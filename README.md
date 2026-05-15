@@ -2,6 +2,8 @@
 
 A beautiful, interactive travel exploration website featuring real-time weather integration, location discovery, and inspiring travel photography.
 
+![Travel Explorer screenshot](screenshot.png)
+
 ## Features
 
 - **Interactive Map Integration**: Explore destinations and discover travel locations
