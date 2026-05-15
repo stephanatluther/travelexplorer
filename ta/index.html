@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>டிராவல் எக்ஸ்புளோரர்</title>
+  <!-- Multilingual alternates — keep this block identical in every language file. -->
+  <link rel="alternate" hreflang="en" href="https://stephanatluther.github.io/travelexplorer/index.html" />
+  <link rel="alternate" hreflang="zh" href="https://stephanatluther.github.io/travelexplorer/zh/index.html" />
+  <link rel="alternate" hreflang="ta" href="https://stephanatluther.github.io/travelexplorer/ta/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://stephanatluther.github.io/travelexplorer/fr/index.html" />
+  <link rel="alternate" hreflang="de" href="https://stephanatluther.github.io/travelexplorer/de/index.html" />
+  <link rel="alternate" hreflang="ms" href="https://stephanatluther.github.io/travelexplorer/ms/index.html" />
+  <link rel="alternate" hreflang="vi" href="https://stephanatluther.github.io/travelexplorer/vi/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://stephanatluther.github.io/travelexplorer/index.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Premium European editorial register ──
+       Warm bone paper, ink near-black, a single oxblood accent.
+       Display: Fraunces (editorial serif). Body: Archivo (grotesque). */
+    :root {
+      --bone: #ECE6D8;
+      --paper: #F5F1E6;
+      --paper-hi: #FAF7EE;
+      --ink: #1C1A15;
+      --ink-soft: #2C2820;
+      --stone: #6C6457;
+      --hairline: #CEC5B0;
+      --accent: #7B342B;
+      --accent-deep: #5C2620;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow: 0 22px 50px -32px rgba(28, 26, 21, 0.45);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Archivo', sans-serif;
+      background: var(--bone);
+      color: var(--ink);
+      line-height: 1.65;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--accent); color: var(--paper-hi); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      height: 76px;
+      background: rgba(236, 230, 216, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: -0.4px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-logo span { font-style: italic; color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 38px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.3s var(--ease);
+      position: relative;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -6px;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.35s var(--ease);
+    }
+
+    .nav-links a:not(.nav-cta):hover { color: var(--accent); }
+    .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--ink);
+      color: var(--paper-hi) !important;
+      padding: 11px 22px;
+      border-radius: 0;
+      transition: background 0.3s var(--ease);
+    }
+
+    .nav-cta:hover { background: var(--accent); color: var(--paper-hi) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    #home {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Fallback still — identical to the video's first frame, so the
+       swap to video is invisible. Always sits behind the video. */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../poster.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    /* Video starts hidden and fades in once it actually begins
+       playing — see the .is-playing class added by the script. */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+    }
+
+    .hero-video.is-playing { opacity: 1; }
+
+    /* Accessibility: users who ask for reduced motion just get the
+       still image — the video never loads or plays. */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video { display: none; }
+    }
+
+    /* Warm ink gradient over the video so the headline stays readable */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        105deg,
+        rgba(20,16,12,0.86) 0%,
+        rgba(20,16,12,0.55) 52%,
+        rgba(20,16,12,0.32) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 56px;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #D8A39A;
+      margin-bottom: 26px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: rise 0.9s var(--ease) both;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 38px; height: 1px;
+      background: #D8A39A;
+    }
+
+    .hero-headline {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: 144;
+      font-size: clamp(46px, 7.2vw, 96px);
+      font-weight: 400;
+      line-height: 1.02;
+      color: var(--paper-hi);
+      margin-bottom: 28px;
+      letter-spacing: -1.5px;
+      animation: rise 1s var(--ease) 0.1s both;
+    }
+
+    .hero-headline em { font-style: italic; color: #E8B4AC; }
+
+    .hero-desc {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(245,241,230,0.78);
+      max-width: 540px;
+      margin-bottom: 44px;
+      line-height: 1.75;
+      animation: rise 1s var(--ease) 0.2s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: rise 1s var(--ease) 0.3s both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 34px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s var(--ease);
+      border-radius: 0;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--paper-hi);
+    }
+
+    .btn-primary:hover { background: var(--paper-hi); color: var(--ink); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--paper-hi);
+      border: 1px solid rgba(245,241,230,0.5);
+    }
+
+    .btn-outline:hover { background: var(--paper-hi); color: var(--ink); border-color: var(--paper-hi); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 56px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(245,241,230,0.5);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 48px;
+      height: 1px;
+      background: rgba(245,241,230,0.4);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 130px 56px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(34px, 4.4vw, 60px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      max-width: 16ch;
+    }
+
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--stone);
+      max-width: 560px;
+      margin-bottom: 68px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── CITY CARDS ── */
+    #guides { background: var(--paper); border-top: 1px solid var(--hairline); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 26px;
+    }
+
+    .city-card {
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      overflow: hidden;
+      transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+      cursor: pointer;
+    }
+
+    .city-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s var(--ease);
+      filter: saturate(0.92);
+    }
+
+    .city-card:hover .card-img { transform: scale(1.05); }
+
+    .card-img-wrap { overflow: hidden; height: 220px; }
+
+    .card-body { padding: 26px 26px 28px; }
+
+    .card-country {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-family: 'Fraunces', serif;
+      font-size: 25px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.65;
+      margin-bottom: 18px;
+      font-weight: 300;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .meta-tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 11px;
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      color: var(--stone);
+    }
+
+    .card-btn {
+      width: 100%;
+      padding: 13px;
+      background: transparent;
+      color: var(--ink);
+      font-family: 'Archivo', sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+
+    .card-btn:hover { background: var(--ink); color: var(--paper-hi); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20,16,12,0.72);
+      backdrop-filter: blur(3px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      max-width: 760px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .modal-body { padding: 44px 48px; }
+
+    .modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      background: var(--ink);
+      color: var(--paper-hi);
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      margin: -20px -20px 0 0;
+      z-index: 10;
+      line-height: 1;
+      transition: background 0.3s var(--ease);
+    }
+
+    .modal-close:hover { background: var(--accent); }
+
+    .modal-country {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-family: 'Fraunces', serif;
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: -0.8px;
+      margin-bottom: 18px;
+    }
+
+    .modal-overview {
+      font-size: 15px;
+      color: var(--stone);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .modal-section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 14px;
+      margin-top: 28px;
+    }
+
+    .modal ul { list-style: none; padding: 0; }
+
+    .modal li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--hairline);
+      font-size: 14px;
+      color: var(--stone);
+      display: flex;
+      gap: 12px;
+      font-weight: 300;
+    }
+
+    .modal li::before {
+      content: '—';
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .cost-item {
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+      padding: 16px 18px;
+      border-radius: 0;
+    }
+
+    .cost-label { font-size: 10px; color: var(--stone); text-transform: uppercase; letter-spacing: 1.5px; }
+    .cost-value { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--ink); margin-top: 4px; }
+
+    /* ── TOOLS ── */
+    #tools { background: var(--bone); border-top: 1px solid var(--hairline); }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 28px;
+    }
+
+    .tool-card {
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      padding: 36px;
+    }
+
+    .tool-title {
+      font-family: 'Fraunces', serif;
+      font-size: 23px;
+      font-weight: 500;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .tool-result {
+      margin-top: 18px;
+      padding: 18px;
+      background: var(--ink);
+      border-radius: 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--paper-hi);
+      display: none;
+    }
+
+    .tool-result strong { font-family: 'Fraunces', serif; font-weight: 600; }
+
+    label {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 7px;
+      margin-top: 16px;
+    }
+
+    input[type=text], input[type=number], input[type=email],
+    input[type=tel], input[type=date], select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      font-family: 'Archivo', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      background: var(--paper);
+      transition: border-color 0.3s var(--ease);
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 96px; }
+
+    .btn-dark {
+      margin-top: 18px;
+      width: 100%;
+      padding: 15px;
+      background: var(--ink);
+      color: var(--paper-hi);
+      font-family: 'Archivo', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background 0.3s var(--ease);
+    }
+
+    .btn-dark:hover { background: var(--accent); }
+
+    /* Checklist */
+    .checklist-category { margin-bottom: 22px; }
+
+    .checklist-category-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 7px 0;
+      cursor: pointer;
+    }
+
+    .checklist-item input[type=checkbox] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      font-size: 14px;
+      color: var(--stone);
+      cursor: pointer;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .checklist-item.checked label { text-decoration: line-through; color: var(--hairline); }
+
+    /* Itinerary */
+    .itinerary-list { margin-top: 18px; }
+
+    .itinerary-item {
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+      border-left: 2px solid var(--accent);
+      padding: 15px 17px;
+      margin-bottom: 11px;
+      border-radius: 0;
+    }
+
+    .itinerary-item .day-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .itinerary-item .activity { font-size: 15px; font-weight: 600; margin-top: 2px; }
+    .itinerary-item .time { font-size: 13px; color: var(--stone); }
+    .itinerary-item .notes { font-size: 13px; color: var(--stone); margin-top: 4px; font-style: italic; }
+
+    .itinerary-remove {
+      float: right;
+      background: none;
+      border: none;
+      color: var(--stone);
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    /* ── WEATHER ── */
+    #weather { background: var(--paper); border-top: 1px solid var(--hairline); }
+
+    .weather-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .weather-card {
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      padding: 36px;
+    }
+
+    .weather-result {
+      display: none;
+      margin-top: 22px;
+      padding: 28px;
+      background: var(--ink);
+      border-radius: 0;
+      color: var(--paper-hi);
+      text-align: center;
+    }
+
+    .weather-msg {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 0;
+      font-size: 14px;
+      font-weight: 500;
+      background: #F1E3DD;
+      color: var(--accent-deep);
+      border: 1px solid #DCC4BC;
+    }
+
+    .weather-city-name {
+      font-family: 'Fraunces', serif;
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .weather-temp {
+      font-family: 'Fraunces', serif;
+      font-size: 70px;
+      font-weight: 300;
+      line-height: 1;
+      margin: 14px 0;
+    }
+
+    .weather-desc {
+      font-size: 13px;
+      color: rgba(245,241,230,0.6);
+      text-transform: capitalize;
+      letter-spacing: 1px;
+    }
+
+    .weather-meta {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 18px;
+      font-size: 12px;
+      color: rgba(245,241,230,0.6);
+      letter-spacing: 0.5px;
+    }
+
+    .weather-api-note {
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      border-left: 2px solid var(--accent);
+      border-radius: 0;
+      padding: 32px;
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--stone);
+      font-weight: 300;
+    }
+
+    .weather-api-note strong { color: var(--ink); font-weight: 600; }
+
+    .weather-api-note code {
+      background: var(--paper);
+      padding: 2px 8px;
+      border-radius: 0;
+      font-size: 12px;
+      font-family: monospace;
+      color: var(--accent-deep);
+    }
+
+    /* ── SAFETY ── */
+    #safety { background: var(--bone); border-top: 1px solid var(--hairline); }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 26px;
+    }
+
+    .safety-card {
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      padding: 28px;
+      transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+
+    .safety-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .safety-icon { font-size: 26px; margin-bottom: 14px; }
+
+    .safety-city {
+      font-family: 'Fraunces', serif;
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .safety-badge {
+      display: inline-block;
+      padding: 4px 11px;
+      border-radius: 0;
+      border: 1px solid;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .safe { background: #E4EAE0; color: #46583D; border-color: #C2D0B6; }
+    .moderate { background: #F1E8D4; color: #7A6526; border-color: #DECFA8; }
+    .caution { background: #F1E3DD; color: var(--accent-deep); border-color: #DCC4BC; }
+
+    .safety-tips { font-size: 13px; color: var(--stone); line-height: 1.7; font-weight: 300; }
+
+    /* ── ENQUIRY ── */
+    #enquiry { background: var(--paper); border-top: 1px solid var(--hairline); }
+
+    .enquiry-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .enquiry-info .section-title { font-size: clamp(32px, 3.6vw, 46px); }
+
+    .enquiry-detail {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .enquiry-detail-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .detail-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--bone);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .detail-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .detail-text span { font-size: 14px; color: var(--stone); }
+
+    .enquiry-form {
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      padding: 44px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .success-msg {
+      display: none;
+      padding: 16px 20px;
+      background: #E4EAE0;
+      border: 1px solid #C2D0B6;
+      border-radius: 0;
+      color: #46583D;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 18px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(245,241,230,0.45);
+      text-align: center;
+      padding: 64px 56px;
+      font-size: 13px;
+      border-top: 1px solid var(--hairline);
+    }
+
+    footer .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 27px;
+      font-weight: 500;
+      color: var(--paper-hi);
+      margin-bottom: 10px;
+    }
+
+    footer .footer-logo span { font-style: italic; color: #E8B4AC; }
+
+    .footer-social {
+      margin-top: 24px;
+    }
+
+    .footer-social ul {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      list-style: none;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      color: rgba(245,241,230,0.55);
+      border: 1px solid rgba(245,241,230,0.18);
+      text-decoration: none;
+      transition: color 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+    }
+
+    .footer-social a:hover {
+      color: var(--paper-hi);
+      border-color: #E8B4AC;
+      background: rgba(245,241,230,0.06);
+    }
+
+    .footer-social a:focus-visible {
+      outline: 2px solid #E8B4AC;
+      outline-offset: 2px;
+    }
+
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 88px 24px; }
+      .hero-content { padding: 0 24px; }
+      .hero-scroll { left: 24px; }
+      .weather-layout { grid-template-columns: 1fr; }
+      .enquiry-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .cost-grid { grid-template-columns: 1fr; }
+      .modal-body { padding: 30px 22px; }
+    }
+
+    /* ── MOBILE NAV ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 76px;
+      left: 0;
+      right: 0;
+      background: var(--paper-hi);
+      border-bottom: 1px solid var(--hairline);
+      z-index: 99;
+      padding: 22px 24px;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    /* ── LANGUAGE SWITCHER ──
+       Native <details> disclosure — accessible, crawlable links, no JS. */
+    .lang-switcher { display: flex; align-items: center; }
+    .lang-switcher details { position: relative; }
+
+    .lang-switcher summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink);
+      transition: color 0.3s var(--ease);
+    }
+
+    .lang-switcher summary::-webkit-details-marker { display: none; }
+    .lang-switcher summary::after { content: '▾'; font-size: 9px; }
+    .lang-switcher summary:hover { color: var(--accent); }
+    .lang-switcher details[open] summary { color: var(--accent); }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 18px);
+      right: 0;
+      min-width: 172px;
+      list-style: none;
+      background: var(--paper-hi);
+      border: 1px solid var(--hairline);
+      box-shadow: var(--shadow);
+      padding: 6px 0;
+    }
+
+    .lang-menu a {
+      display: block;
+      padding: 9px 18px;
+      font-size: 12.5px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      text-transform: none;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 0.25s var(--ease), color 0.25s var(--ease);
+    }
+
+    .lang-menu a::after { display: none; }
+    .lang-menu a:hover { background: var(--paper); color: var(--accent); }
+    .lang-menu a[aria-current="true"] { color: var(--accent); font-weight: 600; }
+
+    /* Language row inside the mobile menu */
+    .mobile-lang {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 16px;
+    }
+
+    .mobile-lang a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--stone);
+      text-decoration: none;
+      padding: 7px 12px;
+      border: 1px solid var(--hairline);
+    }
+
+    .mobile-lang a[aria-current="true"] {
+      color: var(--paper-hi);
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">Travel<span>Explorer</span></a>
+  <ul class="nav-links">
+    <li><a href="#home">முகப்பு</a></li>
+    <li><a href="#guides">வழிகாட்டிகள்</a></li>
+    <li><a href="#tools">கருவிகள்</a></li>
+    <li><a href="#weather">வானிலை</a></li>
+    <li><a href="#safety">பாதுகாப்பு</a></li>
+    <li><a href="#enquiry" class="nav-cta">விசாரணை</a></li>
+    <li class="lang-switcher">
+      <details>
+        <summary aria-label="Choose language">TA</summary>
+        <ul class="lang-menu">
+          <li><a href="../index.html" hreflang="en">English</a></li>
+          <li><a href="../zh/index.html" hreflang="zh">中文</a></li>
+          <li><a href="../ta/index.html" hreflang="ta" aria-current="true">தமிழ்</a></li>
+          <li><a href="../fr/index.html" hreflang="fr">Français</a></li>
+          <li><a href="../de/index.html" hreflang="de">Deutsch</a></li>
+          <li><a href="../ms/index.html" hreflang="ms">Bahasa Melayu</a></li>
+          <li><a href="../vi/index.html" hreflang="vi">Tiếng Việt</a></li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobileMenu()">முகப்பு</a>
+  <a href="#guides" onclick="closeMobileMenu()">வழிகாட்டிகள்</a>
+  <a href="#tools" onclick="closeMobileMenu()">கருவிகள்</a>
+  <a href="#weather" onclick="closeMobileMenu()">வானிலை</a>
+  <a href="#safety" onclick="closeMobileMenu()">பாதுகாப்பு</a>
+  <a href="#enquiry" onclick="closeMobileMenu()">விசாரணை</a>
+  <div class="mobile-lang">
+    <a href="../index.html" hreflang="en">EN</a>
+    <a href="../zh/index.html" hreflang="zh">中文</a>
+    <a href="../ta/index.html" hreflang="ta" aria-current="true">தமிழ்</a>
+    <a href="../fr/index.html" hreflang="fr">FR</a>
+    <a href="../de/index.html" hreflang="de">DE</a>
+    <a href="../ms/index.html" hreflang="ms">MS</a>
+    <a href="../vi/index.html" hreflang="vi">VI</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="home" style="padding:0;">
+  <div class="hero-bg"></div>
+  <video class="hero-video" autoplay muted loop playsinline preload="auto"
+         poster="../poster.jpg">
+    <source src="../hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <script>
+    /* Fade the video in only once it's genuinely playing, so it
+       blends over the matching poster instead of snapping in. */
+    (function () {
+      var v = document.querySelector('.hero-video');
+      if (!v) return;
+      var reveal = function () { v.classList.add('is-playing'); };
+      if (v.readyState >= 3) reveal();          // already buffered
+      v.addEventListener('playing', reveal);
+    })();
+  </script>
+  <div class="hero-content">
+    <p class="hero-label">ஆசியா &amp; பசிபிக் வழிகாட்டிகள்</p>
+    <h1 class="hero-headline">நாங்கள் <em>சென்றோம்</em>,<br>எங்கு செல்வது என்று<br>உங்களுக்குத் தெரியும்.</h1>
+    <p class="hero-desc">உண்மையான விலைகள், நடைமுறைக்கேற்ற பயணத் திட்டங்கள், விமான நிலைய குறிப்புகள், பாதுகாப்பு குறிப்புகள், வானிலை நுண்ணறிவுகள் மற்றும் உள்ளூர் பரிந்துரைகளுடன் கூடிய தேர்ந்தெடுக்கப்பட்ட பயண வழிகாட்டிகள்.</p>
+    <div class="hero-buttons">
+      <a href="#guides" class="btn btn-primary">சமீபத்திய வழிகாட்டியைப் படிக்கவும்</a>
+      <a href="#enquiry" class="btn btn-outline">விசாரணை அனுப்பவும்</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div> ஆராய உருட்டவும்</div>
+</section>
+
+<!-- GUIDES -->
+<section id="guides">
+  <div class="section-label">சேருமிட வழிகாட்டிகள்</div>
+  <h2 class="section-title">நீங்கள் எங்கு செல்ல விரும்புகிறீர்கள்?</h2>
+  <p class="section-desc">பட்ஜெட்டுகள், பயணத் திட்டங்கள் மற்றும் நேர்மையான உள்ளூர் குறிப்புகள் — உங்களுக்குத் தேவையான அனைத்தும் கொண்ட கைதேர்ந்த சேருமிடங்கள்.</p>
+  <div class="cards-grid" id="cardsGrid"></div>
+</section>
+
+<!-- GUIDE MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <img id="modalImg" class="modal-img" src="" alt="" />
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <p class="modal-country" id="modalCountry"></p>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-overview" id="modalOverview"></p>
+
+      <h3 class="modal-section-title">3 நாள் பயணத் திட்டம்</h3>
+      <ul id="modalItinerary"></ul>
+
+      <h3 class="modal-section-title">உணவு பரிந்துரைகள்</h3>
+      <ul id="modalFood"></ul>
+
+      <h3 class="modal-section-title">போக்குவரத்து குறிப்புகள்</h3>
+      <ul id="modalTransport"></ul>
+
+      <h3 class="modal-section-title">மதிப்பிடப்பட்ட செலவு விவரம்</h3>
+      <div class="cost-grid" id="modalCosts"></div>
+
+      <h3 class="modal-section-title">சிறந்த புகைப்பட இடங்கள்</h3>
+      <ul id="modalPhotos"></ul>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-label">பயணக் கருவிகள்</div>
+  <h2 class="section-title">புத்திசாலித்தனமாக திட்டமிடுங்கள்.</h2>
+  <p class="section-desc">உங்கள் அடுத்த பயணத்திற்கு பட்ஜெட் தயாரிக்க, பொருட்களை அடுக்க மற்றும் ஒழுங்கமைக்க உதவும் பயனுள்ள கருவிகள்.</p>
+
+  <div class="tools-grid">
+
+    <!-- Budget Calculator -->
+    <div class="tool-card">
+      <h3 class="tool-title">பயண பட்ஜெட் கணிப்பான்</h3>
+      <label>சேருமிடம்</label>
+      <select id="budgetDest">
+        <option value="">சேருமிடத்தைத் தேர்ந்தெடுக்கவும்…</option>
+        <option value="seoul">சியோல்</option>
+        <option value="singapore">சிங்கப்பூர்</option>
+        <option value="bali">பாலி</option>
+        <option value="tokyo">டோக்கியோ</option>
+        <option value="bangkok">பாங்காக்</option>
+        <option value="hongkong">ஹாங்காங்</option>
+        <option value="kl">கோலாலம்பூர்</option>
+        <option value="maldives">மாலத்தீவு</option>
+        <option value="phuket">பூகெட்</option>
+        <option value="sydney">சிட்னி</option>
+        <option value="taipei">தாய்பெய்</option>
+        <option value="hanoi">ஹனோய்</option>
+      </select>
+      <label>பயணிகளின் எண்ணிக்கை</label>
+      <input type="number" id="travellers" min="1" value="2" />
+      <label>நாட்களின் எண்ணிக்கை</label>
+      <input type="number" id="days" min="1" value="5" />
+      <label>ஒருவருக்கான தினசரி பட்ஜெட் (SGD)</label>
+      <input type="number" id="dailyBudget" min="0" value="150" />
+      <button class="btn-dark" onclick="calcBudget()">மொத்தத்தை கணக்கிடவும்</button>
+      <div class="tool-result" id="budgetResult"></div>
+    </div>
+
+    <!-- Packing Checklist -->
+    <div class="tool-card">
+      <h3 class="tool-title">பொதி சரிபார்ப்புப் பட்டியல்</h3>
+      <div id="checklistContainer"></div>
+    </div>
+
+    <!-- Itinerary Planner -->
+    <div class="tool-card">
+      <h3 class="tool-title">பயணத் திட்டமிடுபவர்</h3>
+      <label>நாள்</label>
+      <select id="itinDay">
+        <option>நாள் 1</option><option>நாள் 2</option><option>நாள் 3</option>
+        <option>நாள் 4</option><option>நாள் 5</option><option>நாள் 6</option>
+        <option>நாள் 7</option>
+      </select>
+      <label>செயல்பாடு</label>
+      <input type="text" id="itinActivity" placeholder="எ.கா. ஷிபுயா குறுக்குச் சாலையைப் பார்வையிடுதல்" />
+      <label>நேரம்</label>
+      <input type="text" id="itinTime" placeholder="எ.கா. காலை 10:00" />
+      <label>குறிப்புகள்</label>
+      <input type="text" id="itinNotes" placeholder="விருப்பத் தேர்வு குறிப்புகள்…" />
+      <button class="btn-dark" onclick="addItinItem()">பயணத் திட்டத்தில் சேர்க்கவும்</button>
+      <div class="itinerary-list" id="itineraryList"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WEATHER -->
+<section id="weather">
+  <div class="section-label">நேரடி வானிலை</div>
+  <h2 class="section-title">முன்னறிவிப்பைச் சரிபார்க்கவும்.</h2>
+  <p class="section-desc">உங்கள் பைகளை அடுக்குவதற்கு முன் வானிலை எப்படி இருக்கிறது என்று பாருங்கள்.</p>
+
+  <div class="weather-layout">
+    <div class="weather-card">
+      <label>நகரத்தின் பெயர்</label>
+      <input type="text" id="weatherCity" placeholder="எ.கா. டோக்கியோ, பாங்காக், பாலி…" />
+      <button class="btn-dark" onclick="checkWeather()">வானிலையைச் சரிபார்க்கவும்</button>
+      <div class="weather-result" id="weatherResult">
+        <div class="weather-city-name" id="wCity"></div>
+        <div class="weather-temp" id="wTemp"></div>
+        <div class="weather-desc" id="wDesc"></div>
+        <div class="weather-meta">
+          <span id="wHumidity"></span>
+          <span id="wWind"></span>
+        </div>
+      </div>
+      <div class="weather-msg" id="weatherMsg"></div>
+    </div>
+
+    <div class="weather-api-note">
+      <strong>நேரடி வானிலை, உலகம் முழுவதும்.</strong><br><br>
+      எந்த நகரத்தையும் தட்டச்சு செய்யுங்கள் — டோக்கியோ, பாங்காக், பாலி அல்லது வேறு எங்கும் — நாங்கள்
+      தற்போதைய வெப்பநிலை, ஈரப்பதம் மற்றும் காற்றின் வேகத்தைக் காட்டுவோம்.<br><br>
+      வானிலை தரவு <strong>OpenWeather</strong> மூலம் வழங்கப்படுகிறது மற்றும் நிகழ்நேரத்தில் புதுப்பிக்கப்படுகிறது,
+      எனவே நீங்கள் செல்வதற்கு முன் என்ன அடுக்க வேண்டும் என்பதைச் சரியாகப் பார்க்கலாம்.
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety">
+  <div class="section-label">பயணப் பாதுகாப்பு</div>
+  <h2 class="section-title">செல்வதற்கு முன் தெரிந்துகொள்ளுங்கள்.</h2>
+  <p class="section-desc">பிரபலமான சேருமிடங்களுக்கான பொதுவான பாதுகாப்பு குறிப்புகள். பயணத்திற்கு முன் எப்போதும் சமீபத்திய ஆலோசனைகளைச் சரிபார்க்கவும்.</p>
+  <div class="safety-grid" id="safetyGrid"></div>
+</section>
+
+<!-- ENQUIRY -->
+<section id="enquiry">
+  <div class="enquiry-layout">
+    <div class="enquiry-info">
+      <div class="section-label">தொடர்பு கொள்ளுங்கள்</div>
+      <h2 class="section-title">உங்கள் அடுத்த சாகசத்தைத் திட்டமிடுங்கள்.</h2>
+      <p class="section-desc">நீங்கள் எங்கு செல்ல விரும்புகிறீர்கள் என்று எங்களிடம் சொல்லுங்கள். அங்கு செல்ல நாங்கள் உதவுவோம்.</p>
+      <div class="enquiry-detail">
+        <div class="enquiry-detail-item">
+          <div class="detail-icon">✉</div>
+          <div class="detail-text">
+            <strong>எங்களுக்கு மின்னஞ்சல் அனுப்பவும்</strong>
+            <span>hello@travelexplorer.com</span>
+          </div>
+        </div>
+        <div class="enquiry-detail-item">
+          <div class="detail-icon">📞</div>
+          <div class="detail-text">
+            <strong>எங்களை அழைக்கவும்</strong>
+            <span>+65 9000 0000</span>
+          </div>
+        </div>
+        <div class="enquiry-detail-item">
+          <div class="detail-icon">🕐</div>
+          <div class="detail-text">
+            <strong>பதிலளிக்கும் நேரம்</strong>
+            <span>24 மணி நேரத்திற்குள்</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="enquiry-form">
+      <div class="form-row">
+        <div>
+          <label>முழுப் பெயர் *</label>
+          <input type="text" id="eName" placeholder="ஜேன் ஸ்மித்" />
+        </div>
+        <div>
+          <label>மின்னஞ்சல் *</label>
+          <input type="email" id="eEmail" placeholder="jane@email.com" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label>தொலைபேசி</label>
+          <input type="tel" id="ePhone" placeholder="+65 9000 0000" />
+        </div>
+        <div>
+          <label>ஆர்வமுள்ள சேருமிடம்</label>
+          <select id="eDest">
+            <option value="">தேர்ந்தெடுக்கவும்…</option>
+            <option>சியோல்</option><option>சிங்கப்பூர்</option><option>பாலி</option>
+            <option>டோக்கியோ</option><option>பாங்காக்</option><option>ஹாங்காங்</option>
+            <option>கோலாலம்பூர்</option><option>மாலத்தீவு</option><option>பூகெட்</option>
+            <option>சிட்னி</option><option>தாய்பெய்</option><option>ஹனோய்</option>
+            <option>மற்றவை</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label>பயணத் தேதி</label>
+          <input type="date" id="eDate" />
+        </div>
+        <div>
+          <label>பயணிகளின் எண்ணிக்கை</label>
+          <input type="number" id="eTravellers" min="1" placeholder="2" />
+        </div>
+      </div>
+      <label>செய்தி</label>
+      <textarea id="eMessage" placeholder="உங்கள் கனவுப் பயணத்தைப் பற்றி எங்களிடம் சொல்லுங்கள்…"></textarea>
+      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">விசாரணை அனுப்பவும்</button>
+      <div class="success-msg" id="enquirySuccess">
+        ✓ உங்கள் விசாரணை பெறப்பட்டது! 24 மணி நேரத்திற்குள் நாங்கள் தொடர்பு கொள்வோம்.
+      </div>
+      <div class="success-msg" id="enquiryError" style="background:#fdecea;color:#b3261e;">
+        ⚠ மன்னிக்கவும், ஏதோ தவறு நடந்துவிட்டது. மீண்டும் முயற்சிக்கவும் அல்லது நேரடியாக எங்களுக்கு மின்னஞ்சல் அனுப்பவும்.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Travel<span>Explorer</span></div>
+  <p style="margin-top:6px;">நாங்கள் சென்றோம், எங்கு செல்வது என்று உங்களுக்குத் தெரியும்.</p>
+  <nav class="footer-social" aria-label="Social media">
+    <ul>
+      <li>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M14 8.5h2.5V5.2c-.4-.06-1.8-.2-3.4-.2-3.4 0-5.7 2-5.7 5.8V14H4.5v3.7h2.9V24h3.9v-6.3h2.8l.5-3.7h-3.3v-2.6c0-1.07.3-1.9 1.2-1.9z"></path>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M16.5 2h-3.2v13.1a2.7 2.7 0 1 1-2.7-2.7c.27 0 .53.04.78.11V9.2a6 6 0 0 0-.78-.05 5.85 5.85 0 1 0 5.85 5.85V8.6a7.4 7.4 0 0 0 4.3 1.37V6.74a4.27 4.27 0 0 1-4.25-4.74z"></path>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M17.9 3h3.3l-7.2 8.2L22.7 21h-6.6l-5.2-6.8L4.9 21H1.6l7.7-8.8L1.3 3h6.8l4.7 6.2L17.9 3zm-1.16 16h1.83L7.34 4.9H5.38L16.74 19z"></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <p style="margin-top:16px; font-size:12px;">© 2025 TravelExplorer. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+</footer>
+
+<script>
+// ────────────────────────────────────────────────────────────────────────────────
+// DATA
+// ────────────────────────────────────────────────────────────────────────────────
+
+const cities = [
+  {
+    id: "tokyo",
+    name: "டோக்கியோ",
+    country: "ஜப்பான்",
+    desc: "பழமையான கோயில்கள் மற்றும் நியான் ஒளி வீசும் வானளாவிய கட்டிடங்களின் கண்கவர் கலவை. டோக்கியோ ஒவ்வொரு திருப்பத்திலும் ஆர்வமுள்ள பயணிக்கு வெகுமதி அளிக்கிறது.",
+    img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 7 மணி நேரம்",
+    budget: "SGD 200–350/நாள்",
+    season: "மார்ச்–மே, அக்.–நவ.",
+    overview: "டோக்கியோ உலகின் சிறந்த நகரங்களில் ஒன்று — மின்னல் வேகம், பரந்த விரிவு மற்றும் முடிவில்லாமல் ஆச்சரியமூட்டும். மெய்ஜி கோயிலின் அமைதியிலிருந்து ஷிபுயாவின் ஒழுங்கமைக்கப்பட்ட குழப்பம் வரை, இது ஆர்வமுள்ளவர்களுக்கு வெகுமதி அளிக்கும் நகரம். ஒவ்வொரு விலை நிலையிலும் உணவு சிறப்பாக உள்ளது, பொதுப் போக்குவரத்து உலகத் தரமானது, மற்றும் நகரம் மிகவும் பாதுகாப்பானது.",
+    itinerary: [
+      "நாள் 1 காலை: வந்தடைதல், ஷின்ஜுகுவில் தங்குதல், கபுகிசோ மற்றும் கோல்டன் கையை ஆராய்தல்",
+      "நாள் 1 மாலை: மாலையில் ஷிபுயா குறுக்குச் சாலை, இசகயாவில் இரவு உணவு",
+      "நாள் 2 காலை: காலை உணவுக்கு சுகிஜி வெளிச் சந்தை, ஹமாரிக்யூ தோட்டங்கள்",
+      "நாள் 2 மாலை: அசக்குசா மற்றும் சென்சோ-ஜி கோயில், நகாமிசே ஷாப்பிங் தெரு",
+      "நாள் 3 காலை: ஹராஜுகு மற்றும் மெய்ஜி கோயில், டகேஷிடா தெரு",
+      "நாள் 3 மாலை: பரந்த சூரிய அஸ்தமன காட்சிகளுக்கு ரொப்பொங்கி ஹில்ஸ்"
+    ],
+    food: ["இச்சிரானில் ராமன் (24/7, தனி அறைகள்)", "சுகிஜி சந்தை கடைகளில் சுஷி", "மைசென் அயோமாவில் டொன்காட்சு", "யுராக்குசோ தண்டவாளங்களுக்குக் கீழே யாகிடோரி"],
+    transport: ["எந்த நிலையத்திலும் சுய்கா அட்டை வாங்கவும் (¥500 வைப்புத்தொகை)", "நகரங்களுக்கிடையேயான புல்லட் ரயில்களுக்கு JR பாஸ்", "உள் நகரப் பயணத்திற்கு டோக்கியோ மெட்ரோ வேகமானது", "நெரிசல் நேரத்தைத் தவிர்க்கவும்: காலை 7–9 மற்றும் மாலை 6–8"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 80–200" }, { label: "உணவு & பானம்", val: "SGD 50–100" }, { label: "போக்குவரத்து", val: "SGD 15–30" }, { label: "செயல்பாடுகள்", val: "SGD 20–50" }],
+    photos: ["மேக்'ஸ் பார்க் மொட்டை மாடியிலிருந்து ஷிபுயா குறுக்குச் சாலை", "கூட்டம் வருவதற்கு முன் விடியற்காலையில் சென்சோ-ஜி", "செர்ரி மலர் பருவத்தில் ஷின்ஜுகு க்யோயென்", "சோஜோ-ஜி கோயிலை முன்னணியாகக் கொண்ட டோக்கியோ கோபுரம்"]
+  },
+  {
+    id: "bali",
+    name: "பாலி",
+    country: "இந்தோனேசியா",
+    desc: "பசுமையான நெல் வயல் படிகள், புனிதக் கோயில்கள், துடிப்பான இரவு வாழ்க்கை மற்றும் உலகத் தரம் வாய்ந்த அலையோட்டம். பாலி முடிவில்லாமல் கவர்ந்திழுக்கிறது.",
+    img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 2.5 மணி நேரம்",
+    budget: "SGD 80–180/நாள்",
+    season: "ஏப்.–அக். (வறண்ட பருவம்)",
+    overview: "பாலி ஒவ்வொரு வகை பயணிக்கும் ஏதாவது வழங்குகிறது — உபுட்டின் நெல் வயல் படிகளின் ஆன்மிக அமைதியிலிருந்து கங்குவின் அலையோட்டம் மற்றும் உலுவாட்டுவின் மலைச்சரிவு பார்கள் வரை. சிறந்த உணவு, அன்பான விருந்தோம்பல் மற்றும் கண்கவர் காட்சிகளுடன் இது உலகின் சிறந்த மதிப்பு சேருமிடங்களில் ஒன்றாகவே நீடிக்கிறது.",
+    itinerary: [
+      "நாள் 1: டென்பசார் வந்தடைதல், செமின்யாக்கிற்கு மாற்றம், கு டே டாவில் கடற்கரை சூரிய அஸ்தமனம்",
+      "நாள் 2 காலை: உபுட்டிற்கு வாகனப் பயணம், சூரிய உதயத்தில் தெகல்லாலாங் நெல் வயல் படிகளைப் பார்வையிடுதல்",
+      "நாள் 2 மாலை: உபுட் குரங்கு வனம், உள்ளூர் வாருங் மதிய உணவு, சூரிய அஸ்தமனத்தில் உபுட் அரண்மனை",
+      "நாள் 3 காலை: சூரிய உதயத்தில் தனா லொட் கோயில், தெற்கே உலுவாட்டுவிற்கு வாகனப் பயணம்",
+      "நாள் 3 மாலை: உலுவாட்டு மலைச்சரிவு கோயில், சூரிய அஸ்தமனத்தில் கேசக் நெருப்பு நடனம்"
+    ],
+    food: ["எந்த உள்ளூர் வாருங்கிலும் நாசி கோரெங்", "உபுட்டில் இபு ஓகாவில் பாபி குலிங் (பால் குடிக்கும் பன்றி)", "ஜிம்பரான் விரிகுடாவில் புதிய கடல் உணவு", "கங்கு கஃபேக்களில் ஸ்மூத்தி பௌல்கள்"],
+    transport: ["தனிப்பட்ட ஓட்டுநரை SGD 50–70/நாளுக்கு அமர்த்தவும் (மிகவும் திறமையானது)", "முக்கிய பகுதிகளில் கிராப் செயலி கிடைக்கிறது", "ஸ்கூட்டர் வாடகை SGD 8–12/நாள் (சர்வதேச உரிமம் தேவை)", "புளூபேர்ட் டாக்சிகள் மீட்டர் கொண்டவை மற்றும் நம்பகமானவை"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 40–150" }, { label: "உணவு & பானம்", val: "SGD 20–60" }, { label: "போக்குவரத்து", val: "SGD 10–50" }, { label: "செயல்பாடுகள்", val: "SGD 15–40" }],
+    photos: ["காலை 7 மணிக்கு தெகல்லாலாங் நெல் வயல் படிகள்", "சூரிய அஸ்தமனத்தில் தனா லொட் கோயில்", "சிங்கிள் ஃபின் பாரிலிருந்து உலுவாட்டு மலைக் காட்சிகள்", "வடக்கு பாலியில் செகும்புல் நீர்வீழ்ச்சி"]
+  },
+  {
+    id: "seoul",
+    name: "சியோல்",
+    country: "தென் கொரியா",
+    desc: "அபார உணவு, நவீன ஃபேஷன், பழமையான அரண்மனைகள் மற்றும் மிகச் சிறந்த சருமப் பராமரிப்பு கொண்ட கே-கலாச்சார மையம்.",
+    img: "https://images.unsplash.com/photo-1601621915196-2621bfb0cd6e?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 6.5 மணி நேரம்",
+    budget: "SGD 130–250/நாள்",
+    season: "ஏப்.–ஜூன், செப்.–நவ.",
+    overview: "சியோல் ஆசியாவின் மிகவும் சுறுசுறுப்பான தலைநகரங்களில் ஒன்று — 600 ஆண்டுகள் பழமையான அரண்மனைகளை உலகின் வேகமான இணையம் மற்றும் மிகுந்த ஆர்வமுள்ள உணவு கலாச்சாரத்துடன் இணைக்கும் நகரம். தெருவோர உணவு மற்றும் சருமப் பராமரிப்புக்கு மியோங்டோங், இரவு வாழ்க்கைக்கு ஹாங்டே, வரலாற்றுக்கு புக்சோன் ஹனோக் கிராமம். சுரங்க ரயில் ஒரு தலைசிறந்த படைப்பு.",
+    itinerary: [
+      "நாள் 1 காலை: திறக்கும் நேரத்தில் (காலை 9 மணி) ஜியோங்போக்குங் அரண்மனை, புக்சோன் ஹனோக் கிராமம்",
+      "நாள் 1 மாலை: இன்சாடோங் கலைத் தெரு, சியோங்கெசியோன் ஓடை நடைப்பயணம்",
+      "நாள் 2 காலை: மியோங்டோங் தெருவோர உணவு காலை உணவு, நம்சன் கோபுரம் கேபிள் கார்",
+      "நாள் 2 மாலை: இடேவான் சுற்றுப்புறம், லீயம் சாம்சங் அருங்காட்சியகம்",
+      "நாள் 3 காலை: ஹாங்டே படைப்பாற்றல் சந்தை, இவா பெண்கள் பல்கலைக்கழக சுவரோவியங்கள்",
+      "நாள் 3 மாலை: இரவில் ஹான் நதி பான்போ பாலம் வானவில் நீரூற்று"
+    ],
+    food: ["மாபோ கல்மேகியில் கொரிய பார்பிக்யூ (மாட்டிறைச்சி விலா எலும்புகள்)", "இன்சாடோங்கில் கோகுங்கில் பிபிம்பாப்", "க்வாங்ஜாங் சந்தையில் டோக்போக்கி (காரமான அரிசி கேக்குகள்)", "க்யோச்சோனில் கொரிய பொரித்த கோழி"],
+    transport: ["மெட்ரோ மற்றும் பேருந்துக்கு டி-மணி அட்டை (எந்த வசதிக் கடையிலும் வாங்கலாம்)", "மெட்ரோ விரிவானது, சுத்தமானது மற்றும் மலிவானது (சராசரி SGD 1.20)", "புசானுக்கு பகல் பயணங்களுக்கு KTX புல்லட் ரயில்", "டாக்சிகளுக்கு ககாவோ டி செயலி"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 60–180" }, { label: "உணவு & பானம்", val: "SGD 30–80" }, { label: "போக்குவரத்து", val: "SGD 10–20" }, { label: "செயல்பாடுகள்", val: "SGD 15–40" }],
+    photos: ["புக்ஹன்சான் பின்னணியுடன் ஜியோங்போக்குங் அரண்மனை", "இரவில் நம்சன் கோபுரம்", "விடியற்காலையில் புக்சோன் ஹனோக் கிராம சந்துகள்", "இருட்டிய பிறகு பான்போ பாலம் வானவில் நீரூற்று"]
+  },
+  {
+    id: "singapore",
+    name: "சிங்கப்பூர்",
+    country: "சிங்கப்பூர்",
+    desc: "ஆசியாவின் மிகவும் திறமையான நகரம் — குற்றமற்ற உணவு, கண்கவர் கட்டிடக்கலை மற்றும் பிராந்தியத்தின் மற்ற பகுதிகளுக்கான நுழைவாயில்.",
+    img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80",
+    flight: "மைய நகரம்",
+    budget: "SGD 150–350/நாள்",
+    season: "ஆண்டு முழுவதும் (பிப்.–ஏப். வறண்டது)",
+    overview: "சிங்கப்பூர் அதன் அளவுக்கு மீறி ஒளிர்கிறது. 750 சதுர கிலோமீட்டருக்கும் குறைவான பரப்பளவில் ஹாக்கர் மையங்களிலிருந்து மிச்செலின் நட்சத்திர உணவகங்கள் வரை உலகத் தரம் வாய்ந்த உணவு, காலனித்துவ கடைக்கட்டடங்களிலிருந்து ஜூவல் சாங்கி வரை அபார கட்டிடக்கலை மற்றும் ஆசியாவின் சில சிறந்த காக்டெயில் பார்களை நீங்கள் காண்பீர்கள். பாதுகாப்பானது, சுத்தமானது மற்றும் முடிவில்லாமல் அணுகக்கூடியது.",
+    itinerary: [
+      "நாள் 1 காலை: ஜூவல் சாங்கி விமான நிலைய ரெயின் வோர்ட்டெக்ஸ், கார்டன்ஸ் பை தி பே",
+      "நாள் 1 மாலை: மரீனா பே சாண்ட்ஸ் ஸ்கைபார்க், சூப்பர்ட்ரீ மாலை ஒளி நிகழ்ச்சி",
+      "நாள் 2 காலை: சைனாடவுன் பாரம்பரிய மையம், ஹைனானீஸ் சிக்கன் ரைஸுக்கு மேக்ஸ்வெல் உணவு மையம்",
+      "நாள் 2 மாலை: லிட்டில் இந்தியா, அரபு தெரு, ஹாஜி லேன்",
+      "நாள் 3 காலை: செந்தோசா தீவு, யுனிவர்சல் ஸ்டுடியோஸ் அல்லது பலவான் கடற்கரை",
+      "நாள் 3 மாலை: கிளார்க் கீ நதியோர பார்கள், சதேக்கு லாவ் பா சாட்"
+    ],
+    food: ["மேக்ஸ்வெல்லில் டியான் டியானில் ஹைனானீஸ் சிக்கன் ரைஸ்", "நோ சைன்போர்டு சீஃபுட்டில் சில்லி கிராப்", "யா குன் கயா டோஸ்ட்டில் கயா டோஸ்ட் செட்", "328 கட்டோங் லக்ஸாவில் லக்ஸா"],
+    transport: ["MRT மற்றும் பேருந்துகளுக்கு EZ-Link அட்டை", "கிராப் செயலி தடையற்றது மற்றும் மலிவானது", "MRT பெரும்பாலான சுற்றுலாப் பகுதிகளை திறமையாக உள்ளடக்கியது", "விமான நிலையத்திலிருந்து நகரத்திற்கு MRT 30 நிமிடங்கள் ஆகும்"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 120–400" }, { label: "உணவு & பானம்", val: "SGD 30–100" }, { label: "போக்குவரத்து", val: "SGD 5–20" }, { label: "செயல்பாடுகள்", val: "SGD 20–80" }],
+    photos: ["நீல நேரத்தில் மரீனா பே சாண்ட்ஸ் பிரதிபலிப்பு", "கார்டன்ஸ் பை தி பேயில் சூப்பர்ட்ரீகள்", "ஜூவல் சாங்கி ரெயின் வோர்ட்டெக்ஸ்", "இரவில் CBD வானளாவிய காட்சியுடன் மெர்லயன்"]
+  },
+  {
+    id: "bangkok",
+    name: "பாங்காக்",
+    country: "தாய்லாந்து",
+    desc: "குழப்பமான, போதையேற்றும் மற்றும் முடிவில்லாமல் வெகுமதி அளிக்கும். பாங்காக் என்பது கோயில்கள், தெருவோர உணவு, மொட்டை மாடி பார்கள் மற்றும் டுக்-டுக்குகள்.",
+    img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 2.5 மணி நேரம்",
+    budget: "SGD 80–180/நாள்",
+    season: "நவ.–பிப். (குளிர் பருவம்)",
+    overview: "பாங்காக் தென்கிழக்கு ஆசியாவின் மிகவும் மின்னல் வேக நகரம். காலையில் கிராண்ட் அரண்மனை மற்றும் வாட் போ, இரவில் யாவோராட் சாலையில் தெருவோர உணவு, வானளாவிய காட்சிக்கு மேலே மொட்டை மாடி காக்டெயில்கள் மற்றும் வார இறுதியில் மிதக்கும் சந்தைகள். இது வெப்பமானது, சத்தமானது மற்றும் முற்றிலும் அற்புதமானது.",
+    itinerary: [
+      "நாள் 1 காலை: கிராண்ட் அரண்மனை மற்றும் வாட் போ (கூட்டத்திற்கு முன் காலை 8 மணிக்கு வந்தடையவும்)",
+      "நாள் 1 மாலை: லாங்டெயில் படகில் வாட் அரூன், தா தியன் சந்தை மதிய உணவு",
+      "நாள் 2 காலை: சதுச்சாக் வார இறுதி சந்தை (சனி/ஞாயிறு) அல்லது ஓர் டோர் கோர் சந்தை",
+      "நாள் 2 மாலை: பிளாட்டினம் ஃபேஷன் மால், சியாம் பாரகான், சூரிய அஸ்தமனத்தில் ஸ்கை பார்",
+      "நாள் 3: டம்னோன் சதுவாக் மிதக்கும் சந்தை பகல் பயணம்",
+      "நாள் 3 மாலை: யாவோராட் (சைனாடவுன்) தெருவோர உணவு இரவு உணவு"
+    ],
+    food: ["மஹாச்சாய் சாலையில் திப் சாமாயில் பேட் தாய்", "க்வாங் சீஃபுட்டில் டாம் யம் கூங்", "மாமுவாங்கில் (மே வாரீ) மாம்பழ ஒட்டும் அரிசி", "யாவோராட் சைனாடவுனில் தெருவோர டிம் சம்"],
+    transport: ["BTS ஸ்கைட்ரெயின் மற்றும் MRT முக்கிய சுற்றுலாப் பகுதியை உள்ளடக்கியது", "கிராப் மிகவும் பாதுகாப்பான மற்றும் மலிவான டாக்சி தேர்வு", "சாவ் ப்ராயா நதியில் லாங்டெயில் படகுகள்", "முதலில் பேரம் பேசாவிட்டால் டுக்-டுக்குகளைத் தவிர்க்கவும்"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 40–200" }, { label: "உணவு & பானம்", val: "SGD 15–60" }, { label: "போக்குவரத்து", val: "SGD 8–25" }, { label: "செயல்பாடுகள்", val: "SGD 10–40" }],
+    photos: ["நதியிலிருந்து சூரிய உதயத்தில் வாட் அரூன்", "அந்தி வேளையில் லெபுவாவில் ஸ்கை பார்", "கிராண்ட் அரண்மனை தங்க கோபுரங்கள்", "நள்ளிரவில் யாவோராட் சாலை நியான்"]
+  },
+  {
+    id: "hongkong",
+    name: "ஹாங்காங்",
+    country: "சீனா SAR",
+    desc: "ஆசியாவின் உச்ச செங்குத்து நகரம். விடியற்காலையில் டிம் சம், அந்தியில் துறைமுகக் காட்சிகள் மற்றும் உலகின் சில சிறந்த மலையேற்றம்.",
+    img: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 3.5 மணி நேரம்",
+    budget: "SGD 180–350/நாள்",
+    season: "அக்.–மார்ச்",
+    overview: "ஹாங்காங் உலகின் சிறந்த நகர்ப்புற காட்சிகளில் ஒன்று. இரவில் சிம் சா சுயிலிருந்து விக்டோரியா துறைமுக வானளாவிய காட்சி தவறவிடக்கூடாதது. காலை உணவுக்கு டிம் சம் சாப்பிடுங்கள், மதியம் டிராகன்'ஸ் பேக் பாதையில் மலையேறுங்கள், மாலை பரந்த காட்சிக்கு பீக் டிராம் ஏறுங்கள். MTR உலகின் சிறந்த மெட்ரோ.",
+    itinerary: [
+      "நாள் 1: வந்தடைதல், கௌலூனில் தங்குதல், சிம் சா சுயி துறைமுக நடைபாதை, சிம்பனி ஆஃப் லைட்ஸ்",
+      "நாள் 2 காலை: டிம் சம்மிற்கு டிம் ஹோ வான், சென்ட்ரல் / ஷியூங் வான் ஆராய்தல்",
+      "நாள் 2 மாலை: சூரிய அஸ்தமனத்தில் விக்டோரியா பீக்கிற்கு பீக் டிராம்",
+      "நாள் 3 காலை: டிராகன்'ஸ் பேக் பாதை மலையேற்றம் (ஷெக் ஓ), பிக் வேவ் பே",
+      "நாள் 3 மாலை: டெம்பிள் ஸ்ட்ரீட் இரவுச் சந்தை, ஜோர்டான் தெருவோர உணவு"
+    ],
+    food: ["டிம் ஹோ வானில் டிம் சம் (மிச்செலின் நட்சத்திரம், மலிவானது)", "யுங் கீ உணவகத்தில் வறுத்த வாத்து", "எந்த தெருவோரக் கடையிலும் முட்டை வாஃபிள்கள் (கை டான் ஜாய்)", "காம் வா கஃபேயில் வெண்ணெயுடன் அன்னாசி பன்"],
+    transport: ["ஆக்டோபஸ் அட்டை MTR, பேருந்து, டிராம் மற்றும் படகுகளை உள்ளடக்கியது", "கௌலூன் மற்றும் ஹாங்காங் தீவுக்கு இடையே ஸ்டார் ஃபெர்ரி (HKD 2.70)", "மத்திய மலைச்சரிவுக்கு மிட்-லெவல்ஸ் எஸ்கலேட்டர்", "MTR வேகமானது, மலிவானது மற்றும் மிகவும் நம்பகமானது"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 100–300" }, { label: "உணவு & பானம்", val: "SGD 40–100" }, { label: "போக்குவரத்து", val: "SGD 8–15" }, { label: "செயல்பாடுகள்", val: "SGD 15–40" }],
+    photos: ["இரவில் சிம் சா சுயிலிருந்து விக்டோரியா துறைமுகம்", "சூரிய அஸ்தமனத்தில் லயன் ராக் உச்சியில் பீக் டிராம்", "சென்ட்ரல்-மிட்-லெவல்ஸ் எஸ்கலேட்டர் காட்சி", "டிராகன்'ஸ் பேக் பாதையிலிருந்து தெற்கு சீனக் கடல் காட்சி"]
+  },
+  {
+    id: "kl",
+    name: "கோலாலம்பூர்",
+    country: "மலேசியா",
+    desc: "பெட்ரோனாஸ் கோபுரங்கள், அபார பல்கலாச்சார உணவு மற்றும் சிங்கப்பூரின் செலவில் ஒரு பகுதியில் ஆடம்பர ஹோட்டல்கள்.",
+    img: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 45 நிமிடங்கள்",
+    budget: "SGD 80–200/நாள்",
+    season: "மே–ஜூலை, டிச.–பிப்.",
+    overview: "கோலாலம்பூர் ஆசியாவின் மிகவும் குறைமதிப்பிற்கு உட்படுத்தப்பட்ட தலைநகரங்களில் ஒன்று. பெட்ரோனாஸ் கோபுரங்கள் நேரில் பார்க்கும்போது இன்னும் கம்பீரமாக உள்ளன, உணவுக் காட்சி அபாரமானது (ஜலான் அலோர், பிரிக்ஃபீல்ட்ஸ், சைனாடவுன்), மற்றும் ஹோட்டல் மதிப்பு சிறப்பானது. பாடு குகைகள் மற்றும் கேமரூன் மலையகங்களுக்கு பகல் பயணங்களை எளிதாக ஏற்பாடு செய்யலாம்.",
+    itinerary: [
+      "நாள் 1 காலை: சூரிய உதயத்தில் பாடு குகைகள் (வெப்பத்தைத் தவிர்க்க), லிட்டில் இந்தியா நடைப்பயணம்",
+      "நாள் 1 மாலை: பெட்ரோனாஸ் கோபுரங்கள் பார்வை மேடை, KLCC பூங்கா",
+      "நாள் 2 காலை: மத்திய சந்தை, சைனாடவுன் பெட்டாலிங் தெரு",
+      "நாள் 2 மாலை: மெர்டேகா சதுக்கம், KL கோபுரம், ஜலான் அலோர் இரவுச் சந்தை",
+      "நாள் 3: ஜென்டிங் மலையகங்கள் அல்லது புத்ராஜெயாவுக்கு பகல் பயணம்",
+      "நாள் 3 மாலை: ஹெலி லவுஞ்ச் பாரில் மொட்டை மாடி பார் (ஹெலிபேடுக்குள்)"
+    ],
+    food: ["ரெஸ்டோரான் கஸிம் முஸ்தபாவில் சார் குவே டியோ", "வில்லேஜ் பார்க் உணவகத்தில் நாசி லெமாக்", "க்லாங்கில் பாக் குட் தே (பகல் பயணம்)", "எந்த 24 மணி நேர மாமாக்கிலும் மாமாக் ரோட்டி கனாய்"],
+    transport: ["KL சென்ட்ரல் முக்கிய போக்குவரத்து மையம்", "MRT மற்றும் LRT பெரும்பாலான பகுதிகளை உள்ளடக்கியது", "கிராப் மலிவானது மற்றும் எங்கும் கிடைக்கிறது", "விமான நிலைய எக்ஸ்பிரஸ் (KLIA Ekspres) 28 நிமிடங்கள் ஆகும்"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 50–180" }, { label: "உணவு & பானம்", val: "SGD 20–60" }, { label: "போக்குவரத்து", val: "SGD 5–20" }, { label: "செயல்பாடுகள்", val: "SGD 10–30" }],
+    photos: ["KLCC பூங்கா பிரதிபலிப்பு குளத்திலிருந்து பெட்ரோனாஸ் கோபுரங்கள்", "சூரிய உதயத்தில் பாடு குகைகள் வானவில் படிகள்", "ஹெலி லவுஞ்ச் பார் மொட்டை மாடி காட்சி", "இரவில் ஜலான் அலோர் தெருவோர உணவு"]
+  },
+  {
+    id: "maldives",
+    name: "மாலத்தீவு",
+    country: "மாலத்தீவு",
+    desc: "நீருக்கு மேலான குடிசைகள், கண்ணாடி தெளிவான குளங்கள் மற்றும் ஒளிரும் கடற்கரைகள். உச்ச ஆடம்பர தப்பித்தல்.",
+    img: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 4 மணி நேரம்",
+    budget: "SGD 400–1200/நாள்",
+    season: "நவ.–ஏப். (வறண்ட பருவம்)",
+    overview: "மாலத்தீவு பூமியில் வேறெங்கும் இல்லாதது. கடல் மட்டத்திற்கு சற்றே மேலே, இந்தியப் பெருங்கடல் முழுவதும் சிதறிக்கிடக்கிறது, இது நீருக்கு மேலான குடிசைகள், மாண்டா கதிர்கள் மற்றும் சுறாக்கள் நிறைந்த வீட்டுப் பவளப்பாறைகள் மற்றும் கற்பனை செய்யக்கூடிய மிகத் தெளிவான நீல நீரை வழங்குகிறது. உள்ளூர் தீவுகளில் பட்ஜெட் தேர்வுகள் உள்ளன; ரிசார்ட் தீவுகளில் ஆடம்பரத்திற்கு எல்லையே இல்லை.",
+    itinerary: [
+      "நாள் 1: மாலேவிற்கு பறக்கவும், உங்கள் தீவுக்கு வேகப்படகு அல்லது கடல் விமானம், தங்குதல்",
+      "நாள் 2: வீட்டுப் பவளப்பாறையில் ஸ்னோர்க்கலிங் அல்லது டைவிங், சூரிய அஸ்தமன மீன்பிடிப் பயணம்",
+      "நாள் 3: விடியற்காலையில் டால்பின் பயணம், மணல்திட்டு சிற்றுண்டி, ஒளிர்வில் இரவு நீச்சல்",
+    ],
+    food: ["புதிய சூரை மீன் (மாஸ்) எல்லா வடிவங்களிலும் — வாட்டியது, கறி, புகையூட்டியது", "உள்ளூர் தீவுகளில் மாஸ் ஹுனி (சூரை மீன் மற்றும் தேங்காய் காலை உணவு)", "ரிசார்ட் உணவகங்களில் கடற்கரையில் இறால்", "உள்ளூர் கஃபேக்களில் புதிய தேங்காய் பானங்கள் (ரிசார்ட்டுகளை விட மிகவும் மலிவானது)"],
+    transport: ["கடல் விமான மாற்றங்கள் கண்கவர்ந்தவை ஆனால் விலையுயர்ந்தவை", "வெளி தீவுகளை அடைய வேகப்படகுகள் பட்ஜெட் மாற்றாகும்", "மாலேவிலிருந்து உள்ளூர் தீவுகளுக்கு: பொது படகுகள் SGD 2–5", "பெரும்பாலான ரிசார்ட்டுகள் அனைத்து தீவு மாற்றங்களையும் ஏற்பாடு செய்கின்றன"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 200–800+" }, { label: "உணவு & பானம்", val: "SGD 80–200" }, { label: "செயல்பாடுகள்", val: "SGD 50–150" }, { label: "போக்குவரத்து", val: "SGD 50–400" }],
+    photos: ["விடியற்காலையில் நீருக்கு மேலான குடிசை, வடக்கு மாலே அட்டோல்", "வாதூ தீவில் ஒளிரும் கடற்கரை", "ஹனிஃபாரு விரிகுடாவில் மாண்டா கதிர் ஸ்னோர்க்கலிங்", "கடல் விமானத்திலிருந்து மணல்திட்டு வான்வழிக் காட்சி"]
+  },
+  {
+    id: "phuket",
+    name: "பூகெட் & கிராபி",
+    country: "தாய்லாந்து",
+    desc: "சுண்ணாம்புக்கல் மலைகள், மரகத நிற நீர், உலகத் தரம் வாய்ந்த டைவிங் மற்றும் அந்தமான் கடலில் கண்கவர் தீவு தாவல்.",
+    img: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 2 மணி நேரம்",
+    budget: "SGD 100–250/நாள்",
+    season: "நவ.–ஏப். (வறண்ட பருவம்)",
+    overview: "பூகெட் மற்றும் கிராபி ஒன்றாக உலகின் மிகக் கண்கவர் கடலோர சேருமிடங்களில் ஒன்றை உருவாக்குகின்றன. ஃபி ஃபி தீவுகள், ரெய்லே கடற்கரை (படகு மூலம் மட்டுமே அணுகக்கூடியது) மற்றும் கோ லான்டாவைச் சுற்றியுள்ள ஃபோர் ஐலண்ட்ஸ் சுற்றுப்பயணம் வாழ்நாள் அனுபவங்கள். கிராபி அமைதியானது மற்றும் நாடகீயமானது; பூகெட்டில் சிறந்த உள்கட்டமைப்பு மற்றும் இரவு வாழ்க்கை உள்ளது.",
+    itinerary: [
+      "நாள் 1: பூகெட் வந்தடைதல், படோங் கடற்கரை, இரவில் பாங்லா சாலை நடைபாதைத் தெரு",
+      "நாள் 2: ஃபி ஃபி தீவுகள் வேகப்படகு பகல் பயணம் (காலை 7 மணிக்கு புறப்படவும்)",
+      "நாள் 3: கிராபிக்கு மாற்றம், ஆவ் நாங்கில் தங்குதல், லாங்டெயில் படகில் ரெய்லே கடற்கரை",
+    ],
+    food: ["எந்த ஆவ் நாங் கடற்கரையோர உணவகத்திலும் பேட் தாய் மற்றும் பச்சைக் கறி", "ராவாய் சீஃபுட் சந்தையில் (பூகெட்) புதிய வாட்டிய கடல் உணவு", "புதிய தேங்காய் ஓட்டில் தேங்காய் ஐஸ்கிரீம்", "உள்ளூர் கடற்கரைக் குடில்களில் டாம் கா கை சூப்"],
+    transport: ["கிராப் பூகெட் நகரில் வேலை செய்கிறது ஆனால் சுற்றுலாப் பகுதிகளில் குறைவாக", "கடற்கரை மற்றும் தீவு தாவலுக்கு லாங்டெயில் படகுகள்", "சாங்தேவ்கள் (பகிரப்பட்ட சிவப்பு டிரக்குகள்) பூகெட்டில் மிகவும் மலிவானவை", "முழு நெகிழ்வுத்தன்மைக்கு கிராபியில் ஸ்கூட்டர் வாடகைக்கு எடுக்கவும்"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 50–250" }, { label: "உணவு & பானம்", val: "SGD 20–70" }, { label: "போக்குவரத்து", val: "SGD 15–50" }, { label: "செயல்பாடுகள்", val: "SGD 30–80" }],
+    photos: ["ரெய்லே கடற்கரை கிழக்கு மற்றும் மேற்கு பரந்த காட்சி", "சூரிய உதயத்தில் ஃபி ஃபி டான் வான்வழிக் காட்சி", "ஜேம்ஸ் பாண்ட் தீவு (காவ் ஃபிங் கான்) சுண்ணாம்புக்கல்", "கடற்கரை பாரிலிருந்து ஆவ் நாங் சூரிய அஸ்தமனம்"]
+  },
+  {
+    id: "sydney",
+    name: "சிட்னி",
+    country: "ஆஸ்திரேலியா",
+    desc: "ஓபரா ஹவுஸ், துறைமுகப் பாலம், உலகத் தரம் வாய்ந்த கடற்கரைகள் மற்றும் தெற்கு அரைக்கோளத்தின் சிறந்த உணவு நகரங்களில் ஒன்று.",
+    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 8 மணி நேரம்",
+    budget: "SGD 300–600/நாள்",
+    season: "செப்.–நவ., மார்ச்–மே",
+    overview: "சிட்னி உலகின் மிகவும் வாழத்தக்க மற்றும் பார்வையிடத்தக்க நகரங்களில் ஒன்று. சின்னமாக விளங்கும் ஓபரா ஹவுஸ் மற்றும் துறைமுகப் பாலம், போண்டி மற்றும் மேன்லி போன்ற உலகப் புகழ்பெற்ற கடற்கரைகள், மற்றும் சிறந்த உற்பத்திப் பொருட்கள் மற்றும் பல்கலாச்சார தாக்கங்களால் இயக்கப்படும் உணவுக் காட்சி. ஆசிய தரத்தில் விலையுயர்ந்தது ஆனால் எங்கும் அபாரமான தரம்.",
+    itinerary: [
+      "நாள் 1 காலை: சிட்னி ஓபரா ஹவுஸ் சுற்றுப்பயணம், சர்க்குலர் கீ, தி ராக்ஸ்",
+      "நாள் 1 மாலை: துறைமுகப் பால ஏற்றம் (அல்லது பைலான் லுக்அவுட்), டார்லிங் துறைமுகம்",
+      "நாள் 2 காலை: போண்டி கடற்கரை, போண்டி-டு-கூஜி கடலோர நடைப்பயணம்",
+      "நாள் 2 மாலை: சர்ரி ஹில்ஸ் உணவு சுற்றுப்பயணம், கிரவுன் தெரு உணவகங்கள்",
+      "நாள் 3: மேன்லி ஃபெர்ரி (கண்கவர் துறைமுகக் கடப்பு), மேன்லி கடற்கரை, புளூ மலைகளுக்கு பகல் பயணம்"
+    ],
+    food: ["ஃபிளாட் ஒயிட் காபி கலாச்சாரம் — ஒவ்வொரு புறநகர்ப் பகுதியிலும் சிறந்த கஃபேக்கள்", "எந்த மீன் சந்தை அல்லது துறைமுக உணவகத்திலும் சிட்னி பாறை சிப்பிகள்", "சர்ரி ஹில்ஸில் போர்க் ஸ்ட்ரீட் பேக்கரியில் பிரஞ்சு", "கேப்ரமாட்டா அல்லது பேங்க்ஸ்டவுனில் வியட்நாமிய ஃபோ"],
+    transport: ["ரயில்கள், பேருந்துகள், படகுகள் மற்றும் லைட் ரெயிலுக்கு ஓபல் அட்டை", "மேன்லி ஃபெர்ரி மிகவும் அழகிய போக்குவரத்து அனுபவம்", "விமான நிலையத்திலிருந்து நகரத்திற்கு ரயில்கள் (சர்க்குலர் கீ): 13 நிமிடங்கள்", "உபேர் பரவலாகக் கிடைக்கிறது; டாக்சிகள் விலை அதிகம்"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 180–500" }, { label: "உணவு & பானம்", val: "SGD 80–160" }, { label: "போக்குவரத்து", val: "SGD 15–40" }, { label: "செயல்பாடுகள்", val: "SGD 30–80" }],
+    photos: ["மிசஸ் மக்வாரீஸ் சேரிலிருந்து சூரிய உதயத்தில் ஓபரா ஹவுஸ்", "போண்டி-டு-கூஜி நடைப்பயண பாறைக் காட்சிகள்", "அந்தியில் வடக்கு சிட்னியிலிருந்து துறைமுகப் பாலம்", "மேன்லி ஃபெர்ரியிலிருந்து நகர வானளாவிய காட்சிக்கான திரும்பிய பார்வை"]
+  },
+  {
+    id: "taipei",
+    name: "தாய்பெய்",
+    country: "தைவான்",
+    desc: "இரவுச் சந்தைகள், பப்பிள் டீ தோற்றக் கதைகள், தாய்பெய் 101 மற்றும் ஆசியாவின் மிகவும் உண்மையான சீன உணவு வகைகள்.",
+    img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 4 மணி நேரம்",
+    budget: "SGD 100–200/நாள்",
+    season: "செப்.–நவ., மார்ச்–மே",
+    overview: "தாய்பெய் அற்புதமாக வாழத்தக்கது மற்றும் ஆச்சரியமாக குறைமதிப்பிற்கு உட்படுத்தப்பட்டது. இரவுச் சந்தைகள் (ஷிலின், ராவோஹெ, நிங்க்சியா) புராணக் கதையானவை, தாய்பெய் 101 இன்னும் வியக்க வைக்கிறது, மற்றும் MRT சுத்தமானது மற்றும் மலிவானது. ஜியூஃபென் பழைய நகரம், யேலியு புவியியல் பூங்கா மற்றும் டாரோகோ பள்ளத்தாக்கிற்கு பகல் பயணங்கள் தவறவிடக்கூடாதவை. மக்கள் ஆசியாவின் மிகவும் நட்பானவர்களில் உள்ளனர்.",
+    itinerary: [
+      "நாள் 1 காலை: சியாங் கை-ஷேக் நினைவு மண்டபம், ஷிமென்டிங் (தாய்பெயின் ஹராஜுகு)",
+      "நாள் 1 மாலை: தாய்பெய் 101 பார்வை மேடை, சின்யி ஷாப்பிங் மாவட்டம்",
+      "நாள் 2 காலை: ஜியூஃபென் பழைய நகரம் மற்றும் ஜின்குவாஷி தங்க அருங்காட்சியகத்திற்கு பகல் பயணம்",
+      "நாள் 2 மாலை: ஷிலின் இரவுச் சந்தை (தாய்பெயில் மிகப்பெரியது)",
+      "நாள் 3 காலை: லாங்ஷான் கோயில், டிஹுவா தெரு வரலாற்றுச் சந்தை",
+      "நாள் 3 மாலை: சூரிய அஸ்தமனத்தில் யானை மலை மலையேற்றம் (தாய்பெய் 101 பரந்த காட்சி)"
+    ],
+    food: ["யோங் காங் பீஃப் நூடுலில் மாட்டிறைச்சி நூடுல் சூப்", "டின் தாய் ஃபங் மூலத்தில் சியாவ் லாங் பாவ் (சூப் டம்ளிங்ஸ்)", "ஷிலின் இரவுச் சந்தையில் நாற்றமுள்ள டோஃபு (கேட்பதை விட தைரியமானது)", "சுன் ஷுய் டாங்கில் பப்பிள் டீ (இதைக் கண்டுபிடித்த பெருமை இதற்கே)"],
+    transport: ["ஈஸிகார்டு MRT, பேருந்துகள் மற்றும் யூபைக் சைக்கிள் வாடகைகளை உள்ளடக்கியது", "MRT மிகவும் மலிவானது — ஒரு பயணத்திற்கு SGD 0.60–1.50", "காவ்சியுங் மற்றும் தைனான் பகல் பயணங்களுக்கு HSR புல்லட் ரயில்", "விமான நிலையத்திலிருந்து முதன்மை நிலையத்திற்கு THSR: 35 நிமிடங்கள்"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 60–180" }, { label: "உணவு & பானம்", val: "SGD 25–70" }, { label: "போக்குவரத்து", val: "SGD 5–15" }, { label: "செயல்பாடுகள்", val: "SGD 10–30" }],
+    photos: ["சூரிய அஸ்தமனத்தில் யானை மலையிலிருந்து தாய்பெய் 101", "மழையில் ஜியூஃபென் பழைய நகர விளக்குகள்", "ஷிலின் இரவுச் சந்தை மேலிருந்து கூட்டப் படம்", "சியாங் கை-ஷேக் நினைவு மண்டப காவலர்கள் மாறுதல்"]
+  },
+  {
+    id: "hanoi",
+    name: "ஹனோய்",
+    country: "வியட்நாம்",
+    desc: "பழமையான பழைய மாவட்டம், உலகத் தரம் வாய்ந்த தெருவோர உணவு, ஹாலாங் விரிகுடா நுழைவாயில் மற்றும் பிரஞ்சு மற்றும் வியட்நாமிய கலாச்சாரத்தின் கவர்ந்திழுக்கும் கலவை.",
+    img: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=600&q=80",
+    flight: "சிங்கப்பூரிலிருந்து 3 மணி நேரம்",
+    budget: "SGD 60–150/நாள்",
+    season: "அக்.–ஏப்.",
+    overview: "ஹனோய் தென்கிழக்கு ஆசியாவின் மிகவும் சூழ்நிலை வாய்ந்த தலைநகரம். பழைய மாவட்டத்தின் 36 சங்கத் தெருக்கள், எந்த நேரத்திலும் ஹோவான் கியெம் ஏரி, முட்டை காபி கலாச்சாரம், மற்றும் உலகின் சிறந்த தெருவோர உணவு. ஹாலாங் விரிகுடா, நின் பின் மற்றும் சபாவிற்கான நுழைவாயில். குழப்பமானது, அழகானது மற்றும் முற்றிலும் கவர்ந்திழுப்பது.",
+    itinerary: [
+      "நாள் 1 காலை: ஹோவான் கியெம் ஏரி, நோக் சன் கோயில், பழைய மாவட்ட நடைச் சுற்றுப்பயணம்",
+      "நாள் 1 மாலை: இலக்கியக் கோயில், வியட்நாமிய பெண்கள் அருங்காட்சியகம்",
+      "நாள் 1 இரவு: பியா ஹோய் மூலை (தெருவோர பீர் சந்திப்பு), டா ஹியன் தெரு",
+      "நாள் 2: இரவுத் தங்கல் தேர்வுடன் முழு நாள் ஹாலாங் விரிகுடா பயணம்",
+      "நாள் 3: நின் பின்னுக்கு ரயில் (த்ராங் ஆன் குகைகள், மூவா குகை பார்வை இடம்)"
+    ],
+    food: ["பாட் டான் தெருவில் ஃபோ ஜியா ட்ரூயனில் ஃபோ போ (மாட்டிறைச்சி ஃபோ)", "பூன் சா ஹுவோங் லியனில் பூன் சா (நூடுல்களுடன் வாட்டிய பன்றி இறைச்சி) (ஒபாமாவின் மேசை)", "பழைய மாவட்டத்தில் பான் மீ 25-இல் பான் மீ", "கஃபே ஜியாங்கில் முட்டை காபி (கா ஃபே ட்ரங்)"],
+    transport: ["சுற்றுலாப் பயணிகளுக்கு கிராப் ஒரே சரியான டாக்சி தேர்வு", "புகழ்பெற்ற இயக்குநர்கள் மூலம் மட்டுமே ஹாலாங் விரிகுடா சுற்றுப்பயணங்களை முன்பதிவு செய்யவும்", "நின் பின்னுக்கு ரயில்: SGD 3–5, 2 மணி நேரப் பயணம்", "தெருவில் பேரம் பேசப்படும் சே ஓம் (மோட்டார்சைக்கிள் டாக்சிகள்) தவிர்க்கவும்"],
+    costs: [{ label: "தங்குமிடம்", val: "SGD 30–120" }, { label: "உணவு & பானம்", val: "SGD 15–50" }, { label: "போக்குவரத்து", val: "SGD 5–20" }, { label: "செயல்பாடுகள்", val: "SGD 20–60" }],
+    photos: ["அந்தியில் ஹோவான் கியெம் ஏரி மற்றும் நோக் சன் கோயில்", "மேலிருந்து ஹாலாங் விரிகுடா சுண்ணாம்புக்கல்", "மோட்டார்சைக்கிள்களுடன் இரவில் பழைய மாவட்ட சந்து", "நின் பின், மூவா குகை பார்வை இடம் பரந்த காட்சி"]
+  }
+];
+
+const safetyData = [
+  { city: "டோக்கியோ", icon: "🇯🇵", level: "safe", badge: "மிகவும் பாதுகாப்பானது", tips: "மிகவும் பாதுகாப்பானது. சுற்றுலாப் பயணிகளுக்கு குற்றம் கிட்டத்தட்ட இல்லை. உங்கள் பணப்பையை மேசையில் வைத்துவிட்டுச் சென்றால், திரும்பி வரும்போது அது அங்கேயே இருக்கும். அடிப்படை பழக்கவழக்கங்கள்: நடந்தபடி சாப்பிட வேண்டாம், ரயில்களில் அமைதியாகப் பேசுங்கள்." },
+  { city: "சிங்கப்பூர்", icon: "🇸🇬", level: "safe", badge: "மிகவும் பாதுகாப்பானது", tips: "உலகின் மிகப் பாதுகாப்பான நகரங்களில் ஒன்று. குப்பை போடுதல், சாலையை விதிமீறிக் கடத்தல் மற்றும் போதைப்பொருள் வைத்திருத்தல் ஆகியவற்றுக்கு கடுமையான சட்டங்கள். உங்கள் கடவுச்சீட்டை எடுத்துச் செல்லுங்கள். பகுதிகள்: எல்லா நேரங்களிலும் அனைத்தும் பாதுகாப்பானது." },
+  { city: "சியோல்", icon: "🇰🇷", level: "safe", badge: "மிகவும் பாதுகாப்பானது", tips: "சுற்றுலாப் பயணிகளுக்கு மிகவும் பாதுகாப்பானது. பாக்கெட்டடித்தல் அரிது. தனியாகப் பயணிக்கும் பெண்கள் வசதியாக உணர்கிறார்கள். இடேவானில் தீவிரமான உணவக ஆட்சேர்ப்பாளர்கள் குறித்து எச்சரிக்கையாக இருங்கள்." },
+  { city: "சிட்னி", icon: "🇦🇺", level: "safe", badge: "மிகவும் பாதுகாப்பானது", tips: "பொதுவாக மிகவும் பாதுகாப்பானது. இரவில் கிங்ஸ் கிராஸில் வழக்கமான நகர முன்னெச்சரிக்கைகள் பொருந்தும். கடுமையான வெயில்: SPF 50+ அணியுங்கள் மற்றும் கடற்கரைகளில் கொடிகளுக்கு இடையே நீந்துங்கள்." },
+  { city: "தாய்பெய்", icon: "🇹🇼", level: "safe", badge: "மிகவும் பாதுகாப்பானது", tips: "ஆசியாவின் மிகப் பாதுகாப்பான நகரங்களில் ஒன்று. இரவுச் சந்தைகள் மற்றும் தெருக்கள் எல்லா நேரங்களிலும் பாதுகாப்பானவை. ஜூன்–அக்டோபர் புயல் பருவம் — வானிலை ஆலோசனைகளைச் சரிபார்க்கவும்." },
+  { city: "பாங்காக்", icon: "🇹🇭", level: "moderate", badge: "மிதமானது", tips: "பொதுவாக பாதுகாப்பானது ஆனால் விழிப்புடன் இருங்கள். பொதுவான மோசடிகள்: டுக்-டுக் ரத்தினக்கல் மோசடிகள், 'கிராண்ட் அரண்மனை இன்று மூடப்பட்டுள்ளது' — கோயில்களுக்கு அருகில் அந்நியர்களின் அணுகுமுறைகளைப் புறக்கணியுங்கள். எப்போதாவது எதிர்ப்புகள் நிகழ்கின்றன." },
+  { city: "பாலி", icon: "🇮🇩", level: "moderate", badge: "மிதமானது", tips: "சுற்றுலாப் பயணிகளுக்கு பாதுகாப்பானது ஆனால் சிறு திருட்டு உள்ளது. மதிப்புமிக்க பொருட்களுக்கு ஹோட்டல் பாதுகாப்புப் பெட்டியைப் பயன்படுத்தவும். வெறிநோய் உள்ளது — தெரு நாய்களையோ குரங்குகளையோ தொடாதீர்கள். ஸ்கூட்டர்கள்: ஹெல்மெட் அணியுங்கள், பல சுற்றுலாப் பயணி காயங்கள்." },
+  { city: "கோலாலம்பூர்", icon: "🇲🇾", level: "moderate", badge: "மிதமானது", tips: "பொதுவாக பாதுகாப்பானது. பறித்துத் திருடுதல் (பை பறித்தல்) முக்கிய கவலை — பைகளை உள்பக்கம் எடுத்துச் செல்லுங்கள். KL சென்ட்ரல் பகுதியில் எப்போதாவது தீவிரமான பிச்சை எடுத்தல் உள்ளது. இரவில் சௌ கிட்டில் இருண்ட சந்துகளைத் தவிர்க்கவும்." },
+  { city: "ஹாங்காங்", icon: "🇭🇰", level: "moderate", badge: "மிதமானது", tips: "சுற்றுலாப் பயணிகளுக்கு மிகக் குறைந்த குற்ற விகிதம். தற்போதைய அரசியல் சூழல் காரணமாக எப்போதாவது பெரிய கூட்டங்கள் நிகழ்கின்றன. இரவில் மாங் கோக்கில் வழக்கமான நகர முன்னெச்சரிக்கைகள்." },
+  { city: "ஹனோய்", icon: "🇻🇳", level: "moderate", badge: "மிதமானது", tips: "பாதுகாப்பானது ஆனால் செயலில் உள்ள மோசடிகளுடன்: ஒப்புக்கொள்ளப்பட்ட விலை இல்லாமல் தீவிரமான சைக்லோ பயணங்கள், விமான நிலையத்தில் போலி டாக்சிகள் (கிராப் அல்லது வினாசன் மட்டுமே பயன்படுத்தவும்), விலை குறிக்கப்படாத உணவகங்களில் அதிக கட்டணம்." },
+  { city: "பூகெட்", icon: "🇹🇭", level: "moderate", badge: "மிதமானது", tips: "பாதுகாப்பானது ஆனால் குறிப்பிட்ட ஆபத்துகள்: மேற்கு கடற்கரைகளில் கடுமையான இழுவை நீரோட்டங்கள் (எப்போதும் கொடிகளுக்கு இடையே நீந்துங்கள்), ஜெட் ஸ்கீ மோசடி (சேதக் கோரிக்கைகள்), இரவில் படோங் கடற்கரையில் உரிமம் இல்லாத இயக்குநர்கள்." },
+  { city: "மாலத்தீவு", icon: "🇲🇻", level: "safe", badge: "பாதுகாப்பானது", tips: "ரிசார்ட் தீவுகளில் மிகவும் பாதுகாப்பானது. உள்ளூர் தீவுகள் பழமைவாத முஸ்லிம் சமூகங்கள் — அடக்கமாக உடையணியுங்கள், பொது இடத்தில் மது இல்லை. பட்ஜெட் விருந்தினர் இல்லங்களில் சிறு திருட்டு அரிது ஆனால் மதிப்புமிக்க பொருட்களைப் பூட்டி வையுங்கள்." }
+];
+
+const checklistData = {
+  "ஆவணங்கள்": ["கடவுச்சீட்டு (6+ மாதங்கள் செல்லுபடியாகும்)", "விசா / இ-விசா அச்சிடப்பட்ட நகல்", "பயணக் காப்பீட்டு ஆவணங்கள்", "விமான முன்பதிவு உறுதிப்படுத்தல்கள்", "ஹோட்டல் முன்பதிவு உறுதிப்படுத்தல்கள்", "அவசரத் தொடர்புப் பட்டியல்"],
+  "ஆடைகள்": ["இலகுவான சட்டைகள் (3–5)", "வசதியான நடைப்பாதணிகள்", "செருப்புகள் அல்லது ஃபிளிப் ஃபிளாப்புகள்", "மழைச் சட்டை அல்லது மடிக்கக்கூடிய குடை", "உணவகங்களுக்கான நேர்த்தியான உடை", "கண்ணாடிகள் மற்றும் தொப்பி"],
+  "மின்னணுச் சாதனங்கள்": ["தொலைபேசி சார்ஜர் மற்றும் பவர் பேங்க்", "உலகளாவிய பயண அடாப்டர்", "இயர்போன்கள் / ஏர்பாட்ஸ்", "கேமரா மற்றும் நினைவக அட்டைகள்", "மடிக்கணினி அல்லது டேப்லெட் (தேவைப்பட்டால்)", "எடுத்துச் செல்லக்கூடிய வைஃபை அல்லது சிம் கார்டு"],
+  "மருந்துகள்": ["பரிந்துரைக்கப்பட்ட மருந்துகள் (போதுமான அளவு + கூடுதல்)", "அலர்ஜி மருந்துகள்", "வயிற்றுப்போக்கு மருந்து (இமோடியம்)", "வலி நிவாரணம் (பனடோல்/இபுப்ரோஃபென்)", "பூச்சி விரட்டி (DEET அடிப்படையிலானது)", "கை சுத்திகரிப்பான்"],
+  "பயண அத்தியாவசியங்கள்": ["உள்ளூர் நாணயம் (முதல் நாளுக்கு போதுமான அளவு)", "கடன் / பற்று அட்டை (வங்கிக்கு அறிவிக்கவும்)", "பயணப்பெட்டி பூட்டு", "மீண்டும் பயன்படுத்தக்கூடிய தண்ணீர் பாட்டில்", "சன்ஸ்கிரீன் SPF 50+", "உதட்டுக் களிம்பு மற்றும் ஈரப்பதமூட்டி"]
+};
+
+// ────────────────────────────────────────────────────────────────────────────────
+// RENDER CITY CARDS
+// ────────────────────────────────────────────────────────────────────────────────
+
+function renderCards() {
+  const grid = document.getElementById('cardsGrid');
+  grid.innerHTML = cities.map(c => `
+    <div class="city-card" onclick="openModal('${c.id}')">
+      <div class="card-img-wrap">
+        <img class="card-img" src="${c.img}" alt="${c.name}" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <div class="card-country">${c.country}</div>
+        <h3 class="card-title">${c.name}</h3>
+        <p class="card-desc">${c.desc}</p>
+        <div class="card-meta">
+          <span class="meta-tag">✈ ${c.flight}</span>
+          <span class="meta-tag">💰 ${c.budget}</span>
+          <span class="meta-tag">🌤 ${c.season}</span>
+        </div>
+        <button class="card-btn">வழிகாட்டியைப் பார்க்கவும்</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
+// MODAL
+// ────────────────────────────────────────────────────────────────────────────────
+
+function openModal(id) {
+  const c = cities.find(x => x.id === id);
+  if (!c) return;
+  document.getElementById('modalImg').src = c.img.replace('w=600', 'w=900');
+  document.getElementById('modalImg').alt = c.name;
+  document.getElementById('modalCountry').textContent = c.country;
+  document.getElementById('modalTitle').textContent = c.name;
+  document.getElementById('modalOverview').textContent = c.overview;
+  document.getElementById('modalItinerary').innerHTML = c.itinerary.map(i => `<li>${i}</li>`).join('');
+  document.getElementById('modalFood').innerHTML = c.food.map(f => `<li>${f}</li>`).join('');
+  document.getElementById('modalTransport').innerHTML = c.transport.map(t => `<li>${t}</li>`).join('');
+  document.getElementById('modalCosts').innerHTML = c.costs.map(x => `
+    <div class="cost-item">
+      <div class="cost-label">${x.label}</div>
+      <div class="cost-value">${x.val}</div>
+    </div>
+  `).join('');
+  document.getElementById('modalPhotos').innerHTML = c.photos.map(p => `<li>${p}</li>`).join('');
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// ────────────────────────────────────────────────────────────────────────────────
+// SAFETY
+// ────────────────────────────────────────────────────────────────────────────────
+
+function renderSafety() {
+  const grid = document.getElementById('safetyGrid');
+  grid.innerHTML = safetyData.map(s => `
+    <div class="safety-card">
+      <div class="safety-icon">${s.icon}</div>
+      <div class="safety-city">${s.city}</div>
+      <span class="safety-badge ${s.level}">${s.badge}</span>
+      <p class="safety-tips">${s.tips}</p>
+    </div>
+  `).join('');
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
+// CHECKLIST
+// ────────────────────────────────────────────────────────────────────────────────
+
+function renderChecklist() {
+  const container = document.getElementById('checklistContainer');
+  container.innerHTML = Object.entries(checklistData).map(([cat, items]) => `
+    <div class="checklist-category">
+      <div class="checklist-category-title">${cat}</div>
+      ${items.map((item, i) => `
+        <div class="checklist-item" id="ci_${cat}_${i}">
+          <input type="checkbox" id="cb_${cat}_${i}" onchange="toggleCheck('${cat}',${i})" />
+          <label for="cb_${cat}_${i}">${item}</label>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+function toggleCheck(cat, i) {
+  const el = document.getElementById(`ci_${cat}_${i}`);
+  const cb = document.getElementById(`cb_${cat}_${i}`);
+  el.classList.toggle('checked', cb.checked);
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
+// BUDGET CALCULATOR
+// ────────────────────────────────────────────────────────────────────────────────
+
+function calcBudget() {
+  const travellers = parseInt(document.getElementById('travellers').value) || 1;
+  const days = parseInt(document.getElementById('days').value) || 1;
+  const daily = parseFloat(document.getElementById('dailyBudget').value) || 0;
+  const total = travellers * days * daily;
+  const result = document.getElementById('budgetResult');
+  result.style.display = 'block';
+  result.innerHTML = `மதிப்பிடப்பட்ட மொத்தம்: <strong>SGD ${total.toLocaleString()}</strong><br><small style="font-weight:400;font-size:13px;color:#888">${travellers} பயணி${travellers > 1 ? 'கள்' : ''} × ${days} நாட்கள் × SGD ${daily}/நாள்</small>`;
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
+// ITINERARY PLANNER
+// ────────────────────────────────────────────────────────────────────────────────
+
+let itinItems = [];
+
+function addItinItem() {
+  const day = document.getElementById('itinDay').value;
+  const activity = document.getElementById('itinActivity').value.trim();
+  const time = document.getElementById('itinTime').value.trim();
+  const notes = document.getElementById('itinNotes').value.trim();
+  if (!activity) { document.getElementById('itinActivity').focus(); return; }
+  const id = Date.now();
+  itinItems.push({ id, day, activity, time, notes });
+  renderItinerary();
+  document.getElementById('itinActivity').value = '';
+  document.getElementById('itinTime').value = '';
+  document.getElementById('itinNotes').value = '';
+}
+
+function removeItinItem(id) {
+  itinItems = itinItems.filter(x => x.id !== id);
+  renderItinerary();
+}
+
+function renderItinerary() {
+  const list = document.getElementById('itineraryList');
+  if (!itinItems.length) { list.innerHTML = ''; return; }
+  list.innerHTML = itinItems.map(item => `
+    <div class="itinerary-item">
+      <button class="itinerary-remove" onclick="removeItinItem(${item.id})">✕</button>
+      <div class="day-label">${item.day}</div>
+      <div class="activity">${item.activity}</div>
+      ${item.time ? `<div class="time">⏰ ${item.time}</div>` : ''}
+      ${item.notes ? `<div class="notes">${item.notes}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
+// WEATHER
+// ────────────────────────────────────────────────────────────────────────────────
+
+// Replace with your OpenWeather API key from https://openweathermap.org/api
+const OPENWEATHER_API_KEY = "513fb8a7ad2f008010d943c64dc27334";
+
+function showWeatherMsg(text) {
+  const el = document.getElementById('weatherMsg');
+  el.textContent = text;
+  el.style.display = 'block';
+  document.getElementById('weatherResult').style.display = 'none';
+}
+
+async function checkWeather() {
+  const city = document.getElementById('weatherCity').value.trim();
+  const msgEl = document.getElementById('weatherMsg');
+  msgEl.style.display = 'none';
+
+  if (!city) {
+    showWeatherMsg('நகரத்தின் பெயரை உள்ளிடவும்.');
+    return;
+  }
+
+  try {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${OPENWEATHER_API_KEY}&units=metric`;
+    const res = await fetch(url);
+    if (res.status === 404) throw new Error('notfound');
+    if (res.status === 401) throw new Error('auth');
+    if (!res.ok) throw new Error('other');
+    const data = await res.json();
+    showWeather(
+      data.name,
+      Math.round(data.main.temp),
+      data.weather[0].description,
+      data.main.humidity,
+      data.wind.speed.toFixed(1)
+    );
+  } catch (err) {
+    if (err.message === 'notfound') {
+      showWeatherMsg(`"${city}" ஐக் கண்டுபிடிக்க முடியவில்லை. எழுத்துப்பிழையைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.`);
+    } else if (err.message === 'auth') {
+      showWeatherMsg('நேரடி வானிலை தற்காலிகமாக கிடைக்கவில்லை. பிறகு மீண்டும் முயற்சிக்கவும்.');
+    } else {
+      showWeatherMsg('வானிலையைப் பெறுவதில் ஏதோ தவறு நடந்துவிட்டது. மீண்டும் முயற்சிக்கவும்.');
+    }
+    console.error('Weather lookup failed:', err);
+  }
+}
+
+function showWeather(city, temp, desc, humidity, wind) {
+  document.getElementById('wCity').textContent = city;
+  document.getElementById('wTemp').textContent = temp + '°C';
+  document.getElementById('wDesc').textContent = desc;
+  document.getElementById('wHumidity').textContent = `ஈரப்பதம் ${humidity}%`;
+  document.getElementById('wWind').textContent = `காற்று ${wind} மீ/வி`;
+  document.getElementById('weatherResult').style.display = 'block';
+  document.getElementById('weatherMsg').style.display = 'none';
+}
+
+document.getElementById('weatherCity').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkWeather();
+});
+
+// ────────────────────────────────────────────────────────────────────────────────
+// ENQUIRY FORM
+// ────────────────────────────────────────────────────────────────────────────────
+
+const WEB3FORMS_ACCESS_KEY = '5c6b48a7-374e-4b83-a442-8b8a3c901821';
+
+async function submitEnquiry() {
+  const name = document.getElementById('eName').value.trim();
+  const email = document.getElementById('eEmail').value.trim();
+  const errorEl = document.getElementById('enquiryError');
+  document.getElementById('enquirySuccess').style.display = 'none';
+  errorEl.style.display = 'none';
+  if (!name || !email) {
+    errorEl.textContent = '⚠ உங்கள் பெயர் மற்றும் மின்னஞ்சலை நிரப்பவும்.';
+    errorEl.style.display = 'block';
+    return;
+  }
+  const enquiry = {
+    name,
+    email,
+    phone: document.getElementById('ePhone').value.trim(),
+    destination: document.getElementById('eDest').value,
+    date: document.getElementById('eDate').value,
+    travellers: document.getElementById('eTravellers').value,
+    message: document.getElementById('eMessage').value.trim(),
+    timestamp: new Date().toISOString()
+  };
+
+  const btn = document.getElementById('enquiryBtn');
+  const successEl = document.getElementById('enquirySuccess');
+  btn.disabled = true;
+  btn.textContent = 'அனுப்புகிறது…';
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `New travel enquiry from ${name}`,
+        from_name: 'Travel Explorer',
+        ...enquiry
+      })
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.message || 'Submission failed');
+
+    successEl.style.display = 'block';
+    ['eName','eEmail','ePhone','eDate','eTravellers','eMessage'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('eDest').selectedIndex = 0;
+  } catch (err) {
+    console.error('Enquiry submission failed:', err);
+    errorEl.textContent = '⚠ மன்னிக்கவும், ஏதோ தவறு நடந்துவிட்டது. மீண்டும் முயற்சிக்கவும் அல்லது நேரடியாக எங்களுக்கு மின்னஞ்சல் அனுப்பவும்.';
+    errorEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'விசாரணை அனுப்பவும்';
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
+// MOBILE NAV
+// ────────────────────────────────────────────────────────────────────────────────
+
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
+// INIT
+// ────────────────────────────────────────────────────────────────────────────────
+
+renderCards();
+renderSafety();
+renderChecklist();
+</script>
+</body>
+</html>

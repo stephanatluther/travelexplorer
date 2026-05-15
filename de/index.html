@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -147,7 +147,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('poster.jpg');
+      background-image: url('../poster.jpg');
       background-size: cover;
       background-position: center;
       z-index: 0;
@@ -1129,47 +1129,47 @@
 <nav>
   <a class="nav-logo" href="#home">Travel<span>Explorer</span></a>
   <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#guides">Guides</a></li>
-    <li><a href="#tools">Tools</a></li>
-    <li><a href="#weather">Weather</a></li>
-    <li><a href="#safety">Safety</a></li>
-    <li><a href="#enquiry" class="nav-cta">Enquiry</a></li>
+    <li><a href="#home">Start</a></li>
+    <li><a href="#guides">Reiseführer</a></li>
+    <li><a href="#tools">Werkzeuge</a></li>
+    <li><a href="#weather">Wetter</a></li>
+    <li><a href="#safety">Sicherheit</a></li>
+    <li><a href="#enquiry" class="nav-cta">Anfrage</a></li>
     <li class="lang-switcher">
       <details>
-        <summary aria-label="Choose language">EN</summary>
+        <summary aria-label="Sprache wählen">DE</summary>
         <ul class="lang-menu">
-          <li><a href="index.html" hreflang="en" aria-current="true">English</a></li>
-          <li><a href="zh/index.html" hreflang="zh">中文</a></li>
-          <li><a href="ta/index.html" hreflang="ta">தமிழ்</a></li>
-          <li><a href="fr/index.html" hreflang="fr">Français</a></li>
-          <li><a href="de/index.html" hreflang="de">Deutsch</a></li>
-          <li><a href="ms/index.html" hreflang="ms">Bahasa Melayu</a></li>
-          <li><a href="vi/index.html" hreflang="vi">Tiếng Việt</a></li>
+          <li><a href="../index.html" hreflang="en">English</a></li>
+          <li><a href="../zh/index.html" hreflang="zh">中文</a></li>
+          <li><a href="../ta/index.html" hreflang="ta">தமிழ்</a></li>
+          <li><a href="../fr/index.html" hreflang="fr">Français</a></li>
+          <li><a href="../de/index.html" hreflang="de" aria-current="true">Deutsch</a></li>
+          <li><a href="../ms/index.html" hreflang="ms">Bahasa Melayu</a></li>
+          <li><a href="../vi/index.html" hreflang="vi">Tiếng Việt</a></li>
         </ul>
       </details>
     </li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
+  <button class="hamburger" id="hamburger" aria-label="Menü">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMobileMenu()">Home</a>
-  <a href="#guides" onclick="closeMobileMenu()">Guides</a>
-  <a href="#tools" onclick="closeMobileMenu()">Tools</a>
-  <a href="#weather" onclick="closeMobileMenu()">Weather</a>
-  <a href="#safety" onclick="closeMobileMenu()">Safety</a>
-  <a href="#enquiry" onclick="closeMobileMenu()">Enquiry</a>
+  <a href="#home" onclick="closeMobileMenu()">Start</a>
+  <a href="#guides" onclick="closeMobileMenu()">Reiseführer</a>
+  <a href="#tools" onclick="closeMobileMenu()">Werkzeuge</a>
+  <a href="#weather" onclick="closeMobileMenu()">Wetter</a>
+  <a href="#safety" onclick="closeMobileMenu()">Sicherheit</a>
+  <a href="#enquiry" onclick="closeMobileMenu()">Anfrage</a>
   <div class="mobile-lang">
-    <a href="index.html" hreflang="en" aria-current="true">EN</a>
-    <a href="zh/index.html" hreflang="zh">中文</a>
-    <a href="ta/index.html" hreflang="ta">தமிழ்</a>
-    <a href="fr/index.html" hreflang="fr">FR</a>
-    <a href="de/index.html" hreflang="de">DE</a>
-    <a href="ms/index.html" hreflang="ms">MS</a>
-    <a href="vi/index.html" hreflang="vi">VI</a>
+    <a href="../index.html" hreflang="en">EN</a>
+    <a href="../zh/index.html" hreflang="zh">中文</a>
+    <a href="../ta/index.html" hreflang="ta">தமிழ்</a>
+    <a href="../fr/index.html" hreflang="fr">FR</a>
+    <a href="../de/index.html" hreflang="de" aria-current="true">DE</a>
+    <a href="../ms/index.html" hreflang="ms">MS</a>
+    <a href="../vi/index.html" hreflang="vi">VI</a>
   </div>
 </div>
 
@@ -1177,8 +1177,8 @@
 <section id="home" style="padding:0;">
   <div class="hero-bg"></div>
   <video class="hero-video" autoplay muted loop playsinline preload="auto"
-         poster="poster.jpg">
-    <source src="hero.mp4" type="video/mp4">
+         poster="../poster.jpg">
+    <source src="../hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <script>
@@ -1193,22 +1193,22 @@
     })();
   </script>
   <div class="hero-content">
-    <p class="hero-label">Asia &amp; Pacific Guides</p>
-    <h1 class="hero-headline">We <em>went</em>,<br>so you know<br>where to go.</h1>
-    <p class="hero-desc">Curated travel guides with real prices, realistic itineraries, airport tips, safety notes, weather insights, and local recommendations.</p>
+    <p class="hero-label">Reiseführer für Asien &amp; Pazifik</p>
+    <h1 class="hero-headline">Wir waren <em>dort</em>,<br>damit Sie wissen,<br>wohin es geht.</h1>
+    <p class="hero-desc">Sorgfältig zusammengestellte Reiseführer mit echten Preisen, realistischen Reiseplänen, Flughafentipps, Sicherheitshinweisen, Wettereinblicken und Empfehlungen von Einheimischen.</p>
     <div class="hero-buttons">
-      <a href="#guides" class="btn btn-primary">Read Latest Guide</a>
-      <a href="#enquiry" class="btn btn-outline">Send Enquiry</a>
+      <a href="#guides" class="btn btn-primary">Neuesten Reiseführer lesen</a>
+      <a href="#enquiry" class="btn btn-outline">Anfrage senden</a>
     </div>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div> Scroll to explore</div>
+  <div class="hero-scroll"><div class="scroll-line"></div> Zum Entdecken scrollen</div>
 </section>
 
 <!-- GUIDES -->
 <section id="guides">
-  <div class="section-label">Destination Guides</div>
-  <h2 class="section-title">Where do you want to go?</h2>
-  <p class="section-desc">Hand-picked destinations with everything you need — budgets, itineraries, and honest local tips.</p>
+  <div class="section-label">Reiseziel-Führer</div>
+  <h2 class="section-title">Wohin möchten Sie reisen?</h2>
+  <p class="section-desc">Handverlesene Reiseziele mit allem, was Sie brauchen — Budgets, Reisepläne und ehrliche Tipps von Einheimischen.</p>
   <div class="cards-grid" id="cardsGrid"></div>
 </section>
 
@@ -1222,19 +1222,19 @@
       <h2 class="modal-title" id="modalTitle"></h2>
       <p class="modal-overview" id="modalOverview"></p>
 
-      <h3 class="modal-section-title">3-Day Itinerary</h3>
+      <h3 class="modal-section-title">3-Tage-Reiseplan</h3>
       <ul id="modalItinerary"></ul>
 
-      <h3 class="modal-section-title">Food Recommendations</h3>
+      <h3 class="modal-section-title">Essensempfehlungen</h3>
       <ul id="modalFood"></ul>
 
-      <h3 class="modal-section-title">Transport Tips</h3>
+      <h3 class="modal-section-title">Verkehrstipps</h3>
       <ul id="modalTransport"></ul>
 
-      <h3 class="modal-section-title">Estimated Cost Breakdown</h3>
+      <h3 class="modal-section-title">Geschätzte Kostenaufstellung</h3>
       <div class="cost-grid" id="modalCosts"></div>
 
-      <h3 class="modal-section-title">Best Photo Spots</h3>
+      <h3 class="modal-section-title">Beste Fotospots</h3>
       <ul id="modalPhotos"></ul>
     </div>
   </div>
@@ -1242,63 +1242,63 @@
 
 <!-- TOOLS -->
 <section id="tools">
-  <div class="section-label">Travel Tools</div>
-  <h2 class="section-title">Plan smarter.</h2>
-  <p class="section-desc">Useful tools to help you budget, pack, and organise your next trip.</p>
+  <div class="section-label">Reise-Werkzeuge</div>
+  <h2 class="section-title">Klüger planen.</h2>
+  <p class="section-desc">Nützliche Werkzeuge, die Ihnen helfen, Ihre nächste Reise zu budgetieren, zu packen und zu organisieren.</p>
 
   <div class="tools-grid">
 
     <!-- Budget Calculator -->
     <div class="tool-card">
-      <h3 class="tool-title">Trip Budget Calculator</h3>
-      <label>Destination</label>
+      <h3 class="tool-title">Reisebudget-Rechner</h3>
+      <label>Reiseziel</label>
       <select id="budgetDest">
-        <option value="">Select destination…</option>
+        <option value="">Reiseziel auswählen…</option>
         <option value="seoul">Seoul</option>
-        <option value="singapore">Singapore</option>
+        <option value="singapore">Singapur</option>
         <option value="bali">Bali</option>
-        <option value="tokyo">Tokyo</option>
+        <option value="tokyo">Tokio</option>
         <option value="bangkok">Bangkok</option>
-        <option value="hongkong">Hong Kong</option>
+        <option value="hongkong">Hongkong</option>
         <option value="kl">Kuala Lumpur</option>
-        <option value="maldives">Maldives</option>
+        <option value="maldives">Malediven</option>
         <option value="phuket">Phuket</option>
         <option value="sydney">Sydney</option>
-        <option value="taipei">Taipei</option>
+        <option value="taipei">Taipeh</option>
         <option value="hanoi">Hanoi</option>
       </select>
-      <label>Number of Travellers</label>
+      <label>Anzahl der Reisenden</label>
       <input type="number" id="travellers" min="1" value="2" />
-      <label>Number of Days</label>
+      <label>Anzahl der Tage</label>
       <input type="number" id="days" min="1" value="5" />
-      <label>Daily Budget per Person (SGD)</label>
+      <label>Tagesbudget pro Person (SGD)</label>
       <input type="number" id="dailyBudget" min="0" value="150" />
-      <button class="btn-dark" onclick="calcBudget()">Calculate Total</button>
+      <button class="btn-dark" onclick="calcBudget()">Gesamt berechnen</button>
       <div class="tool-result" id="budgetResult"></div>
     </div>
 
     <!-- Packing Checklist -->
     <div class="tool-card">
-      <h3 class="tool-title">Packing Checklist</h3>
+      <h3 class="tool-title">Packliste</h3>
       <div id="checklistContainer"></div>
     </div>
 
     <!-- Itinerary Planner -->
     <div class="tool-card">
-      <h3 class="tool-title">Itinerary Planner</h3>
-      <label>Day</label>
+      <h3 class="tool-title">Reiseplaner</h3>
+      <label>Tag</label>
       <select id="itinDay">
-        <option>Day 1</option><option>Day 2</option><option>Day 3</option>
-        <option>Day 4</option><option>Day 5</option><option>Day 6</option>
-        <option>Day 7</option>
+        <option>Tag 1</option><option>Tag 2</option><option>Tag 3</option>
+        <option>Tag 4</option><option>Tag 5</option><option>Tag 6</option>
+        <option>Tag 7</option>
       </select>
-      <label>Activity</label>
-      <input type="text" id="itinActivity" placeholder="e.g. Visit Shibuya Crossing" />
-      <label>Time</label>
-      <input type="text" id="itinTime" placeholder="e.g. 10:00 AM" />
-      <label>Notes</label>
-      <input type="text" id="itinNotes" placeholder="Optional notes…" />
-      <button class="btn-dark" onclick="addItinItem()">Add to Itinerary</button>
+      <label>Aktivität</label>
+      <input type="text" id="itinActivity" placeholder="z. B. Shibuya-Kreuzung besuchen" />
+      <label>Uhrzeit</label>
+      <input type="text" id="itinTime" placeholder="z. B. 10:00 Uhr" />
+      <label>Notizen</label>
+      <input type="text" id="itinNotes" placeholder="Optionale Notizen…" />
+      <button class="btn-dark" onclick="addItinItem()">Zum Reiseplan hinzufügen</button>
       <div class="itinerary-list" id="itineraryList"></div>
     </div>
 
@@ -1307,15 +1307,15 @@
 
 <!-- WEATHER -->
 <section id="weather">
-  <div class="section-label">Live Weather</div>
-  <h2 class="section-title">Check the forecast.</h2>
-  <p class="section-desc">See what the weather is like before you pack your bags.</p>
+  <div class="section-label">Live-Wetter</div>
+  <h2 class="section-title">Vorhersage prüfen.</h2>
+  <p class="section-desc">Sehen Sie, wie das Wetter ist, bevor Sie Ihre Koffer packen.</p>
 
   <div class="weather-layout">
     <div class="weather-card">
-      <label>City Name</label>
-      <input type="text" id="weatherCity" placeholder="e.g. Tokyo, Bangkok, Bali…" />
-      <button class="btn-dark" onclick="checkWeather()">Check Weather</button>
+      <label>Stadtname</label>
+      <input type="text" id="weatherCity" placeholder="z. B. Tokio, Bangkok, Bali…" />
+      <button class="btn-dark" onclick="checkWeather()">Wetter prüfen</button>
       <div class="weather-result" id="weatherResult">
         <div class="weather-city-name" id="wCity"></div>
         <div class="weather-temp" id="wTemp"></div>
@@ -1329,20 +1329,20 @@
     </div>
 
     <div class="weather-api-note">
-      <strong>Live weather, worldwide.</strong><br><br>
-      Type any city — Tokyo, Bangkok, Bali, or anywhere else — and we'll show the
-      current temperature, humidity, and wind speed.<br><br>
-      Weather data is provided by <strong>OpenWeather</strong> and updates in real time,
-      so you can see exactly what to pack before you go.
+      <strong>Live-Wetter, weltweit.</strong><br><br>
+      Geben Sie eine beliebige Stadt ein — Tokio, Bangkok, Bali oder anderswo — und wir zeigen Ihnen die
+      aktuelle Temperatur, Luftfeuchtigkeit und Windgeschwindigkeit.<br><br>
+      Die Wetterdaten werden von <strong>OpenWeather</strong> bereitgestellt und in Echtzeit aktualisiert,
+      sodass Sie genau sehen können, was Sie vor der Abreise einpacken sollten.
     </div>
   </div>
 </section>
 
 <!-- SAFETY -->
 <section id="safety">
-  <div class="section-label">Travel Safety</div>
-  <h2 class="section-title">Know before you go.</h2>
-  <p class="section-desc">General safety notes for popular destinations. Always check the latest advisories before travel.</p>
+  <div class="section-label">Reisesicherheit</div>
+  <h2 class="section-title">Wissen, bevor Sie reisen.</h2>
+  <p class="section-desc">Allgemeine Sicherheitshinweise für beliebte Reiseziele. Prüfen Sie vor der Reise stets die aktuellsten Hinweise.</p>
   <div class="safety-grid" id="safetyGrid"></div>
 </section>
 
@@ -1350,29 +1350,29 @@
 <section id="enquiry">
   <div class="enquiry-layout">
     <div class="enquiry-info">
-      <div class="section-label">Get in Touch</div>
-      <h2 class="section-title">Plan your next adventure.</h2>
-      <p class="section-desc">Tell us where you want to go. We'll help you get there.</p>
+      <div class="section-label">Kontakt aufnehmen</div>
+      <h2 class="section-title">Planen Sie Ihr nächstes Abenteuer.</h2>
+      <p class="section-desc">Sagen Sie uns, wohin Sie reisen möchten. Wir helfen Ihnen, dorthin zu gelangen.</p>
       <div class="enquiry-detail">
         <div class="enquiry-detail-item">
           <div class="detail-icon">✉</div>
           <div class="detail-text">
-            <strong>Email Us</strong>
+            <strong>Schreiben Sie uns</strong>
             <span>hello@travelexplorer.com</span>
           </div>
         </div>
         <div class="enquiry-detail-item">
           <div class="detail-icon">📞</div>
           <div class="detail-text">
-            <strong>Call Us</strong>
+            <strong>Rufen Sie uns an</strong>
             <span>+65 9000 0000</span>
           </div>
         </div>
         <div class="enquiry-detail-item">
           <div class="detail-icon">🕐</div>
           <div class="detail-text">
-            <strong>Response Time</strong>
-            <span>Within 24 hours</span>
+            <strong>Antwortzeit</strong>
+            <span>Innerhalb von 24 Stunden</span>
           </div>
         </div>
       </div>
@@ -1381,49 +1381,49 @@
     <div class="enquiry-form">
       <div class="form-row">
         <div>
-          <label>Full Name *</label>
-          <input type="text" id="eName" placeholder="Jane Smith" />
+          <label>Vollständiger Name *</label>
+          <input type="text" id="eName" placeholder="Anna Müller" />
         </div>
         <div>
-          <label>Email *</label>
-          <input type="email" id="eEmail" placeholder="jane@email.com" />
+          <label>E-Mail *</label>
+          <input type="email" id="eEmail" placeholder="anna@email.com" />
         </div>
       </div>
       <div class="form-row">
         <div>
-          <label>Phone</label>
+          <label>Telefon</label>
           <input type="tel" id="ePhone" placeholder="+65 9000 0000" />
         </div>
         <div>
-          <label>Destination of Interest</label>
+          <label>Gewünschtes Reiseziel</label>
           <select id="eDest">
-            <option value="">Select…</option>
-            <option>Seoul</option><option>Singapore</option><option>Bali</option>
-            <option>Tokyo</option><option>Bangkok</option><option>Hong Kong</option>
-            <option>Kuala Lumpur</option><option>Maldives</option><option>Phuket</option>
-            <option>Sydney</option><option>Taipei</option><option>Hanoi</option>
-            <option>Other</option>
+            <option value="">Auswählen…</option>
+            <option>Seoul</option><option>Singapur</option><option>Bali</option>
+            <option>Tokio</option><option>Bangkok</option><option>Hongkong</option>
+            <option>Kuala Lumpur</option><option>Malediven</option><option>Phuket</option>
+            <option>Sydney</option><option>Taipeh</option><option>Hanoi</option>
+            <option>Andere</option>
           </select>
         </div>
       </div>
       <div class="form-row">
         <div>
-          <label>Travel Date</label>
+          <label>Reisedatum</label>
           <input type="date" id="eDate" />
         </div>
         <div>
-          <label>Number of Travellers</label>
+          <label>Anzahl der Reisenden</label>
           <input type="number" id="eTravellers" min="1" placeholder="2" />
         </div>
       </div>
-      <label>Message</label>
-      <textarea id="eMessage" placeholder="Tell us about your dream trip…"></textarea>
-      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">Send Enquiry</button>
+      <label>Nachricht</label>
+      <textarea id="eMessage" placeholder="Erzählen Sie uns von Ihrer Traumreise…"></textarea>
+      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">Anfrage senden</button>
       <div class="success-msg" id="enquirySuccess">
-        ✓ Your enquiry has been received! We'll be in touch within 24 hours.
+        ✓ Ihre Anfrage ist bei uns eingegangen! Wir melden uns innerhalb von 24 Stunden.
       </div>
       <div class="success-msg" id="enquiryError" style="background:#fdecea;color:#b3261e;">
-        ⚠ Sorry, something went wrong. Please try again or email us directly.
+        ⚠ Entschuldigung, etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.
       </div>
     </div>
   </div>
@@ -1432,8 +1432,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Travel<span>Explorer</span></div>
-  <p style="margin-top:6px;">We went, so you know where to go.</p>
-  <nav class="footer-social" aria-label="Social media">
+  <p style="margin-top:6px;">Wir waren dort, damit Sie wissen, wohin es geht.</p>
+  <nav class="footer-social" aria-label="Soziale Medien">
     <ul>
       <li>
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1467,7 +1467,7 @@
       </li>
     </ul>
   </nav>
-  <p style="margin-top:16px; font-size:12px;">© 2025 TravelExplorer. All rights reserved.</p>
+  <p style="margin-top:16px; font-size:12px;">© 2025 TravelExplorer. Alle Rechte vorbehalten.</p>
 </footer>
 
 <script>
@@ -1478,293 +1478,293 @@
 const cities = [
   {
     id: "tokyo",
-    name: "Tokyo",
+    name: "Tokio",
     country: "Japan",
-    desc: "A dazzling blend of ancient temples and neon-lit skyscrapers. Tokyo rewards the curious traveller at every turn.",
+    desc: "Eine schillernde Mischung aus uralten Tempeln und von Neonlicht erleuchteten Wolkenkratzern. Tokio belohnt neugierige Reisende auf Schritt und Tritt.",
     img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
-    flight: "7h from Singapore",
-    budget: "SGD 200–350/day",
-    season: "Mar–May, Oct–Nov",
-    overview: "Tokyo is one of the world's great cities — electric, vast, and endlessly surprising. From the serenity of Meiji Shrine to the organised chaos of Shibuya, it is a city that rewards the curious. Food is exceptional at every price point, public transport is world-class, and the city is immaculately safe.",
+    flight: "7 Std. ab Singapur",
+    budget: "SGD 200–350/Tag",
+    season: "März–Mai, Okt–Nov",
+    overview: "Tokio ist eine der großen Metropolen der Welt — elektrisierend, riesig und endlos überraschend. Von der Ruhe des Meiji-Schreins bis zum geordneten Chaos von Shibuya ist es eine Stadt, die Neugier belohnt. Das Essen ist in jeder Preisklasse außergewöhnlich, der öffentliche Nahverkehr von Weltklasse und die Stadt makellos sicher.",
     itinerary: [
-      "Day 1 AM: Arrive, check in Shinjuku, explore Kabukicho and Golden Gai",
-      "Day 1 PM: Shibuya Crossing at dusk, dinner at an izakaya",
-      "Day 2 AM: Tsukiji Outer Market for breakfast, Hamarikyu Gardens",
-      "Day 2 PM: Asakusa and Senso-ji Temple, Nakamise shopping street",
-      "Day 3 AM: Harajuku and Meiji Shrine, Takeshita Street",
-      "Day 3 PM: Roppongi Hills for panoramic sunset views"
+      "Tag 1 vormittags: Ankunft, Check-in in Shinjuku, Kabukicho und Golden Gai erkunden",
+      "Tag 1 nachmittags: Shibuya-Kreuzung in der Abenddämmerung, Abendessen in einer Izakaya",
+      "Tag 2 vormittags: Frühstück auf dem Tsukiji-Außenmarkt, Hamarikyu-Gärten",
+      "Tag 2 nachmittags: Asakusa und Senso-ji-Tempel, Einkaufsstraße Nakamise",
+      "Tag 3 vormittags: Harajuku und Meiji-Schrein, Takeshita-Straße",
+      "Tag 3 nachmittags: Roppongi Hills für einen Panorama-Sonnenuntergang"
     ],
-    food: ["Ramen at Ichiran (24/7, solo booths)", "Sushi at Tsukiji market stalls", "Tonkatsu at Maisen Aoyama", "Yakitori under Yurakucho tracks"],
-    transport: ["Buy a Suica card at any station (¥500 deposit)", "JR Pass for intercity bullet trains", "Tokyo Metro is the fastest for inner-city travel", "Avoid rush hour: 7–9 AM and 6–8 PM"],
-    costs: [{ label: "Accommodation", val: "SGD 80–200" }, { label: "Food & Drink", val: "SGD 50–100" }, { label: "Transport", val: "SGD 15–30" }, { label: "Activities", val: "SGD 20–50" }],
-    photos: ["Shibuya Crossing from Mag's Park rooftop", "Senso-ji at dawn before crowds arrive", "Shinjuku Gyoen during cherry blossom season", "Tokyo Tower from Zojo-ji Temple foreground"]
+    food: ["Ramen bei Ichiran (rund um die Uhr, Einzelkabinen)", "Sushi an den Marktständen von Tsukiji", "Tonkatsu bei Maisen Aoyama", "Yakitori unter den Bahngleisen von Yurakucho"],
+    transport: ["Kaufen Sie an jedem Bahnhof eine Suica-Karte (¥500 Pfand)", "JR Pass für die Schnellzüge zwischen den Städten", "Die Tokyo Metro ist am schnellsten für Fahrten innerhalb der Stadt", "Meiden Sie die Hauptverkehrszeit: 7–9 Uhr und 18–20 Uhr"],
+    costs: [{ label: "Unterkunft", val: "SGD 80–200" }, { label: "Essen & Trinken", val: "SGD 50–100" }, { label: "Transport", val: "SGD 15–30" }, { label: "Aktivitäten", val: "SGD 20–50" }],
+    photos: ["Shibuya-Kreuzung von der Dachterrasse des Mag's Park", "Senso-ji im Morgengrauen, bevor die Menschenmengen kommen", "Shinjuku Gyoen während der Kirschblütenzeit", "Tokyo Tower mit dem Zojo-ji-Tempel im Vordergrund"]
   },
   {
     id: "bali",
     name: "Bali",
-    country: "Indonesia",
-    desc: "Lush rice terraces, sacred temples, vibrant nightlife, and world-class surf. Bali is endlessly captivating.",
+    country: "Indonesien",
+    desc: "Üppige Reisterrassen, heilige Tempel, lebendiges Nachtleben und Surfen von Weltklasse. Bali ist endlos faszinierend.",
     img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80",
-    flight: "2.5h from Singapore",
-    budget: "SGD 80–180/day",
-    season: "Apr–Oct (Dry Season)",
-    overview: "Bali offers something for every type of traveller — from the spiritual serenity of Ubud's rice terraces to the surf breaks of Canggu and the cliffside bars of Uluwatu. It remains one of the world's best value destinations with exceptional food, warm hospitality, and stunning scenery.",
+    flight: "2,5 Std. ab Singapur",
+    budget: "SGD 80–180/Tag",
+    season: "Apr–Okt (Trockenzeit)",
+    overview: "Bali bietet für jeden Reisetyp etwas — von der spirituellen Ruhe der Reisterrassen von Ubud über die Surfspots von Canggu bis zu den Klippenbars von Uluwatu. Es bleibt eines der weltweit preiswertesten Reiseziele mit außergewöhnlichem Essen, herzlicher Gastfreundschaft und atemberaubender Landschaft.",
     itinerary: [
-      "Day 1: Arrive Denpasar, transfer to Seminyak, beach sunset at Ku De Ta",
-      "Day 2 AM: Drive to Ubud, visit Tegallalang rice terraces at sunrise",
-      "Day 2 PM: Ubud Monkey Forest, local warung lunch, Ubud Palace at sunset",
-      "Day 3 AM: Tanah Lot Temple at sunrise, drive south to Uluwatu",
-      "Day 3 PM: Uluwatu cliffside temple, Kecak fire dance at sunset"
+      "Tag 1: Ankunft in Denpasar, Transfer nach Seminyak, Strand-Sonnenuntergang im Ku De Ta",
+      "Tag 2 vormittags: Fahrt nach Ubud, Besuch der Tegallalang-Reisterrassen bei Sonnenaufgang",
+      "Tag 2 nachmittags: Affenwald von Ubud, Mittagessen in einem lokalen Warung, Ubud-Palast bei Sonnenuntergang",
+      "Tag 3 vormittags: Tanah-Lot-Tempel bei Sonnenaufgang, Fahrt nach Süden zu Uluwatu",
+      "Tag 3 nachmittags: Uluwatu-Klippentempel, Kecak-Feuertanz bei Sonnenuntergang"
     ],
-    food: ["Nasi Goreng at any local warung", "Babi Guling (suckling pig) at Ibu Oka, Ubud", "Fresh seafood at Jimbaran Bay", "Smoothie bowls at Canggu cafes"],
-    transport: ["Hire a private driver for SGD 50–70/day (most efficient)", "Grab app available in major areas", "Scooter rental SGD 8–12/day (international licence required)", "Bluebird taxis are metered and reliable"],
-    costs: [{ label: "Accommodation", val: "SGD 40–150" }, { label: "Food & Drink", val: "SGD 20–60" }, { label: "Transport", val: "SGD 10–50" }, { label: "Activities", val: "SGD 15–40" }],
-    photos: ["Tegallalang Rice Terraces at 7 AM", "Tanah Lot Temple at sunset", "Uluwatu cliff views from Single Fin bar", "Sekumpul Waterfall in north Bali"]
+    food: ["Nasi Goreng in jedem lokalen Warung", "Babi Guling (Spanferkel) bei Ibu Oka in Ubud", "Frische Meeresfrüchte an der Jimbaran-Bucht", "Smoothie-Bowls in den Cafés von Canggu"],
+    transport: ["Mieten Sie einen privaten Fahrer für SGD 50–70/Tag (am effizientesten)", "Die Grab-App ist in den wichtigsten Gebieten verfügbar", "Rollervermietung SGD 8–12/Tag (internationaler Führerschein erforderlich)", "Bluebird-Taxis fahren mit Taxameter und sind zuverlässig"],
+    costs: [{ label: "Unterkunft", val: "SGD 40–150" }, { label: "Essen & Trinken", val: "SGD 20–60" }, { label: "Transport", val: "SGD 10–50" }, { label: "Aktivitäten", val: "SGD 15–40" }],
+    photos: ["Tegallalang-Reisterrassen um 7 Uhr", "Tanah-Lot-Tempel bei Sonnenuntergang", "Klippenblick von Uluwatu von der Single Fin Bar", "Sekumpul-Wasserfall im Norden Balis"]
   },
   {
     id: "seoul",
     name: "Seoul",
-    country: "South Korea",
-    desc: "K-culture epicentre with incredible food, cutting-edge fashion, ancient palaces and obsessive-grade skincare.",
+    country: "Südkorea",
+    desc: "Epizentrum der K-Kultur mit unglaublichem Essen, wegweisender Mode, alten Palästen und perfektionierter Hautpflege.",
     img: "https://images.unsplash.com/photo-1601621915196-2621bfb0cd6e?w=600&q=80",
-    flight: "6.5h from Singapore",
-    budget: "SGD 130–250/day",
+    flight: "6,5 Std. ab Singapur",
+    budget: "SGD 130–250/Tag",
     season: "Apr–Jun, Sep–Nov",
-    overview: "Seoul is one of Asia's most dynamic capitals — a city that fuses 600-year-old palaces with the planet's fastest internet and most obsessive food culture. Myeongdong for street food and skincare, Hongdae for nightlife, Bukchon Hanok Village for history. The subway is a masterpiece.",
+    overview: "Seoul ist eine der dynamischsten Hauptstädte Asiens — eine Stadt, die 600 Jahre alte Paläste mit dem schnellsten Internet der Welt und der leidenschaftlichsten Esskultur verbindet. Myeongdong für Streetfood und Hautpflege, Hongdae für das Nachtleben, das Hanok-Dorf Bukchon für Geschichte. Die U-Bahn ist ein Meisterwerk.",
     itinerary: [
-      "Day 1 AM: Gyeongbokgung Palace at opening (9 AM), Bukchon Hanok Village",
-      "Day 1 PM: Insadong art street, Cheonggyecheon stream walk",
-      "Day 2 AM: Myeongdong street food breakfast, Namsan Tower cable car",
-      "Day 2 PM: Itaewon neighbourhood, Leeum Samsung Museum",
-      "Day 3 AM: Hongdae creative market, Ewha Womans University murals",
-      "Day 3 PM: Han River Banpo Bridge Rainbow Fountain at night"
+      "Tag 1 vormittags: Gyeongbokgung-Palast zur Öffnung (9 Uhr), Hanok-Dorf Bukchon",
+      "Tag 1 nachmittags: Kunststraße Insadong, Spaziergang am Cheonggyecheon-Bach",
+      "Tag 2 vormittags: Streetfood-Frühstück in Myeongdong, Seilbahn zum Namsan-Turm",
+      "Tag 2 nachmittags: Stadtviertel Itaewon, Leeum-Samsung-Museum",
+      "Tag 3 vormittags: Kreativmarkt in Hongdae, Wandmalereien an der Ewha-Frauenuniversität",
+      "Tag 3 nachmittags: Regenbogenfontäne der Banpo-Brücke am Han-Fluss bei Nacht"
     ],
-    food: ["Korean BBQ at Mapo Galmaegi (beef ribs)", "Bibimbap at Gogung, Insadong", "Tteokbokki (spicy rice cakes) at Gwangjang Market", "Korean fried chicken at Kyochon"],
-    transport: ["T-Money card for metro and bus (buy at any convenience store)", "Metro is extensive, clean, and cheap (SGD 1.20 avg)", "KTX bullet train for day trips to Busan", "Kakao T app for taxis"],
-    costs: [{ label: "Accommodation", val: "SGD 60–180" }, { label: "Food & Drink", val: "SGD 30–80" }, { label: "Transport", val: "SGD 10–20" }, { label: "Activities", val: "SGD 15–40" }],
-    photos: ["Gyeongbokgung Palace with Bukhansan behind", "Namsan Tower at night", "Bukchon Hanok Village alleyways at dawn", "Banpo Bridge Rainbow Fountain after dark"]
+    food: ["Koreanisches BBQ bei Mapo Galmaegi (Rinderrippchen)", "Bibimbap bei Gogung, Insadong", "Tteokbokki (scharfe Reiskuchen) auf dem Gwangjang-Markt", "Koreanisches Brathähnchen bei Kyochon"],
+    transport: ["T-Money-Karte für U-Bahn und Bus (in jedem Convenience-Store erhältlich)", "Die U-Bahn ist weitläufig, sauber und günstig (durchschnittlich SGD 1,20)", "KTX-Schnellzug für Tagesausflüge nach Busan", "Kakao-T-App für Taxis"],
+    costs: [{ label: "Unterkunft", val: "SGD 60–180" }, { label: "Essen & Trinken", val: "SGD 30–80" }, { label: "Transport", val: "SGD 10–20" }, { label: "Aktivitäten", val: "SGD 15–40" }],
+    photos: ["Gyeongbokgung-Palast mit dem Bukhansan im Hintergrund", "Namsan-Turm bei Nacht", "Gassen des Hanok-Dorfs Bukchon im Morgengrauen", "Regenbogenfontäne der Banpo-Brücke nach Einbruch der Dunkelheit"]
   },
   {
     id: "singapore",
-    name: "Singapore",
-    country: "Singapore",
-    desc: "Asia's most efficient city — impeccable food, stunning architecture, and a gateway to the rest of the region.",
+    name: "Singapur",
+    country: "Singapur",
+    desc: "Asiens effizienteste Stadt — makelloses Essen, atemberaubende Architektur und ein Tor zum Rest der Region.",
     img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80",
-    flight: "Hub city",
-    budget: "SGD 150–350/day",
-    season: "Year-round (Feb–Apr driest)",
-    overview: "Singapore punches far above its size. In under 750 square kilometres you will find world-class food from hawker centres to Michelin-starred restaurants, incredible architecture from colonial shophouses to Jewel Changi, and some of Asia's best cocktail bars. Safe, clean, and endlessly accessible.",
+    flight: "Drehkreuz-Stadt",
+    budget: "SGD 150–350/Tag",
+    season: "Ganzjährig (Feb–Apr am trockensten)",
+    overview: "Singapur überzeugt weit über seine Größe hinaus. Auf weniger als 750 Quadratkilometern finden Sie Weltklasse-Essen von Hawker-Zentren bis zu Restaurants mit Michelin-Sternen, beeindruckende Architektur von kolonialen Shophouses bis zum Jewel Changi und einige der besten Cocktailbars Asiens. Sicher, sauber und endlos zugänglich.",
     itinerary: [
-      "Day 1 AM: Jewel Changi Airport Rain Vortex, Gardens by the Bay",
-      "Day 1 PM: Marina Bay Sands SkyPark, Supertree evening light show",
-      "Day 2 AM: Chinatown Heritage Centre, Maxwell Food Centre for Hainanese chicken rice",
-      "Day 2 PM: Little India, Arab Street, Haji Lane",
-      "Day 3 AM: Sentosa Island, Universal Studios or Palawan Beach",
-      "Day 3 PM: Clarke Quay riverside bars, Lau Pa Sat for satay"
+      "Tag 1 vormittags: Rain Vortex am Flughafen Jewel Changi, Gardens by the Bay",
+      "Tag 1 nachmittags: SkyPark des Marina Bay Sands, abendliche Lichtshow der Supertrees",
+      "Tag 2 vormittags: Chinatown Heritage Centre, Maxwell Food Centre für Hainan-Hähnchenreis",
+      "Tag 2 nachmittags: Little India, Arab Street, Haji Lane",
+      "Tag 3 vormittags: Insel Sentosa, Universal Studios oder Palawan Beach",
+      "Tag 3 nachmittags: Bars am Flussufer von Clarke Quay, Lau Pa Sat für Satay"
     ],
-    food: ["Hainanese Chicken Rice at Tian Tian, Maxwell", "Chilli Crab at No Signboard Seafood", "Kaya toast set at Ya Kun Kaya Toast", "Laksa at 328 Katong Laksa"],
-    transport: ["EZ-Link card for MRT and buses", "Grab app is seamless and affordable", "MRT covers most tourist areas efficiently", "Airport MRT to city takes 30 mins"],
-    costs: [{ label: "Accommodation", val: "SGD 120–400" }, { label: "Food & Drink", val: "SGD 30–100" }, { label: "Transport", val: "SGD 5–20" }, { label: "Activities", val: "SGD 20–80" }],
-    photos: ["Marina Bay Sands reflection at blue hour", "Supertrees at Gardens by the Bay", "Jewel Changi Rain Vortex", "Merlion with CBD skyline at night"]
+    food: ["Hainan-Hähnchenreis bei Tian Tian, Maxwell", "Chili-Krabbe bei No Signboard Seafood", "Kaya-Toast-Set bei Ya Kun Kaya Toast", "Laksa bei 328 Katong Laksa"],
+    transport: ["EZ-Link-Karte für MRT und Busse", "Die Grab-App ist nahtlos und erschwinglich", "Die MRT erschließt die meisten Touristengebiete effizient", "Die Flughafen-MRT in die Stadt dauert 30 Minuten"],
+    costs: [{ label: "Unterkunft", val: "SGD 120–400" }, { label: "Essen & Trinken", val: "SGD 30–100" }, { label: "Transport", val: "SGD 5–20" }, { label: "Aktivitäten", val: "SGD 20–80" }],
+    photos: ["Spiegelung des Marina Bay Sands zur blauen Stunde", "Supertrees in den Gardens by the Bay", "Rain Vortex im Jewel Changi", "Merlion mit der CBD-Skyline bei Nacht"]
   },
   {
     id: "bangkok",
     name: "Bangkok",
     country: "Thailand",
-    desc: "Chaotic, intoxicating, and endlessly rewarding. Bangkok is temples, street food, rooftop bars, and tuk-tuks.",
+    desc: "Chaotisch, berauschend und endlos lohnend. Bangkok bedeutet Tempel, Streetfood, Rooftop-Bars und Tuk-Tuks.",
     img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80",
-    flight: "2.5h from Singapore",
-    budget: "SGD 80–180/day",
-    season: "Nov–Feb (Cool Season)",
-    overview: "Bangkok is Southeast Asia's most electrifying city. Grand Palace and Wat Pho in the morning, street food on Yaowarat Road at night, rooftop cocktails above the skyline, and floating markets on the weekend. It's hot, loud, and absolutely wonderful.",
+    flight: "2,5 Std. ab Singapur",
+    budget: "SGD 80–180/Tag",
+    season: "Nov–Feb (kühle Jahreszeit)",
+    overview: "Bangkok ist die elektrisierendste Stadt Südostasiens. Großer Palast und Wat Pho am Morgen, Streetfood auf der Yaowarat Road am Abend, Rooftop-Cocktails über der Skyline und schwimmende Märkte am Wochenende. Es ist heiß, laut und absolut wunderbar.",
     itinerary: [
-      "Day 1 AM: Grand Palace and Wat Pho (arrive 8 AM before crowds)",
-      "Day 1 PM: Wat Arun by longtail boat, Tha Tien Market lunch",
-      "Day 2 AM: Chatuchak Weekend Market (Sat/Sun) or Or Tor Kor Market",
-      "Day 2 PM: Platinum Fashion Mall, Siam Paragon, Sky Bar at sunset",
-      "Day 3: Damnoen Saduak Floating Market day trip",
-      "Day 3 PM: Yaowarat (Chinatown) street food dinner"
+      "Tag 1 vormittags: Großer Palast und Wat Pho (um 8 Uhr ankommen, vor den Menschenmengen)",
+      "Tag 1 nachmittags: Wat Arun mit dem Longtailboot, Mittagessen auf dem Tha-Tien-Markt",
+      "Tag 2 vormittags: Chatuchak-Wochenendmarkt (Sa/So) oder Or-Tor-Kor-Markt",
+      "Tag 2 nachmittags: Platinum Fashion Mall, Siam Paragon, Sky Bar bei Sonnenuntergang",
+      "Tag 3: Tagesausflug zum schwimmenden Markt Damnoen Saduak",
+      "Tag 3 nachmittags: Streetfood-Abendessen in Yaowarat (Chinatown)"
     ],
-    food: ["Pad Thai at Thip Samai on Mahachai Road", "Tom Yum Goong at Kuang Seafood", "Mango sticky rice at Mamuang (Mae Varee)", "Street dim sum in Yaowarat Chinatown"],
-    transport: ["BTS Skytrain and MRT cover the main tourist belt", "Grab is the safest and cheapest taxi option", "Longtail boats on Chao Phraya River", "Avoid tuk-tuks unless you negotiate first"],
-    costs: [{ label: "Accommodation", val: "SGD 40–200" }, { label: "Food & Drink", val: "SGD 15–60" }, { label: "Transport", val: "SGD 8–25" }, { label: "Activities", val: "SGD 10–40" }],
-    photos: ["Wat Arun at sunrise from the river", "Sky Bar at Lebua at twilight", "Grand Palace golden spires", "Yaowarat Road neon at midnight"]
+    food: ["Pad Thai bei Thip Samai auf der Mahachai Road", "Tom Yum Goong bei Kuang Seafood", "Mango-Klebreis bei Mamuang (Mae Varee)", "Straßen-Dim-Sum in Yaowarat Chinatown"],
+    transport: ["BTS-Skytrain und MRT erschließen den wichtigsten Touristengürtel", "Grab ist die sicherste und günstigste Taxi-Option", "Longtailboote auf dem Chao-Phraya-Fluss", "Meiden Sie Tuk-Tuks, sofern Sie nicht vorher verhandeln"],
+    costs: [{ label: "Unterkunft", val: "SGD 40–200" }, { label: "Essen & Trinken", val: "SGD 15–60" }, { label: "Transport", val: "SGD 8–25" }, { label: "Aktivitäten", val: "SGD 10–40" }],
+    photos: ["Wat Arun bei Sonnenaufgang vom Fluss aus", "Sky Bar im Lebua in der Dämmerung", "Goldene Türme des Großen Palasts", "Neonlichter der Yaowarat Road um Mitternacht"]
   },
   {
     id: "hongkong",
-    name: "Hong Kong",
-    country: "China SAR",
-    desc: "Asia's ultimate vertical city. Dim sum at dawn, harbour views at dusk, and some of the world's best hiking.",
+    name: "Hongkong",
+    country: "China SVR",
+    desc: "Asiens ultimative vertikale Stadt. Dim Sum im Morgengrauen, Hafenblick in der Abenddämmerung und einige der besten Wanderwege der Welt.",
     img: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=600&q=80",
-    flight: "3.5h from Singapore",
-    budget: "SGD 180–350/day",
-    season: "Oct–Mar",
-    overview: "Hong Kong is one of the world's great urban spectacles. The Victoria Harbour skyline from Tsim Sha Tsui at night is unmissable. Eat dim sum for breakfast, hike Dragon's Back Trail in the afternoon, and take the Peak Tram up for the evening panorama. The MTR is the world's best metro.",
+    flight: "3,5 Std. ab Singapur",
+    budget: "SGD 180–350/Tag",
+    season: "Okt–März",
+    overview: "Hongkong ist eines der großen urbanen Spektakel der Welt. Die Skyline am Victoria Harbour von Tsim Sha Tsui aus bei Nacht ist ein Muss. Essen Sie Dim Sum zum Frühstück, wandern Sie nachmittags auf dem Dragon's Back Trail und fahren Sie mit der Peak Tram hinauf zum abendlichen Panorama. Die MTR ist die beste U-Bahn der Welt.",
     itinerary: [
-      "Day 1: Arrive, check in Kowloon, Tsim Sha Tsui harbour promenade, Symphony of Lights",
-      "Day 2 AM: Tim Ho Wan for dim sum, Central / Sheung Wan exploration",
-      "Day 2 PM: Peak Tram to Victoria Peak at sunset",
-      "Day 3 AM: Dragon's Back Trail hike (Shek O), Big Wave Bay",
-      "Day 3 PM: Temple Street Night Market, Jordan street food"
+      "Tag 1: Ankunft, Check-in in Kowloon, Hafenpromenade von Tsim Sha Tsui, Symphony of Lights",
+      "Tag 2 vormittags: Tim Ho Wan für Dim Sum, Erkundung von Central / Sheung Wan",
+      "Tag 2 nachmittags: Peak Tram zum Victoria Peak bei Sonnenuntergang",
+      "Tag 3 vormittags: Wanderung auf dem Dragon's Back Trail (Shek O), Big Wave Bay",
+      "Tag 3 nachmittags: Nachtmarkt der Temple Street, Streetfood in Jordan"
     ],
-    food: ["Dim sum at Tim Ho Wan (Michelin-starred, affordable)", "Roast goose at Yung Kee Restaurant", "Egg waffles (gai daan jai) at any street stall", "Pineapple bun with butter at Kam Wah Cafe"],
-    transport: ["Octopus Card covers MTR, buses, trams, and ferries", "Star Ferry between Kowloon and Hong Kong Island (HKD 2.70)", "Mid-Levels Escalator for the central hillside", "MTR is fast, cheap, and very reliable"],
-    costs: [{ label: "Accommodation", val: "SGD 100–300" }, { label: "Food & Drink", val: "SGD 40–100" }, { label: "Transport", val: "SGD 8–15" }, { label: "Activities", val: "SGD 15–40" }],
-    photos: ["Victoria Harbour at night from Tsim Sha Tsui", "Peak Tram top of Lion Rock at sunset", "Central-Mid-Levels Escalator view", "Dragon's Back Trail view to South China Sea"]
+    food: ["Dim Sum bei Tim Ho Wan (mit Michelin-Stern, erschwinglich)", "Brathuhn bei Yung Kee Restaurant", "Eierwaffeln (Gai Daan Jai) an jedem Straßenstand", "Ananasbrötchen mit Butter im Kam Wah Café"],
+    transport: ["Die Octopus-Karte gilt für MTR, Busse, Straßenbahnen und Fähren", "Star Ferry zwischen Kowloon und Hong Kong Island (HKD 2,70)", "Mid-Levels-Rolltreppe für den zentralen Hang", "Die MTR ist schnell, günstig und sehr zuverlässig"],
+    costs: [{ label: "Unterkunft", val: "SGD 100–300" }, { label: "Essen & Trinken", val: "SGD 40–100" }, { label: "Transport", val: "SGD 8–15" }, { label: "Aktivitäten", val: "SGD 15–40" }],
+    photos: ["Victoria Harbour bei Nacht von Tsim Sha Tsui", "Peak Tram, Gipfel des Lion Rock bei Sonnenuntergang", "Blick von der Central-Mid-Levels-Rolltreppe", "Blick vom Dragon's Back Trail aufs Südchinesische Meer"]
   },
   {
     id: "kl",
     name: "Kuala Lumpur",
     country: "Malaysia",
-    desc: "Petronas Towers, incredible multicultural food, and luxurious hotels at a fraction of Singapore's cost.",
+    desc: "Petronas Towers, unglaubliches multikulturelles Essen und luxuriöse Hotels zu einem Bruchteil der Kosten Singapurs.",
     img: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80",
-    flight: "45min from Singapore",
-    budget: "SGD 80–200/day",
-    season: "May–Jul, Dec–Feb",
-    overview: "KL is one of Asia's most underrated capitals. The Petronas Towers are even more impressive in person, the food scene is extraordinary (Jalan Alor, Brickfields, Chinatown), and hotel value is exceptional. Day trips to Batu Caves and the Cameron Highlands are easily arranged.",
+    flight: "45 Min. ab Singapur",
+    budget: "SGD 80–200/Tag",
+    season: "Mai–Jul, Dez–Feb",
+    overview: "KL ist eine der am meisten unterschätzten Hauptstädte Asiens. Die Petronas Towers sind aus der Nähe noch beeindruckender, die Esszene ist außergewöhnlich (Jalan Alor, Brickfields, Chinatown) und das Preis-Leistungs-Verhältnis der Hotels ist hervorragend. Tagesausflüge zu den Batu-Höhlen und in die Cameron Highlands lassen sich leicht arrangieren.",
     itinerary: [
-      "Day 1 AM: Batu Caves at sunrise (beat the heat), Little India walk",
-      "Day 1 PM: Petronas Towers observation deck, KLCC park",
-      "Day 2 AM: Central Market, Chinatown Petaling Street",
-      "Day 2 PM: Merdeka Square, KL Tower, Jalan Alor night market",
-      "Day 3: Day trip to Genting Highlands or Putrajaya",
-      "Day 3 PM: Rooftop bar at Heli Lounge Bar (inside a helipad)"
+      "Tag 1 vormittags: Batu-Höhlen bei Sonnenaufgang (der Hitze entgehen), Spaziergang durch Little India",
+      "Tag 1 nachmittags: Aussichtsplattform der Petronas Towers, KLCC-Park",
+      "Tag 2 vormittags: Central Market, Petaling Street in Chinatown",
+      "Tag 2 nachmittags: Merdeka-Platz, KL Tower, Nachtmarkt Jalan Alor",
+      "Tag 3: Tagesausflug zu den Genting Highlands oder nach Putrajaya",
+      "Tag 3 nachmittags: Rooftop-Bar in der Heli Lounge Bar (auf einem Hubschrauberlandeplatz)"
     ],
-    food: ["Char Kuey Teow at Restoran Kassim Mustafa", "Nasi Lemak at Village Park Restaurant", "Bak Kut Teh in Klang (day trip)", "Mamak roti canai at any 24-hour mamak"],
-    transport: ["KL Sentral is the main transit hub", "MRT and LRT cover most areas", "Grab is cheap and ubiquitous", "Airport Express (KLIA Ekspres) takes 28 mins"],
-    costs: [{ label: "Accommodation", val: "SGD 50–180" }, { label: "Food & Drink", val: "SGD 20–60" }, { label: "Transport", val: "SGD 5–20" }, { label: "Activities", val: "SGD 10–30" }],
-    photos: ["Petronas Towers from KLCC park reflection pool", "Batu Caves rainbow steps at sunrise", "Heli Lounge Bar rooftop view", "Jalan Alor street food at night"]
+    food: ["Char Kuey Teow im Restoran Kassim Mustafa", "Nasi Lemak im Village Park Restaurant", "Bak Kut Teh in Klang (Tagesausflug)", "Mamak-Roti-Canai in jedem 24-Stunden-Mamak"],
+    transport: ["KL Sentral ist das wichtigste Verkehrsdrehkreuz", "MRT und LRT erschließen die meisten Gebiete", "Grab ist günstig und allgegenwärtig", "Der Airport Express (KLIA Ekspres) dauert 28 Minuten"],
+    costs: [{ label: "Unterkunft", val: "SGD 50–180" }, { label: "Essen & Trinken", val: "SGD 20–60" }, { label: "Transport", val: "SGD 5–20" }, { label: "Aktivitäten", val: "SGD 10–30" }],
+    photos: ["Petronas Towers im Spiegelbecken des KLCC-Parks", "Regenbogentreppe der Batu-Höhlen bei Sonnenaufgang", "Rooftop-Blick von der Heli Lounge Bar", "Streetfood auf der Jalan Alor bei Nacht"]
   },
   {
     id: "maldives",
-    name: "Maldives",
-    country: "Maldives",
-    desc: "Overwater bungalows, glass-clear lagoons, and bioluminescent beaches. The ultimate luxury escape.",
+    name: "Malediven",
+    country: "Malediven",
+    desc: "Überwasser-Bungalows, glasklare Lagunen und biolumineszente Strände. Die ultimative Luxusauszeit.",
     img: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80",
-    flight: "4h from Singapore",
-    budget: "SGD 400–1200/day",
-    season: "Nov–Apr (Dry Season)",
-    overview: "The Maldives is unlike anywhere on earth. Barely above sea level, scattered across the Indian Ocean, it offers overwater bungalows, house reefs teeming with manta rays and sharks, and the most vivid blue water imaginable. Budget options exist on local islands; luxury knows no ceiling on resort atolls.",
+    flight: "4 Std. ab Singapur",
+    budget: "SGD 400–1200/Tag",
+    season: "Nov–Apr (Trockenzeit)",
+    overview: "Die Malediven sind anders als jeder andere Ort auf der Erde. Kaum über dem Meeresspiegel, verstreut im Indischen Ozean, bieten sie Überwasser-Bungalows, Hausriffe voller Mantarochen und Haie und das lebendigste vorstellbare Blau des Wassers. Günstige Optionen gibt es auf den Einheimischen-Inseln; auf den Resort-Atollen kennt der Luxus keine Grenzen.",
     itinerary: [
-      "Day 1: Fly into Malé, speedboat or seaplane to your atoll, settle in",
-      "Day 2: Snorkelling or diving at house reef, sunset fishing trip",
-      "Day 3: Dolphin cruise at dawn, sandbank picnic, night swim in bioluminescence",
+      "Tag 1: Flug nach Malé, Schnellboot oder Wasserflugzeug zu Ihrem Atoll, einrichten",
+      "Tag 2: Schnorcheln oder Tauchen am Hausriff, Angelausflug bei Sonnenuntergang",
+      "Tag 3: Delfinkreuzfahrt im Morgengrauen, Picknick auf einer Sandbank, Nachtschwimmen in der Biolumineszenz",
     ],
-    food: ["Fresh tuna (mas) in every form — grilled, curried, smoked", "Mas huni (tuna and coconut breakfast) on local islands", "Lobster on the beach at resort restaurants", "Fresh coconut drinks at local cafes (much cheaper than resorts)"],
-    transport: ["Seaplane transfers are spectacular but expensive", "Speedboats are the budget alternative to reach outer atolls", "Malé to local islands: public ferries for SGD 2–5", "Most resorts arrange all island transfers"],
-    costs: [{ label: "Accommodation", val: "SGD 200–800+" }, { label: "Food & Drink", val: "SGD 80–200" }, { label: "Activities", val: "SGD 50–150" }, { label: "Transport", val: "SGD 50–400" }],
-    photos: ["Overwater bungalow at dawn, North Malé Atoll", "Bioluminescent beach at Vaadhoo Island", "Manta ray snorkelling at Hanifaru Bay", "Sandbank aerial from seaplane"]
+    food: ["Frischer Thunfisch (Mas) in jeder Form — gegrillt, als Curry, geräuchert", "Mas Huni (Frühstück aus Thunfisch und Kokosnuss) auf den Einheimischen-Inseln", "Hummer am Strand in den Resort-Restaurants", "Frische Kokosnussgetränke in lokalen Cafés (viel günstiger als in Resorts)"],
+    transport: ["Wasserflugzeug-Transfers sind spektakulär, aber teuer", "Schnellboote sind die günstige Alternative, um die äußeren Atolle zu erreichen", "Malé zu den Einheimischen-Inseln: öffentliche Fähren für SGD 2–5", "Die meisten Resorts organisieren alle Inseltransfers"],
+    costs: [{ label: "Unterkunft", val: "SGD 200–800+" }, { label: "Essen & Trinken", val: "SGD 80–200" }, { label: "Aktivitäten", val: "SGD 50–150" }, { label: "Transport", val: "SGD 50–400" }],
+    photos: ["Überwasser-Bungalow im Morgengrauen, Nord-Malé-Atoll", "Biolumineszenter Strand auf der Insel Vaadhoo", "Schnorcheln mit Mantarochen in der Hanifaru Bay", "Sandbank-Luftaufnahme aus dem Wasserflugzeug"]
   },
   {
     id: "phuket",
     name: "Phuket & Krabi",
     country: "Thailand",
-    desc: "Limestone karsts, emerald waters, world-class diving, and stunning island-hopping in the Andaman Sea.",
+    desc: "Kalksteinfelsen, smaragdgrünes Wasser, Weltklasse-Tauchen und atemberaubendes Inselhüpfen in der Andamanensee.",
     img: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80",
-    flight: "2h from Singapore",
-    budget: "SGD 100–250/day",
-    season: "Nov–Apr (Dry Season)",
-    overview: "Phuket and Krabi together form one of the world's most spectacular coastal destinations. The Phi Phi Islands, Railay Beach (only accessible by boat), and the Four Islands tour around Koh Lanta are bucket-list experiences. Krabi is quieter and more dramatic; Phuket has better infrastructure and nightlife.",
+    flight: "2 Std. ab Singapur",
+    budget: "SGD 100–250/Tag",
+    season: "Nov–Apr (Trockenzeit)",
+    overview: "Phuket und Krabi bilden zusammen eines der spektakulärsten Küstenreiseziele der Welt. Die Phi-Phi-Inseln, der Railay Beach (nur per Boot erreichbar) und die Vier-Inseln-Tour rund um Koh Lanta sind unvergessliche Erlebnisse. Krabi ist ruhiger und dramatischer; Phuket bietet die bessere Infrastruktur und das bessere Nachtleben.",
     itinerary: [
-      "Day 1: Arrive Phuket, Patong Beach, Bangla Road walking street at night",
-      "Day 2: Phi Phi Islands speedboat day trip (leave by 7 AM)",
-      "Day 3: Transfer to Krabi, check in Ao Nang, Railay Beach by longtail boat",
+      "Tag 1: Ankunft in Phuket, Patong Beach, Fußgängerstraße Bangla Road bei Nacht",
+      "Tag 2: Schnellboot-Tagesausflug zu den Phi-Phi-Inseln (vor 7 Uhr aufbrechen)",
+      "Tag 3: Transfer nach Krabi, Check-in in Ao Nang, Railay Beach mit dem Longtailboot",
     ],
-    food: ["Pad Thai and green curry at any Ao Nang beachfront restaurant", "Fresh grilled seafood at Rawai Seafood Market (Phuket)", "Coconut ice cream in a fresh coconut shell", "Tom Kha Gai soup at local beach shacks"],
-    transport: ["Grab works in Phuket town but less so in tourist areas", "Longtail boats for beach and island hopping", "Songthaews (shared red trucks) are cheapest in Phuket", "Rent a scooter in Krabi for full flexibility"],
-    costs: [{ label: "Accommodation", val: "SGD 50–250" }, { label: "Food & Drink", val: "SGD 20–70" }, { label: "Transport", val: "SGD 15–50" }, { label: "Activities", val: "SGD 30–80" }],
-    photos: ["Railay Beach east and west panorama", "Phi Phi Don aerial at sunrise", "James Bond Island (Khao Phing Kan) karst", "Ao Nang sunset from beach bar"]
+    food: ["Pad Thai und grünes Curry in jedem Strandrestaurant in Ao Nang", "Frisch gegrillte Meeresfrüchte auf dem Rawai Seafood Market (Phuket)", "Kokoseis in einer frischen Kokosnussschale", "Tom-Kha-Gai-Suppe in lokalen Strandhütten"],
+    transport: ["Grab funktioniert in der Stadt Phuket, aber weniger in den Touristengebieten", "Longtailboote für Strand- und Inselhüpfen", "Songthaews (geteilte rote Pick-ups) sind in Phuket am günstigsten", "Mieten Sie in Krabi einen Roller für volle Flexibilität"],
+    costs: [{ label: "Unterkunft", val: "SGD 50–250" }, { label: "Essen & Trinken", val: "SGD 20–70" }, { label: "Transport", val: "SGD 15–50" }, { label: "Aktivitäten", val: "SGD 30–80" }],
+    photos: ["Panorama von Railay Beach Ost und West", "Luftaufnahme von Phi Phi Don bei Sonnenaufgang", "Kalksteinfelsen der James-Bond-Insel (Khao Phing Kan)", "Sonnenuntergang in Ao Nang von einer Strandbar"]
   },
   {
     id: "sydney",
     name: "Sydney",
-    country: "Australia",
-    desc: "Opera House, Harbour Bridge, world-class beaches, and one of the Southern Hemisphere's great food cities.",
+    country: "Australien",
+    desc: "Opernhaus, Harbour Bridge, Weltklasse-Strände und eine der großen Esskulturmetropolen der Südhalbkugel.",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80",
-    flight: "8h from Singapore",
-    budget: "SGD 300–600/day",
-    season: "Sep–Nov, Mar–May",
-    overview: "Sydney is one of the world's most liveable and visitable cities. The iconic Opera House and Harbour Bridge, world-famous beaches like Bondi and Manly, and a food scene driven by exceptional produce and multicultural influences. Expensive by Asian standards but extraordinary quality everywhere.",
+    flight: "8 Std. ab Singapur",
+    budget: "SGD 300–600/Tag",
+    season: "Sep–Nov, März–Mai",
+    overview: "Sydney ist eine der lebenswertesten und sehenswertesten Städte der Welt. Das ikonische Opernhaus und die Harbour Bridge, weltberühmte Strände wie Bondi und Manly sowie eine Esszene, die von außergewöhnlichen Produkten und multikulturellen Einflüssen geprägt ist. Nach asiatischen Maßstäben teuer, aber überall von außergewöhnlicher Qualität.",
     itinerary: [
-      "Day 1 AM: Sydney Opera House tour, Circular Quay, The Rocks",
-      "Day 1 PM: Harbour Bridge climb (or Pylon Lookout), Darling Harbour",
-      "Day 2 AM: Bondi Beach, Bondi-to-Coogee coastal walk",
-      "Day 2 PM: Surry Hills food crawl, Crown Street restaurants",
-      "Day 3: Manly Ferry (spectacular harbour crossing), Manly Beach, day trip to Blue Mountains"
+      "Tag 1 vormittags: Tour durch das Opernhaus von Sydney, Circular Quay, The Rocks",
+      "Tag 1 nachmittags: Harbour-Bridge-Aufstieg (oder Pylon Lookout), Darling Harbour",
+      "Tag 2 vormittags: Bondi Beach, Küstenwanderung von Bondi nach Coogee",
+      "Tag 2 nachmittags: Food-Tour durch Surry Hills, Restaurants an der Crown Street",
+      "Tag 3: Manly-Fähre (spektakuläre Hafenüberquerung), Manly Beach, Tagesausflug in die Blue Mountains"
     ],
-    food: ["Flat white coffee culture — every suburb has exceptional cafes", "Sydney rock oysters at any fish market or harbour restaurant", "Brunch at Bourke Street Bakery, Surry Hills", "Vietnamese pho in Cabramatta or Bankstown"],
-    transport: ["Opal Card for trains, buses, ferries, and light rail", "Manly Ferry is the most scenic transport experience", "Trains from airport to city (Circular Quay): 13 mins", "Uber widely available; taxis more expensive"],
-    costs: [{ label: "Accommodation", val: "SGD 180–500" }, { label: "Food & Drink", val: "SGD 80–160" }, { label: "Transport", val: "SGD 15–40" }, { label: "Activities", val: "SGD 30–80" }],
-    photos: ["Opera House at sunrise from Mrs Macquarie's Chair", "Bondi-to-Coogee walk cliff views", "Harbour Bridge from North Sydney at dusk", "Manly Ferry view back to city skyline"]
+    food: ["Flat-White-Kaffeekultur — jeder Vorort hat außergewöhnliche Cafés", "Sydney-Felsenaustern in jedem Fischmarkt oder Hafenrestaurant", "Brunch in der Bourke Street Bakery, Surry Hills", "Vietnamesische Pho in Cabramatta oder Bankstown"],
+    transport: ["Opal-Karte für Züge, Busse, Fähren und Stadtbahn", "Die Manly-Fähre ist das landschaftlich schönste Verkehrserlebnis", "Züge vom Flughafen in die Stadt (Circular Quay): 13 Minuten", "Uber ist weit verbreitet; Taxis sind teurer"],
+    costs: [{ label: "Unterkunft", val: "SGD 180–500" }, { label: "Essen & Trinken", val: "SGD 80–160" }, { label: "Transport", val: "SGD 15–40" }, { label: "Aktivitäten", val: "SGD 30–80" }],
+    photos: ["Opernhaus bei Sonnenaufgang von Mrs Macquarie's Chair", "Klippenblick auf der Wanderung von Bondi nach Coogee", "Harbour Bridge von North Sydney in der Dämmerung", "Blick von der Manly-Fähre zurück auf die Skyline der Stadt"]
   },
   {
     id: "taipei",
-    name: "Taipei",
+    name: "Taipeh",
     country: "Taiwan",
-    desc: "Night markets, bubble tea origin stories, Taipei 101, and some of Asia's most authentic Chinese cuisine.",
+    desc: "Nachtmärkte, die Ursprungsgeschichten des Bubble Tea, Taipei 101 und einige der authentischsten chinesischen Küchen Asiens.",
     img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=600&q=80",
-    flight: "4h from Singapore",
-    budget: "SGD 100–200/day",
-    season: "Sep–Nov, Mar–May",
-    overview: "Taipei is wonderfully liveable and surprisingly underrated. The night markets (Shilin, Raohe, Ningxia) are legendary, Taipei 101 still stuns, and the MRT is clean and cheap. Day trips to Jiufen old town, Yehliu Geopark, and Taroko Gorge are unmissable. The people are among the friendliest in Asia.",
+    flight: "4 Std. ab Singapur",
+    budget: "SGD 100–200/Tag",
+    season: "Sep–Nov, März–Mai",
+    overview: "Taipeh ist wunderbar lebenswert und überraschend unterschätzt. Die Nachtmärkte (Shilin, Raohe, Ningxia) sind legendär, der Taipei 101 beeindruckt nach wie vor und die MRT ist sauber und günstig. Tagesausflüge in die Altstadt von Jiufen, zum Yehliu-Geopark und zur Taroko-Schlucht sind ein Muss. Die Menschen gehören zu den freundlichsten in Asien.",
     itinerary: [
-      "Day 1 AM: Chiang Kai-shek Memorial Hall, Ximending (Taipei's Harajuku)",
-      "Day 1 PM: Taipei 101 Observatory, Xinyi shopping district",
-      "Day 2 AM: Day trip to Jiufen Old Town and Jinguashi Gold Museum",
-      "Day 2 PM: Shilin Night Market (largest in Taipei)",
-      "Day 3 AM: Longshan Temple, Dihua Street historic market",
-      "Day 3 PM: Elephant Mountain hike at sunset (Taipei 101 panorama)"
+      "Tag 1 vormittags: Chiang-Kai-shek-Gedächtnishalle, Ximending (das Harajuku Taipehs)",
+      "Tag 1 nachmittags: Aussichtsplattform des Taipei 101, Einkaufsviertel Xinyi",
+      "Tag 2 vormittags: Tagesausflug in die Altstadt von Jiufen und zum Goldmuseum Jinguashi",
+      "Tag 2 nachmittags: Shilin-Nachtmarkt (der größte in Taipeh)",
+      "Tag 3 vormittags: Longshan-Tempel, historischer Markt in der Dihua-Straße",
+      "Tag 3 nachmittags: Wanderung auf den Elephant Mountain bei Sonnenuntergang (Panorama des Taipei 101)"
     ],
-    food: ["Beef noodle soup at Yong Kang Beef Noodle", "Xiao long bao (soup dumplings) at Din Tai Fung original", "Stinky tofu at Shilin Night Market (bolder than it sounds)", "Bubble tea at Chun Shui Tang (credited with inventing it)"],
-    transport: ["EasyCard covers MRT, buses, and YouBike bicycle rentals", "MRT is extremely cheap — SGD 0.60–1.50 per journey", "HSR bullet train for Kaohsiung and Tainan day trips", "THSR from airport to main station: 35 mins"],
-    costs: [{ label: "Accommodation", val: "SGD 60–180" }, { label: "Food & Drink", val: "SGD 25–70" }, { label: "Transport", val: "SGD 5–15" }, { label: "Activities", val: "SGD 10–30" }],
-    photos: ["Taipei 101 from Elephant Mountain at sunset", "Jiufen Old Town lanterns in the rain", "Shilin Night Market overhead crowd shot", "Chiang Kai-shek Memorial Hall guards changing"]
+    food: ["Rindfleisch-Nudelsuppe bei Yong Kang Beef Noodle", "Xiao Long Bao (Suppenklößchen) im Original von Din Tai Fung", "Stinkender Tofu auf dem Shilin-Nachtmarkt (mutiger, als es klingt)", "Bubble Tea bei Chun Shui Tang (dem die Erfindung zugeschrieben wird)"],
+    transport: ["Die EasyCard gilt für MRT, Busse und YouBike-Fahrradverleih", "Die MRT ist extrem günstig — SGD 0,60–1,50 pro Fahrt", "HSR-Schnellzug für Tagesausflüge nach Kaohsiung und Tainan", "THSR vom Flughafen zum Hauptbahnhof: 35 Minuten"],
+    costs: [{ label: "Unterkunft", val: "SGD 60–180" }, { label: "Essen & Trinken", val: "SGD 25–70" }, { label: "Transport", val: "SGD 5–15" }, { label: "Aktivitäten", val: "SGD 10–30" }],
+    photos: ["Taipei 101 vom Elephant Mountain bei Sonnenuntergang", "Laternen in der Altstadt von Jiufen im Regen", "Menschenmenge auf dem Shilin-Nachtmarkt von oben", "Wachablösung an der Chiang-Kai-shek-Gedächtnishalle"]
   },
   {
     id: "hanoi",
     name: "Hanoi",
     country: "Vietnam",
-    desc: "Ancient Old Quarter, world-class street food, Halong Bay gateway, and a fascinating blend of French and Vietnamese culture.",
+    desc: "Uralte Altstadt, Weltklasse-Streetfood, Tor zur Halong-Bucht und eine faszinierende Mischung aus französischer und vietnamesischer Kultur.",
     img: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=600&q=80",
-    flight: "3h from Singapore",
-    budget: "SGD 60–150/day",
-    season: "Oct–Apr",
-    overview: "Hanoi is Southeast Asia's most atmospheric capital. The Old Quarter's 36 guilds streets, Hoan Kiem Lake at any hour of day, the egg coffee culture, and some of the world's finest street food. The gateway to Halong Bay, Ninh Binh, and Sapa. Chaotic, beautiful, and utterly compelling.",
+    flight: "3 Std. ab Singapur",
+    budget: "SGD 60–150/Tag",
+    season: "Okt–Apr",
+    overview: "Hanoi ist die atmosphärischste Hauptstadt Südostasiens. Die 36 Zunftstraßen der Altstadt, der Hoan-Kiem-See zu jeder Tageszeit, die Eierkaffee-Kultur und einige der weltbesten Streetfoods. Das Tor zur Halong-Bucht, nach Ninh Binh und Sapa. Chaotisch, schön und absolut fesselnd.",
     itinerary: [
-      "Day 1 AM: Hoan Kiem Lake, Ngoc Son Temple, Old Quarter walking tour",
-      "Day 1 PM: Temple of Literature, Vietnamese Women's Museum",
-      "Day 1 Evening: Bia Hoi corner (street beer junction), Ta Hien Street",
-      "Day 2: Full-day Halong Bay cruise with overnight option",
-      "Day 3: Train to Ninh Binh (Trang An Grottoes, Mua Cave viewpoint)"
+      "Tag 1 vormittags: Hoan-Kiem-See, Ngoc-Son-Tempel, Spaziergang durch die Altstadt",
+      "Tag 1 nachmittags: Literaturtempel, Museum der vietnamesischen Frauen",
+      "Tag 1 abends: Bia-Hoi-Ecke (Straßenbier-Kreuzung), Ta-Hien-Straße",
+      "Tag 2: Ganztägige Kreuzfahrt durch die Halong-Bucht mit Übernachtungsmöglichkeit",
+      "Tag 3: Zug nach Ninh Binh (Trang-An-Grotten, Aussichtspunkt der Mua-Höhle)"
     ],
-    food: ["Pho bo (beef pho) at Pho Gia Truyen, Bat Dan Street", "Bun cha (grilled pork with noodles) at Bun Cha Huong Lien (Obama's table)", "Banh mi at Banh Mi 25 in Old Quarter", "Egg coffee (ca phe trung) at Cafe Giang"],
-    transport: ["Grab is the only sensible taxi option for tourists", "Book Halong Bay tours through reputable operators only", "Train to Ninh Binh: SGD 3–5, 2-hour journey", "Avoid xe om (motorbike taxis) negotiated on street"],
-    costs: [{ label: "Accommodation", val: "SGD 30–120" }, { label: "Food & Drink", val: "SGD 15–50" }, { label: "Transport", val: "SGD 5–20" }, { label: "Activities", val: "SGD 20–60" }],
-    photos: ["Hoan Kiem Lake and Ngoc Son Temple at dusk", "Halong Bay limestone karsts from above", "Old Quarter alleyway at night with motorbikes", "Mua Cave viewpoint panorama, Ninh Binh"]
+    food: ["Pho Bo (Rindfleisch-Pho) bei Pho Gia Truyen, Bat-Dan-Straße", "Bun Cha (gegrilltes Schweinefleisch mit Nudeln) bei Bun Cha Huong Lien (Obamas Tisch)", "Banh Mi bei Banh Mi 25 in der Altstadt", "Eierkaffee (Ca Phe Trung) im Café Giang"],
+    transport: ["Grab ist die einzige vernünftige Taxi-Option für Touristen", "Buchen Sie Touren in die Halong-Bucht nur über seriöse Anbieter", "Zug nach Ninh Binh: SGD 3–5, 2-stündige Fahrt", "Meiden Sie auf der Straße ausgehandelte Xe Om (Motorradtaxis)"],
+    costs: [{ label: "Unterkunft", val: "SGD 30–120" }, { label: "Essen & Trinken", val: "SGD 15–50" }, { label: "Transport", val: "SGD 5–20" }, { label: "Aktivitäten", val: "SGD 20–60" }],
+    photos: ["Hoan-Kiem-See und Ngoc-Son-Tempel in der Abenddämmerung", "Kalksteinfelsen der Halong-Bucht von oben", "Altstadtgasse bei Nacht mit Motorrädern", "Panorama vom Aussichtspunkt der Mua-Höhle, Ninh Binh"]
   }
 ];
 
 const safetyData = [
-  { city: "Tokyo", icon: "🇯🇵", level: "safe", badge: "Very Safe", tips: "Extremely safe. Crime is virtually non-existent for tourists. Leave your wallet on the table and it will be there when you return. Basic manners: don't eat while walking, speak quietly on trains." },
-  { city: "Singapore", icon: "🇸🇬", level: "safe", badge: "Very Safe", tips: "One of the world's safest cities. Strict laws on littering, jaywalking, and drug possession. Carry your passport. Areas: all safe at all hours." },
-  { city: "Seoul", icon: "🇰🇷", level: "safe", badge: "Very Safe", tips: "Very safe for tourists. Pickpocketing is rare. Women travelling solo feel comfortable. Be aware of aggressive restaurant touts in Itaewon." },
-  { city: "Sydney", icon: "🇦🇺", level: "safe", badge: "Very Safe", tips: "Generally very safe. Standard city precautions apply in Kings Cross at night. Strong sun: wear SPF 50+ and swim between the flags at beaches." },
-  { city: "Taipei", icon: "🇹🇼", level: "safe", badge: "Very Safe", tips: "One of Asia's safest cities. Night markets and streets are safe at all hours. Typhoon season June–October — check weather advisories." },
-  { city: "Bangkok", icon: "🇹🇭", level: "moderate", badge: "Moderate", tips: "Generally safe but be alert. Common scams: tuk-tuk gem scams, 'Grand Palace is closed today' — ignore approaches from strangers near temples. Protests occasionally occur." },
-  { city: "Bali", icon: "🇮🇩", level: "moderate", badge: "Moderate", tips: "Safe for tourists but petty theft exists. Use hotel safe for valuables. Rabies present — do not touch stray dogs or monkeys. Scooters: wear a helmet, many tourist injuries." },
-  { city: "KL", icon: "🇲🇾", level: "moderate", badge: "Moderate", tips: "Generally safe. Snatch theft (bag snatching) is the main concern — carry bags on the inner side. KL Sentral area has occasional aggressive begging. Avoid dark alleys in Chow Kit at night." },
-  { city: "Hong Kong", icon: "🇭🇰", level: "moderate", badge: "Moderate", tips: "Very low crime rate for tourists. Current political context means large gatherings occasionally occur. Standard urban precautions in Mong Kok at night." },
-  { city: "Hanoi", icon: "🇻🇳", level: "moderate", badge: "Moderate", tips: "Safe but with active scams: aggressive cyclo rides with no agreed price, fake taxis at the airport (only use Grab or Vinasun), overcharging at non-priced restaurants." },
-  { city: "Phuket", icon: "🇹🇭", level: "moderate", badge: "Moderate", tips: "Safe but specific hazards: strong rip currents on west coast beaches (always swim between flags), jet ski scam (damage claims), unlicensed operators on Patong Beach at night." },
-  { city: "Maldives", icon: "🇲🇻", level: "safe", badge: "Safe", tips: "Very safe on resort islands. Local islands are conservative Muslim communities — dress modestly, no alcohol in public. Petty theft on budget guesthouses is rare but lock valuables." }
+  { city: "Tokio", icon: "🇯🇵", level: "safe", badge: "Sehr sicher", tips: "Extrem sicher. Kriminalität gegenüber Touristen ist praktisch nicht vorhanden. Lassen Sie Ihre Brieftasche auf dem Tisch liegen, und sie wird bei Ihrer Rückkehr noch dort sein. Grundregeln des Anstands: nicht im Gehen essen, in Zügen leise sprechen." },
+  { city: "Singapur", icon: "🇸🇬", level: "safe", badge: "Sehr sicher", tips: "Eine der sichersten Städte der Welt. Strenge Gesetze gegen Vermüllung, Überqueren der Straße bei Rot und Drogenbesitz. Führen Sie Ihren Reisepass mit. Gebiete: alle sicher zu jeder Tageszeit." },
+  { city: "Seoul", icon: "🇰🇷", level: "safe", badge: "Sehr sicher", tips: "Sehr sicher für Touristen. Taschendiebstahl ist selten. Alleinreisende Frauen fühlen sich wohl. Achten Sie auf aufdringliche Restaurant-Schlepper in Itaewon." },
+  { city: "Sydney", icon: "🇦🇺", level: "safe", badge: "Sehr sicher", tips: "Im Allgemeinen sehr sicher. In Kings Cross gelten nachts übliche städtische Vorsichtsmaßnahmen. Starke Sonne: tragen Sie LSF 50+ und schwimmen Sie an den Stränden zwischen den Flaggen." },
+  { city: "Taipeh", icon: "🇹🇼", level: "safe", badge: "Sehr sicher", tips: "Eine der sichersten Städte Asiens. Nachtmärkte und Straßen sind zu jeder Tageszeit sicher. Taifunsaison von Juni bis Oktober — prüfen Sie die Wetterhinweise." },
+  { city: "Bangkok", icon: "🇹🇭", level: "moderate", badge: "Mäßig", tips: "Im Allgemeinen sicher, aber bleiben Sie aufmerksam. Häufige Betrugsmaschen: Tuk-Tuk-Edelsteinbetrug, „Der Große Palast ist heute geschlossen" — ignorieren Sie Ansprachen von Fremden in der Nähe von Tempeln. Gelegentlich kommt es zu Protesten." },
+  { city: "Bali", icon: "🇮🇩", level: "moderate", badge: "Mäßig", tips: "Sicher für Touristen, aber Kleinkriminalität kommt vor. Nutzen Sie den Hotelsafe für Wertsachen. Tollwut ist verbreitet — berühren Sie keine streunenden Hunde oder Affen. Roller: tragen Sie einen Helm, viele Touristen verletzen sich." },
+  { city: "KL", icon: "🇲🇾", level: "moderate", badge: "Mäßig", tips: "Im Allgemeinen sicher. Handtaschenraub ist das größte Problem — tragen Sie Taschen auf der Innenseite. Im Bereich von KL Sentral kommt es gelegentlich zu aggressivem Betteln. Meiden Sie nachts dunkle Gassen in Chow Kit." },
+  { city: "Hongkong", icon: "🇭🇰", level: "moderate", badge: "Mäßig", tips: "Sehr niedrige Kriminalitätsrate für Touristen. Der aktuelle politische Kontext bedeutet, dass gelegentlich große Menschenansammlungen stattfinden. Übliche städtische Vorsichtsmaßnahmen nachts in Mong Kok." },
+  { city: "Hanoi", icon: "🇻🇳", level: "moderate", badge: "Mäßig", tips: "Sicher, aber mit aktiven Betrugsmaschen: aufdringliche Cyclo-Fahrten ohne vereinbarten Preis, falsche Taxis am Flughafen (nutzen Sie nur Grab oder Vinasun), Überteuerung in Restaurants ohne Preisangaben." },
+  { city: "Phuket", icon: "🇹🇭", level: "moderate", badge: "Mäßig", tips: "Sicher, aber mit besonderen Gefahren: starke Brandungsrückströmungen an den Stränden der Westküste (immer zwischen den Flaggen schwimmen), Jetski-Betrug (Schadensforderungen), nicht lizenzierte Anbieter am Patong Beach bei Nacht." },
+  { city: "Malediven", icon: "🇲🇻", level: "safe", badge: "Sicher", tips: "Sehr sicher auf den Resort-Inseln. Die Einheimischen-Inseln sind konservative muslimische Gemeinschaften — kleiden Sie sich dezent, kein Alkohol in der Öffentlichkeit. Kleinkriminalität in günstigen Gästehäusern ist selten, schließen Sie Wertsachen dennoch weg." }
 ];
 
 const checklistData = {
-  "Documents": ["Passport (6+ months validity)", "Visa / e-Visa printout", "Travel insurance documents", "Flight booking confirmations", "Hotel booking confirmations", "Emergency contacts list"],
-  "Clothing": ["Lightweight shirts (3–5)", "Comfortable walking shoes", "Sandals or flip flops", "Rain jacket or packable umbrella", "Smart outfit for restaurants", "Sunglasses and hat"],
-  "Electronics": ["Phone charger and power bank", "Universal travel adapter", "Earphones / AirPods", "Camera and memory cards", "Laptop or tablet (if needed)", "Portable WiFi or SIM card"],
-  "Medication": ["Prescribed medications (enough + extra)", "Antihistamines", "Diarrhea medication (Imodium)", "Pain relief (Panadol/Ibuprofen)", "Insect repellent (DEET-based)", "Hand sanitiser"],
-  "Travel Essentials": ["Local currency (enough for first day)", "Credit / debit card (notify bank)", "Luggage padlock", "Reusable water bottle", "Sunscreen SPF 50+", "Lip balm and moisturiser"]
+  "Dokumente": ["Reisepass (mindestens 6 Monate gültig)", "Visum / e-Visum-Ausdruck", "Reiseversicherungsunterlagen", "Flugbuchungsbestätigungen", "Hotelbuchungsbestätigungen", "Liste der Notfallkontakte"],
+  "Kleidung": ["Leichte Hemden (3–5)", "Bequeme Wanderschuhe", "Sandalen oder Flip-Flops", "Regenjacke oder zusammenfaltbarer Regenschirm", "Schickes Outfit für Restaurants", "Sonnenbrille und Hut"],
+  "Elektronik": ["Handyladegerät und Powerbank", "Universal-Reiseadapter", "Kopfhörer / AirPods", "Kamera und Speicherkarten", "Laptop oder Tablet (falls benötigt)", "Mobiles WLAN oder SIM-Karte"],
+  "Medikamente": ["Verschriebene Medikamente (genug + Reserve)", "Antihistaminika", "Durchfallmittel (Imodium)", "Schmerzmittel (Panadol/Ibuprofen)", "Insektenschutzmittel (auf DEET-Basis)", "Handdesinfektionsmittel"],
+  "Reise-Essentials": ["Lokale Währung (genug für den ersten Tag)", "Kredit-/Debitkarte (Bank informieren)", "Gepäckschloss", "Wiederverwendbare Wasserflasche", "Sonnencreme LSF 50+", "Lippenbalsam und Feuchtigkeitscreme"]
 };
 
 // ────────────────────────────────────────────────────────────────────────────────
@@ -1787,7 +1787,7 @@ function renderCards() {
           <span class="meta-tag">💰 ${c.budget}</span>
           <span class="meta-tag">🌤 ${c.season}</span>
         </div>
-        <button class="card-btn">View Guide</button>
+        <button class="card-btn">Reiseführer ansehen</button>
       </div>
     </div>
   `).join('');
@@ -1880,7 +1880,7 @@ function calcBudget() {
   const total = travellers * days * daily;
   const result = document.getElementById('budgetResult');
   result.style.display = 'block';
-  result.innerHTML = `Estimated Total: <strong>SGD ${total.toLocaleString()}</strong><br><small style="font-weight:400;font-size:13px;color:#888">${travellers} traveller${travellers > 1 ? 's' : ''} × ${days} days × SGD ${daily}/day</small>`;
+  result.innerHTML = `Geschätzte Gesamtsumme: <strong>SGD ${total.toLocaleString()}</strong><br><small style="font-weight:400;font-size:13px;color:#888">${travellers} ${travellers > 1 ? 'Reisende' : 'Reisender'} × ${days} Tage × SGD ${daily}/Tag</small>`;
 }
 
 // ────────────────────────────────────────────────────────────────────────────────
@@ -1942,7 +1942,7 @@ async function checkWeather() {
   msgEl.style.display = 'none';
 
   if (!city) {
-    showWeatherMsg('Please enter a city name.');
+    showWeatherMsg('Bitte geben Sie einen Stadtnamen ein.');
     return;
   }
 
@@ -1962,11 +1962,11 @@ async function checkWeather() {
     );
   } catch (err) {
     if (err.message === 'notfound') {
-      showWeatherMsg(`Couldn't find "${city}". Check the spelling and try again.`);
+      showWeatherMsg(`„${city}" konnte nicht gefunden werden. Bitte überprüfen Sie die Schreibweise und versuchen Sie es erneut.`);
     } else if (err.message === 'auth') {
-      showWeatherMsg('Live weather is temporarily unavailable. Please try again later.');
+      showWeatherMsg('Das Live-Wetter ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.');
     } else {
-      showWeatherMsg('Something went wrong fetching the weather. Please try again.');
+      showWeatherMsg('Beim Abrufen des Wetters ist etwas schiefgelaufen. Bitte versuchen Sie es erneut.');
     }
     console.error('Weather lookup failed:', err);
   }
@@ -1976,7 +1976,7 @@ function showWeather(city, temp, desc, humidity, wind) {
   document.getElementById('wCity').textContent = city;
   document.getElementById('wTemp').textContent = temp + '°C';
   document.getElementById('wDesc').textContent = desc;
-  document.getElementById('wHumidity').textContent = `Humidity ${humidity}%`;
+  document.getElementById('wHumidity').textContent = `Luftfeuchtigkeit ${humidity}%`;
   document.getElementById('wWind').textContent = `Wind ${wind} m/s`;
   document.getElementById('weatherResult').style.display = 'block';
   document.getElementById('weatherMsg').style.display = 'none';
@@ -1999,7 +1999,7 @@ async function submitEnquiry() {
   document.getElementById('enquirySuccess').style.display = 'none';
   errorEl.style.display = 'none';
   if (!name || !email) {
-    errorEl.textContent = '⚠ Please fill in your name and email.';
+    errorEl.textContent = '⚠ Bitte geben Sie Ihren Namen und Ihre E-Mail-Adresse ein.';
     errorEl.style.display = 'block';
     return;
   }
@@ -2017,7 +2017,7 @@ async function submitEnquiry() {
   const btn = document.getElementById('enquiryBtn');
   const successEl = document.getElementById('enquirySuccess');
   btn.disabled = true;
-  btn.textContent = 'Sending…';
+  btn.textContent = 'Wird gesendet…';
 
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
@@ -2040,11 +2040,11 @@ async function submitEnquiry() {
     document.getElementById('eDest').selectedIndex = 0;
   } catch (err) {
     console.error('Enquiry submission failed:', err);
-    errorEl.textContent = '⚠ Sorry, something went wrong. Please try again or email us directly.';
+    errorEl.textContent = '⚠ Entschuldigung, etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.';
     errorEl.style.display = 'block';
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Send Enquiry';
+    btn.textContent = 'Anfrage senden';
   }
 }
 

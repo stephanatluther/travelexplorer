@@ -13,6 +13,22 @@ A beautiful, interactive travel exploration website featuring real-time weather 
 - **Smooth Animations**: Elegant fade-ins and smooth scrolling for enhanced user experience
 - **Accessibility**: Respects `prefers-reduced-motion` for motion-sensitive users
 - **Modern UI**: Clean, minimalist design with gold accents and refined typography
+- **Multilingual**: Available in 7 languages with per-language pages and SEO `hreflang` tags
+
+## Languages
+
+The site is published as static per-language pages, linked by a language switcher
+and reciprocal `hreflang` tags:
+
+| Language | Path |
+|----------|------|
+| English | `/index.html` |
+| Chinese (Simplified) | `/zh/index.html` |
+| Tamil | `/ta/index.html` |
+| French | `/fr/index.html` |
+| German | `/de/index.html` |
+| Malay | `/ms/index.html` |
+| Vietnamese | `/vi/index.html` |
 
 ## Setup
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Explorer</title>
+  <title>旅行探索者</title>
   <!-- Multilingual alternates — keep this block identical in every language file. -->
   <link rel="alternate" hreflang="en" href="https://stephanatluther.github.io/travelexplorer/index.html" />
   <link rel="alternate" hreflang="zh" href="https://stephanatluther.github.io/travelexplorer/zh/index.html" />
@@ -147,7 +147,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('poster.jpg');
+      background-image: url('../poster.jpg');
       background-size: cover;
       background-position: center;
       z-index: 0;
@@ -1129,47 +1129,47 @@
 <nav>
   <a class="nav-logo" href="#home">Travel<span>Explorer</span></a>
   <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#guides">Guides</a></li>
-    <li><a href="#tools">Tools</a></li>
-    <li><a href="#weather">Weather</a></li>
-    <li><a href="#safety">Safety</a></li>
-    <li><a href="#enquiry" class="nav-cta">Enquiry</a></li>
+    <li><a href="#home">首页</a></li>
+    <li><a href="#guides">攻略</a></li>
+    <li><a href="#tools">工具</a></li>
+    <li><a href="#weather">天气</a></li>
+    <li><a href="#safety">安全</a></li>
+    <li><a href="#enquiry" class="nav-cta">咨询</a></li>
     <li class="lang-switcher">
       <details>
-        <summary aria-label="Choose language">EN</summary>
+        <summary aria-label="选择语言">ZH</summary>
         <ul class="lang-menu">
-          <li><a href="index.html" hreflang="en" aria-current="true">English</a></li>
-          <li><a href="zh/index.html" hreflang="zh">中文</a></li>
-          <li><a href="ta/index.html" hreflang="ta">தமிழ்</a></li>
-          <li><a href="fr/index.html" hreflang="fr">Français</a></li>
-          <li><a href="de/index.html" hreflang="de">Deutsch</a></li>
-          <li><a href="ms/index.html" hreflang="ms">Bahasa Melayu</a></li>
-          <li><a href="vi/index.html" hreflang="vi">Tiếng Việt</a></li>
+          <li><a href="../index.html" hreflang="en">English</a></li>
+          <li><a href="../zh/index.html" hreflang="zh" aria-current="true">中文</a></li>
+          <li><a href="../ta/index.html" hreflang="ta">தமிழ்</a></li>
+          <li><a href="../fr/index.html" hreflang="fr">Français</a></li>
+          <li><a href="../de/index.html" hreflang="de">Deutsch</a></li>
+          <li><a href="../ms/index.html" hreflang="ms">Bahasa Melayu</a></li>
+          <li><a href="../vi/index.html" hreflang="vi">Tiếng Việt</a></li>
         </ul>
       </details>
     </li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
+  <button class="hamburger" id="hamburger" aria-label="菜单">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMobileMenu()">Home</a>
-  <a href="#guides" onclick="closeMobileMenu()">Guides</a>
-  <a href="#tools" onclick="closeMobileMenu()">Tools</a>
-  <a href="#weather" onclick="closeMobileMenu()">Weather</a>
-  <a href="#safety" onclick="closeMobileMenu()">Safety</a>
-  <a href="#enquiry" onclick="closeMobileMenu()">Enquiry</a>
+  <a href="#home" onclick="closeMobileMenu()">首页</a>
+  <a href="#guides" onclick="closeMobileMenu()">攻略</a>
+  <a href="#tools" onclick="closeMobileMenu()">工具</a>
+  <a href="#weather" onclick="closeMobileMenu()">天气</a>
+  <a href="#safety" onclick="closeMobileMenu()">安全</a>
+  <a href="#enquiry" onclick="closeMobileMenu()">咨询</a>
   <div class="mobile-lang">
-    <a href="index.html" hreflang="en" aria-current="true">EN</a>
-    <a href="zh/index.html" hreflang="zh">中文</a>
-    <a href="ta/index.html" hreflang="ta">தமிழ்</a>
-    <a href="fr/index.html" hreflang="fr">FR</a>
-    <a href="de/index.html" hreflang="de">DE</a>
-    <a href="ms/index.html" hreflang="ms">MS</a>
-    <a href="vi/index.html" hreflang="vi">VI</a>
+    <a href="../index.html" hreflang="en">EN</a>
+    <a href="../zh/index.html" hreflang="zh" aria-current="true">中文</a>
+    <a href="../ta/index.html" hreflang="ta">தமிழ்</a>
+    <a href="../fr/index.html" hreflang="fr">FR</a>
+    <a href="../de/index.html" hreflang="de">DE</a>
+    <a href="../ms/index.html" hreflang="ms">MS</a>
+    <a href="../vi/index.html" hreflang="vi">VI</a>
   </div>
 </div>
 
@@ -1177,8 +1177,8 @@
 <section id="home" style="padding:0;">
   <div class="hero-bg"></div>
   <video class="hero-video" autoplay muted loop playsinline preload="auto"
-         poster="poster.jpg">
-    <source src="hero.mp4" type="video/mp4">
+         poster="../poster.jpg">
+    <source src="../hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <script>
@@ -1193,22 +1193,22 @@
     })();
   </script>
   <div class="hero-content">
-    <p class="hero-label">Asia &amp; Pacific Guides</p>
-    <h1 class="hero-headline">We <em>went</em>,<br>so you know<br>where to go.</h1>
-    <p class="hero-desc">Curated travel guides with real prices, realistic itineraries, airport tips, safety notes, weather insights, and local recommendations.</p>
+    <p class="hero-label">亚洲与太平洋攻略</p>
+    <h1 class="hero-headline">我们<em>亲身走过</em>，<br>所以你知道<br>该去哪里。</h1>
+    <p class="hero-desc">精心策划的旅行攻略，包含真实价格、切合实际的行程、机场贴士、安全提示、天气洞察以及本地推荐。</p>
     <div class="hero-buttons">
-      <a href="#guides" class="btn btn-primary">Read Latest Guide</a>
-      <a href="#enquiry" class="btn btn-outline">Send Enquiry</a>
+      <a href="#guides" class="btn btn-primary">阅读最新攻略</a>
+      <a href="#enquiry" class="btn btn-outline">发送咨询</a>
     </div>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div> Scroll to explore</div>
+  <div class="hero-scroll"><div class="scroll-line"></div> 向下滚动探索</div>
 </section>
 
 <!-- GUIDES -->
 <section id="guides">
-  <div class="section-label">Destination Guides</div>
-  <h2 class="section-title">Where do you want to go?</h2>
-  <p class="section-desc">Hand-picked destinations with everything you need — budgets, itineraries, and honest local tips.</p>
+  <div class="section-label">目的地攻略</div>
+  <h2 class="section-title">你想去哪里？</h2>
+  <p class="section-desc">精挑细选的目的地，提供你所需的一切——预算、行程以及真诚的本地贴士。</p>
   <div class="cards-grid" id="cardsGrid"></div>
 </section>
 
@@ -1222,19 +1222,19 @@
       <h2 class="modal-title" id="modalTitle"></h2>
       <p class="modal-overview" id="modalOverview"></p>
 
-      <h3 class="modal-section-title">3-Day Itinerary</h3>
+      <h3 class="modal-section-title">三日行程</h3>
       <ul id="modalItinerary"></ul>
 
-      <h3 class="modal-section-title">Food Recommendations</h3>
+      <h3 class="modal-section-title">美食推荐</h3>
       <ul id="modalFood"></ul>
 
-      <h3 class="modal-section-title">Transport Tips</h3>
+      <h3 class="modal-section-title">交通贴士</h3>
       <ul id="modalTransport"></ul>
 
-      <h3 class="modal-section-title">Estimated Cost Breakdown</h3>
+      <h3 class="modal-section-title">预估费用明细</h3>
       <div class="cost-grid" id="modalCosts"></div>
 
-      <h3 class="modal-section-title">Best Photo Spots</h3>
+      <h3 class="modal-section-title">最佳拍照地点</h3>
       <ul id="modalPhotos"></ul>
     </div>
   </div>
@@ -1242,63 +1242,63 @@
 
 <!-- TOOLS -->
 <section id="tools">
-  <div class="section-label">Travel Tools</div>
-  <h2 class="section-title">Plan smarter.</h2>
-  <p class="section-desc">Useful tools to help you budget, pack, and organise your next trip.</p>
+  <div class="section-label">旅行工具</div>
+  <h2 class="section-title">更聪明地规划。</h2>
+  <p class="section-desc">实用工具助你为下一趟旅程做预算、打包行李并合理安排。</p>
 
   <div class="tools-grid">
 
     <!-- Budget Calculator -->
     <div class="tool-card">
-      <h3 class="tool-title">Trip Budget Calculator</h3>
-      <label>Destination</label>
+      <h3 class="tool-title">行程预算计算器</h3>
+      <label>目的地</label>
       <select id="budgetDest">
-        <option value="">Select destination…</option>
-        <option value="seoul">Seoul</option>
-        <option value="singapore">Singapore</option>
-        <option value="bali">Bali</option>
-        <option value="tokyo">Tokyo</option>
-        <option value="bangkok">Bangkok</option>
-        <option value="hongkong">Hong Kong</option>
-        <option value="kl">Kuala Lumpur</option>
-        <option value="maldives">Maldives</option>
-        <option value="phuket">Phuket</option>
-        <option value="sydney">Sydney</option>
-        <option value="taipei">Taipei</option>
-        <option value="hanoi">Hanoi</option>
+        <option value="">选择目的地…</option>
+        <option value="seoul">首尔</option>
+        <option value="singapore">新加坡</option>
+        <option value="bali">巴厘岛</option>
+        <option value="tokyo">东京</option>
+        <option value="bangkok">曼谷</option>
+        <option value="hongkong">香港</option>
+        <option value="kl">吉隆坡</option>
+        <option value="maldives">马尔代夫</option>
+        <option value="phuket">普吉岛</option>
+        <option value="sydney">悉尼</option>
+        <option value="taipei">台北</option>
+        <option value="hanoi">河内</option>
       </select>
-      <label>Number of Travellers</label>
+      <label>旅行人数</label>
       <input type="number" id="travellers" min="1" value="2" />
-      <label>Number of Days</label>
+      <label>旅行天数</label>
       <input type="number" id="days" min="1" value="5" />
-      <label>Daily Budget per Person (SGD)</label>
+      <label>每人每日预算（新元）</label>
       <input type="number" id="dailyBudget" min="0" value="150" />
-      <button class="btn-dark" onclick="calcBudget()">Calculate Total</button>
+      <button class="btn-dark" onclick="calcBudget()">计算总额</button>
       <div class="tool-result" id="budgetResult"></div>
     </div>
 
     <!-- Packing Checklist -->
     <div class="tool-card">
-      <h3 class="tool-title">Packing Checklist</h3>
+      <h3 class="tool-title">行李清单</h3>
       <div id="checklistContainer"></div>
     </div>
 
     <!-- Itinerary Planner -->
     <div class="tool-card">
-      <h3 class="tool-title">Itinerary Planner</h3>
-      <label>Day</label>
+      <h3 class="tool-title">行程规划器</h3>
+      <label>第几天</label>
       <select id="itinDay">
-        <option>Day 1</option><option>Day 2</option><option>Day 3</option>
-        <option>Day 4</option><option>Day 5</option><option>Day 6</option>
-        <option>Day 7</option>
+        <option>第 1 天</option><option>第 2 天</option><option>第 3 天</option>
+        <option>第 4 天</option><option>第 5 天</option><option>第 6 天</option>
+        <option>第 7 天</option>
       </select>
-      <label>Activity</label>
-      <input type="text" id="itinActivity" placeholder="e.g. Visit Shibuya Crossing" />
-      <label>Time</label>
-      <input type="text" id="itinTime" placeholder="e.g. 10:00 AM" />
-      <label>Notes</label>
-      <input type="text" id="itinNotes" placeholder="Optional notes…" />
-      <button class="btn-dark" onclick="addItinItem()">Add to Itinerary</button>
+      <label>活动</label>
+      <input type="text" id="itinActivity" placeholder="例如 游览涩谷十字路口" />
+      <label>时间</label>
+      <input type="text" id="itinTime" placeholder="例如 上午 10:00" />
+      <label>备注</label>
+      <input type="text" id="itinNotes" placeholder="可选备注…" />
+      <button class="btn-dark" onclick="addItinItem()">添加到行程</button>
       <div class="itinerary-list" id="itineraryList"></div>
     </div>
 
@@ -1307,15 +1307,15 @@
 
 <!-- WEATHER -->
 <section id="weather">
-  <div class="section-label">Live Weather</div>
-  <h2 class="section-title">Check the forecast.</h2>
-  <p class="section-desc">See what the weather is like before you pack your bags.</p>
+  <div class="section-label">实时天气</div>
+  <h2 class="section-title">查看天气预报。</h2>
+  <p class="section-desc">在收拾行李之前，先看看当地的天气情况。</p>
 
   <div class="weather-layout">
     <div class="weather-card">
-      <label>City Name</label>
-      <input type="text" id="weatherCity" placeholder="e.g. Tokyo, Bangkok, Bali…" />
-      <button class="btn-dark" onclick="checkWeather()">Check Weather</button>
+      <label>城市名称</label>
+      <input type="text" id="weatherCity" placeholder="例如 东京、曼谷、巴厘岛…" />
+      <button class="btn-dark" onclick="checkWeather()">查询天气</button>
       <div class="weather-result" id="weatherResult">
         <div class="weather-city-name" id="wCity"></div>
         <div class="weather-temp" id="wTemp"></div>
@@ -1329,20 +1329,20 @@
     </div>
 
     <div class="weather-api-note">
-      <strong>Live weather, worldwide.</strong><br><br>
-      Type any city — Tokyo, Bangkok, Bali, or anywhere else — and we'll show the
-      current temperature, humidity, and wind speed.<br><br>
-      Weather data is provided by <strong>OpenWeather</strong> and updates in real time,
-      so you can see exactly what to pack before you go.
+      <strong>全球实时天气。</strong><br><br>
+      输入任意城市——东京、曼谷、巴厘岛或其他任何地方——我们将为你显示
+      当前的气温、湿度和风速。<br><br>
+      天气数据由 <strong>OpenWeather</strong> 提供，并实时更新，
+      让你出行前清楚知道该带什么。
     </div>
   </div>
 </section>
 
 <!-- SAFETY -->
 <section id="safety">
-  <div class="section-label">Travel Safety</div>
-  <h2 class="section-title">Know before you go.</h2>
-  <p class="section-desc">General safety notes for popular destinations. Always check the latest advisories before travel.</p>
+  <div class="section-label">旅行安全</div>
+  <h2 class="section-title">出发前先了解。</h2>
+  <p class="section-desc">热门目的地的一般安全提示。出行前请务必查看最新的旅行警示。</p>
   <div class="safety-grid" id="safetyGrid"></div>
 </section>
 
@@ -1350,29 +1350,29 @@
 <section id="enquiry">
   <div class="enquiry-layout">
     <div class="enquiry-info">
-      <div class="section-label">Get in Touch</div>
-      <h2 class="section-title">Plan your next adventure.</h2>
-      <p class="section-desc">Tell us where you want to go. We'll help you get there.</p>
+      <div class="section-label">联系我们</div>
+      <h2 class="section-title">规划你的下一场冒险。</h2>
+      <p class="section-desc">告诉我们你想去哪里，我们会帮你到达那里。</p>
       <div class="enquiry-detail">
         <div class="enquiry-detail-item">
           <div class="detail-icon">✉</div>
           <div class="detail-text">
-            <strong>Email Us</strong>
+            <strong>电邮我们</strong>
             <span>hello@travelexplorer.com</span>
           </div>
         </div>
         <div class="enquiry-detail-item">
           <div class="detail-icon">📞</div>
           <div class="detail-text">
-            <strong>Call Us</strong>
+            <strong>致电我们</strong>
             <span>+65 9000 0000</span>
           </div>
         </div>
         <div class="enquiry-detail-item">
           <div class="detail-icon">🕐</div>
           <div class="detail-text">
-            <strong>Response Time</strong>
-            <span>Within 24 hours</span>
+            <strong>回复时间</strong>
+            <span>24 小时内</span>
           </div>
         </div>
       </div>
@@ -1381,49 +1381,49 @@
     <div class="enquiry-form">
       <div class="form-row">
         <div>
-          <label>Full Name *</label>
-          <input type="text" id="eName" placeholder="Jane Smith" />
+          <label>姓名 *</label>
+          <input type="text" id="eName" placeholder="张小美" />
         </div>
         <div>
-          <label>Email *</label>
+          <label>电子邮箱 *</label>
           <input type="email" id="eEmail" placeholder="jane@email.com" />
         </div>
       </div>
       <div class="form-row">
         <div>
-          <label>Phone</label>
+          <label>电话</label>
           <input type="tel" id="ePhone" placeholder="+65 9000 0000" />
         </div>
         <div>
-          <label>Destination of Interest</label>
+          <label>感兴趣的目的地</label>
           <select id="eDest">
-            <option value="">Select…</option>
-            <option>Seoul</option><option>Singapore</option><option>Bali</option>
-            <option>Tokyo</option><option>Bangkok</option><option>Hong Kong</option>
-            <option>Kuala Lumpur</option><option>Maldives</option><option>Phuket</option>
-            <option>Sydney</option><option>Taipei</option><option>Hanoi</option>
-            <option>Other</option>
+            <option value="">请选择…</option>
+            <option>首尔</option><option>新加坡</option><option>巴厘岛</option>
+            <option>东京</option><option>曼谷</option><option>香港</option>
+            <option>吉隆坡</option><option>马尔代夫</option><option>普吉岛</option>
+            <option>悉尼</option><option>台北</option><option>河内</option>
+            <option>其他</option>
           </select>
         </div>
       </div>
       <div class="form-row">
         <div>
-          <label>Travel Date</label>
+          <label>出行日期</label>
           <input type="date" id="eDate" />
         </div>
         <div>
-          <label>Number of Travellers</label>
+          <label>旅行人数</label>
           <input type="number" id="eTravellers" min="1" placeholder="2" />
         </div>
       </div>
-      <label>Message</label>
-      <textarea id="eMessage" placeholder="Tell us about your dream trip…"></textarea>
-      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">Send Enquiry</button>
+      <label>留言</label>
+      <textarea id="eMessage" placeholder="告诉我们你梦想中的旅程…"></textarea>
+      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">发送咨询</button>
       <div class="success-msg" id="enquirySuccess">
-        ✓ Your enquiry has been received! We'll be in touch within 24 hours.
+        ✓ 我们已收到你的咨询！我们会在 24 小时内与你联系。
       </div>
       <div class="success-msg" id="enquiryError" style="background:#fdecea;color:#b3261e;">
-        ⚠ Sorry, something went wrong. Please try again or email us directly.
+        ⚠ 抱歉，出了点问题。请重试或直接发邮件给我们。
       </div>
     </div>
   </div>
@@ -1432,8 +1432,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Travel<span>Explorer</span></div>
-  <p style="margin-top:6px;">We went, so you know where to go.</p>
-  <nav class="footer-social" aria-label="Social media">
+  <p style="margin-top:6px;">我们亲身走过，所以你知道该去哪里。</p>
+  <nav class="footer-social" aria-label="社交媒体">
     <ul>
       <li>
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1467,7 +1467,7 @@
       </li>
     </ul>
   </nav>
-  <p style="margin-top:16px; font-size:12px;">© 2025 TravelExplorer. All rights reserved.</p>
+  <p style="margin-top:16px; font-size:12px;">© 2025 TravelExplorer. 版权所有。</p>
 </footer>
 
 <script>
@@ -1478,293 +1478,293 @@
 const cities = [
   {
     id: "tokyo",
-    name: "Tokyo",
-    country: "Japan",
-    desc: "A dazzling blend of ancient temples and neon-lit skyscrapers. Tokyo rewards the curious traveller at every turn.",
+    name: "东京",
+    country: "日本",
+    desc: "古老寺庙与霓虹摩天大楼的炫目交融。东京在每个转角都犒赏着好奇的旅人。",
     img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
-    flight: "7h from Singapore",
-    budget: "SGD 200–350/day",
-    season: "Mar–May, Oct–Nov",
-    overview: "Tokyo is one of the world's great cities — electric, vast, and endlessly surprising. From the serenity of Meiji Shrine to the organised chaos of Shibuya, it is a city that rewards the curious. Food is exceptional at every price point, public transport is world-class, and the city is immaculately safe.",
+    flight: "距新加坡 7 小时",
+    budget: "每天 200–350 新元",
+    season: "3月–5月、10月–11月",
+    overview: "东京是世界上最伟大的城市之一——充满活力、广袤无垠且永远令人惊喜。从明治神宫的宁静到涩谷井然有序的喧嚣，这座城市犒赏着每一位好奇的旅人。各种价位的美食都极为出色，公共交通堪称世界级，城市也极为安全整洁。",
     itinerary: [
-      "Day 1 AM: Arrive, check in Shinjuku, explore Kabukicho and Golden Gai",
-      "Day 1 PM: Shibuya Crossing at dusk, dinner at an izakaya",
-      "Day 2 AM: Tsukiji Outer Market for breakfast, Hamarikyu Gardens",
-      "Day 2 PM: Asakusa and Senso-ji Temple, Nakamise shopping street",
-      "Day 3 AM: Harajuku and Meiji Shrine, Takeshita Street",
-      "Day 3 PM: Roppongi Hills for panoramic sunset views"
+      "第 1 天上午：抵达，入住新宿，探索歌舞伎町与黄金街",
+      "第 1 天下午：黄昏时分的涩谷十字路口，在居酒屋享用晚餐",
+      "第 2 天上午：在筑地场外市场吃早餐，游览滨离宫庭园",
+      "第 2 天下午：浅草与浅草寺，仲见世购物街",
+      "第 3 天上午：原宿与明治神宫，竹下通",
+      "第 3 天下午：六本木之丘观赏全景日落"
     ],
-    food: ["Ramen at Ichiran (24/7, solo booths)", "Sushi at Tsukiji market stalls", "Tonkatsu at Maisen Aoyama", "Yakitori under Yurakucho tracks"],
-    transport: ["Buy a Suica card at any station (¥500 deposit)", "JR Pass for intercity bullet trains", "Tokyo Metro is the fastest for inner-city travel", "Avoid rush hour: 7–9 AM and 6–8 PM"],
-    costs: [{ label: "Accommodation", val: "SGD 80–200" }, { label: "Food & Drink", val: "SGD 50–100" }, { label: "Transport", val: "SGD 15–30" }, { label: "Activities", val: "SGD 20–50" }],
-    photos: ["Shibuya Crossing from Mag's Park rooftop", "Senso-ji at dawn before crowds arrive", "Shinjuku Gyoen during cherry blossom season", "Tokyo Tower from Zojo-ji Temple foreground"]
+    food: ["一兰拉面（24 小时营业，独立座位）", "筑地市场摊位的寿司", "青山迈泉的炸猪排", "有乐町铁道下的烤鸡串"],
+    transport: ["在任意车站购买西瓜卡（500 日元押金）", "城际新干线可用 JR Pass", "东京地铁是市内出行最快的方式", "避开高峰时段：上午 7–9 点与晚上 6–8 点"],
+    costs: [{ label: "住宿", val: "SGD 80–200" }, { label: "餐饮", val: "SGD 50–100" }, { label: "交通", val: "SGD 15–30" }, { label: "活动", val: "SGD 20–50" }],
+    photos: ["从 Mag's Park 天台俯瞰涩谷十字路口", "人群到来之前破晓时分的浅草寺", "樱花季的新宿御苑", "以增上寺为前景的东京塔"]
   },
   {
     id: "bali",
-    name: "Bali",
-    country: "Indonesia",
-    desc: "Lush rice terraces, sacred temples, vibrant nightlife, and world-class surf. Bali is endlessly captivating.",
+    name: "巴厘岛",
+    country: "印度尼西亚",
+    desc: "葱郁的梯田、神圣的庙宇、热闹的夜生活以及世界级的冲浪。巴厘岛令人无尽着迷。",
     img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80",
-    flight: "2.5h from Singapore",
-    budget: "SGD 80–180/day",
-    season: "Apr–Oct (Dry Season)",
-    overview: "Bali offers something for every type of traveller — from the spiritual serenity of Ubud's rice terraces to the surf breaks of Canggu and the cliffside bars of Uluwatu. It remains one of the world's best value destinations with exceptional food, warm hospitality, and stunning scenery.",
+    flight: "距新加坡 2.5 小时",
+    budget: "每天 80–180 新元",
+    season: "4月–10月（旱季）",
+    overview: "巴厘岛为每一类旅人都提供了去处——从乌布梯田的灵性宁静，到长谷的冲浪浪点，再到乌鲁瓦图的悬崖酒吧。它依然是世界上性价比最高的目的地之一，拥有出色的美食、热情的款待和迷人的风景。",
     itinerary: [
-      "Day 1: Arrive Denpasar, transfer to Seminyak, beach sunset at Ku De Ta",
-      "Day 2 AM: Drive to Ubud, visit Tegallalang rice terraces at sunrise",
-      "Day 2 PM: Ubud Monkey Forest, local warung lunch, Ubud Palace at sunset",
-      "Day 3 AM: Tanah Lot Temple at sunrise, drive south to Uluwatu",
-      "Day 3 PM: Uluwatu cliffside temple, Kecak fire dance at sunset"
+      "第 1 天：抵达登巴萨，转往水明漾，在 Ku De Ta 观赏海滩日落",
+      "第 2 天上午：驱车前往乌布，日出时游览德格拉朗梯田",
+      "第 2 天下午：乌布圣猴森林，在当地小餐馆用午餐，日落时分的乌布王宫",
+      "第 3 天上午：日出时分的海神庙，向南驱车前往乌鲁瓦图",
+      "第 3 天下午：乌鲁瓦图悬崖庙宇，日落时观赏凯卡克火舞"
     ],
-    food: ["Nasi Goreng at any local warung", "Babi Guling (suckling pig) at Ibu Oka, Ubud", "Fresh seafood at Jimbaran Bay", "Smoothie bowls at Canggu cafes"],
-    transport: ["Hire a private driver for SGD 50–70/day (most efficient)", "Grab app available in major areas", "Scooter rental SGD 8–12/day (international licence required)", "Bluebird taxis are metered and reliable"],
-    costs: [{ label: "Accommodation", val: "SGD 40–150" }, { label: "Food & Drink", val: "SGD 20–60" }, { label: "Transport", val: "SGD 10–50" }, { label: "Activities", val: "SGD 15–40" }],
-    photos: ["Tegallalang Rice Terraces at 7 AM", "Tanah Lot Temple at sunset", "Uluwatu cliff views from Single Fin bar", "Sekumpul Waterfall in north Bali"]
+    food: ["任意当地小餐馆的炒饭", "乌布 Ibu Oka 的烤乳猪", "金巴兰湾的新鲜海鲜", "长谷咖啡馆的果昔碗"],
+    transport: ["雇佣私人司机，每天 50–70 新元（最高效）", "主要区域可使用 Grab 应用", "摩托车租赁每天 8–12 新元（需国际驾照）", "蓝鸟出租车按表计价且可靠"],
+    costs: [{ label: "住宿", val: "SGD 40–150" }, { label: "餐饮", val: "SGD 20–60" }, { label: "交通", val: "SGD 10–50" }, { label: "活动", val: "SGD 15–40" }],
+    photos: ["上午 7 点的德格拉朗梯田", "日落时分的海神庙", "从 Single Fin 酒吧眺望乌鲁瓦图悬崖", "巴厘岛北部的塞库普尔瀑布"]
   },
   {
     id: "seoul",
-    name: "Seoul",
-    country: "South Korea",
-    desc: "K-culture epicentre with incredible food, cutting-edge fashion, ancient palaces and obsessive-grade skincare.",
+    name: "首尔",
+    country: "韩国",
+    desc: "韩流文化的中心，拥有令人惊艳的美食、前卫的时尚、古老的宫殿以及极致讲究的护肤文化。",
     img: "https://images.unsplash.com/photo-1601621915196-2621bfb0cd6e?w=600&q=80",
-    flight: "6.5h from Singapore",
-    budget: "SGD 130–250/day",
-    season: "Apr–Jun, Sep–Nov",
-    overview: "Seoul is one of Asia's most dynamic capitals — a city that fuses 600-year-old palaces with the planet's fastest internet and most obsessive food culture. Myeongdong for street food and skincare, Hongdae for nightlife, Bukchon Hanok Village for history. The subway is a masterpiece.",
+    flight: "距新加坡 6.5 小时",
+    budget: "每天 130–250 新元",
+    season: "4月–6月、9月–11月",
+    overview: "首尔是亚洲最具活力的首都之一——一座将拥有 600 年历史的宫殿，与全球最快的网络和最讲究的美食文化融为一体的城市。明洞有街头美食与护肤品，弘大有夜生活，北村韩屋村则承载着历史。地铁系统堪称杰作。",
     itinerary: [
-      "Day 1 AM: Gyeongbokgung Palace at opening (9 AM), Bukchon Hanok Village",
-      "Day 1 PM: Insadong art street, Cheonggyecheon stream walk",
-      "Day 2 AM: Myeongdong street food breakfast, Namsan Tower cable car",
-      "Day 2 PM: Itaewon neighbourhood, Leeum Samsung Museum",
-      "Day 3 AM: Hongdae creative market, Ewha Womans University murals",
-      "Day 3 PM: Han River Banpo Bridge Rainbow Fountain at night"
+      "第 1 天上午：开门时分（上午 9 点）的景福宫，北村韩屋村",
+      "第 1 天下午：仁寺洞艺术街，清溪川漫步",
+      "第 2 天上午：明洞街头美食早餐，南山塔缆车",
+      "第 2 天下午：梨泰院街区，三星美术馆 Leeum",
+      "第 3 天上午：弘大创意市集，梨花女子大学壁画",
+      "第 3 天下午：夜晚的汉江盘浦大桥彩虹喷泉"
     ],
-    food: ["Korean BBQ at Mapo Galmaegi (beef ribs)", "Bibimbap at Gogung, Insadong", "Tteokbokki (spicy rice cakes) at Gwangjang Market", "Korean fried chicken at Kyochon"],
-    transport: ["T-Money card for metro and bus (buy at any convenience store)", "Metro is extensive, clean, and cheap (SGD 1.20 avg)", "KTX bullet train for day trips to Busan", "Kakao T app for taxis"],
-    costs: [{ label: "Accommodation", val: "SGD 60–180" }, { label: "Food & Drink", val: "SGD 30–80" }, { label: "Transport", val: "SGD 10–20" }, { label: "Activities", val: "SGD 15–40" }],
-    photos: ["Gyeongbokgung Palace with Bukhansan behind", "Namsan Tower at night", "Bukchon Hanok Village alleyways at dawn", "Banpo Bridge Rainbow Fountain after dark"]
+    food: ["麻浦葛尾韩式烤肉（牛肋排）", "仁寺洞古宫的拌饭", "广藏市场的辣炒年糕", "Kyochon 的韩式炸鸡"],
+    transport: ["地铁与公交可用 T-Money 卡（任意便利店有售）", "地铁线路广泛、整洁又便宜（平均 1.20 新元）", "可乘 KTX 高铁一日游釜山", "打车可用 Kakao T 应用"],
+    costs: [{ label: "住宿", val: "SGD 60–180" }, { label: "餐饮", val: "SGD 30–80" }, { label: "交通", val: "SGD 10–20" }, { label: "活动", val: "SGD 15–40" }],
+    photos: ["以北汉山为背景的景福宫", "夜晚的南山塔", "破晓时分的北村韩屋村小巷", "夜幕降临后的盘浦大桥彩虹喷泉"]
   },
   {
     id: "singapore",
-    name: "Singapore",
-    country: "Singapore",
-    desc: "Asia's most efficient city — impeccable food, stunning architecture, and a gateway to the rest of the region.",
+    name: "新加坡",
+    country: "新加坡",
+    desc: "亚洲最高效的城市——无可挑剔的美食、惊艳的建筑，也是通往本区域其他地方的门户。",
     img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80",
-    flight: "Hub city",
-    budget: "SGD 150–350/day",
-    season: "Year-round (Feb–Apr driest)",
-    overview: "Singapore punches far above its size. In under 750 square kilometres you will find world-class food from hawker centres to Michelin-starred restaurants, incredible architecture from colonial shophouses to Jewel Changi, and some of Asia's best cocktail bars. Safe, clean, and endlessly accessible.",
+    flight: "枢纽城市",
+    budget: "每天 150–350 新元",
+    season: "全年皆宜（2月–4月最干燥）",
+    overview: "新加坡的实力远超其面积。在不到 750 平方公里的土地上，你能找到从小贩中心到米其林星级餐厅的世界级美食，从殖民时期店屋到星耀樟宜的精彩建筑，以及亚洲最棒的一些鸡尾酒吧。安全、整洁，且处处便利可达。",
     itinerary: [
-      "Day 1 AM: Jewel Changi Airport Rain Vortex, Gardens by the Bay",
-      "Day 1 PM: Marina Bay Sands SkyPark, Supertree evening light show",
-      "Day 2 AM: Chinatown Heritage Centre, Maxwell Food Centre for Hainanese chicken rice",
-      "Day 2 PM: Little India, Arab Street, Haji Lane",
-      "Day 3 AM: Sentosa Island, Universal Studios or Palawan Beach",
-      "Day 3 PM: Clarke Quay riverside bars, Lau Pa Sat for satay"
+      "第 1 天上午：星耀樟宜机场雨漩涡，滨海湾花园",
+      "第 1 天下午：滨海湾金沙空中花园，傍晚的擎天树灯光秀",
+      "第 2 天上午：牛车水原貌馆，麦士威熟食中心吃海南鸡饭",
+      "第 2 天下午：小印度、阿拉伯街、哈芝巷",
+      "第 3 天上午：圣淘沙岛，环球影城或巴拉湾海滩",
+      "第 3 天下午：克拉码头河畔酒吧，老巴刹吃沙嗲"
     ],
-    food: ["Hainanese Chicken Rice at Tian Tian, Maxwell", "Chilli Crab at No Signboard Seafood", "Kaya toast set at Ya Kun Kaya Toast", "Laksa at 328 Katong Laksa"],
-    transport: ["EZ-Link card for MRT and buses", "Grab app is seamless and affordable", "MRT covers most tourist areas efficiently", "Airport MRT to city takes 30 mins"],
-    costs: [{ label: "Accommodation", val: "SGD 120–400" }, { label: "Food & Drink", val: "SGD 30–100" }, { label: "Transport", val: "SGD 5–20" }, { label: "Activities", val: "SGD 20–80" }],
-    photos: ["Marina Bay Sands reflection at blue hour", "Supertrees at Gardens by the Bay", "Jewel Changi Rain Vortex", "Merlion with CBD skyline at night"]
+    food: ["麦士威天天海南鸡饭", "无招牌海鲜的辣椒螃蟹", "亚坤的咖椰吐司套餐", "328加东叻沙"],
+    transport: ["地铁与公交可用 EZ-Link 卡", "Grab 应用顺畅又实惠", "地铁可高效覆盖大部分旅游区域", "从机场乘地铁到市区约需 30 分钟"],
+    costs: [{ label: "住宿", val: "SGD 120–400" }, { label: "餐饮", val: "SGD 30–100" }, { label: "交通", val: "SGD 5–20" }, { label: "活动", val: "SGD 20–80" }],
+    photos: ["蓝调时刻滨海湾金沙的倒影", "滨海湾花园的擎天树", "星耀樟宜雨漩涡", "夜晚以中央商务区天际线为背景的鱼尾狮"]
   },
   {
     id: "bangkok",
-    name: "Bangkok",
-    country: "Thailand",
-    desc: "Chaotic, intoxicating, and endlessly rewarding. Bangkok is temples, street food, rooftop bars, and tuk-tuks.",
+    name: "曼谷",
+    country: "泰国",
+    desc: "混乱、令人陶醉，又收获满满。曼谷有寺庙、街头美食、天台酒吧和嘟嘟车。",
     img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80",
-    flight: "2.5h from Singapore",
-    budget: "SGD 80–180/day",
-    season: "Nov–Feb (Cool Season)",
-    overview: "Bangkok is Southeast Asia's most electrifying city. Grand Palace and Wat Pho in the morning, street food on Yaowarat Road at night, rooftop cocktails above the skyline, and floating markets on the weekend. It's hot, loud, and absolutely wonderful.",
+    flight: "距新加坡 2.5 小时",
+    budget: "每天 80–180 新元",
+    season: "11月–2月（凉季）",
+    overview: "曼谷是东南亚最令人激动的城市。清晨游大皇宫和卧佛寺，夜晚在耀华力路品尝街头美食，在天际线之上喝天台鸡尾酒，周末逛水上市场。这里炎热、喧闹，却绝对精彩。",
     itinerary: [
-      "Day 1 AM: Grand Palace and Wat Pho (arrive 8 AM before crowds)",
-      "Day 1 PM: Wat Arun by longtail boat, Tha Tien Market lunch",
-      "Day 2 AM: Chatuchak Weekend Market (Sat/Sun) or Or Tor Kor Market",
-      "Day 2 PM: Platinum Fashion Mall, Siam Paragon, Sky Bar at sunset",
-      "Day 3: Damnoen Saduak Floating Market day trip",
-      "Day 3 PM: Yaowarat (Chinatown) street food dinner"
+      "第 1 天上午：大皇宫与卧佛寺（上午 8 点抵达避开人群）",
+      "第 1 天下午：乘长尾船游郑王庙，塔田市场用午餐",
+      "第 2 天上午：札都甲周末市场（周六/周日）或乍都节市场",
+      "第 2 天下午：白金时尚商城、暹罗百丽宫，日落时分的 Sky Bar",
+      "第 3 天：丹嫩沙多水上市场一日游",
+      "第 3 天下午：耀华力（唐人街）街头美食晚餐"
     ],
-    food: ["Pad Thai at Thip Samai on Mahachai Road", "Tom Yum Goong at Kuang Seafood", "Mango sticky rice at Mamuang (Mae Varee)", "Street dim sum in Yaowarat Chinatown"],
-    transport: ["BTS Skytrain and MRT cover the main tourist belt", "Grab is the safest and cheapest taxi option", "Longtail boats on Chao Phraya River", "Avoid tuk-tuks unless you negotiate first"],
-    costs: [{ label: "Accommodation", val: "SGD 40–200" }, { label: "Food & Drink", val: "SGD 15–60" }, { label: "Transport", val: "SGD 8–25" }, { label: "Activities", val: "SGD 10–40" }],
-    photos: ["Wat Arun at sunrise from the river", "Sky Bar at Lebua at twilight", "Grand Palace golden spires", "Yaowarat Road neon at midnight"]
+    food: ["玛哈猜路 Thip Samai 的泰式炒河粉", "Kuang Seafood 的冬阴功汤", "Mamuang（Mae Varee）的芒果糯米饭", "耀华力唐人街的街头点心"],
+    transport: ["BTS 空铁与 MRT 覆盖主要旅游地带", "Grab 是最安全也最便宜的打车选择", "湄南河上的长尾船", "除非先议好价，否则避免乘坐嘟嘟车"],
+    costs: [{ label: "住宿", val: "SGD 40–200" }, { label: "餐饮", val: "SGD 15–60" }, { label: "交通", val: "SGD 8–25" }, { label: "活动", val: "SGD 10–40" }],
+    photos: ["从河上观赏日出时分的郑王庙", "暮色中的 Lebua 酒店 Sky Bar", "大皇宫的金色尖塔", "午夜耀华力路的霓虹"]
   },
   {
     id: "hongkong",
-    name: "Hong Kong",
-    country: "China SAR",
-    desc: "Asia's ultimate vertical city. Dim sum at dawn, harbour views at dusk, and some of the world's best hiking.",
+    name: "香港",
+    country: "中国特别行政区",
+    desc: "亚洲终极的垂直城市。清晨吃点心，黄昏赏海港，还有世界上最棒的一些远足路线。",
     img: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=600&q=80",
-    flight: "3.5h from Singapore",
-    budget: "SGD 180–350/day",
-    season: "Oct–Mar",
-    overview: "Hong Kong is one of the world's great urban spectacles. The Victoria Harbour skyline from Tsim Sha Tsui at night is unmissable. Eat dim sum for breakfast, hike Dragon's Back Trail in the afternoon, and take the Peak Tram up for the evening panorama. The MTR is the world's best metro.",
+    flight: "距新加坡 3.5 小时",
+    budget: "每天 180–350 新元",
+    season: "10月–3月",
+    overview: "香港是世界上最壮观的都市奇景之一。夜晚从尖沙咀眺望维多利亚港天际线绝不容错过。早餐吃点心，下午徒步龙脊步道，傍晚乘山顶缆车上山观赏全景。港铁是世界上最棒的地铁。",
     itinerary: [
-      "Day 1: Arrive, check in Kowloon, Tsim Sha Tsui harbour promenade, Symphony of Lights",
-      "Day 2 AM: Tim Ho Wan for dim sum, Central / Sheung Wan exploration",
-      "Day 2 PM: Peak Tram to Victoria Peak at sunset",
-      "Day 3 AM: Dragon's Back Trail hike (Shek O), Big Wave Bay",
-      "Day 3 PM: Temple Street Night Market, Jordan street food"
+      "第 1 天：抵达，入住九龙，尖沙咀海滨长廊，幻彩咏香江",
+      "第 2 天上午：添好运吃点心，中环／上环游览",
+      "第 2 天下午：日落时乘山顶缆车上太平山",
+      "第 3 天上午：龙脊步道徒步（石澳），大浪湾",
+      "第 3 天下午：庙街夜市，佐敦街头美食"
     ],
-    food: ["Dim sum at Tim Ho Wan (Michelin-starred, affordable)", "Roast goose at Yung Kee Restaurant", "Egg waffles (gai daan jai) at any street stall", "Pineapple bun with butter at Kam Wah Cafe"],
-    transport: ["Octopus Card covers MTR, buses, trams, and ferries", "Star Ferry between Kowloon and Hong Kong Island (HKD 2.70)", "Mid-Levels Escalator for the central hillside", "MTR is fast, cheap, and very reliable"],
-    costs: [{ label: "Accommodation", val: "SGD 100–300" }, { label: "Food & Drink", val: "SGD 40–100" }, { label: "Transport", val: "SGD 8–15" }, { label: "Activities", val: "SGD 15–40" }],
-    photos: ["Victoria Harbour at night from Tsim Sha Tsui", "Peak Tram top of Lion Rock at sunset", "Central-Mid-Levels Escalator view", "Dragon's Back Trail view to South China Sea"]
+    food: ["添好运的点心（米其林星级，价格亲民）", "镛记酒家的烧鹅", "任意街头摊位的鸡蛋仔", "金华冰厅的牛油菠萝包"],
+    transport: ["八达通卡可用于港铁、巴士、电车和渡轮", "天星小轮往返九龙与香港岛（2.70 港元）", "中环至半山自动扶梯通往中区山坡", "港铁快捷、便宜且非常可靠"],
+    costs: [{ label: "住宿", val: "SGD 100–300" }, { label: "餐饮", val: "SGD 40–100" }, { label: "交通", val: "SGD 8–15" }, { label: "活动", val: "SGD 15–40" }],
+    photos: ["从尖沙咀眺望夜晚的维多利亚港", "日落时分山顶缆车俯瞰狮子山", "中环至半山自动扶梯景观", "龙脊步道眺望南中国海"]
   },
   {
     id: "kl",
-    name: "Kuala Lumpur",
-    country: "Malaysia",
-    desc: "Petronas Towers, incredible multicultural food, and luxurious hotels at a fraction of Singapore's cost.",
+    name: "吉隆坡",
+    country: "马来西亚",
+    desc: "双子塔、令人惊艳的多元文化美食，以及价格仅为新加坡零头的豪华酒店。",
     img: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80",
-    flight: "45min from Singapore",
-    budget: "SGD 80–200/day",
-    season: "May–Jul, Dec–Feb",
-    overview: "KL is one of Asia's most underrated capitals. The Petronas Towers are even more impressive in person, the food scene is extraordinary (Jalan Alor, Brickfields, Chinatown), and hotel value is exceptional. Day trips to Batu Caves and the Cameron Highlands are easily arranged.",
+    flight: "距新加坡 45 分钟",
+    budget: "每天 80–200 新元",
+    season: "5月–7月、12月–2月",
+    overview: "吉隆坡是亚洲最被低估的首都之一。双子塔亲眼所见更为震撼，美食场景非凡（亚罗街、十五碑、唐人街），酒店性价比也极高。前往黑风洞和金马仑高原的一日游也很容易安排。",
     itinerary: [
-      "Day 1 AM: Batu Caves at sunrise (beat the heat), Little India walk",
-      "Day 1 PM: Petronas Towers observation deck, KLCC park",
-      "Day 2 AM: Central Market, Chinatown Petaling Street",
-      "Day 2 PM: Merdeka Square, KL Tower, Jalan Alor night market",
-      "Day 3: Day trip to Genting Highlands or Putrajaya",
-      "Day 3 PM: Rooftop bar at Heli Lounge Bar (inside a helipad)"
+      "第 1 天上午：日出时游黑风洞（避开炎热），漫步小印度",
+      "第 1 天下午：双子塔观景台，吉隆坡城中城公园",
+      "第 2 天上午：中央艺术坊，唐人街茨厂街",
+      "第 2 天下午：独立广场、吉隆坡塔，亚罗街夜市",
+      "第 3 天：云顶高原或布城一日游",
+      "第 3 天下午：Heli Lounge Bar 天台酒吧（位于一处直升机停机坪内）"
     ],
-    food: ["Char Kuey Teow at Restoran Kassim Mustafa", "Nasi Lemak at Village Park Restaurant", "Bak Kut Teh in Klang (day trip)", "Mamak roti canai at any 24-hour mamak"],
-    transport: ["KL Sentral is the main transit hub", "MRT and LRT cover most areas", "Grab is cheap and ubiquitous", "Airport Express (KLIA Ekspres) takes 28 mins"],
-    costs: [{ label: "Accommodation", val: "SGD 50–180" }, { label: "Food & Drink", val: "SGD 20–60" }, { label: "Transport", val: "SGD 5–20" }, { label: "Activities", val: "SGD 10–30" }],
-    photos: ["Petronas Towers from KLCC park reflection pool", "Batu Caves rainbow steps at sunrise", "Heli Lounge Bar rooftop view", "Jalan Alor street food at night"]
+    food: ["Restoran Kassim Mustafa 的炒粿条", "Village Park Restaurant 的椰浆饭", "巴生的肉骨茶（一日游）", "任意 24 小时嘛嘛档的印度煎饼"],
+    transport: ["吉隆坡中央车站是主要交通枢纽", "MRT 与 LRT 覆盖大部分区域", "Grab 便宜且无处不在", "机场快线（KLIA Ekspres）需 28 分钟"],
+    costs: [{ label: "住宿", val: "SGD 50–180" }, { label: "餐饮", val: "SGD 20–60" }, { label: "交通", val: "SGD 5–20" }, { label: "活动", val: "SGD 10–30" }],
+    photos: ["从城中城公园倒影池眺望双子塔", "日出时分黑风洞的彩虹台阶", "Heli Lounge Bar 天台景观", "夜晚的亚罗街街头美食"]
   },
   {
     id: "maldives",
-    name: "Maldives",
-    country: "Maldives",
-    desc: "Overwater bungalows, glass-clear lagoons, and bioluminescent beaches. The ultimate luxury escape.",
+    name: "马尔代夫",
+    country: "马尔代夫",
+    desc: "水上别墅、清澈见底的潟湖和荧光海滩。终极的奢华度假。",
     img: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80",
-    flight: "4h from Singapore",
-    budget: "SGD 400–1200/day",
-    season: "Nov–Apr (Dry Season)",
-    overview: "The Maldives is unlike anywhere on earth. Barely above sea level, scattered across the Indian Ocean, it offers overwater bungalows, house reefs teeming with manta rays and sharks, and the most vivid blue water imaginable. Budget options exist on local islands; luxury knows no ceiling on resort atolls.",
+    flight: "距新加坡 4 小时",
+    budget: "每天 400–1200 新元",
+    season: "11月–4月（旱季）",
+    overview: "马尔代夫与地球上任何地方都不同。它仅略高于海平面，散布在印度洋上，提供水上别墅、满是蝠鲼和鲨鱼的房礁，以及难以想象的湛蓝海水。当地岛屿上有经济型选择；度假村环礁上的奢华则没有上限。",
     itinerary: [
-      "Day 1: Fly into Malé, speedboat or seaplane to your atoll, settle in",
-      "Day 2: Snorkelling or diving at house reef, sunset fishing trip",
-      "Day 3: Dolphin cruise at dawn, sandbank picnic, night swim in bioluminescence",
+      "第 1 天：飞抵马累，乘快艇或水上飞机前往你的环礁，安顿下来",
+      "第 2 天：在房礁浮潜或潜水，傍晚出海钓鱼",
+      "第 3 天：黎明海豚巡游，在沙洲野餐，夜晚在荧光海中游泳",
     ],
-    food: ["Fresh tuna (mas) in every form — grilled, curried, smoked", "Mas huni (tuna and coconut breakfast) on local islands", "Lobster on the beach at resort restaurants", "Fresh coconut drinks at local cafes (much cheaper than resorts)"],
-    transport: ["Seaplane transfers are spectacular but expensive", "Speedboats are the budget alternative to reach outer atolls", "Malé to local islands: public ferries for SGD 2–5", "Most resorts arrange all island transfers"],
-    costs: [{ label: "Accommodation", val: "SGD 200–800+" }, { label: "Food & Drink", val: "SGD 80–200" }, { label: "Activities", val: "SGD 50–150" }, { label: "Transport", val: "SGD 50–400" }],
-    photos: ["Overwater bungalow at dawn, North Malé Atoll", "Bioluminescent beach at Vaadhoo Island", "Manta ray snorkelling at Hanifaru Bay", "Sandbank aerial from seaplane"]
+    food: ["各种做法的新鲜金枪鱼——烤、咖喱、烟熏", "当地岛屿上的金枪鱼椰丝早餐（Mas huni）", "度假村餐厅海滩上的龙虾", "当地咖啡馆的新鲜椰子饮品（比度假村便宜得多）"],
+    transport: ["水上飞机接驳壮观但昂贵", "快艇是抵达外环礁的经济替代方案", "马累往返当地岛屿：公共渡轮 2–5 新元", "大多数度假村会安排所有岛屿接驳"],
+    costs: [{ label: "住宿", val: "SGD 200–800+" }, { label: "餐饮", val: "SGD 80–200" }, { label: "活动", val: "SGD 50–150" }, { label: "交通", val: "SGD 50–400" }],
+    photos: ["黎明时分北马累环礁的水上别墅", "瓦杜岛的荧光海滩", "哈尼法鲁湾的蝠鲼浮潜", "从水上飞机俯瞰沙洲"]
   },
   {
     id: "phuket",
-    name: "Phuket & Krabi",
-    country: "Thailand",
-    desc: "Limestone karsts, emerald waters, world-class diving, and stunning island-hopping in the Andaman Sea.",
+    name: "普吉岛与甲米",
+    country: "泰国",
+    desc: "石灰岩礁、翡翠般的海水、世界级潜水，以及安达曼海上令人惊叹的跳岛游。",
     img: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80",
-    flight: "2h from Singapore",
-    budget: "SGD 100–250/day",
-    season: "Nov–Apr (Dry Season)",
-    overview: "Phuket and Krabi together form one of the world's most spectacular coastal destinations. The Phi Phi Islands, Railay Beach (only accessible by boat), and the Four Islands tour around Koh Lanta are bucket-list experiences. Krabi is quieter and more dramatic; Phuket has better infrastructure and nightlife.",
+    flight: "距新加坡 2 小时",
+    budget: "每天 100–250 新元",
+    season: "11月–4月（旱季）",
+    overview: "普吉岛与甲米共同构成了世界上最壮观的海岸目的地之一。皮皮岛、莱利海滩（仅可乘船抵达），以及环兰塔岛的四岛游都是必体验的清单项目。甲米更宁静、更具戏剧性；普吉岛则拥有更好的基础设施和夜生活。",
     itinerary: [
-      "Day 1: Arrive Phuket, Patong Beach, Bangla Road walking street at night",
-      "Day 2: Phi Phi Islands speedboat day trip (leave by 7 AM)",
-      "Day 3: Transfer to Krabi, check in Ao Nang, Railay Beach by longtail boat",
+      "第 1 天：抵达普吉岛，芭东海滩，夜晚的邦古拉步行街",
+      "第 2 天：乘快艇前往皮皮岛一日游（上午 7 点前出发）",
+      "第 3 天：转往甲米，入住奥南，乘长尾船前往莱利海滩",
     ],
-    food: ["Pad Thai and green curry at any Ao Nang beachfront restaurant", "Fresh grilled seafood at Rawai Seafood Market (Phuket)", "Coconut ice cream in a fresh coconut shell", "Tom Kha Gai soup at local beach shacks"],
-    transport: ["Grab works in Phuket town but less so in tourist areas", "Longtail boats for beach and island hopping", "Songthaews (shared red trucks) are cheapest in Phuket", "Rent a scooter in Krabi for full flexibility"],
-    costs: [{ label: "Accommodation", val: "SGD 50–250" }, { label: "Food & Drink", val: "SGD 20–70" }, { label: "Transport", val: "SGD 15–50" }, { label: "Activities", val: "SGD 30–80" }],
-    photos: ["Railay Beach east and west panorama", "Phi Phi Don aerial at sunrise", "James Bond Island (Khao Phing Kan) karst", "Ao Nang sunset from beach bar"]
+    food: ["任意奥南海滨餐厅的泰式炒河粉与青咖喱", "拉威海鲜市场的新鲜烤海鲜（普吉岛）", "盛在新鲜椰壳里的椰子冰淇淋", "当地海滩小屋的椰汁鸡汤"],
+    transport: ["Grab 在普吉镇可用，但在旅游区较少", "长尾船用于海滩和跳岛", "双条车（共享红色卡车）在普吉岛最便宜", "在甲米租摩托车以获得充分灵活性"],
+    costs: [{ label: "住宿", val: "SGD 50–250" }, { label: "餐饮", val: "SGD 20–70" }, { label: "交通", val: "SGD 15–50" }, { label: "活动", val: "SGD 30–80" }],
+    photos: ["莱利海滩东西两侧全景", "日出时分皮皮岛的航拍", "詹姆斯邦德岛（Khao Phing Kan）的石灰岩礁", "海滩酒吧观赏的奥南日落"]
   },
   {
     id: "sydney",
-    name: "Sydney",
-    country: "Australia",
-    desc: "Opera House, Harbour Bridge, world-class beaches, and one of the Southern Hemisphere's great food cities.",
+    name: "悉尼",
+    country: "澳大利亚",
+    desc: "歌剧院、海港大桥、世界级海滩，以及南半球最伟大的美食城市之一。",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80",
-    flight: "8h from Singapore",
-    budget: "SGD 300–600/day",
-    season: "Sep–Nov, Mar–May",
-    overview: "Sydney is one of the world's most liveable and visitable cities. The iconic Opera House and Harbour Bridge, world-famous beaches like Bondi and Manly, and a food scene driven by exceptional produce and multicultural influences. Expensive by Asian standards but extraordinary quality everywhere.",
+    flight: "距新加坡 8 小时",
+    budget: "每天 300–600 新元",
+    season: "9月–11月、3月–5月",
+    overview: "悉尼是世界上最宜居、最值得游览的城市之一。标志性的歌剧院和海港大桥、邦迪和曼利等世界闻名的海滩，以及由出色物产和多元文化影响驱动的美食场景。以亚洲标准来看价格昂贵，但处处品质非凡。",
     itinerary: [
-      "Day 1 AM: Sydney Opera House tour, Circular Quay, The Rocks",
-      "Day 1 PM: Harbour Bridge climb (or Pylon Lookout), Darling Harbour",
-      "Day 2 AM: Bondi Beach, Bondi-to-Coogee coastal walk",
-      "Day 2 PM: Surry Hills food crawl, Crown Street restaurants",
-      "Day 3: Manly Ferry (spectacular harbour crossing), Manly Beach, day trip to Blue Mountains"
+      "第 1 天上午：悉尼歌剧院参观，环形码头，岩石区",
+      "第 1 天下午：攀登海港大桥（或塔楼瞭望台），达令港",
+      "第 2 天上午：邦迪海滩，邦迪至库吉的海岸步道",
+      "第 2 天下午：萨里山美食巡游，皇冠街餐厅",
+      "第 3 天：曼利渡轮（壮观的海港穿越），曼利海滩，蓝山一日游"
     ],
-    food: ["Flat white coffee culture — every suburb has exceptional cafes", "Sydney rock oysters at any fish market or harbour restaurant", "Brunch at Bourke Street Bakery, Surry Hills", "Vietnamese pho in Cabramatta or Bankstown"],
-    transport: ["Opal Card for trains, buses, ferries, and light rail", "Manly Ferry is the most scenic transport experience", "Trains from airport to city (Circular Quay): 13 mins", "Uber widely available; taxis more expensive"],
-    costs: [{ label: "Accommodation", val: "SGD 180–500" }, { label: "Food & Drink", val: "SGD 80–160" }, { label: "Transport", val: "SGD 15–40" }, { label: "Activities", val: "SGD 30–80" }],
-    photos: ["Opera House at sunrise from Mrs Macquarie's Chair", "Bondi-to-Coogee walk cliff views", "Harbour Bridge from North Sydney at dusk", "Manly Ferry view back to city skyline"]
+    food: ["白咖啡文化——每个街区都有出色的咖啡馆", "任意鱼市场或海港餐厅的悉尼岩牡蛎", "萨里山 Bourke Street Bakery 的早午餐", "卡布拉马塔或班克斯敦的越南河粉"],
+    transport: ["火车、巴士、渡轮和轻轨可用 Opal 卡", "曼利渡轮是最具风景的交通体验", "从机场到市区（环形码头）的火车：13 分钟", "Uber 广泛可用；出租车较贵"],
+    costs: [{ label: "住宿", val: "SGD 180–500" }, { label: "餐饮", val: "SGD 80–160" }, { label: "交通", val: "SGD 15–40" }, { label: "活动", val: "SGD 30–80" }],
+    photos: ["从麦考利夫人座椅眺望日出时分的歌剧院", "邦迪至库吉步道的悬崖景观", "暮色中从北悉尼眺望海港大桥", "曼利渡轮回望城市天际线"]
   },
   {
     id: "taipei",
-    name: "Taipei",
-    country: "Taiwan",
-    desc: "Night markets, bubble tea origin stories, Taipei 101, and some of Asia's most authentic Chinese cuisine.",
+    name: "台北",
+    country: "台湾",
+    desc: "夜市、珍珠奶茶的起源故事、台北 101，以及亚洲最地道的一些中华料理。",
     img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=600&q=80",
-    flight: "4h from Singapore",
-    budget: "SGD 100–200/day",
-    season: "Sep–Nov, Mar–May",
-    overview: "Taipei is wonderfully liveable and surprisingly underrated. The night markets (Shilin, Raohe, Ningxia) are legendary, Taipei 101 still stuns, and the MRT is clean and cheap. Day trips to Jiufen old town, Yehliu Geopark, and Taroko Gorge are unmissable. The people are among the friendliest in Asia.",
+    flight: "距新加坡 4 小时",
+    budget: "每天 100–200 新元",
+    season: "9月–11月、3月–5月",
+    overview: "台北格外宜居，也出人意料地被低估。夜市（士林、饶河、宁夏）堪称传奇，台北 101 依然震撼，捷运整洁又便宜。前往九份老街、野柳地质公园和太鲁阁峡谷的一日游绝不容错过。这里的人是亚洲最友善的人群之一。",
     itinerary: [
-      "Day 1 AM: Chiang Kai-shek Memorial Hall, Ximending (Taipei's Harajuku)",
-      "Day 1 PM: Taipei 101 Observatory, Xinyi shopping district",
-      "Day 2 AM: Day trip to Jiufen Old Town and Jinguashi Gold Museum",
-      "Day 2 PM: Shilin Night Market (largest in Taipei)",
-      "Day 3 AM: Longshan Temple, Dihua Street historic market",
-      "Day 3 PM: Elephant Mountain hike at sunset (Taipei 101 panorama)"
+      "第 1 天上午：中正纪念堂，西门町（台北的原宿）",
+      "第 1 天下午：台北 101 观景台，信义购物区",
+      "第 2 天上午：九份老街与金瓜石黄金博物馆一日游",
+      "第 2 天下午：士林夜市（台北最大）",
+      "第 3 天上午：龙山寺，迪化街历史市集",
+      "第 3 天下午：日落时分徒步象山（台北 101 全景）"
     ],
-    food: ["Beef noodle soup at Yong Kang Beef Noodle", "Xiao long bao (soup dumplings) at Din Tai Fung original", "Stinky tofu at Shilin Night Market (bolder than it sounds)", "Bubble tea at Chun Shui Tang (credited with inventing it)"],
-    transport: ["EasyCard covers MRT, buses, and YouBike bicycle rentals", "MRT is extremely cheap — SGD 0.60–1.50 per journey", "HSR bullet train for Kaohsiung and Tainan day trips", "THSR from airport to main station: 35 mins"],
-    costs: [{ label: "Accommodation", val: "SGD 60–180" }, { label: "Food & Drink", val: "SGD 25–70" }, { label: "Transport", val: "SGD 5–15" }, { label: "Activities", val: "SGD 10–30" }],
-    photos: ["Taipei 101 from Elephant Mountain at sunset", "Jiufen Old Town lanterns in the rain", "Shilin Night Market overhead crowd shot", "Chiang Kai-shek Memorial Hall guards changing"]
+    food: ["永康牛肉面的牛肉面", "鼎泰丰创始店的小笼包", "士林夜市的臭豆腐（比听起来更值得一试）", "春水堂的珍珠奶茶（被认为是其发明者）"],
+    transport: ["悠游卡可用于捷运、公交和 YouBike 自行车租赁", "捷运极为便宜——每趟 0.60–1.50 新元", "高铁可一日游高雄和台南", "从机场到台北车站的高铁：35 分钟"],
+    costs: [{ label: "住宿", val: "SGD 60–180" }, { label: "餐饮", val: "SGD 25–70" }, { label: "交通", val: "SGD 5–15" }, { label: "活动", val: "SGD 10–30" }],
+    photos: ["日落时分从象山眺望台北 101", "雨中九份老街的灯笼", "士林夜市俯拍的人群", "中正纪念堂的卫兵换岗"]
   },
   {
     id: "hanoi",
-    name: "Hanoi",
-    country: "Vietnam",
-    desc: "Ancient Old Quarter, world-class street food, Halong Bay gateway, and a fascinating blend of French and Vietnamese culture.",
+    name: "河内",
+    country: "越南",
+    desc: "古老的老城区、世界级的街头美食、下龙湾的门户，以及法越文化的迷人交融。",
     img: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=600&q=80",
-    flight: "3h from Singapore",
-    budget: "SGD 60–150/day",
-    season: "Oct–Apr",
-    overview: "Hanoi is Southeast Asia's most atmospheric capital. The Old Quarter's 36 guilds streets, Hoan Kiem Lake at any hour of day, the egg coffee culture, and some of the world's finest street food. The gateway to Halong Bay, Ninh Binh, and Sapa. Chaotic, beautiful, and utterly compelling.",
+    flight: "距新加坡 3 小时",
+    budget: "每天 60–150 新元",
+    season: "10月–4月",
+    overview: "河内是东南亚最具氛围感的首都。老城区的 36 行会街道、一天中任何时刻的还剑湖、鸡蛋咖啡文化，以及世界上最精致的一些街头美食。这里是通往下龙湾、宁平和沙巴的门户。混乱、美丽，且极具吸引力。",
     itinerary: [
-      "Day 1 AM: Hoan Kiem Lake, Ngoc Son Temple, Old Quarter walking tour",
-      "Day 1 PM: Temple of Literature, Vietnamese Women's Museum",
-      "Day 1 Evening: Bia Hoi corner (street beer junction), Ta Hien Street",
-      "Day 2: Full-day Halong Bay cruise with overnight option",
-      "Day 3: Train to Ninh Binh (Trang An Grottoes, Mua Cave viewpoint)"
+      "第 1 天上午：还剑湖，玉山祠，老城区步行游",
+      "第 1 天下午：文庙，越南妇女博物馆",
+      "第 1 天傍晚：扎啤角（街头啤酒路口），Ta Hien 街",
+      "第 2 天：下龙湾全日游，可选过夜",
+      "第 3 天：乘火车前往宁平（长安石窟，舞洞观景点）"
     ],
-    food: ["Pho bo (beef pho) at Pho Gia Truyen, Bat Dan Street", "Bun cha (grilled pork with noodles) at Bun Cha Huong Lien (Obama's table)", "Banh mi at Banh Mi 25 in Old Quarter", "Egg coffee (ca phe trung) at Cafe Giang"],
-    transport: ["Grab is the only sensible taxi option for tourists", "Book Halong Bay tours through reputable operators only", "Train to Ninh Binh: SGD 3–5, 2-hour journey", "Avoid xe om (motorbike taxis) negotiated on street"],
-    costs: [{ label: "Accommodation", val: "SGD 30–120" }, { label: "Food & Drink", val: "SGD 15–50" }, { label: "Transport", val: "SGD 5–20" }, { label: "Activities", val: "SGD 20–60" }],
-    photos: ["Hoan Kiem Lake and Ngoc Son Temple at dusk", "Halong Bay limestone karsts from above", "Old Quarter alleyway at night with motorbikes", "Mua Cave viewpoint panorama, Ninh Binh"]
+    food: ["Bat Dan 街 Pho Gia Truyen 的牛肉河粉", "Bun Cha Huong Lien 的烤肉米线（奥巴马用过的餐桌）", "老城区 Banh Mi 25 的越式法包", "Cafe Giang 的鸡蛋咖啡"],
+    transport: ["对游客而言 Grab 是唯一明智的打车选择", "下龙湾旅游团只通过信誉良好的运营商预订", "前往宁平的火车：3–5 新元，2 小时车程", "避免在街头议价的摩的（xe om）"],
+    costs: [{ label: "住宿", val: "SGD 30–120" }, { label: "餐饮", val: "SGD 15–50" }, { label: "交通", val: "SGD 5–20" }, { label: "活动", val: "SGD 20–60" }],
+    photos: ["黄昏时分的还剑湖与玉山祠", "从高处俯瞰下龙湾的石灰岩礁", "夜晚摩托车穿行的老城区小巷", "宁平舞洞观景点全景"]
   }
 ];
 
 const safetyData = [
-  { city: "Tokyo", icon: "🇯🇵", level: "safe", badge: "Very Safe", tips: "Extremely safe. Crime is virtually non-existent for tourists. Leave your wallet on the table and it will be there when you return. Basic manners: don't eat while walking, speak quietly on trains." },
-  { city: "Singapore", icon: "🇸🇬", level: "safe", badge: "Very Safe", tips: "One of the world's safest cities. Strict laws on littering, jaywalking, and drug possession. Carry your passport. Areas: all safe at all hours." },
-  { city: "Seoul", icon: "🇰🇷", level: "safe", badge: "Very Safe", tips: "Very safe for tourists. Pickpocketing is rare. Women travelling solo feel comfortable. Be aware of aggressive restaurant touts in Itaewon." },
-  { city: "Sydney", icon: "🇦🇺", level: "safe", badge: "Very Safe", tips: "Generally very safe. Standard city precautions apply in Kings Cross at night. Strong sun: wear SPF 50+ and swim between the flags at beaches." },
-  { city: "Taipei", icon: "🇹🇼", level: "safe", badge: "Very Safe", tips: "One of Asia's safest cities. Night markets and streets are safe at all hours. Typhoon season June–October — check weather advisories." },
-  { city: "Bangkok", icon: "🇹🇭", level: "moderate", badge: "Moderate", tips: "Generally safe but be alert. Common scams: tuk-tuk gem scams, 'Grand Palace is closed today' — ignore approaches from strangers near temples. Protests occasionally occur." },
-  { city: "Bali", icon: "🇮🇩", level: "moderate", badge: "Moderate", tips: "Safe for tourists but petty theft exists. Use hotel safe for valuables. Rabies present — do not touch stray dogs or monkeys. Scooters: wear a helmet, many tourist injuries." },
-  { city: "KL", icon: "🇲🇾", level: "moderate", badge: "Moderate", tips: "Generally safe. Snatch theft (bag snatching) is the main concern — carry bags on the inner side. KL Sentral area has occasional aggressive begging. Avoid dark alleys in Chow Kit at night." },
-  { city: "Hong Kong", icon: "🇭🇰", level: "moderate", badge: "Moderate", tips: "Very low crime rate for tourists. Current political context means large gatherings occasionally occur. Standard urban precautions in Mong Kok at night." },
-  { city: "Hanoi", icon: "🇻🇳", level: "moderate", badge: "Moderate", tips: "Safe but with active scams: aggressive cyclo rides with no agreed price, fake taxis at the airport (only use Grab or Vinasun), overcharging at non-priced restaurants." },
-  { city: "Phuket", icon: "🇹🇭", level: "moderate", badge: "Moderate", tips: "Safe but specific hazards: strong rip currents on west coast beaches (always swim between flags), jet ski scam (damage claims), unlicensed operators on Patong Beach at night." },
-  { city: "Maldives", icon: "🇲🇻", level: "safe", badge: "Safe", tips: "Very safe on resort islands. Local islands are conservative Muslim communities — dress modestly, no alcohol in public. Petty theft on budget guesthouses is rare but lock valuables." }
+  { city: "东京", icon: "🇯🇵", level: "safe", badge: "非常安全", tips: "极为安全。针对游客的犯罪几乎不存在。把钱包留在桌上，回来时它还会在那里。基本礼仪：不要边走边吃，在列车上轻声说话。" },
+  { city: "新加坡", icon: "🇸🇬", level: "safe", badge: "非常安全", tips: "世界上最安全的城市之一。对乱扔垃圾、乱穿马路和持有毒品有严格法律。请随身携带护照。各区域：任何时段都安全。" },
+  { city: "首尔", icon: "🇰🇷", level: "safe", badge: "非常安全", tips: "对游客非常安全。扒窃罕见。独自旅行的女性感觉自在。注意梨泰院积极拉客的餐厅揽客者。" },
+  { city: "悉尼", icon: "🇦🇺", level: "safe", badge: "非常安全", tips: "总体非常安全。夜晚在国王十字区适用标准的城市防范措施。阳光强烈：涂抹 SPF 50+ 防晒，在海滩的旗帜之间游泳。" },
+  { city: "台北", icon: "🇹🇼", level: "safe", badge: "非常安全", tips: "亚洲最安全的城市之一。夜市和街道在任何时段都安全。台风季为 6 月至 10 月——请查看天气警示。" },
+  { city: "曼谷", icon: "🇹🇭", level: "moderate", badge: "中等", tips: "总体安全但需保持警觉。常见骗局：嘟嘟车宝石骗局、“大皇宫今天关闭”——无视寺庙附近陌生人的搭讪。偶尔会发生抗议活动。" },
+  { city: "巴厘岛", icon: "🇮🇩", level: "moderate", badge: "中等", tips: "对游客安全，但存在小偷小摸。贵重物品请使用酒店保险箱。当地有狂犬病——不要触碰流浪狗或猴子。骑摩托车：戴头盔，许多游客因此受伤。" },
+  { city: "吉隆坡", icon: "🇲🇾", level: "moderate", badge: "中等", tips: "总体安全。飞车抢夺（抢包）是主要隐患——把包背在内侧。吉隆坡中央车站一带偶有积极的乞讨。夜晚避免在秋杰区走黑暗小巷。" },
+  { city: "香港", icon: "🇭🇰", level: "moderate", badge: "中等", tips: "针对游客的犯罪率非常低。当前的政治背景意味着偶尔会出现大规模集会。夜晚在旺角适用标准的城市防范措施。" },
+  { city: "河内", icon: "🇻🇳", level: "moderate", badge: "中等", tips: "安全但存在活跃的骗局：未事先议价、强行兜售的人力三轮车，机场的假出租车（只用 Grab 或 Vinasun），无标价餐厅的乱收费。" },
+  { city: "普吉岛", icon: "🇹🇭", level: "moderate", badge: "中等", tips: "安全但有特定危险：西海岸海滩有强劲的离岸流（务必在旗帜之间游泳），水上摩托骗局（索赔损坏），夜晚芭东海滩的无证经营者。" },
+  { city: "马尔代夫", icon: "🇲🇻", level: "safe", badge: "安全", tips: "在度假村岛屿上非常安全。当地岛屿是保守的穆斯林社区——着装要得体，公共场所禁止饮酒。经济型旅馆的小偷小摸罕见，但仍请锁好贵重物品。" }
 ];
 
 const checklistData = {
-  "Documents": ["Passport (6+ months validity)", "Visa / e-Visa printout", "Travel insurance documents", "Flight booking confirmations", "Hotel booking confirmations", "Emergency contacts list"],
-  "Clothing": ["Lightweight shirts (3–5)", "Comfortable walking shoes", "Sandals or flip flops", "Rain jacket or packable umbrella", "Smart outfit for restaurants", "Sunglasses and hat"],
-  "Electronics": ["Phone charger and power bank", "Universal travel adapter", "Earphones / AirPods", "Camera and memory cards", "Laptop or tablet (if needed)", "Portable WiFi or SIM card"],
-  "Medication": ["Prescribed medications (enough + extra)", "Antihistamines", "Diarrhea medication (Imodium)", "Pain relief (Panadol/Ibuprofen)", "Insect repellent (DEET-based)", "Hand sanitiser"],
-  "Travel Essentials": ["Local currency (enough for first day)", "Credit / debit card (notify bank)", "Luggage padlock", "Reusable water bottle", "Sunscreen SPF 50+", "Lip balm and moisturiser"]
+  "证件": ["护照（有效期 6 个月以上）", "签证／电子签证打印件", "旅行保险文件", "机票预订确认单", "酒店预订确认单", "紧急联系人名单"],
+  "衣物": ["轻便衬衫（3–5 件）", "舒适的步行鞋", "凉鞋或人字拖", "雨衣或便携雨伞", "餐厅用的得体服装", "太阳镜和帽子"],
+  "电子产品": ["手机充电器和充电宝", "万能旅行转换插头", "耳机／AirPods", "相机和存储卡", "笔记本电脑或平板（如需要）", "便携 WiFi 或 SIM 卡"],
+  "药品": ["处方药（足量＋备用）", "抗组胺药", "止泻药（易蒙停）", "止痛药（必理痛／布洛芬）", "驱蚊剂（含 DEET）", "免洗洗手液"],
+  "旅行必备品": ["当地货币（足够第一天使用）", "信用卡／借记卡（提前通知银行）", "行李挂锁", "可重复使用的水瓶", "SPF 50+ 防晒霜", "润唇膏和保湿霜"]
 };
 
 // ────────────────────────────────────────────────────────────────────────────────
@@ -1787,7 +1787,7 @@ function renderCards() {
           <span class="meta-tag">💰 ${c.budget}</span>
           <span class="meta-tag">🌤 ${c.season}</span>
         </div>
-        <button class="card-btn">View Guide</button>
+        <button class="card-btn">查看攻略</button>
       </div>
     </div>
   `).join('');
@@ -1880,7 +1880,7 @@ function calcBudget() {
   const total = travellers * days * daily;
   const result = document.getElementById('budgetResult');
   result.style.display = 'block';
-  result.innerHTML = `Estimated Total: <strong>SGD ${total.toLocaleString()}</strong><br><small style="font-weight:400;font-size:13px;color:#888">${travellers} traveller${travellers > 1 ? 's' : ''} × ${days} days × SGD ${daily}/day</small>`;
+  result.innerHTML = `预估总额：<strong>SGD ${total.toLocaleString()}</strong><br><small style="font-weight:400;font-size:13px;color:#888">${travellers} 位旅客 × ${days} 天 × 每天 SGD ${daily}</small>`;
 }
 
 // ────────────────────────────────────────────────────────────────────────────────
@@ -1942,7 +1942,7 @@ async function checkWeather() {
   msgEl.style.display = 'none';
 
   if (!city) {
-    showWeatherMsg('Please enter a city name.');
+    showWeatherMsg('请输入城市名称。');
     return;
   }
 
@@ -1962,11 +1962,11 @@ async function checkWeather() {
     );
   } catch (err) {
     if (err.message === 'notfound') {
-      showWeatherMsg(`Couldn't find "${city}". Check the spelling and try again.`);
+      showWeatherMsg(`找不到“${city}”。请检查拼写后重试。`);
     } else if (err.message === 'auth') {
-      showWeatherMsg('Live weather is temporarily unavailable. Please try again later.');
+      showWeatherMsg('实时天气暂时不可用。请稍后再试。');
     } else {
-      showWeatherMsg('Something went wrong fetching the weather. Please try again.');
+      showWeatherMsg('获取天气时出错。请重试。');
     }
     console.error('Weather lookup failed:', err);
   }
@@ -1976,8 +1976,8 @@ function showWeather(city, temp, desc, humidity, wind) {
   document.getElementById('wCity').textContent = city;
   document.getElementById('wTemp').textContent = temp + '°C';
   document.getElementById('wDesc').textContent = desc;
-  document.getElementById('wHumidity').textContent = `Humidity ${humidity}%`;
-  document.getElementById('wWind').textContent = `Wind ${wind} m/s`;
+  document.getElementById('wHumidity').textContent = `湿度 ${humidity}%`;
+  document.getElementById('wWind').textContent = `风速 ${wind} 米/秒`;
   document.getElementById('weatherResult').style.display = 'block';
   document.getElementById('weatherMsg').style.display = 'none';
 }
@@ -1999,7 +1999,7 @@ async function submitEnquiry() {
   document.getElementById('enquirySuccess').style.display = 'none';
   errorEl.style.display = 'none';
   if (!name || !email) {
-    errorEl.textContent = '⚠ Please fill in your name and email.';
+    errorEl.textContent = '⚠ 请填写你的姓名和电子邮箱。';
     errorEl.style.display = 'block';
     return;
   }
@@ -2017,7 +2017,7 @@ async function submitEnquiry() {
   const btn = document.getElementById('enquiryBtn');
   const successEl = document.getElementById('enquirySuccess');
   btn.disabled = true;
-  btn.textContent = 'Sending…';
+  btn.textContent = '发送中…';
 
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
@@ -2040,11 +2040,11 @@ async function submitEnquiry() {
     document.getElementById('eDest').selectedIndex = 0;
   } catch (err) {
     console.error('Enquiry submission failed:', err);
-    errorEl.textContent = '⚠ Sorry, something went wrong. Please try again or email us directly.';
+    errorEl.textContent = '⚠ 抱歉，出了点问题。请重试或直接发邮件给我们。';
     errorEl.style.display = 'block';
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Send Enquiry';
+    btn.textContent = '发送咨询';
   }
 }
 
