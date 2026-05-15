@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Travel Explorer</title>
-  <!-- Multilingual alternates — keep this block identical in every language file. -->
+  <!-- Multilingual alternates â keep this block identical in every language file. -->
   <link rel="alternate" hreflang="en" href="https://stephanatluther.github.io/travelexplorer/index.html" />
   <link rel="alternate" hreflang="zh" href="https://stephanatluther.github.io/travelexplorer/zh/index.html" />
-  <link rel="alternate" hreflang="ta" href="https://stephanatluther.github.io/travelexplorer/ta/index.html" />
   <link rel="alternate" hreflang="fr" href="https://stephanatluther.github.io/travelexplorer/fr/index.html" />
   <link rel="alternate" hreflang="de" href="https://stephanatluther.github.io/travelexplorer/de/index.html" />
   <link rel="alternate" hreflang="ms" href="https://stephanatluther.github.io/travelexplorer/ms/index.html" />
@@ -19,7 +18,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── Premium European editorial register ──
+    /* ââ Premium European editorial register ââ
        Warm bone paper, ink near-black, a single oxblood accent.
        Display: Fraunces (editorial serif). Body: Archivo (grotesque). */
     :root {
@@ -49,7 +48,7 @@
 
     ::selection { background: var(--accent); color: var(--paper-hi); }
 
-    /* ── NAV ── */
+    /* ââ NAV ââ */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -132,7 +131,7 @@
       transition: all 0.3s;
     }
 
-    /* ── HERO ── */
+    /* ââ HERO ââ */
     #home {
       position: relative;
       height: 100vh;
@@ -142,7 +141,7 @@
       overflow: hidden;
     }
 
-    /* Fallback still — identical to the video's first frame, so the
+    /* Fallback still â identical to the video's first frame, so the
        swap to video is invisible. Always sits behind the video. */
     .hero-bg {
       position: absolute;
@@ -154,7 +153,7 @@
     }
 
     /* Video starts hidden and fades in once it actually begins
-       playing — see the .is-playing class added by the script. */
+       playing â see the .is-playing class added by the script. */
     .hero-video {
       position: absolute;
       inset: 0;
@@ -169,7 +168,7 @@
     .hero-video.is-playing { opacity: 1; }
 
     /* Accessibility: users who ask for reduced motion just get the
-       still image — the video never loads or plays. */
+       still image â the video never loads or plays. */
     @media (prefers-reduced-motion: reduce) {
       .hero-video { display: none; }
     }
@@ -299,7 +298,7 @@
       background: rgba(245,241,230,0.4);
     }
 
-    /* ── SECTIONS ── */
+    /* ââ SECTIONS ââ */
     section {
       padding: 130px 56px;
     }
@@ -343,7 +342,7 @@
       font-weight: 300;
     }
 
-    /* ── CITY CARDS ── */
+    /* ââ CITY CARDS ââ */
     #guides { background: var(--paper); border-top: 1px solid var(--hairline); }
 
     .cards-grid {
@@ -442,7 +441,7 @@
 
     .card-btn:hover { background: var(--ink); color: var(--paper-hi); }
 
-    /* ── MODAL ── */
+    /* ââ MODAL ââ */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -543,7 +542,7 @@
     }
 
     .modal li::before {
-      content: '—';
+      content: 'â';
       color: var(--accent);
       flex-shrink: 0;
     }
@@ -565,7 +564,7 @@
     .cost-label { font-size: 10px; color: var(--stone); text-transform: uppercase; letter-spacing: 1.5px; }
     .cost-value { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--ink); margin-top: 4px; }
 
-    /* ── TOOLS ── */
+    /* ââ TOOLS ââ */
     #tools { background: var(--bone); border-top: 1px solid var(--hairline); }
 
     .tools-grid {
@@ -725,7 +724,7 @@
       line-height: 1;
     }
 
-    /* ── WEATHER ── */
+    /* ââ WEATHER ââ */
     #weather { background: var(--paper); border-top: 1px solid var(--hairline); }
 
     .weather-layout {
@@ -818,7 +817,7 @@
       color: var(--accent-deep);
     }
 
-    /* ── SAFETY ── */
+    /* ââ SAFETY ââ */
     #safety { background: var(--bone); border-top: 1px solid var(--hairline); }
 
     .safety-grid {
@@ -864,7 +863,7 @@
 
     .safety-tips { font-size: 13px; color: var(--stone); line-height: 1.7; font-weight: 300; }
 
-    /* ── ENQUIRY ── */
+    /* ââ ENQUIRY ââ */
     #enquiry { background: var(--paper); border-top: 1px solid var(--hairline); }
 
     .enquiry-layout {
@@ -939,7 +938,7 @@
       margin-top: 18px;
     }
 
-    /* ── FOOTER ── */
+    /* ââ FOOTER ââ */
     footer {
       background: var(--ink);
       color: rgba(245,241,230,0.45);
@@ -999,7 +998,7 @@
       display: block;
     }
 
-    /* ── RESPONSIVE ── */
+    /* ââ RESPONSIVE ââ */
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
       .nav-links { display: none; }
@@ -1017,7 +1016,7 @@
       .modal-body { padding: 30px 22px; }
     }
 
-    /* ── MOBILE NAV ── */
+    /* ââ MOBILE NAV ââ */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -1045,8 +1044,8 @@
       border-bottom: 1px solid var(--hairline);
     }
 
-    /* ── LANGUAGE SWITCHER ──
-       Native <details> disclosure — accessible, crawlable links, no JS. */
+    /* ââ LANGUAGE SWITCHER ââ
+       Native <details> disclosure â accessible, crawlable links, no JS. */
     .lang-switcher { display: flex; align-items: center; }
     .lang-switcher details { position: relative; }
 
@@ -1065,7 +1064,7 @@
     }
 
     .lang-switcher summary::-webkit-details-marker { display: none; }
-    .lang-switcher summary::after { content: '▾'; font-size: 9px; }
+    .lang-switcher summary::after { content: 'â¾'; font-size: 9px; }
     .lang-switcher summary:hover { color: var(--accent); }
     .lang-switcher details[open] summary { color: var(--accent); }
 
@@ -1129,23 +1128,22 @@
 <nav>
   <a class="nav-logo" href="#home">Travel<span>Explorer</span></a>
   <ul class="nav-links">
-    <li><a href="#home">Trang chủ</a></li>
-    <li><a href="#guides">Cẩm nang</a></li>
-    <li><a href="#tools">Công cụ</a></li>
-    <li><a href="#weather">Thời tiết</a></li>
-    <li><a href="#safety">An toàn</a></li>
-    <li><a href="#enquiry" class="nav-cta">Liên hệ</a></li>
+    <li><a href="#home">Trang chá»§</a></li>
+    <li><a href="#guides">Cáº©m nang</a></li>
+    <li><a href="#tools">CÃ´ng cá»¥</a></li>
+    <li><a href="#weather">Thá»i tiáº¿t</a></li>
+    <li><a href="#safety">An toÃ n</a></li>
+    <li><a href="#enquiry" class="nav-cta">LiÃªn há»</a></li>
     <li class="lang-switcher">
       <details>
         <summary aria-label="Choose language">VI</summary>
         <ul class="lang-menu">
           <li><a href="../index.html" hreflang="en">English</a></li>
-          <li><a href="../zh/index.html" hreflang="zh">中文</a></li>
-          <li><a href="../ta/index.html" hreflang="ta">தமிழ்</a></li>
-          <li><a href="../fr/index.html" hreflang="fr">Français</a></li>
+          <li><a href="../zh/index.html" hreflang="zh">ä¸­æ</a></li>
+          <li><a href="../fr/index.html" hreflang="fr">FranÃ§ais</a></li>
           <li><a href="../de/index.html" hreflang="de">Deutsch</a></li>
           <li><a href="../ms/index.html" hreflang="ms">Bahasa Melayu</a></li>
-          <li><a href="../vi/index.html" hreflang="vi" aria-current="true">Tiếng Việt</a></li>
+          <li><a href="../vi/index.html" hreflang="vi" aria-current="true">Tiáº¿ng Viá»t</a></li>
         </ul>
       </details>
     </li>
@@ -1156,16 +1154,15 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMobileMenu()">Trang chủ</a>
-  <a href="#guides" onclick="closeMobileMenu()">Cẩm nang</a>
-  <a href="#tools" onclick="closeMobileMenu()">Công cụ</a>
-  <a href="#weather" onclick="closeMobileMenu()">Thời tiết</a>
-  <a href="#safety" onclick="closeMobileMenu()">An toàn</a>
-  <a href="#enquiry" onclick="closeMobileMenu()">Liên hệ</a>
+  <a href="#home" onclick="closeMobileMenu()">Trang chá»§</a>
+  <a href="#guides" onclick="closeMobileMenu()">Cáº©m nang</a>
+  <a href="#tools" onclick="closeMobileMenu()">CÃ´ng cá»¥</a>
+  <a href="#weather" onclick="closeMobileMenu()">Thá»i tiáº¿t</a>
+  <a href="#safety" onclick="closeMobileMenu()">An toÃ n</a>
+  <a href="#enquiry" onclick="closeMobileMenu()">LiÃªn há»</a>
   <div class="mobile-lang">
     <a href="../index.html" hreflang="en">EN</a>
-    <a href="../zh/index.html" hreflang="zh">中文</a>
-    <a href="../ta/index.html" hreflang="ta">தமிழ்</a>
+    <a href="../zh/index.html" hreflang="zh">ä¸­æ</a>
     <a href="../fr/index.html" hreflang="fr">FR</a>
     <a href="../de/index.html" hreflang="de">DE</a>
     <a href="../ms/index.html" hreflang="ms">MS</a>
@@ -1193,22 +1190,22 @@
     })();
   </script>
   <div class="hero-content">
-    <p class="hero-label">Cẩm nang Châu Á &amp; Thái Bình Dương</p>
-    <h1 class="hero-headline">Chúng tôi đã <em>đi</em>,<br>để bạn biết<br>nên đến đâu.</h1>
-    <p class="hero-desc">Cẩm nang du lịch được tuyển chọn kỹ lưỡng với giá cả thực tế, lịch trình khả thi, mẹo sân bay, lưu ý an toàn, thông tin thời tiết và gợi ý từ người địa phương.</p>
+    <p class="hero-label">Cáº©m nang ChÃ¢u Ã &amp; ThÃ¡i BÃ¬nh DÆ°Æ¡ng</p>
+    <h1 class="hero-headline">ChÃºng tÃ´i ÄÃ£ <em>Äi</em>,<br>Äá» báº¡n biáº¿t<br>nÃªn Äáº¿n ÄÃ¢u.</h1>
+    <p class="hero-desc">Cáº©m nang du lá»ch ÄÆ°á»£c tuyá»n chá»n ká»¹ lÆ°á»¡ng vá»i giÃ¡ cáº£ thá»±c táº¿, lá»ch trÃ¬nh kháº£ thi, máº¹o sÃ¢n bay, lÆ°u Ã½ an toÃ n, thÃ´ng tin thá»i tiáº¿t vÃ  gá»£i Ã½ tá»« ngÆ°á»i Äá»a phÆ°Æ¡ng.</p>
     <div class="hero-buttons">
-      <a href="#guides" class="btn btn-primary">Đọc cẩm nang mới nhất</a>
-      <a href="#enquiry" class="btn btn-outline">Gửi liên hệ</a>
+      <a href="#guides" class="btn btn-primary">Äá»c cáº©m nang má»i nháº¥t</a>
+      <a href="#enquiry" class="btn btn-outline">Gá»­i liÃªn há»</a>
     </div>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div> Cuộn để khám phá</div>
+  <div class="hero-scroll"><div class="scroll-line"></div> Cuá»n Äá» khÃ¡m phÃ¡</div>
 </section>
 
 <!-- GUIDES -->
 <section id="guides">
-  <div class="section-label">Cẩm nang điểm đến</div>
-  <h2 class="section-title">Bạn muốn đi đâu?</h2>
-  <p class="section-desc">Những điểm đến được chọn lọc kỹ càng với mọi thứ bạn cần — ngân sách, lịch trình và lời khuyên chân thực từ người địa phương.</p>
+  <div class="section-label">Cáº©m nang Äiá»m Äáº¿n</div>
+  <h2 class="section-title">Báº¡n muá»n Äi ÄÃ¢u?</h2>
+  <p class="section-desc">Nhá»¯ng Äiá»m Äáº¿n ÄÆ°á»£c chá»n lá»c ká»¹ cÃ ng vá»i má»i thá»© báº¡n cáº§n â ngÃ¢n sÃ¡ch, lá»ch trÃ¬nh vÃ  lá»i khuyÃªn chÃ¢n thá»±c tá»« ngÆ°á»i Äá»a phÆ°Æ¡ng.</p>
   <div class="cards-grid" id="cardsGrid"></div>
 </section>
 
@@ -1217,24 +1214,24 @@
   <div class="modal" id="modal">
     <img id="modalImg" class="modal-img" src="" alt="" />
     <div class="modal-body">
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <button class="modal-close" onclick="closeModal()">â</button>
       <p class="modal-country" id="modalCountry"></p>
       <h2 class="modal-title" id="modalTitle"></h2>
       <p class="modal-overview" id="modalOverview"></p>
 
-      <h3 class="modal-section-title">Lịch trình 3 ngày</h3>
+      <h3 class="modal-section-title">Lá»ch trÃ¬nh 3 ngÃ y</h3>
       <ul id="modalItinerary"></ul>
 
-      <h3 class="modal-section-title">Gợi ý ẩm thực</h3>
+      <h3 class="modal-section-title">Gá»£i Ã½ áº©m thá»±c</h3>
       <ul id="modalFood"></ul>
 
-      <h3 class="modal-section-title">Mẹo di chuyển</h3>
+      <h3 class="modal-section-title">Máº¹o di chuyá»n</h3>
       <ul id="modalTransport"></ul>
 
-      <h3 class="modal-section-title">Ước tính chi phí</h3>
+      <h3 class="modal-section-title">Æ¯á»c tÃ­nh chi phÃ­</h3>
       <div class="cost-grid" id="modalCosts"></div>
 
-      <h3 class="modal-section-title">Địa điểm chụp ảnh đẹp nhất</h3>
+      <h3 class="modal-section-title">Äá»a Äiá»m chá»¥p áº£nh Äáº¹p nháº¥t</h3>
       <ul id="modalPhotos"></ul>
     </div>
   </div>
@@ -1242,63 +1239,63 @@
 
 <!-- TOOLS -->
 <section id="tools">
-  <div class="section-label">Công cụ du lịch</div>
-  <h2 class="section-title">Lên kế hoạch thông minh hơn.</h2>
-  <p class="section-desc">Những công cụ hữu ích giúp bạn lập ngân sách, chuẩn bị hành lý và sắp xếp chuyến đi tiếp theo.</p>
+  <div class="section-label">CÃ´ng cá»¥ du lá»ch</div>
+  <h2 class="section-title">LÃªn káº¿ hoáº¡ch thÃ´ng minh hÆ¡n.</h2>
+  <p class="section-desc">Nhá»¯ng cÃ´ng cá»¥ há»¯u Ã­ch giÃºp báº¡n láº­p ngÃ¢n sÃ¡ch, chuáº©n bá» hÃ nh lÃ½ vÃ  sáº¯p xáº¿p chuyáº¿n Äi tiáº¿p theo.</p>
 
   <div class="tools-grid">
 
     <!-- Budget Calculator -->
     <div class="tool-card">
-      <h3 class="tool-title">Công cụ tính ngân sách chuyến đi</h3>
-      <label>Điểm đến</label>
+      <h3 class="tool-title">CÃ´ng cá»¥ tÃ­nh ngÃ¢n sÃ¡ch chuyáº¿n Äi</h3>
+      <label>Äiá»m Äáº¿n</label>
       <select id="budgetDest">
-        <option value="">Chọn điểm đến…</option>
+        <option value="">Chá»n Äiá»m Äáº¿nâ¦</option>
         <option value="seoul">Seoul</option>
         <option value="singapore">Singapore</option>
         <option value="bali">Bali</option>
         <option value="tokyo">Tokyo</option>
         <option value="bangkok">Bangkok</option>
-        <option value="hongkong">Hồng Kông</option>
+        <option value="hongkong">Há»ng KÃ´ng</option>
         <option value="kl">Kuala Lumpur</option>
         <option value="maldives">Maldives</option>
         <option value="phuket">Phuket</option>
         <option value="sydney">Sydney</option>
-        <option value="taipei">Đài Bắc</option>
-        <option value="hanoi">Hà Nội</option>
+        <option value="taipei">ÄÃ i Báº¯c</option>
+        <option value="hanoi">HÃ  Ná»i</option>
       </select>
-      <label>Số người đi</label>
+      <label>Sá» ngÆ°á»i Äi</label>
       <input type="number" id="travellers" min="1" value="2" />
-      <label>Số ngày</label>
+      <label>Sá» ngÃ y</label>
       <input type="number" id="days" min="1" value="5" />
-      <label>Ngân sách mỗi ngày cho mỗi người (SGD)</label>
+      <label>NgÃ¢n sÃ¡ch má»i ngÃ y cho má»i ngÆ°á»i (SGD)</label>
       <input type="number" id="dailyBudget" min="0" value="150" />
-      <button class="btn-dark" onclick="calcBudget()">Tính tổng</button>
+      <button class="btn-dark" onclick="calcBudget()">TÃ­nh tá»ng</button>
       <div class="tool-result" id="budgetResult"></div>
     </div>
 
     <!-- Packing Checklist -->
     <div class="tool-card">
-      <h3 class="tool-title">Danh sách hành lý</h3>
+      <h3 class="tool-title">Danh sÃ¡ch hÃ nh lÃ½</h3>
       <div id="checklistContainer"></div>
     </div>
 
     <!-- Itinerary Planner -->
     <div class="tool-card">
-      <h3 class="tool-title">Lập kế hoạch lịch trình</h3>
-      <label>Ngày</label>
+      <h3 class="tool-title">Láº­p káº¿ hoáº¡ch lá»ch trÃ¬nh</h3>
+      <label>NgÃ y</label>
       <select id="itinDay">
-        <option>Ngày 1</option><option>Ngày 2</option><option>Ngày 3</option>
-        <option>Ngày 4</option><option>Ngày 5</option><option>Ngày 6</option>
-        <option>Ngày 7</option>
+        <option>NgÃ y 1</option><option>NgÃ y 2</option><option>NgÃ y 3</option>
+        <option>NgÃ y 4</option><option>NgÃ y 5</option><option>NgÃ y 6</option>
+        <option>NgÃ y 7</option>
       </select>
-      <label>Hoạt động</label>
-      <input type="text" id="itinActivity" placeholder="vd. Tham quan ngã tư Shibuya" />
-      <label>Thời gian</label>
-      <input type="text" id="itinTime" placeholder="vd. 10:00 sáng" />
-      <label>Ghi chú</label>
-      <input type="text" id="itinNotes" placeholder="Ghi chú tùy chọn…" />
-      <button class="btn-dark" onclick="addItinItem()">Thêm vào lịch trình</button>
+      <label>Hoáº¡t Äá»ng</label>
+      <input type="text" id="itinActivity" placeholder="vd. Tham quan ngÃ£ tÆ° Shibuya" />
+      <label>Thá»i gian</label>
+      <input type="text" id="itinTime" placeholder="vd. 10:00 sÃ¡ng" />
+      <label>Ghi chÃº</label>
+      <input type="text" id="itinNotes" placeholder="Ghi chÃº tÃ¹y chá»nâ¦" />
+      <button class="btn-dark" onclick="addItinItem()">ThÃªm vÃ o lá»ch trÃ¬nh</button>
       <div class="itinerary-list" id="itineraryList"></div>
     </div>
 
@@ -1307,15 +1304,15 @@
 
 <!-- WEATHER -->
 <section id="weather">
-  <div class="section-label">Thời tiết trực tiếp</div>
-  <h2 class="section-title">Kiểm tra dự báo.</h2>
-  <p class="section-desc">Xem thời tiết như thế nào trước khi bạn chuẩn bị hành lý.</p>
+  <div class="section-label">Thá»i tiáº¿t trá»±c tiáº¿p</div>
+  <h2 class="section-title">Kiá»m tra dá»± bÃ¡o.</h2>
+  <p class="section-desc">Xem thá»i tiáº¿t nhÆ° tháº¿ nÃ o trÆ°á»c khi báº¡n chuáº©n bá» hÃ nh lÃ½.</p>
 
   <div class="weather-layout">
     <div class="weather-card">
-      <label>Tên thành phố</label>
-      <input type="text" id="weatherCity" placeholder="vd. Tokyo, Bangkok, Bali…" />
-      <button class="btn-dark" onclick="checkWeather()">Kiểm tra thời tiết</button>
+      <label>TÃªn thÃ nh phá»</label>
+      <input type="text" id="weatherCity" placeholder="vd. Tokyo, Bangkok, Baliâ¦" />
+      <button class="btn-dark" onclick="checkWeather()">Kiá»m tra thá»i tiáº¿t</button>
       <div class="weather-result" id="weatherResult">
         <div class="weather-city-name" id="wCity"></div>
         <div class="weather-temp" id="wTemp"></div>
@@ -1329,20 +1326,20 @@
     </div>
 
     <div class="weather-api-note">
-      <strong>Thời tiết trực tiếp, trên toàn thế giới.</strong><br><br>
-      Nhập tên bất kỳ thành phố nào — Tokyo, Bangkok, Bali, hay bất cứ nơi đâu — và chúng tôi sẽ hiển thị
-      nhiệt độ, độ ẩm và tốc độ gió hiện tại.<br><br>
-      Dữ liệu thời tiết được cung cấp bởi <strong>OpenWeather</strong> và cập nhật theo thời gian thực,
-      để bạn biết chính xác cần chuẩn bị gì trước khi lên đường.
+      <strong>Thá»i tiáº¿t trá»±c tiáº¿p, trÃªn toÃ n tháº¿ giá»i.</strong><br><br>
+      Nháº­p tÃªn báº¥t ká»³ thÃ nh phá» nÃ o â Tokyo, Bangkok, Bali, hay báº¥t cá»© nÆ¡i ÄÃ¢u â vÃ  chÃºng tÃ´i sáº½ hiá»n thá»
+      nhiá»t Äá», Äá» áº©m vÃ  tá»c Äá» giÃ³ hiá»n táº¡i.<br><br>
+      Dá»¯ liá»u thá»i tiáº¿t ÄÆ°á»£c cung cáº¥p bá»i <strong>OpenWeather</strong> vÃ  cáº­p nháº­t theo thá»i gian thá»±c,
+      Äá» báº¡n biáº¿t chÃ­nh xÃ¡c cáº§n chuáº©n bá» gÃ¬ trÆ°á»c khi lÃªn ÄÆ°á»ng.
     </div>
   </div>
 </section>
 
 <!-- SAFETY -->
 <section id="safety">
-  <div class="section-label">An toàn du lịch</div>
-  <h2 class="section-title">Biết trước khi đi.</h2>
-  <p class="section-desc">Những lưu ý an toàn chung cho các điểm đến phổ biến. Hãy luôn kiểm tra các khuyến cáo mới nhất trước khi đi.</p>
+  <div class="section-label">An toÃ n du lá»ch</div>
+  <h2 class="section-title">Biáº¿t trÆ°á»c khi Äi.</h2>
+  <p class="section-desc">Nhá»¯ng lÆ°u Ã½ an toÃ n chung cho cÃ¡c Äiá»m Äáº¿n phá» biáº¿n. HÃ£y luÃ´n kiá»m tra cÃ¡c khuyáº¿n cÃ¡o má»i nháº¥t trÆ°á»c khi Äi.</p>
   <div class="safety-grid" id="safetyGrid"></div>
 </section>
 
@@ -1350,29 +1347,29 @@
 <section id="enquiry">
   <div class="enquiry-layout">
     <div class="enquiry-info">
-      <div class="section-label">Liên hệ với chúng tôi</div>
-      <h2 class="section-title">Lên kế hoạch cho chuyến phiêu lưu tiếp theo.</h2>
-      <p class="section-desc">Hãy cho chúng tôi biết bạn muốn đi đâu. Chúng tôi sẽ giúp bạn đến đó.</p>
+      <div class="section-label">LiÃªn há» vá»i chÃºng tÃ´i</div>
+      <h2 class="section-title">LÃªn káº¿ hoáº¡ch cho chuyáº¿n phiÃªu lÆ°u tiáº¿p theo.</h2>
+      <p class="section-desc">HÃ£y cho chÃºng tÃ´i biáº¿t báº¡n muá»n Äi ÄÃ¢u. ChÃºng tÃ´i sáº½ giÃºp báº¡n Äáº¿n ÄÃ³.</p>
       <div class="enquiry-detail">
         <div class="enquiry-detail-item">
-          <div class="detail-icon">✉</div>
+          <div class="detail-icon">â</div>
           <div class="detail-text">
-            <strong>Gửi email cho chúng tôi</strong>
+            <strong>Gá»­i email cho chÃºng tÃ´i</strong>
             <span>hello@travelexplorer.com</span>
           </div>
         </div>
         <div class="enquiry-detail-item">
-          <div class="detail-icon">📞</div>
+          <div class="detail-icon">ð</div>
           <div class="detail-text">
-            <strong>Gọi cho chúng tôi</strong>
+            <strong>Gá»i cho chÃºng tÃ´i</strong>
             <span>+65 9000 0000</span>
           </div>
         </div>
         <div class="enquiry-detail-item">
-          <div class="detail-icon">🕐</div>
+          <div class="detail-icon">ð</div>
           <div class="detail-text">
-            <strong>Thời gian phản hồi</strong>
-            <span>Trong vòng 24 giờ</span>
+            <strong>Thá»i gian pháº£n há»i</strong>
+            <span>Trong vÃ²ng 24 giá»</span>
           </div>
         </div>
       </div>
@@ -1381,8 +1378,8 @@
     <div class="enquiry-form">
       <div class="form-row">
         <div>
-          <label>Họ và tên *</label>
-          <input type="text" id="eName" placeholder="Nguyễn Thị Lan" />
+          <label>Há» vÃ  tÃªn *</label>
+          <input type="text" id="eName" placeholder="Nguyá»n Thá» Lan" />
         </div>
         <div>
           <label>Email *</label>
@@ -1391,39 +1388,39 @@
       </div>
       <div class="form-row">
         <div>
-          <label>Số điện thoại</label>
+          <label>Sá» Äiá»n thoáº¡i</label>
           <input type="tel" id="ePhone" placeholder="+65 9000 0000" />
         </div>
         <div>
-          <label>Điểm đến quan tâm</label>
+          <label>Äiá»m Äáº¿n quan tÃ¢m</label>
           <select id="eDest">
-            <option value="">Chọn…</option>
+            <option value="">Chá»nâ¦</option>
             <option>Seoul</option><option>Singapore</option><option>Bali</option>
-            <option>Tokyo</option><option>Bangkok</option><option>Hồng Kông</option>
+            <option>Tokyo</option><option>Bangkok</option><option>Há»ng KÃ´ng</option>
             <option>Kuala Lumpur</option><option>Maldives</option><option>Phuket</option>
-            <option>Sydney</option><option>Đài Bắc</option><option>Hà Nội</option>
-            <option>Khác</option>
+            <option>Sydney</option><option>ÄÃ i Báº¯c</option><option>HÃ  Ná»i</option>
+            <option>KhÃ¡c</option>
           </select>
         </div>
       </div>
       <div class="form-row">
         <div>
-          <label>Ngày đi</label>
+          <label>NgÃ y Äi</label>
           <input type="date" id="eDate" />
         </div>
         <div>
-          <label>Số người đi</label>
+          <label>Sá» ngÆ°á»i Äi</label>
           <input type="number" id="eTravellers" min="1" placeholder="2" />
         </div>
       </div>
-      <label>Lời nhắn</label>
-      <textarea id="eMessage" placeholder="Hãy kể cho chúng tôi về chuyến đi mơ ước của bạn…"></textarea>
-      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">Gửi liên hệ</button>
+      <label>Lá»i nháº¯n</label>
+      <textarea id="eMessage" placeholder="HÃ£y ká» cho chÃºng tÃ´i vá» chuyáº¿n Äi mÆ¡ Æ°á»c cá»§a báº¡nâ¦"></textarea>
+      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">Gá»­i liÃªn há»</button>
       <div class="success-msg" id="enquirySuccess">
-        ✓ Liên hệ của bạn đã được tiếp nhận! Chúng tôi sẽ phản hồi trong vòng 24 giờ.
+        â LiÃªn há» cá»§a báº¡n ÄÃ£ ÄÆ°á»£c tiáº¿p nháº­n! ChÃºng tÃ´i sáº½ pháº£n há»i trong vÃ²ng 24 giá».
       </div>
       <div class="success-msg" id="enquiryError" style="background:#fdecea;color:#b3261e;">
-        ⚠ Rất tiếc, đã có lỗi xảy ra. Vui lòng thử lại hoặc gửi email trực tiếp cho chúng tôi.
+        â  Ráº¥t tiáº¿c, ÄÃ£ cÃ³ lá»i xáº£y ra. Vui lÃ²ng thá»­ láº¡i hoáº·c gá»­i email trá»±c tiáº¿p cho chÃºng tÃ´i.
       </div>
     </div>
   </div>
@@ -1432,8 +1429,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Travel<span>Explorer</span></div>
-  <p style="margin-top:6px;">Chúng tôi đã đi, để bạn biết nên đến đâu.</p>
-  <nav class="footer-social" aria-label="Social media">
+  <p style="margin-top:6px;">ChÃºng tÃ´i ÄÃ£ Äi, Äá» báº¡n biáº¿t nÃªn Äáº¿n ÄÃ¢u.</p>
+  <div class="footer-social" role="navigation" aria-label="Mạng xã hội">
     <ul>
       <li>
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1466,310 +1463,310 @@
         </a>
       </li>
     </ul>
-  </nav>
-  <p style="margin-top:16px; font-size:12px;">© 2025 TravelExplorer. Bảo lưu mọi quyền.</p>
+  </div>
+  <p style="margin-top:16px; font-size:12px;">Â© 2025 TravelExplorer. Báº£o lÆ°u má»i quyá»n.</p>
 </footer>
 
 <script>
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // DATA
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 const cities = [
   {
     id: "tokyo",
     name: "Tokyo",
-    country: "Nhật Bản",
-    desc: "Sự pha trộn rực rỡ giữa những ngôi đền cổ kính và những tòa nhà chọc trời lung linh ánh đèn neon. Tokyo luôn mang đến phần thưởng cho du khách ham khám phá ở mỗi ngả đường.",
+    country: "Nháº­t Báº£n",
+    desc: "Sá»± pha trá»n rá»±c rá»¡ giá»¯a nhá»¯ng ngÃ´i Äá»n cá» kÃ­nh vÃ  nhá»¯ng tÃ²a nhÃ  chá»c trá»i lung linh Ã¡nh ÄÃ¨n neon. Tokyo luÃ´n mang Äáº¿n pháº§n thÆ°á»ng cho du khÃ¡ch ham khÃ¡m phÃ¡ á» má»i ngáº£ ÄÆ°á»ng.",
     img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
-    flight: "7 giờ bay từ Singapore",
-    budget: "SGD 200–350/ngày",
-    season: "Tháng 3–5, Tháng 10–11",
-    overview: "Tokyo là một trong những thành phố vĩ đại nhất thế giới — sôi động, rộng lớn và luôn đầy bất ngờ. Từ sự tĩnh lặng của Đền Minh Trị đến sự hỗn loạn có trật tự của Shibuya, đây là thành phố luôn dành phần thưởng cho người ham khám phá. Ẩm thực tuyệt vời ở mọi tầm giá, giao thông công cộng đẳng cấp thế giới, và thành phố cực kỳ an toàn.",
+    flight: "7 giá» bay tá»« Singapore",
+    budget: "SGD 200â350/ngÃ y",
+    season: "ThÃ¡ng 3â5, ThÃ¡ng 10â11",
+    overview: "Tokyo lÃ  má»t trong nhá»¯ng thÃ nh phá» vÄ© Äáº¡i nháº¥t tháº¿ giá»i â sÃ´i Äá»ng, rá»ng lá»n vÃ  luÃ´n Äáº§y báº¥t ngá». Tá»« sá»± tÄ©nh láº·ng cá»§a Äá»n Minh Trá» Äáº¿n sá»± há»n loáº¡n cÃ³ tráº­t tá»± cá»§a Shibuya, ÄÃ¢y lÃ  thÃ nh phá» luÃ´n dÃ nh pháº§n thÆ°á»ng cho ngÆ°á»i ham khÃ¡m phÃ¡. áº¨m thá»±c tuyá»t vá»i á» má»i táº§m giÃ¡, giao thÃ´ng cÃ´ng cá»ng Äáº³ng cáº¥p tháº¿ giá»i, vÃ  thÃ nh phá» cá»±c ká»³ an toÃ n.",
     itinerary: [
-      "Ngày 1 sáng: Đến nơi, nhận phòng ở Shinjuku, khám phá Kabukicho và Golden Gai",
-      "Ngày 1 chiều: Ngã tư Shibuya lúc chạng vạng, ăn tối tại một quán izakaya",
-      "Ngày 2 sáng: Chợ ngoài Tsukiji ăn sáng, Vườn Hamarikyu",
-      "Ngày 2 chiều: Asakusa và Đền Senso-ji, phố mua sắm Nakamise",
-      "Ngày 3 sáng: Harajuku và Đền Minh Trị, phố Takeshita",
-      "Ngày 3 chiều: Roppongi Hills ngắm hoàng hôn toàn cảnh"
+      "NgÃ y 1 sÃ¡ng: Äáº¿n nÆ¡i, nháº­n phÃ²ng á» Shinjuku, khÃ¡m phÃ¡ Kabukicho vÃ  Golden Gai",
+      "NgÃ y 1 chiá»u: NgÃ£ tÆ° Shibuya lÃºc cháº¡ng váº¡ng, Än tá»i táº¡i má»t quÃ¡n izakaya",
+      "NgÃ y 2 sÃ¡ng: Chá»£ ngoÃ i Tsukiji Än sÃ¡ng, VÆ°á»n Hamarikyu",
+      "NgÃ y 2 chiá»u: Asakusa vÃ  Äá»n Senso-ji, phá» mua sáº¯m Nakamise",
+      "NgÃ y 3 sÃ¡ng: Harajuku vÃ  Äá»n Minh Trá», phá» Takeshita",
+      "NgÃ y 3 chiá»u: Roppongi Hills ngáº¯m hoÃ ng hÃ´n toÃ n cáº£nh"
     ],
-    food: ["Mì ramen tại Ichiran (mở 24/7, ghế ngồi riêng)", "Sushi tại các quầy chợ Tsukiji", "Tonkatsu tại Maisen Aoyama", "Yakitori dưới đường ray Yurakucho"],
-    transport: ["Mua thẻ Suica tại bất kỳ ga nào (đặt cọc ¥500)", "JR Pass cho tàu cao tốc liên thành phố", "Tàu điện ngầm Tokyo nhanh nhất để di chuyển trong nội thành", "Tránh giờ cao điểm: 7–9 giờ sáng và 6–8 giờ tối"],
-    costs: [{ label: "Chỗ ở", val: "SGD 80–200" }, { label: "Ăn uống", val: "SGD 50–100" }, { label: "Di chuyển", val: "SGD 15–30" }, { label: "Hoạt động", val: "SGD 20–50" }],
-    photos: ["Ngã tư Shibuya từ sân thượng Mag's Park", "Đền Senso-ji lúc bình minh trước khi đông khách", "Vườn Shinjuku Gyoen mùa hoa anh đào", "Tháp Tokyo nhìn từ tiền cảnh Đền Zojo-ji"]
+    food: ["MÃ¬ ramen táº¡i Ichiran (má» 24/7, gháº¿ ngá»i riÃªng)", "Sushi táº¡i cÃ¡c quáº§y chá»£ Tsukiji", "Tonkatsu táº¡i Maisen Aoyama", "Yakitori dÆ°á»i ÄÆ°á»ng ray Yurakucho"],
+    transport: ["Mua tháº» Suica táº¡i báº¥t ká»³ ga nÃ o (Äáº·t cá»c Â¥500)", "JR Pass cho tÃ u cao tá»c liÃªn thÃ nh phá»", "TÃ u Äiá»n ngáº§m Tokyo nhanh nháº¥t Äá» di chuyá»n trong ná»i thÃ nh", "TrÃ¡nh giá» cao Äiá»m: 7â9 giá» sÃ¡ng vÃ  6â8 giá» tá»i"],
+    costs: [{ label: "Chá» á»", val: "SGD 80â200" }, { label: "Än uá»ng", val: "SGD 50â100" }, { label: "Di chuyá»n", val: "SGD 15â30" }, { label: "Hoáº¡t Äá»ng", val: "SGD 20â50" }],
+    photos: ["NgÃ£ tÆ° Shibuya tá»« sÃ¢n thÆ°á»£ng Mag's Park", "Äá»n Senso-ji lÃºc bÃ¬nh minh trÆ°á»c khi ÄÃ´ng khÃ¡ch", "VÆ°á»n Shinjuku Gyoen mÃ¹a hoa anh ÄÃ o", "ThÃ¡p Tokyo nhÃ¬n tá»« tiá»n cáº£nh Äá»n Zojo-ji"]
   },
   {
     id: "bali",
     name: "Bali",
     country: "Indonesia",
-    desc: "Ruộng bậc thang xanh mướt, đền thiêng, đời sống về đêm sôi động và những con sóng lướt ván đẳng cấp thế giới. Bali luôn cuốn hút không ngừng.",
+    desc: "Ruá»ng báº­c thang xanh mÆ°á»t, Äá»n thiÃªng, Äá»i sá»ng vá» ÄÃªm sÃ´i Äá»ng vÃ  nhá»¯ng con sÃ³ng lÆ°á»t vÃ¡n Äáº³ng cáº¥p tháº¿ giá»i. Bali luÃ´n cuá»n hÃºt khÃ´ng ngá»«ng.",
     img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80",
-    flight: "2,5 giờ bay từ Singapore",
-    budget: "SGD 80–180/ngày",
-    season: "Tháng 4–10 (Mùa khô)",
-    overview: "Bali có điều gì đó dành cho mọi kiểu du khách — từ sự tĩnh lặng tâm linh của những ruộng bậc thang Ubud đến những con sóng lướt ván ở Canggu và các quán bar bên vách đá Uluwatu. Đây vẫn là một trong những điểm đến đáng giá nhất thế giới với ẩm thực tuyệt vời, lòng hiếu khách nồng hậu và phong cảnh ngoạn mục.",
+    flight: "2,5 giá» bay tá»« Singapore",
+    budget: "SGD 80â180/ngÃ y",
+    season: "ThÃ¡ng 4â10 (MÃ¹a khÃ´)",
+    overview: "Bali cÃ³ Äiá»u gÃ¬ ÄÃ³ dÃ nh cho má»i kiá»u du khÃ¡ch â tá»« sá»± tÄ©nh láº·ng tÃ¢m linh cá»§a nhá»¯ng ruá»ng báº­c thang Ubud Äáº¿n nhá»¯ng con sÃ³ng lÆ°á»t vÃ¡n á» Canggu vÃ  cÃ¡c quÃ¡n bar bÃªn vÃ¡ch ÄÃ¡ Uluwatu. ÄÃ¢y váº«n lÃ  má»t trong nhá»¯ng Äiá»m Äáº¿n ÄÃ¡ng giÃ¡ nháº¥t tháº¿ giá»i vá»i áº©m thá»±c tuyá»t vá»i, lÃ²ng hiáº¿u khÃ¡ch ná»ng háº­u vÃ  phong cáº£nh ngoáº¡n má»¥c.",
     itinerary: [
-      "Ngày 1: Đến Denpasar, di chuyển đến Seminyak, ngắm hoàng hôn trên biển tại Ku De Ta",
-      "Ngày 2 sáng: Lái xe đến Ubud, tham quan ruộng bậc thang Tegallalang lúc bình minh",
-      "Ngày 2 chiều: Rừng Khỉ Ubud, ăn trưa tại quán warung địa phương, Cung điện Ubud lúc hoàng hôn",
-      "Ngày 3 sáng: Đền Tanah Lot lúc bình minh, lái xe về phía nam đến Uluwatu",
-      "Ngày 3 chiều: Đền trên vách đá Uluwatu, múa lửa Kecak lúc hoàng hôn"
+      "NgÃ y 1: Äáº¿n Denpasar, di chuyá»n Äáº¿n Seminyak, ngáº¯m hoÃ ng hÃ´n trÃªn biá»n táº¡i Ku De Ta",
+      "NgÃ y 2 sÃ¡ng: LÃ¡i xe Äáº¿n Ubud, tham quan ruá»ng báº­c thang Tegallalang lÃºc bÃ¬nh minh",
+      "NgÃ y 2 chiá»u: Rá»«ng Khá» Ubud, Än trÆ°a táº¡i quÃ¡n warung Äá»a phÆ°Æ¡ng, Cung Äiá»n Ubud lÃºc hoÃ ng hÃ´n",
+      "NgÃ y 3 sÃ¡ng: Äá»n Tanah Lot lÃºc bÃ¬nh minh, lÃ¡i xe vá» phÃ­a nam Äáº¿n Uluwatu",
+      "NgÃ y 3 chiá»u: Äá»n trÃªn vÃ¡ch ÄÃ¡ Uluwatu, mÃºa lá»­a Kecak lÃºc hoÃ ng hÃ´n"
     ],
-    food: ["Nasi Goreng tại bất kỳ quán warung địa phương nào", "Babi Guling (lợn sữa quay) tại Ibu Oka, Ubud", "Hải sản tươi tại Vịnh Jimbaran", "Bát sinh tố trái cây tại các quán cà phê Canggu"],
-    transport: ["Thuê tài xế riêng giá SGD 50–70/ngày (hiệu quả nhất)", "Ứng dụng Grab có ở các khu vực chính", "Thuê xe máy SGD 8–12/ngày (yêu cầu bằng lái quốc tế)", "Taxi Bluebird tính cước theo đồng hồ và đáng tin cậy"],
-    costs: [{ label: "Chỗ ở", val: "SGD 40–150" }, { label: "Ăn uống", val: "SGD 20–60" }, { label: "Di chuyển", val: "SGD 10–50" }, { label: "Hoạt động", val: "SGD 15–40" }],
-    photos: ["Ruộng bậc thang Tegallalang lúc 7 giờ sáng", "Đền Tanah Lot lúc hoàng hôn", "Cảnh vách đá Uluwatu từ quán bar Single Fin", "Thác Sekumpul ở phía bắc Bali"]
+    food: ["Nasi Goreng táº¡i báº¥t ká»³ quÃ¡n warung Äá»a phÆ°Æ¡ng nÃ o", "Babi Guling (lá»£n sá»¯a quay) táº¡i Ibu Oka, Ubud", "Háº£i sáº£n tÆ°Æ¡i táº¡i Vá»nh Jimbaran", "BÃ¡t sinh tá» trÃ¡i cÃ¢y táº¡i cÃ¡c quÃ¡n cÃ  phÃª Canggu"],
+    transport: ["ThuÃª tÃ i xáº¿ riÃªng giÃ¡ SGD 50â70/ngÃ y (hiá»u quáº£ nháº¥t)", "á»¨ng dá»¥ng Grab cÃ³ á» cÃ¡c khu vá»±c chÃ­nh", "ThuÃª xe mÃ¡y SGD 8â12/ngÃ y (yÃªu cáº§u báº±ng lÃ¡i quá»c táº¿)", "Taxi Bluebird tÃ­nh cÆ°á»c theo Äá»ng há» vÃ  ÄÃ¡ng tin cáº­y"],
+    costs: [{ label: "Chá» á»", val: "SGD 40â150" }, { label: "Än uá»ng", val: "SGD 20â60" }, { label: "Di chuyá»n", val: "SGD 10â50" }, { label: "Hoáº¡t Äá»ng", val: "SGD 15â40" }],
+    photos: ["Ruá»ng báº­c thang Tegallalang lÃºc 7 giá» sÃ¡ng", "Äá»n Tanah Lot lÃºc hoÃ ng hÃ´n", "Cáº£nh vÃ¡ch ÄÃ¡ Uluwatu tá»« quÃ¡n bar Single Fin", "ThÃ¡c Sekumpul á» phÃ­a báº¯c Bali"]
   },
   {
     id: "seoul",
     name: "Seoul",
-    country: "Hàn Quốc",
-    desc: "Tâm điểm của văn hóa K với ẩm thực tuyệt vời, thời trang tiên phong, cung điện cổ kính và mỹ phẩm chăm sóc da đỉnh cao.",
+    country: "HÃ n Quá»c",
+    desc: "TÃ¢m Äiá»m cá»§a vÄn hÃ³a K vá»i áº©m thá»±c tuyá»t vá»i, thá»i trang tiÃªn phong, cung Äiá»n cá» kÃ­nh vÃ  má»¹ pháº©m chÄm sÃ³c da Äá»nh cao.",
     img: "https://images.unsplash.com/photo-1601621915196-2621bfb0cd6e?w=600&q=80",
-    flight: "6,5 giờ bay từ Singapore",
-    budget: "SGD 130–250/ngày",
-    season: "Tháng 4–6, Tháng 9–11",
-    overview: "Seoul là một trong những thủ đô năng động nhất châu Á — thành phố kết hợp những cung điện 600 năm tuổi với internet nhanh nhất hành tinh và văn hóa ẩm thực say mê nhất. Myeongdong cho ẩm thực đường phố và mỹ phẩm, Hongdae cho đời sống về đêm, Làng Hanok Bukchon cho lịch sử. Hệ thống tàu điện ngầm là một kiệt tác.",
+    flight: "6,5 giá» bay tá»« Singapore",
+    budget: "SGD 130â250/ngÃ y",
+    season: "ThÃ¡ng 4â6, ThÃ¡ng 9â11",
+    overview: "Seoul lÃ  má»t trong nhá»¯ng thá»§ ÄÃ´ nÄng Äá»ng nháº¥t chÃ¢u Ã â thÃ nh phá» káº¿t há»£p nhá»¯ng cung Äiá»n 600 nÄm tuá»i vá»i internet nhanh nháº¥t hÃ nh tinh vÃ  vÄn hÃ³a áº©m thá»±c say mÃª nháº¥t. Myeongdong cho áº©m thá»±c ÄÆ°á»ng phá» vÃ  má»¹ pháº©m, Hongdae cho Äá»i sá»ng vá» ÄÃªm, LÃ ng Hanok Bukchon cho lá»ch sá»­. Há» thá»ng tÃ u Äiá»n ngáº§m lÃ  má»t kiá»t tÃ¡c.",
     itinerary: [
-      "Ngày 1 sáng: Cung điện Gyeongbokgung lúc mở cửa (9 giờ sáng), Làng Hanok Bukchon",
-      "Ngày 1 chiều: Phố nghệ thuật Insadong, đi dạo bên suối Cheonggyecheon",
-      "Ngày 2 sáng: Ăn sáng ẩm thực đường phố Myeongdong, cáp treo Tháp Namsan",
-      "Ngày 2 chiều: Khu phố Itaewon, Bảo tàng Leeum Samsung",
-      "Ngày 3 sáng: Chợ sáng tạo Hongdae, tranh tường Đại học Nữ sinh Ewha",
-      "Ngày 3 chiều: Đài phun nước Cầu vồng cầu Banpo trên sông Hàn về đêm"
+      "NgÃ y 1 sÃ¡ng: Cung Äiá»n Gyeongbokgung lÃºc má» cá»­a (9 giá» sÃ¡ng), LÃ ng Hanok Bukchon",
+      "NgÃ y 1 chiá»u: Phá» nghá» thuáº­t Insadong, Äi dáº¡o bÃªn suá»i Cheonggyecheon",
+      "NgÃ y 2 sÃ¡ng: Än sÃ¡ng áº©m thá»±c ÄÆ°á»ng phá» Myeongdong, cÃ¡p treo ThÃ¡p Namsan",
+      "NgÃ y 2 chiá»u: Khu phá» Itaewon, Báº£o tÃ ng Leeum Samsung",
+      "NgÃ y 3 sÃ¡ng: Chá»£ sÃ¡ng táº¡o Hongdae, tranh tÆ°á»ng Äáº¡i há»c Ná»¯ sinh Ewha",
+      "NgÃ y 3 chiá»u: ÄÃ i phun nÆ°á»c Cáº§u vá»ng cáº§u Banpo trÃªn sÃ´ng HÃ n vá» ÄÃªm"
     ],
-    food: ["Thịt nướng Hàn Quốc tại Mapo Galmaegi (sườn bò)", "Bibimbap tại Gogung, Insadong", "Tteokbokki (bánh gạo cay) tại Chợ Gwangjang", "Gà rán Hàn Quốc tại Kyochon"],
-    transport: ["Thẻ T-Money cho tàu điện ngầm và xe buýt (mua tại bất kỳ cửa hàng tiện lợi nào)", "Tàu điện ngầm rộng khắp, sạch sẽ và rẻ (trung bình SGD 1,20)", "Tàu cao tốc KTX cho chuyến đi trong ngày đến Busan", "Ứng dụng Kakao T để gọi taxi"],
-    costs: [{ label: "Chỗ ở", val: "SGD 60–180" }, { label: "Ăn uống", val: "SGD 30–80" }, { label: "Di chuyển", val: "SGD 10–20" }, { label: "Hoạt động", val: "SGD 15–40" }],
-    photos: ["Cung điện Gyeongbokgung với núi Bukhansan phía sau", "Tháp Namsan về đêm", "Những con hẻm Làng Hanok Bukchon lúc bình minh", "Đài phun nước Cầu vồng cầu Banpo sau khi trời tối"]
+    food: ["Thá»t nÆ°á»ng HÃ n Quá»c táº¡i Mapo Galmaegi (sÆ°á»n bÃ²)", "Bibimbap táº¡i Gogung, Insadong", "Tteokbokki (bÃ¡nh gáº¡o cay) táº¡i Chá»£ Gwangjang", "GÃ  rÃ¡n HÃ n Quá»c táº¡i Kyochon"],
+    transport: ["Tháº» T-Money cho tÃ u Äiá»n ngáº§m vÃ  xe buÃ½t (mua táº¡i báº¥t ká»³ cá»­a hÃ ng tiá»n lá»£i nÃ o)", "TÃ u Äiá»n ngáº§m rá»ng kháº¯p, sáº¡ch sáº½ vÃ  ráº» (trung bÃ¬nh SGD 1,20)", "TÃ u cao tá»c KTX cho chuyáº¿n Äi trong ngÃ y Äáº¿n Busan", "á»¨ng dá»¥ng Kakao T Äá» gá»i taxi"],
+    costs: [{ label: "Chá» á»", val: "SGD 60â180" }, { label: "Än uá»ng", val: "SGD 30â80" }, { label: "Di chuyá»n", val: "SGD 10â20" }, { label: "Hoáº¡t Äá»ng", val: "SGD 15â40" }],
+    photos: ["Cung Äiá»n Gyeongbokgung vá»i nÃºi Bukhansan phÃ­a sau", "ThÃ¡p Namsan vá» ÄÃªm", "Nhá»¯ng con háº»m LÃ ng Hanok Bukchon lÃºc bÃ¬nh minh", "ÄÃ i phun nÆ°á»c Cáº§u vá»ng cáº§u Banpo sau khi trá»i tá»i"]
   },
   {
     id: "singapore",
     name: "Singapore",
     country: "Singapore",
-    desc: "Thành phố hiệu quả nhất châu Á — ẩm thực hoàn hảo, kiến trúc tuyệt đẹp và là cửa ngõ đến phần còn lại của khu vực.",
+    desc: "ThÃ nh phá» hiá»u quáº£ nháº¥t chÃ¢u Ã â áº©m thá»±c hoÃ n háº£o, kiáº¿n trÃºc tuyá»t Äáº¹p vÃ  lÃ  cá»­a ngÃµ Äáº¿n pháº§n cÃ²n láº¡i cá»§a khu vá»±c.",
     img: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80",
-    flight: "Thành phố trung tâm",
-    budget: "SGD 150–350/ngày",
-    season: "Quanh năm (Tháng 2–4 khô nhất)",
-    overview: "Singapore vượt xa kích thước nhỏ bé của nó. Trong chưa đầy 750 km vuông, bạn sẽ tìm thấy ẩm thực đẳng cấp thế giới từ các khu hàng rong đến nhà hàng sao Michelin, kiến trúc tuyệt vời từ những căn nhà phố thời thuộc địa đến Jewel Changi, và một số quán bar cocktail tốt nhất châu Á. An toàn, sạch sẽ và dễ dàng tiếp cận vô tận.",
+    flight: "ThÃ nh phá» trung tÃ¢m",
+    budget: "SGD 150â350/ngÃ y",
+    season: "Quanh nÄm (ThÃ¡ng 2â4 khÃ´ nháº¥t)",
+    overview: "Singapore vÆ°á»£t xa kÃ­ch thÆ°á»c nhá» bÃ© cá»§a nÃ³. Trong chÆ°a Äáº§y 750 km vuÃ´ng, báº¡n sáº½ tÃ¬m tháº¥y áº©m thá»±c Äáº³ng cáº¥p tháº¿ giá»i tá»« cÃ¡c khu hÃ ng rong Äáº¿n nhÃ  hÃ ng sao Michelin, kiáº¿n trÃºc tuyá»t vá»i tá»« nhá»¯ng cÄn nhÃ  phá» thá»i thuá»c Äá»a Äáº¿n Jewel Changi, vÃ  má»t sá» quÃ¡n bar cocktail tá»t nháº¥t chÃ¢u Ã. An toÃ n, sáº¡ch sáº½ vÃ  dá» dÃ ng tiáº¿p cáº­n vÃ´ táº­n.",
     itinerary: [
-      "Ngày 1 sáng: Thác Rain Vortex tại Sân bay Jewel Changi, Gardens by the Bay",
-      "Ngày 1 chiều: SkyPark Marina Bay Sands, màn trình diễn ánh sáng Supertree buổi tối",
-      "Ngày 2 sáng: Trung tâm Di sản Chinatown, Khu ẩm thực Maxwell ăn cơm gà Hải Nam",
-      "Ngày 2 chiều: Little India, Phố Arab, Hẻm Haji",
-      "Ngày 3 sáng: Đảo Sentosa, Universal Studios hoặc Bãi biển Palawan",
-      "Ngày 3 chiều: Các quán bar ven sông Clarke Quay, Lau Pa Sat ăn satay"
+      "NgÃ y 1 sÃ¡ng: ThÃ¡c Rain Vortex táº¡i SÃ¢n bay Jewel Changi, Gardens by the Bay",
+      "NgÃ y 1 chiá»u: SkyPark Marina Bay Sands, mÃ n trÃ¬nh diá»n Ã¡nh sÃ¡ng Supertree buá»i tá»i",
+      "NgÃ y 2 sÃ¡ng: Trung tÃ¢m Di sáº£n Chinatown, Khu áº©m thá»±c Maxwell Än cÆ¡m gÃ  Háº£i Nam",
+      "NgÃ y 2 chiá»u: Little India, Phá» Arab, Háº»m Haji",
+      "NgÃ y 3 sÃ¡ng: Äáº£o Sentosa, Universal Studios hoáº·c BÃ£i biá»n Palawan",
+      "NgÃ y 3 chiá»u: CÃ¡c quÃ¡n bar ven sÃ´ng Clarke Quay, Lau Pa Sat Än satay"
     ],
-    food: ["Cơm gà Hải Nam tại Tian Tian, Maxwell", "Cua sốt ớt tại No Signboard Seafood", "Set bánh mì nướng kaya tại Ya Kun Kaya Toast", "Laksa tại 328 Katong Laksa"],
-    transport: ["Thẻ EZ-Link cho MRT và xe buýt", "Ứng dụng Grab liền mạch và phải chăng", "MRT bao phủ hiệu quả hầu hết các khu du lịch", "MRT từ sân bay vào thành phố mất 30 phút"],
-    costs: [{ label: "Chỗ ở", val: "SGD 120–400" }, { label: "Ăn uống", val: "SGD 30–100" }, { label: "Di chuyển", val: "SGD 5–20" }, { label: "Hoạt động", val: "SGD 20–80" }],
-    photos: ["Marina Bay Sands phản chiếu vào giờ xanh", "Supertree tại Gardens by the Bay", "Thác Rain Vortex Jewel Changi", "Tượng Merlion với đường chân trời CBD về đêm"]
+    food: ["CÆ¡m gÃ  Háº£i Nam táº¡i Tian Tian, Maxwell", "Cua sá»t á»t táº¡i No Signboard Seafood", "Set bÃ¡nh mÃ¬ nÆ°á»ng kaya táº¡i Ya Kun Kaya Toast", "Laksa táº¡i 328 Katong Laksa"],
+    transport: ["Tháº» EZ-Link cho MRT vÃ  xe buÃ½t", "á»¨ng dá»¥ng Grab liá»n máº¡ch vÃ  pháº£i chÄng", "MRT bao phá»§ hiá»u quáº£ háº§u háº¿t cÃ¡c khu du lá»ch", "MRT tá»« sÃ¢n bay vÃ o thÃ nh phá» máº¥t 30 phÃºt"],
+    costs: [{ label: "Chá» á»", val: "SGD 120â400" }, { label: "Än uá»ng", val: "SGD 30â100" }, { label: "Di chuyá»n", val: "SGD 5â20" }, { label: "Hoáº¡t Äá»ng", val: "SGD 20â80" }],
+    photos: ["Marina Bay Sands pháº£n chiáº¿u vÃ o giá» xanh", "Supertree táº¡i Gardens by the Bay", "ThÃ¡c Rain Vortex Jewel Changi", "TÆ°á»£ng Merlion vá»i ÄÆ°á»ng chÃ¢n trá»i CBD vá» ÄÃªm"]
   },
   {
     id: "bangkok",
     name: "Bangkok",
-    country: "Thái Lan",
-    desc: "Hỗn loạn, mê hoặc và luôn đáng giá. Bangkok là những ngôi đền, ẩm thực đường phố, quán bar trên cao và xe tuk-tuk.",
+    country: "ThÃ¡i Lan",
+    desc: "Há»n loáº¡n, mÃª hoáº·c vÃ  luÃ´n ÄÃ¡ng giÃ¡. Bangkok lÃ  nhá»¯ng ngÃ´i Äá»n, áº©m thá»±c ÄÆ°á»ng phá», quÃ¡n bar trÃªn cao vÃ  xe tuk-tuk.",
     img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80",
-    flight: "2,5 giờ bay từ Singapore",
-    budget: "SGD 80–180/ngày",
-    season: "Tháng 11–2 (Mùa mát)",
-    overview: "Bangkok là thành phố sôi động nhất Đông Nam Á. Cung điện Hoàng gia và Wat Pho vào buổi sáng, ẩm thực đường phố trên đường Yaowarat về đêm, cocktail trên sân thượng nhìn xuống đường chân trời, và chợ nổi vào cuối tuần. Nóng nực, ồn ào và tuyệt vời vô cùng.",
+    flight: "2,5 giá» bay tá»« Singapore",
+    budget: "SGD 80â180/ngÃ y",
+    season: "ThÃ¡ng 11â2 (MÃ¹a mÃ¡t)",
+    overview: "Bangkok lÃ  thÃ nh phá» sÃ´i Äá»ng nháº¥t ÄÃ´ng Nam Ã. Cung Äiá»n HoÃ ng gia vÃ  Wat Pho vÃ o buá»i sÃ¡ng, áº©m thá»±c ÄÆ°á»ng phá» trÃªn ÄÆ°á»ng Yaowarat vá» ÄÃªm, cocktail trÃªn sÃ¢n thÆ°á»£ng nhÃ¬n xuá»ng ÄÆ°á»ng chÃ¢n trá»i, vÃ  chá»£ ná»i vÃ o cuá»i tuáº§n. NÃ³ng ná»±c, á»n Ã o vÃ  tuyá»t vá»i vÃ´ cÃ¹ng.",
     itinerary: [
-      "Ngày 1 sáng: Cung điện Hoàng gia và Wat Pho (đến lúc 8 giờ sáng trước khi đông khách)",
-      "Ngày 1 chiều: Wat Arun bằng thuyền đuôi dài, ăn trưa tại Chợ Tha Tien",
-      "Ngày 2 sáng: Chợ cuối tuần Chatuchak (Thứ 7/Chủ nhật) hoặc Chợ Or Tor Kor",
-      "Ngày 2 chiều: Platinum Fashion Mall, Siam Paragon, Sky Bar lúc hoàng hôn",
-      "Ngày 3: Chuyến đi trong ngày đến Chợ nổi Damnoen Saduak",
-      "Ngày 3 chiều: Ăn tối ẩm thực đường phố Yaowarat (khu Chinatown)"
+      "NgÃ y 1 sÃ¡ng: Cung Äiá»n HoÃ ng gia vÃ  Wat Pho (Äáº¿n lÃºc 8 giá» sÃ¡ng trÆ°á»c khi ÄÃ´ng khÃ¡ch)",
+      "NgÃ y 1 chiá»u: Wat Arun báº±ng thuyá»n ÄuÃ´i dÃ i, Än trÆ°a táº¡i Chá»£ Tha Tien",
+      "NgÃ y 2 sÃ¡ng: Chá»£ cuá»i tuáº§n Chatuchak (Thá»© 7/Chá»§ nháº­t) hoáº·c Chá»£ Or Tor Kor",
+      "NgÃ y 2 chiá»u: Platinum Fashion Mall, Siam Paragon, Sky Bar lÃºc hoÃ ng hÃ´n",
+      "NgÃ y 3: Chuyáº¿n Äi trong ngÃ y Äáº¿n Chá»£ ná»i Damnoen Saduak",
+      "NgÃ y 3 chiá»u: Än tá»i áº©m thá»±c ÄÆ°á»ng phá» Yaowarat (khu Chinatown)"
     ],
-    food: ["Pad Thai tại Thip Samai trên đường Mahachai", "Tom Yum Goong tại Kuang Seafood", "Xôi xoài tại Mamuang (Mae Varee)", "Dim sum đường phố ở khu Chinatown Yaowarat"],
-    transport: ["BTS Skytrain và MRT bao phủ khu du lịch chính", "Grab là lựa chọn taxi an toàn và rẻ nhất", "Thuyền đuôi dài trên sông Chao Phraya", "Tránh xe tuk-tuk trừ khi bạn thương lượng giá trước"],
-    costs: [{ label: "Chỗ ở", val: "SGD 40–200" }, { label: "Ăn uống", val: "SGD 15–60" }, { label: "Di chuyển", val: "SGD 8–25" }, { label: "Hoạt động", val: "SGD 10–40" }],
-    photos: ["Wat Arun lúc bình minh nhìn từ sông", "Sky Bar tại Lebua lúc chạng vạng", "Những ngọn tháp vàng của Cung điện Hoàng gia", "Đèn neon đường Yaowarat lúc nửa đêm"]
+    food: ["Pad Thai táº¡i Thip Samai trÃªn ÄÆ°á»ng Mahachai", "Tom Yum Goong táº¡i Kuang Seafood", "XÃ´i xoÃ i táº¡i Mamuang (Mae Varee)", "Dim sum ÄÆ°á»ng phá» á» khu Chinatown Yaowarat"],
+    transport: ["BTS Skytrain vÃ  MRT bao phá»§ khu du lá»ch chÃ­nh", "Grab lÃ  lá»±a chá»n taxi an toÃ n vÃ  ráº» nháº¥t", "Thuyá»n ÄuÃ´i dÃ i trÃªn sÃ´ng Chao Phraya", "TrÃ¡nh xe tuk-tuk trá»« khi báº¡n thÆ°Æ¡ng lÆ°á»£ng giÃ¡ trÆ°á»c"],
+    costs: [{ label: "Chá» á»", val: "SGD 40â200" }, { label: "Än uá»ng", val: "SGD 15â60" }, { label: "Di chuyá»n", val: "SGD 8â25" }, { label: "Hoáº¡t Äá»ng", val: "SGD 10â40" }],
+    photos: ["Wat Arun lÃºc bÃ¬nh minh nhÃ¬n tá»« sÃ´ng", "Sky Bar táº¡i Lebua lÃºc cháº¡ng váº¡ng", "Nhá»¯ng ngá»n thÃ¡p vÃ ng cá»§a Cung Äiá»n HoÃ ng gia", "ÄÃ¨n neon ÄÆ°á»ng Yaowarat lÃºc ná»­a ÄÃªm"]
   },
   {
     id: "hongkong",
-    name: "Hồng Kông",
-    country: "Đặc khu hành chính Trung Quốc",
-    desc: "Thành phố thẳng đứng tối thượng của châu Á. Dim sum lúc bình minh, cảnh cảng lúc hoàng hôn, và một số tuyến đi bộ đường dài đẹp nhất thế giới.",
+    name: "Há»ng KÃ´ng",
+    country: "Äáº·c khu hÃ nh chÃ­nh Trung Quá»c",
+    desc: "ThÃ nh phá» tháº³ng Äá»©ng tá»i thÆ°á»£ng cá»§a chÃ¢u Ã. Dim sum lÃºc bÃ¬nh minh, cáº£nh cáº£ng lÃºc hoÃ ng hÃ´n, vÃ  má»t sá» tuyáº¿n Äi bá» ÄÆ°á»ng dÃ i Äáº¹p nháº¥t tháº¿ giá»i.",
     img: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=600&q=80",
-    flight: "3,5 giờ bay từ Singapore",
-    budget: "SGD 180–350/ngày",
-    season: "Tháng 10–3",
-    overview: "Hồng Kông là một trong những kỳ quan đô thị vĩ đại nhất thế giới. Đường chân trời Cảng Victoria nhìn từ Tsim Sha Tsui về đêm là điều không thể bỏ lỡ. Ăn dim sum vào bữa sáng, đi bộ đường dài Dragon's Back vào buổi chiều, và đi Tàu điện lên Đỉnh núi để ngắm toàn cảnh buổi tối. MTR là hệ thống tàu điện ngầm tốt nhất thế giới.",
+    flight: "3,5 giá» bay tá»« Singapore",
+    budget: "SGD 180â350/ngÃ y",
+    season: "ThÃ¡ng 10â3",
+    overview: "Há»ng KÃ´ng lÃ  má»t trong nhá»¯ng ká»³ quan ÄÃ´ thá» vÄ© Äáº¡i nháº¥t tháº¿ giá»i. ÄÆ°á»ng chÃ¢n trá»i Cáº£ng Victoria nhÃ¬n tá»« Tsim Sha Tsui vá» ÄÃªm lÃ  Äiá»u khÃ´ng thá» bá» lá»¡. Än dim sum vÃ o bá»¯a sÃ¡ng, Äi bá» ÄÆ°á»ng dÃ i Dragon's Back vÃ o buá»i chiá»u, vÃ  Äi TÃ u Äiá»n lÃªn Äá»nh nÃºi Äá» ngáº¯m toÃ n cáº£nh buá»i tá»i. MTR lÃ  há» thá»ng tÃ u Äiá»n ngáº§m tá»t nháº¥t tháº¿ giá»i.",
     itinerary: [
-      "Ngày 1: Đến nơi, nhận phòng ở Kowloon, đi dạo bến cảng Tsim Sha Tsui, màn trình diễn Symphony of Lights",
-      "Ngày 2 sáng: Tim Ho Wan ăn dim sum, khám phá Central / Sheung Wan",
-      "Ngày 2 chiều: Tàu điện lên Đỉnh Victoria lúc hoàng hôn",
-      "Ngày 3 sáng: Đi bộ đường dài Dragon's Back (Shek O), Vịnh Big Wave",
-      "Ngày 3 chiều: Chợ đêm phố Temple, ẩm thực đường phố Jordan"
+      "NgÃ y 1: Äáº¿n nÆ¡i, nháº­n phÃ²ng á» Kowloon, Äi dáº¡o báº¿n cáº£ng Tsim Sha Tsui, mÃ n trÃ¬nh diá»n Symphony of Lights",
+      "NgÃ y 2 sÃ¡ng: Tim Ho Wan Än dim sum, khÃ¡m phÃ¡ Central / Sheung Wan",
+      "NgÃ y 2 chiá»u: TÃ u Äiá»n lÃªn Äá»nh Victoria lÃºc hoÃ ng hÃ´n",
+      "NgÃ y 3 sÃ¡ng: Äi bá» ÄÆ°á»ng dÃ i Dragon's Back (Shek O), Vá»nh Big Wave",
+      "NgÃ y 3 chiá»u: Chá»£ ÄÃªm phá» Temple, áº©m thá»±c ÄÆ°á»ng phá» Jordan"
     ],
-    food: ["Dim sum tại Tim Ho Wan (đạt sao Michelin, giá phải chăng)", "Ngỗng quay tại nhà hàng Yung Kee", "Bánh trứng (gai daan jai) tại bất kỳ quầy đường phố nào", "Bánh mì dứa kẹp bơ tại quán Kam Wah"],
-    transport: ["Thẻ Octopus dùng cho MTR, xe buýt, xe điện và phà", "Phà Star Ferry giữa Kowloon và Đảo Hồng Kông (HKD 2,70)", "Thang cuốn Mid-Levels lên sườn đồi trung tâm", "MTR nhanh, rẻ và rất đáng tin cậy"],
-    costs: [{ label: "Chỗ ở", val: "SGD 100–300" }, { label: "Ăn uống", val: "SGD 40–100" }, { label: "Di chuyển", val: "SGD 8–15" }, { label: "Hoạt động", val: "SGD 15–40" }],
-    photos: ["Cảng Victoria về đêm nhìn từ Tsim Sha Tsui", "Đỉnh Lion Rock lúc hoàng hôn từ Tàu điện lên Đỉnh núi", "Cảnh nhìn từ Thang cuốn Central-Mid-Levels", "Tuyến Dragon's Back nhìn ra Biển Đông"]
+    food: ["Dim sum táº¡i Tim Ho Wan (Äáº¡t sao Michelin, giÃ¡ pháº£i chÄng)", "Ngá»ng quay táº¡i nhÃ  hÃ ng Yung Kee", "BÃ¡nh trá»©ng (gai daan jai) táº¡i báº¥t ká»³ quáº§y ÄÆ°á»ng phá» nÃ o", "BÃ¡nh mÃ¬ dá»©a káº¹p bÆ¡ táº¡i quÃ¡n Kam Wah"],
+    transport: ["Tháº» Octopus dÃ¹ng cho MTR, xe buÃ½t, xe Äiá»n vÃ  phÃ ", "PhÃ  Star Ferry giá»¯a Kowloon vÃ  Äáº£o Há»ng KÃ´ng (HKD 2,70)", "Thang cuá»n Mid-Levels lÃªn sÆ°á»n Äá»i trung tÃ¢m", "MTR nhanh, ráº» vÃ  ráº¥t ÄÃ¡ng tin cáº­y"],
+    costs: [{ label: "Chá» á»", val: "SGD 100â300" }, { label: "Än uá»ng", val: "SGD 40â100" }, { label: "Di chuyá»n", val: "SGD 8â15" }, { label: "Hoáº¡t Äá»ng", val: "SGD 15â40" }],
+    photos: ["Cáº£ng Victoria vá» ÄÃªm nhÃ¬n tá»« Tsim Sha Tsui", "Äá»nh Lion Rock lÃºc hoÃ ng hÃ´n tá»« TÃ u Äiá»n lÃªn Äá»nh nÃºi", "Cáº£nh nhÃ¬n tá»« Thang cuá»n Central-Mid-Levels", "Tuyáº¿n Dragon's Back nhÃ¬n ra Biá»n ÄÃ´ng"]
   },
   {
     id: "kl",
     name: "Kuala Lumpur",
     country: "Malaysia",
-    desc: "Tháp đôi Petronas, ẩm thực đa văn hóa tuyệt vời, và những khách sạn sang trọng với chi phí chỉ bằng một phần của Singapore.",
+    desc: "ThÃ¡p ÄÃ´i Petronas, áº©m thá»±c Äa vÄn hÃ³a tuyá»t vá»i, vÃ  nhá»¯ng khÃ¡ch sáº¡n sang trá»ng vá»i chi phÃ­ chá» báº±ng má»t pháº§n cá»§a Singapore.",
     img: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80",
-    flight: "45 phút bay từ Singapore",
-    budget: "SGD 80–200/ngày",
-    season: "Tháng 5–7, Tháng 12–2",
-    overview: "KL là một trong những thủ đô bị đánh giá thấp nhất châu Á. Tháp đôi Petronas còn ấn tượng hơn khi tận mắt chứng kiến, ẩm thực phong phú khác thường (Jalan Alor, Brickfields, Chinatown), và giá khách sạn cực kỳ hợp lý. Các chuyến đi trong ngày đến Động Batu và Cao nguyên Cameron rất dễ sắp xếp.",
+    flight: "45 phÃºt bay tá»« Singapore",
+    budget: "SGD 80â200/ngÃ y",
+    season: "ThÃ¡ng 5â7, ThÃ¡ng 12â2",
+    overview: "KL lÃ  má»t trong nhá»¯ng thá»§ ÄÃ´ bá» ÄÃ¡nh giÃ¡ tháº¥p nháº¥t chÃ¢u Ã. ThÃ¡p ÄÃ´i Petronas cÃ²n áº¥n tÆ°á»£ng hÆ¡n khi táº­n máº¯t chá»©ng kiáº¿n, áº©m thá»±c phong phÃº khÃ¡c thÆ°á»ng (Jalan Alor, Brickfields, Chinatown), vÃ  giÃ¡ khÃ¡ch sáº¡n cá»±c ká»³ há»£p lÃ½. CÃ¡c chuyáº¿n Äi trong ngÃ y Äáº¿n Äá»ng Batu vÃ  Cao nguyÃªn Cameron ráº¥t dá» sáº¯p xáº¿p.",
     itinerary: [
-      "Ngày 1 sáng: Động Batu lúc bình minh (tránh cái nóng), đi dạo Little India",
-      "Ngày 1 chiều: Đài quan sát Tháp đôi Petronas, công viên KLCC",
-      "Ngày 2 sáng: Chợ Trung tâm, phố Petaling khu Chinatown",
-      "Ngày 2 chiều: Quảng trường Merdeka, Tháp KL, chợ đêm Jalan Alor",
-      "Ngày 3: Chuyến đi trong ngày đến Cao nguyên Genting hoặc Putrajaya",
-      "Ngày 3 chiều: Quán bar trên cao Heli Lounge Bar (bên trong một sân đỗ trực thăng)"
+      "NgÃ y 1 sÃ¡ng: Äá»ng Batu lÃºc bÃ¬nh minh (trÃ¡nh cÃ¡i nÃ³ng), Äi dáº¡o Little India",
+      "NgÃ y 1 chiá»u: ÄÃ i quan sÃ¡t ThÃ¡p ÄÃ´i Petronas, cÃ´ng viÃªn KLCC",
+      "NgÃ y 2 sÃ¡ng: Chá»£ Trung tÃ¢m, phá» Petaling khu Chinatown",
+      "NgÃ y 2 chiá»u: Quáº£ng trÆ°á»ng Merdeka, ThÃ¡p KL, chá»£ ÄÃªm Jalan Alor",
+      "NgÃ y 3: Chuyáº¿n Äi trong ngÃ y Äáº¿n Cao nguyÃªn Genting hoáº·c Putrajaya",
+      "NgÃ y 3 chiá»u: QuÃ¡n bar trÃªn cao Heli Lounge Bar (bÃªn trong má»t sÃ¢n Äá» trá»±c thÄng)"
     ],
-    food: ["Char Kuey Teow tại Restoran Kassim Mustafa", "Nasi Lemak tại nhà hàng Village Park", "Bak Kut Teh ở Klang (chuyến đi trong ngày)", "Roti canai kiểu mamak tại bất kỳ quán mamak 24 giờ nào"],
-    transport: ["KL Sentral là trung tâm trung chuyển chính", "MRT và LRT bao phủ hầu hết các khu vực", "Grab rẻ và phổ biến khắp nơi", "Tàu Airport Express (KLIA Ekspres) mất 28 phút"],
-    costs: [{ label: "Chỗ ở", val: "SGD 50–180" }, { label: "Ăn uống", val: "SGD 20–60" }, { label: "Di chuyển", val: "SGD 5–20" }, { label: "Hoạt động", val: "SGD 10–30" }],
-    photos: ["Tháp đôi Petronas phản chiếu trong hồ nước công viên KLCC", "Bậc thang cầu vồng Động Batu lúc bình minh", "Cảnh sân thượng quán Heli Lounge Bar", "Ẩm thực đường phố Jalan Alor về đêm"]
+    food: ["Char Kuey Teow táº¡i Restoran Kassim Mustafa", "Nasi Lemak táº¡i nhÃ  hÃ ng Village Park", "Bak Kut Teh á» Klang (chuyáº¿n Äi trong ngÃ y)", "Roti canai kiá»u mamak táº¡i báº¥t ká»³ quÃ¡n mamak 24 giá» nÃ o"],
+    transport: ["KL Sentral lÃ  trung tÃ¢m trung chuyá»n chÃ­nh", "MRT vÃ  LRT bao phá»§ háº§u háº¿t cÃ¡c khu vá»±c", "Grab ráº» vÃ  phá» biáº¿n kháº¯p nÆ¡i", "TÃ u Airport Express (KLIA Ekspres) máº¥t 28 phÃºt"],
+    costs: [{ label: "Chá» á»", val: "SGD 50â180" }, { label: "Än uá»ng", val: "SGD 20â60" }, { label: "Di chuyá»n", val: "SGD 5â20" }, { label: "Hoáº¡t Äá»ng", val: "SGD 10â30" }],
+    photos: ["ThÃ¡p ÄÃ´i Petronas pháº£n chiáº¿u trong há» nÆ°á»c cÃ´ng viÃªn KLCC", "Báº­c thang cáº§u vá»ng Äá»ng Batu lÃºc bÃ¬nh minh", "Cáº£nh sÃ¢n thÆ°á»£ng quÃ¡n Heli Lounge Bar", "áº¨m thá»±c ÄÆ°á»ng phá» Jalan Alor vá» ÄÃªm"]
   },
   {
     id: "maldives",
     name: "Maldives",
     country: "Maldives",
-    desc: "Bungalow trên mặt nước, đầm phá trong vắt như pha lê, và bãi biển phát quang sinh học. Chuyến nghỉ dưỡng sang trọng tối thượng.",
+    desc: "Bungalow trÃªn máº·t nÆ°á»c, Äáº§m phÃ¡ trong váº¯t nhÆ° pha lÃª, vÃ  bÃ£i biá»n phÃ¡t quang sinh há»c. Chuyáº¿n nghá» dÆ°á»¡ng sang trá»ng tá»i thÆ°á»£ng.",
     img: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80",
-    flight: "4 giờ bay từ Singapore",
-    budget: "SGD 400–1200/ngày",
-    season: "Tháng 11–4 (Mùa khô)",
-    overview: "Maldives không giống bất cứ nơi nào trên trái đất. Chỉ cao hơn mực nước biển một chút, rải rác khắp Ấn Độ Dương, nơi đây có những bungalow trên mặt nước, rạn san hô đầy cá đuối manta và cá mập, và làn nước xanh rực rỡ nhất bạn có thể tưởng tượng. Các lựa chọn tiết kiệm có ở các đảo địa phương; còn sự sang trọng thì không có giới hạn ở các đảo nghỉ dưỡng.",
+    flight: "4 giá» bay tá»« Singapore",
+    budget: "SGD 400â1200/ngÃ y",
+    season: "ThÃ¡ng 11â4 (MÃ¹a khÃ´)",
+    overview: "Maldives khÃ´ng giá»ng báº¥t cá»© nÆ¡i nÃ o trÃªn trÃ¡i Äáº¥t. Chá» cao hÆ¡n má»±c nÆ°á»c biá»n má»t chÃºt, ráº£i rÃ¡c kháº¯p áº¤n Äá» DÆ°Æ¡ng, nÆ¡i ÄÃ¢y cÃ³ nhá»¯ng bungalow trÃªn máº·t nÆ°á»c, ráº¡n san hÃ´ Äáº§y cÃ¡ Äuá»i manta vÃ  cÃ¡ máº­p, vÃ  lÃ n nÆ°á»c xanh rá»±c rá»¡ nháº¥t báº¡n cÃ³ thá» tÆ°á»ng tÆ°á»£ng. CÃ¡c lá»±a chá»n tiáº¿t kiá»m cÃ³ á» cÃ¡c Äáº£o Äá»a phÆ°Æ¡ng; cÃ²n sá»± sang trá»ng thÃ¬ khÃ´ng cÃ³ giá»i háº¡n á» cÃ¡c Äáº£o nghá» dÆ°á»¡ng.",
     itinerary: [
-      "Ngày 1: Bay đến Malé, đi thuyền cao tốc hoặc thủy phi cơ đến đảo của bạn, ổn định chỗ ở",
-      "Ngày 2: Lặn ống thở hoặc lặn biển tại rạn san hô gần đảo, chuyến câu cá lúc hoàng hôn",
-      "Ngày 3: Du thuyền ngắm cá heo lúc bình minh, dã ngoại trên bãi cát ngầm, bơi đêm trong làn nước phát quang sinh học",
+      "NgÃ y 1: Bay Äáº¿n MalÃ©, Äi thuyá»n cao tá»c hoáº·c thá»§y phi cÆ¡ Äáº¿n Äáº£o cá»§a báº¡n, á»n Äá»nh chá» á»",
+      "NgÃ y 2: Láº·n á»ng thá» hoáº·c láº·n biá»n táº¡i ráº¡n san hÃ´ gáº§n Äáº£o, chuyáº¿n cÃ¢u cÃ¡ lÃºc hoÃ ng hÃ´n",
+      "NgÃ y 3: Du thuyá»n ngáº¯m cÃ¡ heo lÃºc bÃ¬nh minh, dÃ£ ngoáº¡i trÃªn bÃ£i cÃ¡t ngáº§m, bÆ¡i ÄÃªm trong lÃ n nÆ°á»c phÃ¡t quang sinh há»c",
     ],
-    food: ["Cá ngừ tươi (mas) chế biến đủ kiểu — nướng, nấu cà ri, hun khói", "Mas huni (món sáng cá ngừ và dừa) ở các đảo địa phương", "Tôm hùm trên bãi biển tại nhà hàng khu nghỉ dưỡng", "Nước dừa tươi tại các quán cà phê địa phương (rẻ hơn nhiều so với khu nghỉ dưỡng)"],
-    transport: ["Di chuyển bằng thủy phi cơ ngoạn mục nhưng đắt đỏ", "Thuyền cao tốc là lựa chọn tiết kiệm để đến các đảo san hô xa", "Từ Malé đến các đảo địa phương: phà công cộng giá SGD 2–5", "Hầu hết các khu nghỉ dưỡng đều sắp xếp toàn bộ việc di chuyển giữa các đảo"],
-    costs: [{ label: "Chỗ ở", val: "SGD 200–800+" }, { label: "Ăn uống", val: "SGD 80–200" }, { label: "Hoạt động", val: "SGD 50–150" }, { label: "Di chuyển", val: "SGD 50–400" }],
-    photos: ["Bungalow trên mặt nước lúc bình minh, Bắc Malé Atoll", "Bãi biển phát quang sinh học ở Đảo Vaadhoo", "Lặn ống thở cùng cá đuối manta tại Vịnh Hanifaru", "Bãi cát ngầm nhìn từ trên cao trên thủy phi cơ"]
+    food: ["CÃ¡ ngá»« tÆ°Æ¡i (mas) cháº¿ biáº¿n Äá»§ kiá»u â nÆ°á»ng, náº¥u cÃ  ri, hun khÃ³i", "Mas huni (mÃ³n sÃ¡ng cÃ¡ ngá»« vÃ  dá»«a) á» cÃ¡c Äáº£o Äá»a phÆ°Æ¡ng", "TÃ´m hÃ¹m trÃªn bÃ£i biá»n táº¡i nhÃ  hÃ ng khu nghá» dÆ°á»¡ng", "NÆ°á»c dá»«a tÆ°Æ¡i táº¡i cÃ¡c quÃ¡n cÃ  phÃª Äá»a phÆ°Æ¡ng (ráº» hÆ¡n nhiá»u so vá»i khu nghá» dÆ°á»¡ng)"],
+    transport: ["Di chuyá»n báº±ng thá»§y phi cÆ¡ ngoáº¡n má»¥c nhÆ°ng Äáº¯t Äá»", "Thuyá»n cao tá»c lÃ  lá»±a chá»n tiáº¿t kiá»m Äá» Äáº¿n cÃ¡c Äáº£o san hÃ´ xa", "Tá»« MalÃ© Äáº¿n cÃ¡c Äáº£o Äá»a phÆ°Æ¡ng: phÃ  cÃ´ng cá»ng giÃ¡ SGD 2â5", "Háº§u háº¿t cÃ¡c khu nghá» dÆ°á»¡ng Äá»u sáº¯p xáº¿p toÃ n bá» viá»c di chuyá»n giá»¯a cÃ¡c Äáº£o"],
+    costs: [{ label: "Chá» á»", val: "SGD 200â800+" }, { label: "Än uá»ng", val: "SGD 80â200" }, { label: "Hoáº¡t Äá»ng", val: "SGD 50â150" }, { label: "Di chuyá»n", val: "SGD 50â400" }],
+    photos: ["Bungalow trÃªn máº·t nÆ°á»c lÃºc bÃ¬nh minh, Báº¯c MalÃ© Atoll", "BÃ£i biá»n phÃ¡t quang sinh há»c á» Äáº£o Vaadhoo", "Láº·n á»ng thá» cÃ¹ng cÃ¡ Äuá»i manta táº¡i Vá»nh Hanifaru", "BÃ£i cÃ¡t ngáº§m nhÃ¬n tá»« trÃªn cao trÃªn thá»§y phi cÆ¡"]
   },
   {
     id: "phuket",
     name: "Phuket & Krabi",
-    country: "Thái Lan",
-    desc: "Những núi đá vôi, làn nước màu ngọc lục bảo, lặn biển đẳng cấp thế giới và những chuyến đảo tuyệt đẹp trên Biển Andaman.",
+    country: "ThÃ¡i Lan",
+    desc: "Nhá»¯ng nÃºi ÄÃ¡ vÃ´i, lÃ n nÆ°á»c mÃ u ngá»c lá»¥c báº£o, láº·n biá»n Äáº³ng cáº¥p tháº¿ giá»i vÃ  nhá»¯ng chuyáº¿n Äáº£o tuyá»t Äáº¹p trÃªn Biá»n Andaman.",
     img: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80",
-    flight: "2 giờ bay từ Singapore",
-    budget: "SGD 100–250/ngày",
-    season: "Tháng 11–4 (Mùa khô)",
-    overview: "Phuket và Krabi cùng nhau tạo thành một trong những điểm đến ven biển ngoạn mục nhất thế giới. Quần đảo Phi Phi, Bãi biển Railay (chỉ có thể đến bằng thuyền), và tour Bốn Đảo quanh Koh Lanta là những trải nghiệm trong danh sách ước mơ. Krabi yên tĩnh hơn và hùng vĩ hơn; Phuket có cơ sở hạ tầng và đời sống về đêm tốt hơn.",
+    flight: "2 giá» bay tá»« Singapore",
+    budget: "SGD 100â250/ngÃ y",
+    season: "ThÃ¡ng 11â4 (MÃ¹a khÃ´)",
+    overview: "Phuket vÃ  Krabi cÃ¹ng nhau táº¡o thÃ nh má»t trong nhá»¯ng Äiá»m Äáº¿n ven biá»n ngoáº¡n má»¥c nháº¥t tháº¿ giá»i. Quáº§n Äáº£o Phi Phi, BÃ£i biá»n Railay (chá» cÃ³ thá» Äáº¿n báº±ng thuyá»n), vÃ  tour Bá»n Äáº£o quanh Koh Lanta lÃ  nhá»¯ng tráº£i nghiá»m trong danh sÃ¡ch Æ°á»c mÆ¡. Krabi yÃªn tÄ©nh hÆ¡n vÃ  hÃ¹ng vÄ© hÆ¡n; Phuket cÃ³ cÆ¡ sá» háº¡ táº§ng vÃ  Äá»i sá»ng vá» ÄÃªm tá»t hÆ¡n.",
     itinerary: [
-      "Ngày 1: Đến Phuket, Bãi biển Patong, phố đi bộ Bangla Road về đêm",
-      "Ngày 2: Chuyến đi trong ngày bằng thuyền cao tốc đến Quần đảo Phi Phi (khởi hành trước 7 giờ sáng)",
-      "Ngày 3: Di chuyển đến Krabi, nhận phòng ở Ao Nang, đến Bãi biển Railay bằng thuyền đuôi dài",
+      "NgÃ y 1: Äáº¿n Phuket, BÃ£i biá»n Patong, phá» Äi bá» Bangla Road vá» ÄÃªm",
+      "NgÃ y 2: Chuyáº¿n Äi trong ngÃ y báº±ng thuyá»n cao tá»c Äáº¿n Quáº§n Äáº£o Phi Phi (khá»i hÃ nh trÆ°á»c 7 giá» sÃ¡ng)",
+      "NgÃ y 3: Di chuyá»n Äáº¿n Krabi, nháº­n phÃ²ng á» Ao Nang, Äáº¿n BÃ£i biá»n Railay báº±ng thuyá»n ÄuÃ´i dÃ i",
     ],
-    food: ["Pad Thai và cà ri xanh tại bất kỳ nhà hàng ven biển Ao Nang nào", "Hải sản nướng tươi tại Chợ Hải sản Rawai (Phuket)", "Kem dừa trong vỏ dừa tươi", "Súp Tom Kha Gai tại các quán nhỏ ven biển"],
-    transport: ["Grab hoạt động ở thị trấn Phuket nhưng ít hơn ở các khu du lịch", "Thuyền đuôi dài để đi giữa các bãi biển và đảo", "Songthaew (xe tải đỏ chung) rẻ nhất ở Phuket", "Thuê xe máy ở Krabi để linh hoạt hoàn toàn"],
-    costs: [{ label: "Chỗ ở", val: "SGD 50–250" }, { label: "Ăn uống", val: "SGD 20–70" }, { label: "Di chuyển", val: "SGD 15–50" }, { label: "Hoạt động", val: "SGD 30–80" }],
-    photos: ["Toàn cảnh đông và tây Bãi biển Railay", "Phi Phi Don nhìn từ trên cao lúc bình minh", "Núi đá đảo James Bond (Khao Phing Kan)", "Hoàng hôn Ao Nang từ quán bar bãi biển"]
+    food: ["Pad Thai vÃ  cÃ  ri xanh táº¡i báº¥t ká»³ nhÃ  hÃ ng ven biá»n Ao Nang nÃ o", "Háº£i sáº£n nÆ°á»ng tÆ°Æ¡i táº¡i Chá»£ Háº£i sáº£n Rawai (Phuket)", "Kem dá»«a trong vá» dá»«a tÆ°Æ¡i", "SÃºp Tom Kha Gai táº¡i cÃ¡c quÃ¡n nhá» ven biá»n"],
+    transport: ["Grab hoáº¡t Äá»ng á» thá» tráº¥n Phuket nhÆ°ng Ã­t hÆ¡n á» cÃ¡c khu du lá»ch", "Thuyá»n ÄuÃ´i dÃ i Äá» Äi giá»¯a cÃ¡c bÃ£i biá»n vÃ  Äáº£o", "Songthaew (xe táº£i Äá» chung) ráº» nháº¥t á» Phuket", "ThuÃª xe mÃ¡y á» Krabi Äá» linh hoáº¡t hoÃ n toÃ n"],
+    costs: [{ label: "Chá» á»", val: "SGD 50â250" }, { label: "Än uá»ng", val: "SGD 20â70" }, { label: "Di chuyá»n", val: "SGD 15â50" }, { label: "Hoáº¡t Äá»ng", val: "SGD 30â80" }],
+    photos: ["ToÃ n cáº£nh ÄÃ´ng vÃ  tÃ¢y BÃ£i biá»n Railay", "Phi Phi Don nhÃ¬n tá»« trÃªn cao lÃºc bÃ¬nh minh", "NÃºi ÄÃ¡ Äáº£o James Bond (Khao Phing Kan)", "HoÃ ng hÃ´n Ao Nang tá»« quÃ¡n bar bÃ£i biá»n"]
   },
   {
     id: "sydney",
     name: "Sydney",
-    country: "Úc",
-    desc: "Nhà hát Opera, Cầu Cảng, những bãi biển đẳng cấp thế giới, và một trong những thành phố ẩm thực tuyệt vời nhất Nam Bán cầu.",
+    country: "Ãc",
+    desc: "NhÃ  hÃ¡t Opera, Cáº§u Cáº£ng, nhá»¯ng bÃ£i biá»n Äáº³ng cáº¥p tháº¿ giá»i, vÃ  má»t trong nhá»¯ng thÃ nh phá» áº©m thá»±c tuyá»t vá»i nháº¥t Nam BÃ¡n cáº§u.",
     img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=600&q=80",
-    flight: "8 giờ bay từ Singapore",
-    budget: "SGD 300–600/ngày",
-    season: "Tháng 9–11, Tháng 3–5",
-    overview: "Sydney là một trong những thành phố đáng sống và đáng đến nhất thế giới. Nhà hát Opera và Cầu Cảng mang tính biểu tượng, những bãi biển nổi tiếng thế giới như Bondi và Manly, và một nền ẩm thực được dẫn dắt bởi nông sản tuyệt hảo cùng những ảnh hưởng đa văn hóa. Đắt đỏ theo tiêu chuẩn châu Á nhưng chất lượng phi thường ở khắp mọi nơi.",
+    flight: "8 giá» bay tá»« Singapore",
+    budget: "SGD 300â600/ngÃ y",
+    season: "ThÃ¡ng 9â11, ThÃ¡ng 3â5",
+    overview: "Sydney lÃ  má»t trong nhá»¯ng thÃ nh phá» ÄÃ¡ng sá»ng vÃ  ÄÃ¡ng Äáº¿n nháº¥t tháº¿ giá»i. NhÃ  hÃ¡t Opera vÃ  Cáº§u Cáº£ng mang tÃ­nh biá»u tÆ°á»£ng, nhá»¯ng bÃ£i biá»n ná»i tiáº¿ng tháº¿ giá»i nhÆ° Bondi vÃ  Manly, vÃ  má»t ná»n áº©m thá»±c ÄÆ°á»£c dáº«n dáº¯t bá»i nÃ´ng sáº£n tuyá»t háº£o cÃ¹ng nhá»¯ng áº£nh hÆ°á»ng Äa vÄn hÃ³a. Äáº¯t Äá» theo tiÃªu chuáº©n chÃ¢u Ã nhÆ°ng cháº¥t lÆ°á»£ng phi thÆ°á»ng á» kháº¯p má»i nÆ¡i.",
     itinerary: [
-      "Ngày 1 sáng: Tham quan Nhà hát Opera Sydney, Circular Quay, The Rocks",
-      "Ngày 1 chiều: Leo Cầu Cảng (hoặc Đài quan sát Pylon), Darling Harbour",
-      "Ngày 2 sáng: Bãi biển Bondi, đi bộ ven biển từ Bondi đến Coogee",
-      "Ngày 2 chiều: Khám phá ẩm thực Surry Hills, các nhà hàng phố Crown",
-      "Ngày 3: Phà Manly (chuyến vượt cảng ngoạn mục), Bãi biển Manly, chuyến đi trong ngày đến Blue Mountains"
+      "NgÃ y 1 sÃ¡ng: Tham quan NhÃ  hÃ¡t Opera Sydney, Circular Quay, The Rocks",
+      "NgÃ y 1 chiá»u: Leo Cáº§u Cáº£ng (hoáº·c ÄÃ i quan sÃ¡t Pylon), Darling Harbour",
+      "NgÃ y 2 sÃ¡ng: BÃ£i biá»n Bondi, Äi bá» ven biá»n tá»« Bondi Äáº¿n Coogee",
+      "NgÃ y 2 chiá»u: KhÃ¡m phÃ¡ áº©m thá»±c Surry Hills, cÃ¡c nhÃ  hÃ ng phá» Crown",
+      "NgÃ y 3: PhÃ  Manly (chuyáº¿n vÆ°á»£t cáº£ng ngoáº¡n má»¥c), BÃ£i biá»n Manly, chuyáº¿n Äi trong ngÃ y Äáº¿n Blue Mountains"
     ],
-    food: ["Văn hóa cà phê flat white — mỗi khu ngoại ô đều có những quán cà phê tuyệt vời", "Hàu đá Sydney tại bất kỳ chợ cá hay nhà hàng ven cảng nào", "Bữa brunch tại Bourke Street Bakery, Surry Hills", "Phở Việt Nam ở Cabramatta hoặc Bankstown"],
-    transport: ["Thẻ Opal cho tàu, xe buýt, phà và tàu điện nhẹ", "Phà Manly là trải nghiệm di chuyển đẹp nhất", "Tàu từ sân bay vào thành phố (Circular Quay): 13 phút", "Uber có sẵn rộng rãi; taxi đắt hơn"],
-    costs: [{ label: "Chỗ ở", val: "SGD 180–500" }, { label: "Ăn uống", val: "SGD 80–160" }, { label: "Di chuyển", val: "SGD 15–40" }, { label: "Hoạt động", val: "SGD 30–80" }],
-    photos: ["Nhà hát Opera lúc bình minh từ Ghế Bà Macquarie", "Cảnh vách đá tuyến đi bộ Bondi đến Coogee", "Cầu Cảng nhìn từ North Sydney lúc chạng vạng", "Cảnh nhìn từ phà Manly quay về đường chân trời thành phố"]
+    food: ["VÄn hÃ³a cÃ  phÃª flat white â má»i khu ngoáº¡i Ã´ Äá»u cÃ³ nhá»¯ng quÃ¡n cÃ  phÃª tuyá»t vá»i", "HÃ u ÄÃ¡ Sydney táº¡i báº¥t ká»³ chá»£ cÃ¡ hay nhÃ  hÃ ng ven cáº£ng nÃ o", "Bá»¯a brunch táº¡i Bourke Street Bakery, Surry Hills", "Phá» Viá»t Nam á» Cabramatta hoáº·c Bankstown"],
+    transport: ["Tháº» Opal cho tÃ u, xe buÃ½t, phÃ  vÃ  tÃ u Äiá»n nháº¹", "PhÃ  Manly lÃ  tráº£i nghiá»m di chuyá»n Äáº¹p nháº¥t", "TÃ u tá»« sÃ¢n bay vÃ o thÃ nh phá» (Circular Quay): 13 phÃºt", "Uber cÃ³ sáºµn rá»ng rÃ£i; taxi Äáº¯t hÆ¡n"],
+    costs: [{ label: "Chá» á»", val: "SGD 180â500" }, { label: "Än uá»ng", val: "SGD 80â160" }, { label: "Di chuyá»n", val: "SGD 15â40" }, { label: "Hoáº¡t Äá»ng", val: "SGD 30â80" }],
+    photos: ["NhÃ  hÃ¡t Opera lÃºc bÃ¬nh minh tá»« Gháº¿ BÃ  Macquarie", "Cáº£nh vÃ¡ch ÄÃ¡ tuyáº¿n Äi bá» Bondi Äáº¿n Coogee", "Cáº§u Cáº£ng nhÃ¬n tá»« North Sydney lÃºc cháº¡ng váº¡ng", "Cáº£nh nhÃ¬n tá»« phÃ  Manly quay vá» ÄÆ°á»ng chÃ¢n trá»i thÃ nh phá»"]
   },
   {
     id: "taipei",
-    name: "Đài Bắc",
-    country: "Đài Loan",
-    desc: "Chợ đêm, câu chuyện khai sinh trà sữa trân châu, tòa Taipei 101, và một trong những nền ẩm thực Trung Hoa chân thực nhất châu Á.",
+    name: "ÄÃ i Báº¯c",
+    country: "ÄÃ i Loan",
+    desc: "Chá»£ ÄÃªm, cÃ¢u chuyá»n khai sinh trÃ  sá»¯a trÃ¢n chÃ¢u, tÃ²a Taipei 101, vÃ  má»t trong nhá»¯ng ná»n áº©m thá»±c Trung Hoa chÃ¢n thá»±c nháº¥t chÃ¢u Ã.",
     img: "https://images.unsplash.com/photo-1470004914212-05527e49370b?w=600&q=80",
-    flight: "4 giờ bay từ Singapore",
-    budget: "SGD 100–200/ngày",
-    season: "Tháng 9–11, Tháng 3–5",
-    overview: "Đài Bắc rất đáng sống và bị đánh giá thấp một cách đáng ngạc nhiên. Các chợ đêm (Shilin, Raohe, Ningxia) là huyền thoại, tòa Taipei 101 vẫn khiến người ta choáng ngợp, và hệ thống MRT sạch sẽ và rẻ. Các chuyến đi trong ngày đến phố cổ Cửu Phần, Công viên địa chất Dã Liễu và Hẻm núi Taroko là điều không thể bỏ lỡ. Người dân nơi đây thuộc hàng thân thiện nhất châu Á.",
+    flight: "4 giá» bay tá»« Singapore",
+    budget: "SGD 100â200/ngÃ y",
+    season: "ThÃ¡ng 9â11, ThÃ¡ng 3â5",
+    overview: "ÄÃ i Báº¯c ráº¥t ÄÃ¡ng sá»ng vÃ  bá» ÄÃ¡nh giÃ¡ tháº¥p má»t cÃ¡ch ÄÃ¡ng ngáº¡c nhiÃªn. CÃ¡c chá»£ ÄÃªm (Shilin, Raohe, Ningxia) lÃ  huyá»n thoáº¡i, tÃ²a Taipei 101 váº«n khiáº¿n ngÆ°á»i ta choÃ¡ng ngá»£p, vÃ  há» thá»ng MRT sáº¡ch sáº½ vÃ  ráº». CÃ¡c chuyáº¿n Äi trong ngÃ y Äáº¿n phá» cá» Cá»­u Pháº§n, CÃ´ng viÃªn Äá»a cháº¥t DÃ£ Liá»u vÃ  Háº»m nÃºi Taroko lÃ  Äiá»u khÃ´ng thá» bá» lá»¡. NgÆ°á»i dÃ¢n nÆ¡i ÄÃ¢y thuá»c hÃ ng thÃ¢n thiá»n nháº¥t chÃ¢u Ã.",
     itinerary: [
-      "Ngày 1 sáng: Đài tưởng niệm Tưởng Giới Thạch, Ximending (Harajuku của Đài Bắc)",
-      "Ngày 1 chiều: Đài quan sát Taipei 101, khu mua sắm Tín Nghĩa",
-      "Ngày 2 sáng: Chuyến đi trong ngày đến Phố cổ Cửu Phần và Bảo tàng Vàng Kim Qua Thạch",
-      "Ngày 2 chiều: Chợ đêm Shilin (lớn nhất Đài Bắc)",
-      "Ngày 3 sáng: Đền Long Sơn, chợ lịch sử phố Dihua",
-      "Ngày 3 chiều: Đi bộ đường dài lên Núi Voi lúc hoàng hôn (toàn cảnh Taipei 101)"
+      "NgÃ y 1 sÃ¡ng: ÄÃ i tÆ°á»ng niá»m TÆ°á»ng Giá»i Tháº¡ch, Ximending (Harajuku cá»§a ÄÃ i Báº¯c)",
+      "NgÃ y 1 chiá»u: ÄÃ i quan sÃ¡t Taipei 101, khu mua sáº¯m TÃ­n NghÄ©a",
+      "NgÃ y 2 sÃ¡ng: Chuyáº¿n Äi trong ngÃ y Äáº¿n Phá» cá» Cá»­u Pháº§n vÃ  Báº£o tÃ ng VÃ ng Kim Qua Tháº¡ch",
+      "NgÃ y 2 chiá»u: Chá»£ ÄÃªm Shilin (lá»n nháº¥t ÄÃ i Báº¯c)",
+      "NgÃ y 3 sÃ¡ng: Äá»n Long SÆ¡n, chá»£ lá»ch sá»­ phá» Dihua",
+      "NgÃ y 3 chiá»u: Äi bá» ÄÆ°á»ng dÃ i lÃªn NÃºi Voi lÃºc hoÃ ng hÃ´n (toÃ n cáº£nh Taipei 101)"
     ],
-    food: ["Mì bò tại Yong Kang Beef Noodle", "Tiểu long bao (bánh bao nước) tại Din Tai Fung cơ sở gốc", "Đậu phụ thối tại Chợ đêm Shilin (ngon hơn cái tên của nó)", "Trà sữa trân châu tại Chun Shui Tang (nơi được cho là đã phát minh ra nó)"],
-    transport: ["Thẻ EasyCard dùng cho MRT, xe buýt và thuê xe đạp YouBike", "MRT cực kỳ rẻ — SGD 0,60–1,50 mỗi chuyến", "Tàu cao tốc HSR cho chuyến đi trong ngày đến Cao Hùng và Đài Nam", "Tàu THSR từ sân bay đến ga chính: 35 phút"],
-    costs: [{ label: "Chỗ ở", val: "SGD 60–180" }, { label: "Ăn uống", val: "SGD 25–70" }, { label: "Di chuyển", val: "SGD 5–15" }, { label: "Hoạt động", val: "SGD 10–30" }],
-    photos: ["Taipei 101 nhìn từ Núi Voi lúc hoàng hôn", "Đèn lồng phố cổ Cửu Phần trong mưa", "Đám đông Chợ đêm Shilin chụp từ trên cao", "Lễ đổi gác tại Đài tưởng niệm Tưởng Giới Thạch"]
+    food: ["MÃ¬ bÃ² táº¡i Yong Kang Beef Noodle", "Tiá»u long bao (bÃ¡nh bao nÆ°á»c) táº¡i Din Tai Fung cÆ¡ sá» gá»c", "Äáº­u phá»¥ thá»i táº¡i Chá»£ ÄÃªm Shilin (ngon hÆ¡n cÃ¡i tÃªn cá»§a nÃ³)", "TrÃ  sá»¯a trÃ¢n chÃ¢u táº¡i Chun Shui Tang (nÆ¡i ÄÆ°á»£c cho lÃ  ÄÃ£ phÃ¡t minh ra nÃ³)"],
+    transport: ["Tháº» EasyCard dÃ¹ng cho MRT, xe buÃ½t vÃ  thuÃª xe Äáº¡p YouBike", "MRT cá»±c ká»³ ráº» â SGD 0,60â1,50 má»i chuyáº¿n", "TÃ u cao tá»c HSR cho chuyáº¿n Äi trong ngÃ y Äáº¿n Cao HÃ¹ng vÃ  ÄÃ i Nam", "TÃ u THSR tá»« sÃ¢n bay Äáº¿n ga chÃ­nh: 35 phÃºt"],
+    costs: [{ label: "Chá» á»", val: "SGD 60â180" }, { label: "Än uá»ng", val: "SGD 25â70" }, { label: "Di chuyá»n", val: "SGD 5â15" }, { label: "Hoáº¡t Äá»ng", val: "SGD 10â30" }],
+    photos: ["Taipei 101 nhÃ¬n tá»« NÃºi Voi lÃºc hoÃ ng hÃ´n", "ÄÃ¨n lá»ng phá» cá» Cá»­u Pháº§n trong mÆ°a", "ÄÃ¡m ÄÃ´ng Chá»£ ÄÃªm Shilin chá»¥p tá»« trÃªn cao", "Lá» Äá»i gÃ¡c táº¡i ÄÃ i tÆ°á»ng niá»m TÆ°á»ng Giá»i Tháº¡ch"]
   },
   {
     id: "hanoi",
-    name: "Hà Nội",
-    country: "Việt Nam",
-    desc: "Phố Cổ lâu đời, ẩm thực đường phố đẳng cấp thế giới, cửa ngõ đến Vịnh Hạ Long, và sự pha trộn hấp dẫn giữa văn hóa Pháp và Việt Nam.",
+    name: "HÃ  Ná»i",
+    country: "Viá»t Nam",
+    desc: "Phá» Cá» lÃ¢u Äá»i, áº©m thá»±c ÄÆ°á»ng phá» Äáº³ng cáº¥p tháº¿ giá»i, cá»­a ngÃµ Äáº¿n Vá»nh Háº¡ Long, vÃ  sá»± pha trá»n háº¥p dáº«n giá»¯a vÄn hÃ³a PhÃ¡p vÃ  Viá»t Nam.",
     img: "https://images.unsplash.com/photo-1555921015-5532091f6026?w=600&q=80",
-    flight: "3 giờ bay từ Singapore",
-    budget: "SGD 60–150/ngày",
-    season: "Tháng 10–4",
-    overview: "Hà Nội là thủ đô giàu không khí nhất Đông Nam Á. 36 phố phường của Phố Cổ, Hồ Hoàn Kiếm ở bất kỳ thời điểm nào trong ngày, văn hóa cà phê trứng, và một trong những nền ẩm thực đường phố tinh tế nhất thế giới. Đây là cửa ngõ đến Vịnh Hạ Long, Ninh Bình và Sa Pa. Hỗn loạn, xinh đẹp và hoàn toàn cuốn hút.",
+    flight: "3 giá» bay tá»« Singapore",
+    budget: "SGD 60â150/ngÃ y",
+    season: "ThÃ¡ng 10â4",
+    overview: "HÃ  Ná»i lÃ  thá»§ ÄÃ´ giÃ u khÃ´ng khÃ­ nháº¥t ÄÃ´ng Nam Ã. 36 phá» phÆ°á»ng cá»§a Phá» Cá», Há» HoÃ n Kiáº¿m á» báº¥t ká»³ thá»i Äiá»m nÃ o trong ngÃ y, vÄn hÃ³a cÃ  phÃª trá»©ng, vÃ  má»t trong nhá»¯ng ná»n áº©m thá»±c ÄÆ°á»ng phá» tinh táº¿ nháº¥t tháº¿ giá»i. ÄÃ¢y lÃ  cá»­a ngÃµ Äáº¿n Vá»nh Háº¡ Long, Ninh BÃ¬nh vÃ  Sa Pa. Há»n loáº¡n, xinh Äáº¹p vÃ  hoÃ n toÃ n cuá»n hÃºt.",
     itinerary: [
-      "Ngày 1 sáng: Hồ Hoàn Kiếm, Đền Ngọc Sơn, tour đi bộ Phố Cổ",
-      "Ngày 1 chiều: Văn Miếu, Bảo tàng Phụ nữ Việt Nam",
-      "Ngày 1 tối: Góc phố Bia Hơi (ngã tư bia đường phố), phố Tạ Hiện",
-      "Ngày 2: Du thuyền Vịnh Hạ Long trọn ngày với tùy chọn nghỉ đêm",
-      "Ngày 3: Tàu đi Ninh Bình (Hang động Tràng An, điểm ngắm cảnh Hang Múa)"
+      "NgÃ y 1 sÃ¡ng: Há» HoÃ n Kiáº¿m, Äá»n Ngá»c SÆ¡n, tour Äi bá» Phá» Cá»",
+      "NgÃ y 1 chiá»u: VÄn Miáº¿u, Báº£o tÃ ng Phá»¥ ná»¯ Viá»t Nam",
+      "NgÃ y 1 tá»i: GÃ³c phá» Bia HÆ¡i (ngÃ£ tÆ° bia ÄÆ°á»ng phá»), phá» Táº¡ Hiá»n",
+      "NgÃ y 2: Du thuyá»n Vá»nh Háº¡ Long trá»n ngÃ y vá»i tÃ¹y chá»n nghá» ÄÃªm",
+      "NgÃ y 3: TÃ u Äi Ninh BÃ¬nh (Hang Äá»ng TrÃ ng An, Äiá»m ngáº¯m cáº£nh Hang MÃºa)"
     ],
-    food: ["Phở bò tại Phở Gia Truyền, phố Bát Đàn", "Bún chả tại Bún Chả Hương Liên (bàn ăn của Tổng thống Obama)", "Bánh mì tại Bánh Mì 25 ở Phố Cổ", "Cà phê trứng tại Cà phê Giảng"],
-    transport: ["Grab là lựa chọn taxi hợp lý duy nhất cho du khách", "Chỉ đặt tour Vịnh Hạ Long qua các nhà điều hành uy tín", "Tàu đi Ninh Bình: SGD 3–5, hành trình 2 giờ", "Tránh xe ôm thương lượng giá ngoài đường phố"],
-    costs: [{ label: "Chỗ ở", val: "SGD 30–120" }, { label: "Ăn uống", val: "SGD 15–50" }, { label: "Di chuyển", val: "SGD 5–20" }, { label: "Hoạt động", val: "SGD 20–60" }],
-    photos: ["Hồ Hoàn Kiếm và Đền Ngọc Sơn lúc chạng vạng", "Núi đá vôi Vịnh Hạ Long nhìn từ trên cao", "Con hẻm Phố Cổ về đêm với những chiếc xe máy", "Toàn cảnh điểm ngắm Hang Múa, Ninh Bình"]
+    food: ["Phá» bÃ² táº¡i Phá» Gia Truyá»n, phá» BÃ¡t ÄÃ n", "BÃºn cháº£ táº¡i BÃºn Cháº£ HÆ°Æ¡ng LiÃªn (bÃ n Än cá»§a Tá»ng thá»ng Obama)", "BÃ¡nh mÃ¬ táº¡i BÃ¡nh MÃ¬ 25 á» Phá» Cá»", "CÃ  phÃª trá»©ng táº¡i CÃ  phÃª Giáº£ng"],
+    transport: ["Grab lÃ  lá»±a chá»n taxi há»£p lÃ½ duy nháº¥t cho du khÃ¡ch", "Chá» Äáº·t tour Vá»nh Háº¡ Long qua cÃ¡c nhÃ  Äiá»u hÃ nh uy tÃ­n", "TÃ u Äi Ninh BÃ¬nh: SGD 3â5, hÃ nh trÃ¬nh 2 giá»", "TrÃ¡nh xe Ã´m thÆ°Æ¡ng lÆ°á»£ng giÃ¡ ngoÃ i ÄÆ°á»ng phá»"],
+    costs: [{ label: "Chá» á»", val: "SGD 30â120" }, { label: "Än uá»ng", val: "SGD 15â50" }, { label: "Di chuyá»n", val: "SGD 5â20" }, { label: "Hoáº¡t Äá»ng", val: "SGD 20â60" }],
+    photos: ["Há» HoÃ n Kiáº¿m vÃ  Äá»n Ngá»c SÆ¡n lÃºc cháº¡ng váº¡ng", "NÃºi ÄÃ¡ vÃ´i Vá»nh Háº¡ Long nhÃ¬n tá»« trÃªn cao", "Con háº»m Phá» Cá» vá» ÄÃªm vá»i nhá»¯ng chiáº¿c xe mÃ¡y", "ToÃ n cáº£nh Äiá»m ngáº¯m Hang MÃºa, Ninh BÃ¬nh"]
   }
 ];
 
 const safetyData = [
-  { city: "Tokyo", icon: "🇯🇵", level: "safe", badge: "Rất an toàn", tips: "Cực kỳ an toàn. Tội phạm hầu như không tồn tại đối với du khách. Bạn có thể để ví trên bàn và nó vẫn ở đó khi bạn quay lại. Phép lịch sự cơ bản: không vừa đi vừa ăn, nói nhỏ trên tàu." },
-  { city: "Singapore", icon: "🇸🇬", level: "safe", badge: "Rất an toàn", tips: "Một trong những thành phố an toàn nhất thế giới. Luật nghiêm khắc về xả rác, băng qua đường sai quy định và tàng trữ ma túy. Hãy mang theo hộ chiếu. Khu vực: tất cả đều an toàn vào mọi giờ." },
-  { city: "Seoul", icon: "🇰🇷", level: "safe", badge: "Rất an toàn", tips: "Rất an toàn cho du khách. Móc túi hiếm khi xảy ra. Phụ nữ đi du lịch một mình cảm thấy thoải mái. Hãy lưu ý những người chèo kéo nhà hàng quá nhiệt tình ở Itaewon." },
-  { city: "Sydney", icon: "🇦🇺", level: "safe", badge: "Rất an toàn", tips: "Nhìn chung rất an toàn. Áp dụng các biện pháp đề phòng thông thường ở Kings Cross vào ban đêm. Nắng gắt: thoa kem chống nắng SPF 50+ và bơi giữa các lá cờ ở bãi biển." },
-  { city: "Đài Bắc", icon: "🇹🇼", level: "safe", badge: "Rất an toàn", tips: "Một trong những thành phố an toàn nhất châu Á. Chợ đêm và đường phố an toàn vào mọi giờ. Mùa bão từ tháng 6 đến tháng 10 — hãy kiểm tra các khuyến cáo thời tiết." },
-  { city: "Bangkok", icon: "🇹🇭", level: "moderate", badge: "Trung bình", tips: "Nhìn chung an toàn nhưng hãy cảnh giác. Các trò lừa đảo phổ biến: lừa bán đá quý qua xe tuk-tuk, chiêu 'Cung điện Hoàng gia hôm nay đóng cửa' — bỏ qua những người lạ tiếp cận gần các đền chùa. Đôi khi có biểu tình." },
-  { city: "Bali", icon: "🇮🇩", level: "moderate", badge: "Trung bình", tips: "An toàn cho du khách nhưng vẫn có trộm cắp vặt. Hãy dùng két an toàn của khách sạn cho vật có giá trị. Có bệnh dại — không chạm vào chó hoang hoặc khỉ. Xe máy: đội mũ bảo hiểm, nhiều du khách bị thương." },
-  { city: "KL", icon: "🇲🇾", level: "moderate", badge: "Trung bình", tips: "Nhìn chung an toàn. Cướp giật (giật túi) là mối lo chính — hãy đeo túi ở phía trong. Khu vực KL Sentral đôi khi có người ăn xin quá nhiệt tình. Tránh các con hẻm tối ở Chow Kit vào ban đêm." },
-  { city: "Hồng Kông", icon: "🇭🇰", level: "moderate", badge: "Trung bình", tips: "Tỷ lệ tội phạm rất thấp đối với du khách. Bối cảnh chính trị hiện tại đôi khi dẫn đến các cuộc tụ tập đông người. Áp dụng các biện pháp đề phòng đô thị thông thường ở Mong Kok vào ban đêm." },
-  { city: "Hà Nội", icon: "🇻🇳", level: "moderate", badge: "Trung bình", tips: "An toàn nhưng có những trò lừa đảo phổ biến: đi xích lô không thỏa thuận giá trước, taxi giả ở sân bay (chỉ dùng Grab hoặc Vinasun), tính giá đắt tại các nhà hàng không niêm yết giá." },
-  { city: "Phuket", icon: "🇹🇭", level: "moderate", badge: "Trung bình", tips: "An toàn nhưng có những nguy hiểm cụ thể: dòng nước xoáy mạnh ở các bãi biển bờ tây (luôn bơi giữa các lá cờ), trò lừa thuê mô tô nước (đòi bồi thường thiệt hại), những người làm dịch vụ không phép trên Bãi biển Patong vào ban đêm." },
-  { city: "Maldives", icon: "🇲🇻", level: "safe", badge: "An toàn", tips: "Rất an toàn ở các đảo nghỉ dưỡng. Các đảo địa phương là cộng đồng Hồi giáo bảo thủ — hãy ăn mặc kín đáo, không uống rượu nơi công cộng. Trộm cắp vặt ở nhà nghỉ giá rẻ hiếm khi xảy ra nhưng hãy khóa vật có giá trị." }
+  { city: "Tokyo", icon: "ð¯ðµ", level: "safe", badge: "Ráº¥t an toÃ n", tips: "Cá»±c ká»³ an toÃ n. Tá»i pháº¡m háº§u nhÆ° khÃ´ng tá»n táº¡i Äá»i vá»i du khÃ¡ch. Báº¡n cÃ³ thá» Äá» vÃ­ trÃªn bÃ n vÃ  nÃ³ váº«n á» ÄÃ³ khi báº¡n quay láº¡i. PhÃ©p lá»ch sá»± cÆ¡ báº£n: khÃ´ng vá»«a Äi vá»«a Än, nÃ³i nhá» trÃªn tÃ u." },
+  { city: "Singapore", icon: "ð¸ð¬", level: "safe", badge: "Ráº¥t an toÃ n", tips: "Má»t trong nhá»¯ng thÃ nh phá» an toÃ n nháº¥t tháº¿ giá»i. Luáº­t nghiÃªm kháº¯c vá» xáº£ rÃ¡c, bÄng qua ÄÆ°á»ng sai quy Äá»nh vÃ  tÃ ng trá»¯ ma tÃºy. HÃ£y mang theo há» chiáº¿u. Khu vá»±c: táº¥t cáº£ Äá»u an toÃ n vÃ o má»i giá»." },
+  { city: "Seoul", icon: "ð°ð·", level: "safe", badge: "Ráº¥t an toÃ n", tips: "Ráº¥t an toÃ n cho du khÃ¡ch. MÃ³c tÃºi hiáº¿m khi xáº£y ra. Phá»¥ ná»¯ Äi du lá»ch má»t mÃ¬nh cáº£m tháº¥y thoáº£i mÃ¡i. HÃ£y lÆ°u Ã½ nhá»¯ng ngÆ°á»i chÃ¨o kÃ©o nhÃ  hÃ ng quÃ¡ nhiá»t tÃ¬nh á» Itaewon." },
+  { city: "Sydney", icon: "ð¦ðº", level: "safe", badge: "Ráº¥t an toÃ n", tips: "NhÃ¬n chung ráº¥t an toÃ n. Ãp dá»¥ng cÃ¡c biá»n phÃ¡p Äá» phÃ²ng thÃ´ng thÆ°á»ng á» Kings Cross vÃ o ban ÄÃªm. Náº¯ng gáº¯t: thoa kem chá»ng náº¯ng SPF 50+ vÃ  bÆ¡i giá»¯a cÃ¡c lÃ¡ cá» á» bÃ£i biá»n." },
+  { city: "ÄÃ i Báº¯c", icon: "ð¹ð¼", level: "safe", badge: "Ráº¥t an toÃ n", tips: "Má»t trong nhá»¯ng thÃ nh phá» an toÃ n nháº¥t chÃ¢u Ã. Chá»£ ÄÃªm vÃ  ÄÆ°á»ng phá» an toÃ n vÃ o má»i giá». MÃ¹a bÃ£o tá»« thÃ¡ng 6 Äáº¿n thÃ¡ng 10 â hÃ£y kiá»m tra cÃ¡c khuyáº¿n cÃ¡o thá»i tiáº¿t." },
+  { city: "Bangkok", icon: "ð¹ð­", level: "moderate", badge: "Trung bÃ¬nh", tips: "NhÃ¬n chung an toÃ n nhÆ°ng hÃ£y cáº£nh giÃ¡c. CÃ¡c trÃ² lá»«a Äáº£o phá» biáº¿n: lá»«a bÃ¡n ÄÃ¡ quÃ½ qua xe tuk-tuk, chiÃªu 'Cung Äiá»n HoÃ ng gia hÃ´m nay ÄÃ³ng cá»­a' â bá» qua nhá»¯ng ngÆ°á»i láº¡ tiáº¿p cáº­n gáº§n cÃ¡c Äá»n chÃ¹a. ÄÃ´i khi cÃ³ biá»u tÃ¬nh." },
+  { city: "Bali", icon: "ð®ð©", level: "moderate", badge: "Trung bÃ¬nh", tips: "An toÃ n cho du khÃ¡ch nhÆ°ng váº«n cÃ³ trá»m cáº¯p váº·t. HÃ£y dÃ¹ng kÃ©t an toÃ n cá»§a khÃ¡ch sáº¡n cho váº­t cÃ³ giÃ¡ trá». CÃ³ bá»nh dáº¡i â khÃ´ng cháº¡m vÃ o chÃ³ hoang hoáº·c khá». Xe mÃ¡y: Äá»i mÅ© báº£o hiá»m, nhiá»u du khÃ¡ch bá» thÆ°Æ¡ng." },
+  { city: "KL", icon: "ð²ð¾", level: "moderate", badge: "Trung bÃ¬nh", tips: "NhÃ¬n chung an toÃ n. CÆ°á»p giáº­t (giáº­t tÃºi) lÃ  má»i lo chÃ­nh â hÃ£y Äeo tÃºi á» phÃ­a trong. Khu vá»±c KL Sentral ÄÃ´i khi cÃ³ ngÆ°á»i Än xin quÃ¡ nhiá»t tÃ¬nh. TrÃ¡nh cÃ¡c con háº»m tá»i á» Chow Kit vÃ o ban ÄÃªm." },
+  { city: "Há»ng KÃ´ng", icon: "ð­ð°", level: "moderate", badge: "Trung bÃ¬nh", tips: "Tá»· lá» tá»i pháº¡m ráº¥t tháº¥p Äá»i vá»i du khÃ¡ch. Bá»i cáº£nh chÃ­nh trá» hiá»n táº¡i ÄÃ´i khi dáº«n Äáº¿n cÃ¡c cuá»c tá»¥ táº­p ÄÃ´ng ngÆ°á»i. Ãp dá»¥ng cÃ¡c biá»n phÃ¡p Äá» phÃ²ng ÄÃ´ thá» thÃ´ng thÆ°á»ng á» Mong Kok vÃ o ban ÄÃªm." },
+  { city: "HÃ  Ná»i", icon: "ð»ð³", level: "moderate", badge: "Trung bÃ¬nh", tips: "An toÃ n nhÆ°ng cÃ³ nhá»¯ng trÃ² lá»«a Äáº£o phá» biáº¿n: Äi xÃ­ch lÃ´ khÃ´ng thá»a thuáº­n giÃ¡ trÆ°á»c, taxi giáº£ á» sÃ¢n bay (chá» dÃ¹ng Grab hoáº·c Vinasun), tÃ­nh giÃ¡ Äáº¯t táº¡i cÃ¡c nhÃ  hÃ ng khÃ´ng niÃªm yáº¿t giÃ¡." },
+  { city: "Phuket", icon: "ð¹ð­", level: "moderate", badge: "Trung bÃ¬nh", tips: "An toÃ n nhÆ°ng cÃ³ nhá»¯ng nguy hiá»m cá»¥ thá»: dÃ²ng nÆ°á»c xoÃ¡y máº¡nh á» cÃ¡c bÃ£i biá»n bá» tÃ¢y (luÃ´n bÆ¡i giá»¯a cÃ¡c lÃ¡ cá»), trÃ² lá»«a thuÃª mÃ´ tÃ´ nÆ°á»c (ÄÃ²i bá»i thÆ°á»ng thiá»t háº¡i), nhá»¯ng ngÆ°á»i lÃ m dá»ch vá»¥ khÃ´ng phÃ©p trÃªn BÃ£i biá»n Patong vÃ o ban ÄÃªm." },
+  { city: "Maldives", icon: "ð²ð»", level: "safe", badge: "An toÃ n", tips: "Ráº¥t an toÃ n á» cÃ¡c Äáº£o nghá» dÆ°á»¡ng. CÃ¡c Äáº£o Äá»a phÆ°Æ¡ng lÃ  cá»ng Äá»ng Há»i giÃ¡o báº£o thá»§ â hÃ£y Än máº·c kÃ­n ÄÃ¡o, khÃ´ng uá»ng rÆ°á»£u nÆ¡i cÃ´ng cá»ng. Trá»m cáº¯p váº·t á» nhÃ  nghá» giÃ¡ ráº» hiáº¿m khi xáº£y ra nhÆ°ng hÃ£y khÃ³a váº­t cÃ³ giÃ¡ trá»." }
 ];
 
 const checklistData = {
-  "Giấy tờ": ["Hộ chiếu (còn hạn 6 tháng trở lên)", "Bản in thị thực / e-Visa", "Giấy tờ bảo hiểm du lịch", "Xác nhận đặt vé máy bay", "Xác nhận đặt phòng khách sạn", "Danh sách liên hệ khẩn cấp"],
-  "Quần áo": ["Áo nhẹ (3–5 chiếc)", "Giày đi bộ thoải mái", "Dép xăng đan hoặc dép lê", "Áo mưa hoặc ô gấp gọn", "Trang phục lịch sự để đi nhà hàng", "Kính râm và mũ"],
-  "Đồ điện tử": ["Sạc điện thoại và pin dự phòng", "Ổ cắm chuyển đổi đa năng", "Tai nghe / AirPods", "Máy ảnh và thẻ nhớ", "Laptop hoặc máy tính bảng (nếu cần)", "WiFi di động hoặc thẻ SIM"],
-  "Thuốc men": ["Thuốc theo đơn (đủ dùng + dự phòng)", "Thuốc kháng histamin", "Thuốc tiêu chảy (Imodium)", "Thuốc giảm đau (Panadol/Ibuprofen)", "Thuốc chống côn trùng (loại có DEET)", "Nước rửa tay khô"],
-  "Vật dụng thiết yếu": ["Tiền địa phương (đủ cho ngày đầu tiên)", "Thẻ tín dụng / ghi nợ (báo cho ngân hàng)", "Khóa hành lý", "Bình nước tái sử dụng", "Kem chống nắng SPF 50+", "Son dưỡng môi và kem dưỡng ẩm"]
+  "Giáº¥y tá»": ["Há» chiáº¿u (cÃ²n háº¡n 6 thÃ¡ng trá» lÃªn)", "Báº£n in thá» thá»±c / e-Visa", "Giáº¥y tá» báº£o hiá»m du lá»ch", "XÃ¡c nháº­n Äáº·t vÃ© mÃ¡y bay", "XÃ¡c nháº­n Äáº·t phÃ²ng khÃ¡ch sáº¡n", "Danh sÃ¡ch liÃªn há» kháº©n cáº¥p"],
+  "Quáº§n Ã¡o": ["Ão nháº¹ (3â5 chiáº¿c)", "GiÃ y Äi bá» thoáº£i mÃ¡i", "DÃ©p xÄng Äan hoáº·c dÃ©p lÃª", "Ão mÆ°a hoáº·c Ã´ gáº¥p gá»n", "Trang phá»¥c lá»ch sá»± Äá» Äi nhÃ  hÃ ng", "KÃ­nh rÃ¢m vÃ  mÅ©"],
+  "Äá» Äiá»n tá»­": ["Sáº¡c Äiá»n thoáº¡i vÃ  pin dá»± phÃ²ng", "á» cáº¯m chuyá»n Äá»i Äa nÄng", "Tai nghe / AirPods", "MÃ¡y áº£nh vÃ  tháº» nhá»", "Laptop hoáº·c mÃ¡y tÃ­nh báº£ng (náº¿u cáº§n)", "WiFi di Äá»ng hoáº·c tháº» SIM"],
+  "Thuá»c men": ["Thuá»c theo ÄÆ¡n (Äá»§ dÃ¹ng + dá»± phÃ²ng)", "Thuá»c khÃ¡ng histamin", "Thuá»c tiÃªu cháº£y (Imodium)", "Thuá»c giáº£m Äau (Panadol/Ibuprofen)", "Thuá»c chá»ng cÃ´n trÃ¹ng (loáº¡i cÃ³ DEET)", "NÆ°á»c rá»­a tay khÃ´"],
+  "Váº­t dá»¥ng thiáº¿t yáº¿u": ["Tiá»n Äá»a phÆ°Æ¡ng (Äá»§ cho ngÃ y Äáº§u tiÃªn)", "Tháº» tÃ­n dá»¥ng / ghi ná»£ (bÃ¡o cho ngÃ¢n hÃ ng)", "KhÃ³a hÃ nh lÃ½", "BÃ¬nh nÆ°á»c tÃ¡i sá»­ dá»¥ng", "Kem chá»ng náº¯ng SPF 50+", "Son dÆ°á»¡ng mÃ´i vÃ  kem dÆ°á»¡ng áº©m"]
 };
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // RENDER CITY CARDS
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function renderCards() {
   const grid = document.getElementById('cardsGrid');
@@ -1783,19 +1780,19 @@ function renderCards() {
         <h3 class="card-title">${c.name}</h3>
         <p class="card-desc">${c.desc}</p>
         <div class="card-meta">
-          <span class="meta-tag">✈ ${c.flight}</span>
-          <span class="meta-tag">💰 ${c.budget}</span>
-          <span class="meta-tag">🌤 ${c.season}</span>
+          <span class="meta-tag">â ${c.flight}</span>
+          <span class="meta-tag">ð° ${c.budget}</span>
+          <span class="meta-tag">ð¤ ${c.season}</span>
         </div>
-        <button class="card-btn">Xem cẩm nang</button>
+        <button class="card-btn">Xem cáº©m nang</button>
       </div>
     </div>
   `).join('');
 }
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // MODAL
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function openModal(id) {
   const c = cities.find(x => x.id === id);
@@ -1828,9 +1825,9 @@ document.getElementById('modalOverlay').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // SAFETY
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function renderSafety() {
   const grid = document.getElementById('safetyGrid');
@@ -1844,9 +1841,9 @@ function renderSafety() {
   `).join('');
 }
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // CHECKLIST
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function renderChecklist() {
   const container = document.getElementById('checklistContainer');
@@ -1869,9 +1866,9 @@ function toggleCheck(cat, i) {
   el.classList.toggle('checked', cb.checked);
 }
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // BUDGET CALCULATOR
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function calcBudget() {
   const travellers = parseInt(document.getElementById('travellers').value) || 1;
@@ -1880,12 +1877,12 @@ function calcBudget() {
   const total = travellers * days * daily;
   const result = document.getElementById('budgetResult');
   result.style.display = 'block';
-  result.innerHTML = `Tổng ước tính: <strong>SGD ${total.toLocaleString()}</strong><br><small style="font-weight:400;font-size:13px;color:#888">${travellers} người × ${days} ngày × SGD ${daily}/ngày</small>`;
+  result.innerHTML = `Tá»ng Æ°á»c tÃ­nh: <strong>SGD ${total.toLocaleString()}</strong><br><small style="font-weight:400;font-size:13px;color:#888">${travellers} ngÆ°á»i Ã ${days} ngÃ y Ã SGD ${daily}/ngÃ y</small>`;
 }
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // ITINERARY PLANNER
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 let itinItems = [];
 
@@ -1913,18 +1910,18 @@ function renderItinerary() {
   if (!itinItems.length) { list.innerHTML = ''; return; }
   list.innerHTML = itinItems.map(item => `
     <div class="itinerary-item">
-      <button class="itinerary-remove" onclick="removeItinItem(${item.id})">✕</button>
+      <button class="itinerary-remove" onclick="removeItinItem(${item.id})">â</button>
       <div class="day-label">${item.day}</div>
       <div class="activity">${item.activity}</div>
-      ${item.time ? `<div class="time">⏰ ${item.time}</div>` : ''}
+      ${item.time ? `<div class="time">â° ${item.time}</div>` : ''}
       ${item.notes ? `<div class="notes">${item.notes}</div>` : ''}
     </div>
   `).join('');
 }
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // WEATHER
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 // Replace with your OpenWeather API key from https://openweathermap.org/api
 const OPENWEATHER_API_KEY = "513fb8a7ad2f008010d943c64dc27334";
@@ -1942,7 +1939,7 @@ async function checkWeather() {
   msgEl.style.display = 'none';
 
   if (!city) {
-    showWeatherMsg('Vui lòng nhập tên thành phố.');
+    showWeatherMsg('Vui lÃ²ng nháº­p tÃªn thÃ nh phá».');
     return;
   }
 
@@ -1962,11 +1959,11 @@ async function checkWeather() {
     );
   } catch (err) {
     if (err.message === 'notfound') {
-      showWeatherMsg(`Không tìm thấy "${city}". Vui lòng kiểm tra chính tả và thử lại.`);
+      showWeatherMsg(`KhÃ´ng tÃ¬m tháº¥y "${city}". Vui lÃ²ng kiá»m tra chÃ­nh táº£ vÃ  thá»­ láº¡i.`);
     } else if (err.message === 'auth') {
-      showWeatherMsg('Thời tiết trực tiếp tạm thời không khả dụng. Vui lòng thử lại sau.');
+      showWeatherMsg('Thá»i tiáº¿t trá»±c tiáº¿p táº¡m thá»i khÃ´ng kháº£ dá»¥ng. Vui lÃ²ng thá»­ láº¡i sau.');
     } else {
-      showWeatherMsg('Đã có lỗi xảy ra khi lấy dữ liệu thời tiết. Vui lòng thử lại.');
+      showWeatherMsg('ÄÃ£ cÃ³ lá»i xáº£y ra khi láº¥y dá»¯ liá»u thá»i tiáº¿t. Vui lÃ²ng thá»­ láº¡i.');
     }
     console.error('Weather lookup failed:', err);
   }
@@ -1974,10 +1971,10 @@ async function checkWeather() {
 
 function showWeather(city, temp, desc, humidity, wind) {
   document.getElementById('wCity').textContent = city;
-  document.getElementById('wTemp').textContent = temp + '°C';
+  document.getElementById('wTemp').textContent = temp + 'Â°C';
   document.getElementById('wDesc').textContent = desc;
-  document.getElementById('wHumidity').textContent = `Độ ẩm ${humidity}%`;
-  document.getElementById('wWind').textContent = `Gió ${wind} m/s`;
+  document.getElementById('wHumidity').textContent = `Äá» áº©m ${humidity}%`;
+  document.getElementById('wWind').textContent = `GiÃ³ ${wind} m/s`;
   document.getElementById('weatherResult').style.display = 'block';
   document.getElementById('weatherMsg').style.display = 'none';
 }
@@ -1986,9 +1983,9 @@ document.getElementById('weatherCity').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') checkWeather();
 });
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // ENQUIRY FORM
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 const WEB3FORMS_ACCESS_KEY = '5c6b48a7-374e-4b83-a442-8b8a3c901821';
 
@@ -1999,7 +1996,7 @@ async function submitEnquiry() {
   document.getElementById('enquirySuccess').style.display = 'none';
   errorEl.style.display = 'none';
   if (!name || !email) {
-    errorEl.textContent = '⚠ Vui lòng điền tên và email của bạn.';
+    errorEl.textContent = 'â  Vui lÃ²ng Äiá»n tÃªn vÃ  email cá»§a báº¡n.';
     errorEl.style.display = 'block';
     return;
   }
@@ -2017,7 +2014,7 @@ async function submitEnquiry() {
   const btn = document.getElementById('enquiryBtn');
   const successEl = document.getElementById('enquirySuccess');
   btn.disabled = true;
-  btn.textContent = 'Đang gửi…';
+  btn.textContent = 'Äang gá»­iâ¦';
 
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
@@ -2040,17 +2037,17 @@ async function submitEnquiry() {
     document.getElementById('eDest').selectedIndex = 0;
   } catch (err) {
     console.error('Enquiry submission failed:', err);
-    errorEl.textContent = '⚠ Rất tiếc, đã có lỗi xảy ra. Vui lòng thử lại hoặc gửi email trực tiếp cho chúng tôi.';
+    errorEl.textContent = 'â  Ráº¥t tiáº¿c, ÄÃ£ cÃ³ lá»i xáº£y ra. Vui lÃ²ng thá»­ láº¡i hoáº·c gá»­i email trá»±c tiáº¿p cho chÃºng tÃ´i.';
     errorEl.style.display = 'block';
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Gửi liên hệ';
+    btn.textContent = 'Gá»­i liÃªn há»';
   }
 }
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // MOBILE NAV
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 document.getElementById('hamburger').addEventListener('click', function() {
   document.getElementById('mobileMenu').classList.toggle('open');
@@ -2060,9 +2057,9 @@ function closeMobileMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
 }
 
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 // INIT
-// ────────────────────────────────────────────────────────────────────────────────
+// ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 renderCards();
 renderSafety();
