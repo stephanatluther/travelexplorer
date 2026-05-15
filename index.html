@@ -109,17 +109,19 @@
       overflow: hidden;
     }
 
-    /* Fallback image — shows if the video fails to load */
+    /* Fallback still — identical to the video's first frame, so the
+       swap to video is invisible. Always sits behind the video. */
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1800&q=80');
+      background-image: url('poster.jpg');
       background-size: cover;
       background-position: center;
-      filter: brightness(0.45);
       z-index: 0;
     }
 
+    /* Video starts hidden and fades in once it actually begins
+       playing — see the .is-playing class added by the script. */
     .hero-video {
       position: absolute;
       inset: 0;
@@ -127,6 +129,16 @@
       height: 100%;
       object-fit: cover;
       z-index: 1;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+    }
+
+    .hero-video.is-playing { opacity: 1; }
+
+    /* Accessibility: users who ask for reduced motion just get the
+       still image — the video never loads or plays. */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video { display: none; }
     }
 
     /* Dark gradient over the video so the headline stays readable */
@@ -904,11 +916,22 @@
 <!-- HERO -->
 <section id="home" style="padding:0;">
   <div class="hero-bg"></div>
-  <video class="hero-video" autoplay muted loop playsinline
-         poster="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1800&q=80">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto"
+         poster="poster.jpg">
     <source src="hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
+  <script>
+    /* Fade the video in only once it's genuinely playing, so it
+       blends over the matching poster instead of snapping in. */
+    (function () {
+      var v = document.querySelector('.hero-video');
+      if (!v) return;
+      var reveal = function () { v.classList.add('is-playing'); };
+      if (v.readyState >= 3) reveal();          // already buffered
+      v.addEventListener('playing', reveal);
+    })();
+  </script>
   <div class="hero-content">
     <p class="hero-label">Asia &amp; Pacific Guides</p>
     <h1 class="hero-headline">We went,<br>so you know<br>where to go.</h1>
