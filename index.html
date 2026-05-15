@@ -659,6 +659,17 @@
       text-align: center;
     }
 
+    .weather-msg {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 18px;
+      border-radius: 2px;
+      font-size: 14px;
+      font-weight: 500;
+      background: #fdecea;
+      color: #b3261e;
+    }
+
     .weather-city-name {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
@@ -1065,6 +1076,7 @@
           <span id="wWind"></span>
         </div>
       </div>
+      <div class="weather-msg" id="weatherMsg"></div>
     </div>
 
     <div class="weather-api-note">
@@ -1634,26 +1646,29 @@ function renderItinerary() {
 // Replace with your OpenWeather API key from https://openweathermap.org/api
 const OPENWEATHER_API_KEY = "513fb8a7ad2f008010d943c64dc27334";
 
+function showWeatherMsg(text) {
+  const el = document.getElementById('weatherMsg');
+  el.textContent = text;
+  el.style.display = 'block';
+  document.getElementById('weatherResult').style.display = 'none';
+}
+
 async function checkWeather() {
   const city = document.getElementById('weatherCity').value.trim();
-  if (!city) return;
+  const msgEl = document.getElementById('weatherMsg');
+  msgEl.style.display = 'none';
 
-  if (OPENWEATHER_API_KEY === "YOUR_API_KEY_HERE") {
-    // Demo mode — show placeholder data
-    const demoData = {
-      temp: Math.round(22 + Math.random() * 16),
-      desc: ["partly cloudy", "sunny", "light rain", "mostly clear", "hazy"][Math.floor(Math.random() * 5)],
-      humidity: Math.round(55 + Math.random() * 40),
-      wind: (2 + Math.random() * 10).toFixed(1)
-    };
-    showWeather(city, demoData.temp, demoData.desc, demoData.humidity, demoData.wind);
+  if (!city) {
+    showWeatherMsg('Please enter a city name.');
     return;
   }
 
   try {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${OPENWEATHER_API_KEY}&units=metric`;
     const res = await fetch(url);
-    if (!res.ok) throw new Error('City not found');
+    if (res.status === 404) throw new Error('notfound');
+    if (res.status === 401) throw new Error('auth');
+    if (!res.ok) throw new Error('other');
     const data = await res.json();
     showWeather(
       data.name,
@@ -1663,7 +1678,14 @@ async function checkWeather() {
       data.wind.speed.toFixed(1)
     );
   } catch (err) {
-    alert('City not found. Try another name.');
+    if (err.message === 'notfound') {
+      showWeatherMsg(`Couldn't find "${city}". Check the spelling and try again.`);
+    } else if (err.message === 'auth') {
+      showWeatherMsg('Live weather is temporarily unavailable. Please try again later.');
+    } else {
+      showWeatherMsg('Something went wrong fetching the weather. Please try again.');
+    }
+    console.error('Weather lookup failed:', err);
   }
 }
 
@@ -1674,6 +1696,7 @@ function showWeather(city, temp, desc, humidity, wind) {
   document.getElementById('wHumidity').textContent = `Humidity ${humidity}%`;
   document.getElementById('wWind').textContent = `Wind ${wind} m/s`;
   document.getElementById('weatherResult').style.display = 'block';
+  document.getElementById('weatherMsg').style.display = 'none';
 }
 
 document.getElementById('weatherCity').addEventListener('keydown', function(e) {
@@ -1689,8 +1712,12 @@ const WEB3FORMS_ACCESS_KEY = '5c6b48a7-374e-4b83-a442-8b8a3c901821';
 async function submitEnquiry() {
   const name = document.getElementById('eName').value.trim();
   const email = document.getElementById('eEmail').value.trim();
+  const errorEl = document.getElementById('enquiryError');
+  document.getElementById('enquirySuccess').style.display = 'none';
+  errorEl.style.display = 'none';
   if (!name || !email) {
-    alert('Please fill in your name and email.');
+    errorEl.textContent = '⚠ Please fill in your name and email.';
+    errorEl.style.display = 'block';
     return;
   }
   const enquiry = {
@@ -1706,9 +1733,6 @@ async function submitEnquiry() {
 
   const btn = document.getElementById('enquiryBtn');
   const successEl = document.getElementById('enquirySuccess');
-  const errorEl = document.getElementById('enquiryError');
-  successEl.style.display = 'none';
-  errorEl.style.display = 'none';
   btn.disabled = true;
   btn.textContent = 'Sending…';
 
@@ -1733,6 +1757,7 @@ async function submitEnquiry() {
     document.getElementById('eDest').selectedIndex = 0;
   } catch (err) {
     console.error('Enquiry submission failed:', err);
+    errorEl.textContent = '⚠ Sorry, something went wrong. Please try again or email us directly.';
     errorEl.style.display = 'block';
   } finally {
     btn.disabled = false;
