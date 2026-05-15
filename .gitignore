@@ -1,0 +1,25 @@
+# Claude IDE
+.claude/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Secrets & keys
+*.pem
+*.key
+id_rsa
+credentials*
+*secret*
+*.pfx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+*.log
+node_modules/
