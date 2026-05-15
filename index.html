@@ -1157,9 +1157,12 @@
       </div>
       <label>Message</label>
       <textarea id="eMessage" placeholder="Tell us about your dream trip…"></textarea>
-      <button class="btn-dark" style="margin-top:20px;" onclick="submitEnquiry()">Send Enquiry</button>
+      <button class="btn-dark" id="enquiryBtn" style="margin-top:20px;" onclick="submitEnquiry()">Send Enquiry</button>
       <div class="success-msg" id="enquirySuccess">
         ✓ Your enquiry has been received! We'll be in touch within 24 hours.
+      </div>
+      <div class="success-msg" id="enquiryError" style="background:#fdecea;color:#b3261e;">
+        ⚠ Sorry, something went wrong. Please try again or email us directly.
       </div>
     </div>
   </div>
@@ -1629,7 +1632,7 @@ function renderItinerary() {
 // ────────────────────────────────────────────────────────────────────────────────
 
 // Replace with your OpenWeather API key from https://openweathermap.org/api
-const OPENWEATHER_API_KEY = "YOUR_API_KEY_HERE";
+const OPENWEATHER_API_KEY = "513fb8a7ad2f008010d943c64dc27334";
 
 async function checkWeather() {
   const city = document.getElementById('weatherCity').value.trim();
@@ -1681,7 +1684,9 @@ document.getElementById('weatherCity').addEventListener('keydown', function(e) {
 // ENQUIRY FORM
 // ────────────────────────────────────────────────────────────────────────────────
 
-function submitEnquiry() {
+const WEB3FORMS_ACCESS_KEY = '5c6b48a7-374e-4b83-a442-8b8a3c901821';
+
+async function submitEnquiry() {
   const name = document.getElementById('eName').value.trim();
   const email = document.getElementById('eEmail').value.trim();
   if (!name || !email) {
@@ -1698,14 +1703,41 @@ function submitEnquiry() {
     message: document.getElementById('eMessage').value.trim(),
     timestamp: new Date().toISOString()
   };
-  const stored = JSON.parse(localStorage.getItem('travelEnquiries') || '[]');
-  stored.push(enquiry);
-  localStorage.setItem('travelEnquiries', JSON.stringify(stored));
-  document.getElementById('enquirySuccess').style.display = 'block';
-  ['eName','eEmail','ePhone','eDate','eTravellers','eMessage'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-  document.getElementById('eDest').selectedIndex = 0;
+
+  const btn = document.getElementById('enquiryBtn');
+  const successEl = document.getElementById('enquirySuccess');
+  const errorEl = document.getElementById('enquiryError');
+  successEl.style.display = 'none';
+  errorEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `New travel enquiry from ${name}`,
+        from_name: 'Travel Explorer',
+        ...enquiry
+      })
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.message || 'Submission failed');
+
+    successEl.style.display = 'block';
+    ['eName','eEmail','ePhone','eDate','eTravellers','eMessage'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('eDest').selectedIndex = 0;
+  } catch (err) {
+    console.error('Enquiry submission failed:', err);
+    errorEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Enquiry';
+  }
 }
 
 // ────────────────────────────────────────────────────────────────────────────────
