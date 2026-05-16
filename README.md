@@ -13,7 +13,7 @@ A beautiful, interactive travel exploration website featuring real-time weather 
 - **Smooth Animations**: Elegant fade-ins and smooth scrolling for enhanced user experience
 - **Accessibility**: Respects `prefers-reduced-motion` for motion-sensitive users
 - **Modern UI**: Clean, minimalist design with gold accents and refined typography
-- **Multilingual**: Available in 6 languages with per-language pages and SEO `hreflang` tags
+- **Multilingual**: Available in 5 languages with per-language pages and SEO `hreflang` tags
 
 ## Languages
 
@@ -27,13 +27,12 @@ and reciprocal `hreflang` tags:
 | French | `/fr/index.html` |
 | German | `/de/index.html` |
 | Malay | `/ms/index.html` |
-| Vietnamese | `/vi/index.html` |
 
 ## Setup
 
 1. Clone the repository
-2. Replace `YOUR_API_KEY_HERE` in `index.html` with your OpenWeather API key (get one free at [openweathermap.org](https://openweathermap.org/api))
-3. Open `index.html` in a web browser
+2. Open `index.html` in a web browser
+3. The weather feature uses the OpenWeather API. To use your own key, replace the `OPENWEATHER_API_KEY` value in `index.html` (and the per-language pages) — get one free at [openweathermap.org](https://openweathermap.org/api)
 
 ## Usage
 
